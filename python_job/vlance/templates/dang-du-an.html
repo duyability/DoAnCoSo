@@ -1,0 +1,442 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class="main_content">
+
+<script type='text/javascript'>
+    fbq('track', 'ViewCreateJobPage');
+</script>
+
+
+<div class="content-section container create-job">
+    <div class="row-fluid">
+        <div class="span12 left-side">
+            <h1 class="new_job_title">Đăng việc mới</h1>
+
+            <script type="text/javascript">
+                var logged = 'false';
+            </script>
+                            <div class="block-lr" style="margin-bottom: 20px;">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="sprites-job-posting sprites-6"></div>
+        </div>
+        <div class="span10">
+            <h4>Thông tin người đăng việc</h4>
+            <div class="row-fluid block-type-user">
+                <div class="span6">
+                    <label class="radio checked"><input id="new_user" type="radio" name="typeofuser" value="new" checked> Tôi là người mới</label>
+                </div>
+                <div class="span6 right-check-account">
+                    <label class="radio"><input id="old_user" type="radio" name="typeofuser" value="old"> Tôi đã có tài khoản</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="block-form-lr span10 offset2">
+            <div class="block-form-reg">
+                <form id="register-form-in-form" action="#" method="post">
+    <div class="control-group">
+        <div class="row-fluid field">
+            <div class="span6">
+                <p>Họ và tên</p>
+                <input type="text" id="reg-fullname" name="fullname" value="" required="required" class="span4" placeholder="Ví dụ: Nguyễn Văn A..."/>
+            </div>
+            <div class="span6 input-email">
+                <p>Địa chỉ email</p>
+                <input type="email" id="reg-username" name=email" value="" required="required" class="span4 input-email"
+                   placeholder="Email đăng nhập" />
+            </div>
+        </div>
+        <div class="row-fluid field">
+            <div class="span6">
+                <p>Mật khẩu</p>
+                <input type="password" id="reg-password" name="password" required="required" class="span4"
+                   placeholder="Mật khẩu" />
+            </div>
+            <div class="span6 re-pass">
+                <p>Xác nhận mật khẩu</p>
+                <input type="password" id="reg-re-password" name="re-password" required="required" class="span4"
+                   placeholder="Mật khẩu" />
+            </div>
+        </div>
+        <div class="row-fluid field">
+            <div class="span4 offset8">
+                <button type="button" id="btn-submit-register" name="_submit" class="btn btn-large btn-primary btn-form-submit">
+                    Đăng ký                </button>
+            </div>
+        </div>
+    </div>
+    <p class="term-condition">Khi tạo tài khoản bạn đồng ý với <a target="_blank" href="page/dieu-khoan-su-dung.html">điều khoản của vLance</a></p>
+</form>
+<script type="text/javascript">
+    var reg_form_in_job = '#register-form-in-form';
+    var reg_form_in_job_params = {"url":"/a/register_job"};
+</script>            </div>
+            <div class="block-form-log deactive">
+                <form id="login-form-in-job" action="#" method="post">
+    <div class="row-fluid field">
+        <div class="span6">
+        <p><label for="login_username">Địa chỉ email</label></p>
+        <input type="email" id="login_username" name="username" required="required" value="" class="span4 input-email"
+               placeholder="Email đăng nhập" />
+        </div>
+        <div class="span6">
+        <p><label for="login_password">Mật khẩu</label></p>
+        <input type="password" id="login_password" name="password" required="required" class="span4"
+               placeholder="Mật khẩu" />
+        </div>
+    </div>
+    <label for="remember_me" class="checkbox">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        Ghi nhớ mật khẩu    </label>
+    <div class="row-fluid field">
+        <div class="span4">
+            <button type="button" id="btn-submit-login" name="_submit" class="btn btn-large btn-primary btn-form-submit">
+                Đăng nhập            </button>
+        </div>
+    </div>
+    <p class="lost-password">Bạn quên mật khẩu? <a href="a/reset/request.html">Click vào đây</a></p>
+</form>
+<script type="text/javascript">
+    var login_form_in_job = '#login-form-in-job';
+    var login_form_in_job_params = {"url":"/a/login_job"};
+</script>            </div>
+            <script type="text/javascript">
+            </script>
+            <div class="row-fluid">
+                <p class="login-socail-network-label">Hoặc dùng luôn tài khoản sau</p>
+                <div class="login-socail-network">
+                    <a class="btn-facebook btn-social-fb-post-job" onclick="fb_login()"><span><img src="{% static 'img/icon-facebook.png'%}">Facebook</span></a>
+                    <a class="btn-google-plus btn-social-nfb-post-job" onclick="google_login()"><span><img src="{% static 'img/icon-google%2b.png'%}">Google</span></a>
+                    <a class="btn-linkedin btn-social-nfb-post-job" onclick="linkedin_login()"><span><img src="{% static 'img/icon-linkedin.png'%}">LinkedIn</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="post-job">
+                                <form id="edit-job-form" action="https://www.vlance.vn/j/new" method="post" enctype="multipart/form-data">
+                    <div id="vlance_jobbundle_jobtype">
+    <div class="control-group primary-type">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="sprites-job-posting sprites-1"></div>
+            </div>
+            <div class="span10">
+                <h4>Việc cần tuyển freelancer</h4>
+                <div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobtype_category" >Chọn lĩnh vực cần tuyển    </label>    <select
+    id="vlance_jobbundle_jobtype_category"
+name="vlance_jobbundle_jobtype[category]"
+required="required" placeholder="Chọn lĩnh vực phù hợp"                 data-toggle="popover"                 data-placement="top"                 data-content="Chọn lĩnh vực phù hợp"                 data-trigger="hover"                 class="popovers-input span12"    >
+    <option  disabled="disabled" selected="selected">- Tên lĩnh vực -</option>
+                    {% for LinhVuc in post1 %}
+        <option value="{{ LinhVuc.id }}">{{ LinhVuc.title }}</option>
+            {% endfor %}
+                </select>
+                    </div>  </div>
+        </div>
+    </div>
+
+        <div class="control-group service_wrapper hidejs">
+    <label for="vlance_jobbundle_jobtype_service" >Chọn dịch vụ phù hợp với yêu cầu tuyển freelancer của bạn nhất    </label>    <select
+    id="vlance_jobbundle_jobtype_service"
+name="vlance_jobbundle_jobtype[service]" placeholder="Chọn một dịch vụ cần thuê" data-toggle="popover" data-placement="top" data-content="Chọn một dịch vụ cần thuê"                 data-trigger="hover"                 class="popovers-input span12"    >
+    <option  value="">- Tên dịch vụ -</option>
+         {% for DichVu in post %}
+        <option value="{{ DichVu.id }}">{{ DichVu.title }}</option>
+            {% endfor %}
+                </select>
+        </div>
+                        <script type="text/javascript">
+        var catser = "/j/new/catser";
+    </script>
+    <div class="control-group">
+        <div class="row-fluid">
+            <div class="span10 offset2">
+                <div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobtype_title" >Đặt tên cụ thể cho công việc cần tuyển    </label>    <input type="text" id="vlance_jobbundle_jobtype_title"
+name="vlance_jobbundle_jobtype[title]"
+required="required" maxlength="255"             placeholder="VD: Thiết kế trang web bán hàng cao cấp"                 data-toggle="popover"                 data-placement="top"                 data-content="Tên công việc, VD: Dịch tiếng anh sang tiếng việt"                 data-trigger="hover"                 class="popovers-input span12" value=""/>    </div>            </div>
+        </div>
+    </div>
+    <div class="control-group primary-type">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="sprites-job-posting sprites-2"></div>
+            </div>
+            <div class="span10">
+                <h4>Thông tin đầy đủ về yêu cầu tuyển dụng</h4>
+                <div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobtype_description" >Nội dung chi tiết, và các đầu việc cần Freelancer thực hiện (càng chi tiết, freelancer càng có đầy đủ thông tin để gửi báo giá chính xác hơn).    </label>    <textarea id="vlance_jobbundle_jobtype_description"
+name="vlance_jobbundle_jobtype[description]"
+required="required"             placeholder="Ví dụ: Các giao diện website cần thiết kế như trang chủ, xem hàng, thanh toán..."                 data-toggle="popover"                 data-placement="top"                 data-content="GỢI Ý:
+Bạn nên cung cấp tối thiểu những thông tin sau:
+
+- Giới thiệu qua về dự án cần tìm freelancer.
+- Liệt kê những đầu việc mà bạn dự định sẽ giao cho freelancer làm.
+- Một số lưu ý hoặc thỏa thuận đặc biệt khác (nếu có).
+
+LƯU Ý:
+vLance.vn không cho phép để lộ các tin liên lạc của bạn tại đây. Những công việc có nội dung vi phạm sẽ bị ẩn và khóa tài khoản người đăng."                 data-trigger="hover"                 class="popovers-input span12"                 rows="14"></textarea>    </div>            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="row-fluid">
+            <div class="span10 offset2">
+                <div class="fileupload_wrapper">
+            <a class="addupload" href="#" onclick="return false;" data-toggle="collapse" data-target="#vlance_jobbundle_jobtype_files_file_upload_container">
+        Thêm tài liệu đính kèm    </a>
+    <div class="clear"></div>
+            <div id="vlance_jobbundle_jobtype_files" class="control-group fileupload_wrapper ">
+                </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('button[role="confirm"]').click(function() {
+                jQuery(this).parent().parent().modal('hide');
+                jQuery("#" + jQuery(this).attr('target')).remove();
+            });
+        });
+    </script>
+            <div id="vlance_jobbundle_jobtype_files_file_upload_container" class="collapse out">
+        <div class="support_file_attach">Định dạng được hỗ trợ: png, jpg, gif, pdf, psd, xls, xlsx, doc, docx, ppt, pptx, ods, odt, zip, rar</div>
+        <div class="support_file_attach">Kích thước tối đa: 10MB</div>
+        <div id="vlance_jobbundle_jobtype_files_collection_holder" id="vlance_jobbundle_jobtype_files"
+name="vlance_jobbundle_jobtype[files]"
+            data-prototype="&lt;div class=&quot;control-group &quot;&gt;
+        &lt;div id=&quot;vlance_jobbundle_jobtype_files___name__&quot;&gt;
+        &lt;div class=&quot;control-group &quot;&gt;
+        &lt;input type=&quot;file&quot; id=&quot;vlance_jobbundle_jobtype_files___name___file&quot;
+name=&quot;vlance_jobbundle_jobtype[files][__name__][file]&quot;
+required=&quot;required&quot; value=&quot;&quot;/&gt;    &lt;/div&gt;    &lt;/div&gt;    &lt;/div&gt;">
+        </div>
+        <a href="#" class="btn add_input_file" id="vlance_jobbundle_jobtype_files_job_new_file"><i class="icon-plus"></i> Thêm tài liệu</a>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            var required_one = false;
+
+            var newButton = jQuery('');
+            function add_file_input(holder, id) {
+                var input_content = holder.data('prototype');
+                var index = holder.data('index');
+                var new_file = input_content.replace(/__name__label__/g, '').replace(/__name__/g, index);
+                var new_item = jQuery("<div></div>").addClass('new_file_input').append(new_file);
+                add_remove_file_input(new_item);
+
+                holder.append(new_item);
+                jQuery(id + '_' + index.toString() + '_file').on('change', function() {
+                    if(this.files[0]){
+                        jQuery(this).attr('file_size',this.files[0].size);
+                    }
+                });
+                holder.data('index', index + 1);
+
+                //Validate input file
+                $('.new_file_input input').change(function () {
+                    $(this).rules('add', {
+                            filesize: multiupload_validate["size"],
+                            filetype: multiupload_validate["type"],
+                            messages: {
+                                filesize: multiupload_sizeerror,
+                                filetype: multiupload_typeerror
+                            }
+                        }
+                    );
+                    $(this).valid();
+                });
+
+
+            }
+
+            function add_remove_file_input(new_item) {
+                var remove_button = jQuery('<a href="#" class="remove">x</a>');
+                new_item.append(remove_button);
+                remove_button.on('click', function(e) {
+                    e.preventDefault();
+                    if(required_one){
+                        if(jQuery('.new_file_input input').length == 1){
+                            alert('File đính kèm là bắt buộc.');
+                        } else{
+                            new_item.remove();
+                        }
+                    } else {
+                        new_item.remove();
+                    }
+                })
+            }
+
+            if (jQuery('#vlance_jobbundle_jobtype_files')) {
+                jQuery('#vlance_jobbundle_jobtype_files_collection_holder').data('index', jQuery('#vlance_jobbundle_jobtype_files input').size());
+            } else {
+                jQuery('#vlance_jobbundle_jobtype_files_collection_holder').data('index', 0);
+            }
+            jQuery('#vlance_jobbundle_jobtype_files_job_new_file').click(function(e) {
+                add_file_input(jQuery('#vlance_jobbundle_jobtype_files_collection_holder'), '#vlance_jobbundle_jobtype_files');
+                e.preventDefault();
+            });
+
+            if(required_one){
+                jQuery('#vlance_jobbundle_jobtype_files_file_upload_container').collapse('show');
+                add_file_input(jQuery('#vlance_jobbundle_jobtype_files_collection_holder'), '#vlance_jobbundle_jobtype_files');
+            }
+        });
+    </script>
+    <script>
+                var multiupload_validate = {"type" : ["png","jpg","gif","pdf","psd","xls","xlsx","doc","docx","ppt","pptx","ods","odt","zip","rar"], "size" : 10485760};
+        var multiupload_sizeerror = "Kích thước file không vượt quá 10MB";
+        var multiupload_typeerror = "File không đúng định dạng ";
+    </script></div>            </div>
+        </div>
+    </div>
+
+        <div class="control-group">
+        <div class="row-fluid">
+            <div class="span10 offset2">
+                <label>Kỹ năng yêu cầu freelancer phải có</label>
+                <div class="form-add-skill">
+                    <div class="inner-skill">
+                        <input type="text" id="vlance_jobbundle_jobtype_skill" data-provide="typeahead" name="hiddenTagListA" placeholder="VD: Photoshop, Tiếng Anh,..." class="tm-input"/>
+                        <script type="text/javascript">
+                                                        var source = [".NET","2D","2D Animation","3D","3D Animation","A\/B Testing","Actionscript","Adobe Dreamweaver","Adobe Illustrator","Adobe InDesign","Adobe Photoshop","After Effect","AJAX","\u00c2m nh\u1ea1c","Amplitude","Android","AngularJS","\u1ea2nh h\u00f3a","App development","ASP","ASP.NET","Aura","Aurelia.html","AutoCAD","AWS","Babylon.html","Backbone.html","B\u1ea3n \u0111\u1ed3 h\u1ecdc \u0026 B\u1ea3n \u0111\u1ed3","B\u00e1n h\u00e0ng","B\u1eb1ng s\u00e1ng ch\u1ebf","Bao b\u00ec \u0026 \u0110\u00f3ng g\u00f3i","B\u00e1o c\u00e1o thu\u1ebf","B\u00e1o ch\u00ed","B\u1ea3o hi\u1ec3m","B\u1ea5t \u0111\u1ed9ng s\u1ea3n","Bi\u00ean t\u1eadp","Bi\u00ean t\u1eadp s\u00e1ch","Bi\u00ean t\u1eadp vi\u00ean n\u1ed9i dung web","Bitbucket","Bizweb","Bizweb App","Bizweb theme","Blender","Bootstrap","C#","C++","CakePHP","Calq.io","C\u1eadp nh\u1eadp n\u1ed9i dung","Captcha","C\u1eaft HTML\/CSS","Ch\u00e9p l\u1eddi","Chi\u1ebfn l\u01b0\u1ee3c c\u00f4ng ty","Chi\u1ebfn l\u01b0\u1ee3c nh\u00e2n s\u1ef1","Chi\u1ebfn l\u01b0\u1ee3c th\u01b0\u01a1ng hi\u1ec7u","Chi\u1ebfu video","Ch\u1ec9nh s\u1eeda h\u00ecnh \u1ea3nh","Ch\u1ee5p \u1ea3nh","Ch\u1ee5p \u1ea3nh c\u01b0\u1edbi","Ch\u1ee5p m\u1eabu s\u1ea3n ph\u1ea9m","Ch\u1ee5p ng\u01b0\u1eddi m\u1eabu","Ch\u1ee5p phong c\u1ea3nh","Clip","CMS","C\u01a1 \u0111i\u1ec7n t\u1eed","Cocos2D","code","CodeIgniter","C\u00f4ng ngh\u1ec7 kh\u00f4ng gian","C\u00f4ng ngh\u1ec7 nano","C\u00f4ng ngh\u1ec7 s\u1ea1ch","C\u00f4ng ngh\u1ec7 sinh h\u1ecdc","Copywriting","CorelDraw","CRM","CS-Cart","CSS","CSS3","C\u01b0\u1edbi h\u1ecfi","cURL","D3.html","D\u1eabn ch\u01b0\u01a1ng tr\u00ecnh","Danh thi\u1ebfp","Datadog","design","Di truy\u1ec1n","D\u1ecbch b\u00e0i vi\u1ebft","D\u1ecbch ph\u1ee5 \u0111\u1ec1","D\u1ecbch s\u00e1ch","D\u1ecbch t\u00e0i li\u1ec7u k\u1ef9 thu\u1eadt","D\u1ecbch thu\u1eadt","D\u1ecbch v\u1ee5 audio","D\u1ecbch v\u1ee5 trang web Amazon","D\u1ecbch v\u1ee5 video","Dinh d\u01b0\u1ee1ng","Drupal","\u0110\u0103ng b\u00e0i l\u00ean Forum","\u0110\u0103ng b\u00e1o","\u0110\u0103ng rao v\u1eb7t","\u0110\u0103ng t\u1ea3i video","\u0110\u00e1nh gi\u00e1","\u0110\u00e1nh gi\u00e1 \u0026 Th\u1ea9m \u0111\u1ecbnh","\u0110\u00e1nh m\u00e1y","\u0110\u00e0o t\u1ea1o","\u0110\u00e0o t\u1ea1o k\u1ef9 n\u0103ng b\u00e1n h\u00e0ng","\u0110\u00e0o t\u1ea1o k\u1ef9 n\u0103ng m\u1ec1m","\u0110\u00e0o t\u1ea1o k\u1ef9 n\u0103ng ph\u1ee5c v\u1ee5 kh\u00e1ch h\u00e0ng","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 B\u00e1n h\u00e0ng","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 K\u1ebf to\u00e1n","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 Kh\u00e1c","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 Marketing - PR","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 nh\u00e2n s\u1ef1","\u0110\u00e0o t\u1ea1o nghi\u1ec7p v\u1ee5 T\u00e0i ch\u00ednh","\u0110\u1ecba ch\u1ea5t","\u0110i\u1ec7n to\u00e1n \u0111\u00e1m m\u00e2y","\u0110i\u1ec7n t\u1eed","\u0110i\u1ec1u tra th\u1ecb tr\u01b0\u1eddng","\u0110\u1ecbnh v\u1ecb","\u0110\u1ed3 h\u1ecda chuy\u1ec3n \u0111\u1ed9ng","\u0110\u1ed3 h\u1ecda m\u00e1y t\u00ednh","\u0110\u1ecdc b\u00f4ng","Editing","Email Marketing","Ember.html","Erlang","Facebook Ad","Facebook Analytics","Facebook API","Facebook Fanpage","Flash","Forum seeding","FuelPHP","Game Design","G\u00e2y qu\u1ef9","Gi\u00e1m s\u00e1t c\u00f4ng tr\u00ecnh","Gi\u00e1ng sinh","Gi\u00e1o d\u1ee5c \u0026 Gia s\u01b0","Google Adwords","Google Analytics","Google API","Grails","Graphic Design","Growth Hacking","Grunt \u0026 Gulp","Haravan","H\u1eb9n h\u00f2","H\u1ed7 tr\u1ee3 \u0111i\u1ec7n tho\u1ea1i","H\u1ed7 tr\u1ee3 kh\u00e1ch h\u00e0ng","H\u1ed7 tr\u1ee3 k\u0129 thu\u1eadt","H\u1ed7 tr\u1ee3 m\u00e0n h\u00ecnh","H\u1ed9i th\u1ea3o - h\u1ecdp b\u00e1o \u0026 ra m\u1eaft SP","H\u1ee3p \u0111\u1ed3ng","HTML","HTML5","Illustration","In \u1ea5n","Internet marketing","iOS","Java","Javascript","Joomla","Joomla Extensions","JoomlArt","jQuery","JSF","JSON","JSP","K2","K\u1ebf ho\u1ea1ch kinh doanh","K\u1ebf to\u00e1n","Kentico","Khai th\u00e1c d\u1eef li\u1ec7u","Khai th\u00e1c m\u1ecf","Kh\u1ea3o s\u00e1t th\u1ecb tr\u01b0\u1eddng","Kh\u1ea9u hi\u1ec7u","Khoa h\u1ecdc ng\u01b0\u1eddi m\u00e1y","Khoa h\u1ecdc Nh\u00e2n v\u0103n","Khoa h\u1ecdc v\u1ec1 kh\u00ed h\u1eadu","Kh\u1edfi nghi\u1ec7p","Kh\u00f4ng d\u00e2y","Kh\u00f4ng gian \u0111\u1ecba l\u00fd","K\u0129 thu\u1eadt","K\u0129 thu\u1eadt c\u1ea5u tr\u00fac","K\u0129 thu\u1eadt c\u01a1 kh\u00ed","K\u0129 thu\u1eadt c\u00f4ng nghi\u1ec7p","K\u0129 thu\u1eadt d\u00e2n d\u1ee5ng","K\u0129 thu\u1eadt d\u1ea7u kh\u00ed","K\u0129 thu\u1eadt d\u1ec7t may","K\u0129 thu\u1eadt di truy\u1ec1n","K\u0129 thu\u1eadt \u0111i\u1ec7n","K\u0129 thu\u1eadt h\u00f3a h\u1ecdc","K\u0129 thu\u1eadt v\u1eadt li\u1ec7u","K\u0129 thu\u1eadt vi\u1ec5n th\u00f4ng","Ki\u1ec3m \u0111\u1ecbnh ch\u1ea5t l\u01b0\u1ee3ng","Ki\u1ec3m to\u00e1n","Ki\u1ec3m to\u00e1n n\u1ed9i b\u1ed9","Ki\u1ec3m tra k\u1ef9 thu\u1eadt t\u1ef1 \u0111\u1ed9ng","Ki\u1ec3m tra ph\u1ea7n m\u1ec1m","Ki\u1ec3m tra\/QA","Ki\u1ebfn tr\u00fac ph\u1ea7n m\u1ec1m","Ki\u1ebfn tr\u00fac x\u00e2y d\u1ef1ng","Kohana","Konakart","K\u1ef9 ngh\u1ec7 kim ho\u00e0n","K\u1ef9 thu\u1eadt ph\u00e1t thanh","K\u1ef9 thu\u1eadt Video","L\u00e0m s\u1ed5 s\u00e1ch","LAMP","L\u1eadp k\u1ebf ho\u1ea1ch d\u1ef1 \u00e1n","L\u1eadp k\u1ebf ho\u1ea1ch s\u1ef1 ki\u1ec7n","L\u1eadp m\u00e3 Photoshop","L\u1eafp r\u00e1p","L\u1eadp tr\u00ecnh access","L\u1eadp tr\u00ecnh action-script","L\u1eadp tr\u00ecnh C","L\u1eadp tr\u00ecnh C#","L\u1eadp tr\u00ecnh C++","L\u1eadp tr\u00ecnh ph\u1ea7n m\u1ec1m","L\u1eadp tr\u00ecnh \u1ee9ng d\u1ee5ng","L\u1eadp tr\u00ecnh web","Laravel","L\u1ecbch s\u1eed","Liferay","Lightroom","Linux","Lu\u1eadt d\u00e2n s\u1ef1","Lu\u1eadt h\u00ecnh s\u1ef1","Lu\u1eadt kinh t\u1ebf","Lu\u1eadt lao \u0111\u1ed9ng","Lu\u1eadt nh\u00e0 \u0111\u1ea5t","Lu\u1eadt thu\u1ebf","L\u01b0\u1ee3ng t\u1eed","Magento","Magestore","M\u1ea1ng x\u00e3 h\u1ed9i","Marketing lan truy\u1ec1n","Marketing li\u00ean k\u1ebft","M\u1eadt m\u00e3","Mautic","Meteor","Meteor.html","M\u0129 thu\u1eadt","Microsoft Office","Minh h\u1ecda","Mixpanel","M\u00f4 h\u00ecnh th\u1eddi trang","M\u00f4 t\u1ea3 s\u1ea3n ph\u1ea9m","Mobile application","Mocha \u0026 Chai","MongoDB","Moodle","MS Excel","MSSQL","Mua v\u00e0 l\u1eadp k\u1ebf ho\u1ea1ch qu\u1ea3ng c\u00e1o","MVC","MySQL","N\u0103ng l\u01b0\u1ee3ng","N\u1ea5u \u0103n v\u00e0 c\u00f4ng th\u1ee9c n\u1ea5u \u0103n","Nette","Nghi\u00ean c\u1ee9u","Nghi\u00ean c\u1ee9u khoa h\u1ecdc","Nghi\u00ean c\u1ee9u ph\u00e1p l\u00fd","Nghi\u00ean c\u1ee9u t\u00e0i ch\u00ednh","Nghi\u00ean c\u1ee9u th\u1ecb tr\u01b0\u1eddng","Ng\u00f4n ng\u1eef t\u1ef1 nhi\u00ean","Nh\u1eadn di\u1ec7n khu\u00f4n m\u1eb7t","Nh\u1eadn di\u1ec7n th\u01b0\u01a1ng hi\u1ec7u","Nh\u00e2n s\u1ef1","Nh\u1eadp d\u1eef li\u1ec7u","Nh\u1eadp li\u1ec7u","Nhi\u1ebfp \u1ea3nh","Node.html","Nopcommerce","Objective-C","Odoo","OpenCart","OpenCV","OXID eSales","Pha ch\u1ebf \u0111\u1ed3 u\u1ed1ng","Ph\u00e1c h\u1ecda \u00fd t\u01b0\u1edfng","Phalcon (PHP framework)","Ph\u1ea7n m\u1ec1m CRM","Ph\u1ea7n m\u1ec1m ERP","Ph\u1ea7n m\u1ec1m K\u1ebf to\u00e1n","Ph\u1ea7n m\u1ec1m Nh\u00e2n s\u1ef1","Ph\u1ea7n m\u1ec1m qu\u1ea3n l\u00fd","Ph\u00e2n t\u00edch","Ph\u00e2n t\u00edch kinh doanh","Ph\u00e2n t\u00edch nhu c\u1ea7u \u0111\u00e0o t\u1ea1o (TNA)","Ph\u00e2n t\u00edch ph\u1ea7n t\u1eed h\u1eefu h\u1ea1n","PhantomJS","Ph\u00e1p l\u00fd","Ph\u00e1t tri\u1ec3n b\u1ea5t \u0111\u1ed9ng s\u1ea3n","Ph\u00e1t tri\u1ec3n c\u00e1 nh\u00e2n","Ph\u00e1t tri\u1ec3n ph\u1ea7n m\u1ec1m","Phi\u00ean d\u1ecbch","Ph\u1ed1i nh\u1ea1c","Photo editing","PHP","PHPixie","Play 2","Plugin","Polymer","Polymer.html","PostgreSQL","PR","Presentation Design","PrestaShop","Prototype","PSD","Python","Quan h\u1ec7 c\u00f4ng ch\u00fang","Quan h\u1ec7 truy\u1ec1n th\u00f4ng","Qu\u1ea3n l\u00ed","Qu\u1ea3n l\u00ed d\u1ef1 \u00e1n","Qu\u1ea3n l\u00fd b\u1ea5t \u0111\u1ed9ng s\u1ea3n","Qu\u1ea3n l\u00fd fanpage","Qu\u1ea3n l\u00fd kho h\u00e0ng","Qu\u1ea3n l\u00fd s\u1ea3n ph\u1ea9m","Qu\u1ea3n l\u00fd s\u1ef1 ki\u1ec7n gi\u1ea3i tr\u00ed","Qu\u1ea3n l\u00fd website","Qu\u1ea3n tr\u1ecb c\u01a1 s\u1edf d\u1eef li\u1ec7u","Qu\u1ea3n tr\u1ecb h\u1ec7 th\u1ed1ng","Qu\u1ea3ng c\u00e1o","Qu\u1ea3ng c\u00e1o b\u00e1o in","Qu\u1ea3ng c\u00e1o FaceBook","Qu\u1ea3ng c\u00e1o Google Ads","Qu\u1ea3ng c\u00e1o ngo\u00e0i tr\u1eddi","Qu\u1ea3ng c\u00e1o online","Qu\u1ea3ng c\u00e1o TVC","Quy ho\u1ea1ch tuy\u1ebfn t\u00ednh","React.html","responsive","Retouching","Ruby on Rails","S\u1ea3n xu\u1ea5t","S\u1ea3n xu\u1ea5t ho\u1ea1t h\u1ecda","Sau s\u1ea3n xu\u1ea5t","Scrum","SEM","Sendy","SEO","Shopify","Silex","Simicart","Slideshow","Slim","Smarty","Social Networking","Spring MVC","Struts 1","Struts 2","Swift","Symfony","T\u00e0i ch\u00ednh doanh nghi\u1ec7p","T\u00e2m l\u00fd h\u1ecdc","T\u1ea1o Blog","T\u1ea1o h\u00ecnh 3D","T\u1ea1o m\u1eabu","T\u1ea1o th\u01b0\u01a1ng hi\u1ec7u","Telesale","Testing","Th\u1ec3 thao","Th\u1ecb tr\u01b0\u1eddng th\u01b0\u01a1ng m\u1ea1i","Thi\u1ebft k\u1ebf","Thi\u1ebft k\u1ebf 3D","Thi\u1ebft k\u1ebf \u00c2m thanh","Thi\u1ebft k\u1ebf b\u1ea3ng hi\u1ec7u","Thi\u1ebft k\u1ebf Banner","Thi\u1ebft k\u1ebf bao b\u00ec c\u00f4ng nghi\u1ec7p","Thi\u1ebft k\u1ebf b\u00eca th\u01b0","Thi\u1ebft k\u1ebf bi\u1ec3u t\u01b0\u1ee3ng","Thi\u1ebft k\u1ebf Blog","Thi\u1ebft k\u1ebf brochure","Thi\u1ebft k\u1ebf c\u1ea3nh quan","Thi\u1ebft k\u1ebf C\u00f4ng nghi\u1ec7p","Thi\u1ebft k\u1ebf \u0111\u1ed3 h\u1ecda","Thi\u1ebft k\u1ebf Flash","Thi\u1ebft k\u1ebf giao di\u1ec7n","Thi\u1ebft k\u1ebf h\u00ecnh d\u00e1n","Thi\u1ebft k\u1ebf k\u0129 thu\u1eadt s\u1ed1","Thi\u1ebft k\u1ebf ki\u1ebfn tr\u00fac nh\u00e0 \u1edf","Thi\u1ebft k\u1ebf ki\u1ebfn tr\u00fac v\u0103n ph\u00f2ng","Thi\u1ebft k\u1ebf logo","Thi\u1ebft k\u1ebf logo - nh\u1eadn di\u1ec7n c\u00f4ng ty","Thi\u1ebft k\u1ebf m\u1eabu m\u00e3 s\u1ea3n ph\u1ea9m","Thi\u1ebft k\u1ebf Nh\u00e0","Thi\u1ebft k\u1ebf nh\u00e3n hi\u1ec7u","Thi\u1ebft k\u1ebf n\u1ed9i th\u1ea5t","Thi\u1ebft k\u1ebf Photoshop","Thi\u1ebft k\u1ebf Poster","Thi\u1ebft k\u1ebf qu\u1ea3ng c\u00e1o","Thi\u1ebft k\u1ebf s\u1ea3n ph\u1ea9m","Thi\u1ebft k\u1ebf s\u1ea3n xu\u1ea5t","Thi\u1ebft k\u1ebf s\u00e1ng t\u1ea1o","Thi\u1ebft k\u1ebf thi\u1ebfp m\u1eddi","Thi\u1ebft k\u1ebf th\u1eddi trang","Thi\u1ebft k\u1ebf t\u1edd r\u01a1i","Thi\u1ebft k\u1ebf trang web","Thi\u1ebft k\u1ebf tr\u00f2 ch\u01a1i","Thi\u1ebft k\u1ebf UML","Thi\u1ebft k\u1ebf vi m\u1ea1ch","Thi\u1ebft k\u1ebf web","Th\u01a1 ca","Th\u00f4ng c\u00e1o b\u00e1o ch\u00ed","Three.html","Thu \u00e2m","Th\u1ee7 c\u00f4ng \u0026 M\u1ef9 ngh\u1ec7","Th\u1eed nghi\u1ec7m trang web","Th\u1ee7 t\u1ee5c visa \/ Nh\u1eadp c\u01b0","Thu\u1eadt to\u00e1n","Thu\u1ebf","Ti\u1ebfng \u1ea2 R\u1eadp","Ti\u1ebfng Afrikaans","Ti\u1ebfng Albania","Ti\u1ebfng Anh","Ti\u1ebfng Ba Lan","Ti\u1ebfng Basque","Ti\u1ebfng Bengal","Ti\u1ebfng B\u1ed3 \u0110\u00e0o Nha","Ti\u1ebfng Bosnia","Ti\u1ebfng Bulgaria","Ti\u1ebfng Catalan","Ti\u1ebfng Croatia","Ti\u1ebfng \u0110an M\u1ea1ch","Ti\u1ebfng \u0110\u1ee9c","Ti\u1ebfng H\u00e0 Lan","Ti\u1ebfng H\u00e0n","Ti\u1ebfng Hebrew","Ti\u1ebfng Hindi","Ti\u1ebfng Hoa","Ti\u1ebfng Hungari","Ti\u1ebfng Hy L\u1ea1p","Ti\u1ebfng Indonesia","Ti\u1ebfng Kannada","Ti\u1ebfng Latvia","Ti\u1ebfng Lithuania","Ti\u1ebfng Macedonia","Ti\u1ebfng Malayalam","Ti\u1ebfng Malaysia","Ti\u1ebfng Na Uy","Ti\u1ebfng Nga","Ti\u1ebfng Nh\u1eadt","Ti\u1ebfng Ph\u1ea7n Lan","Ti\u1ebfng Ph\u00e1p","Ti\u1ebfng Philippines","Ti\u1ebfng Punjab","Ti\u1ebfng Ru-ma-ni","Ti\u1ebfng S\u00e9c","Ti\u1ebfng Serbia","Ti\u1ebfng Slovakia","Ti\u1ebfng Slovenia","Ti\u1ebfng Tamil","Ti\u1ebfng T\u00e2y Ban Nha","Ti\u1ebfng Telugu","Ti\u1ebfng Th\u00e1i","Ti\u1ebfng Th\u1ed5 Nh\u0129 K\u1ef3","Ti\u1ebfng Th\u1ee5y \u0110i\u1ec3n","Ti\u1ebfng Trung","Ti\u1ebfng Trung gi\u1ea3n th\u1ec3","Ti\u1ebfng Trung truy\u1ec1n th\u1ed1ng","Ti\u1ebfng Urdu","Ti\u1ebfng Vi\u1ec7t","Ti\u1ebfng x\u1ee9 Wales","Ti\u1ebfng \u00dd","Ti\u1ebfp th\u1ecb","Ti\u1ebfp th\u1ecb \u0111\u1ea1i tr\u00e0","Ti\u1ebfp th\u1ecb qua Email","Ti\u1ebfp th\u1ecb qua Internet","Ti\u1ebfp th\u1ecb t\u1eeb xa","T\u00ecm ki\u1ebfm web","T\u00ecm ngu\u1ed3n cung \u1ee9ng","T\u00ecm ngu\u1ed3n cung \u1ee9ng s\u1ea3n ph\u1ea9m","T\u00ecm ngu\u1ed3n ng\u01b0\u1eddi mua","T\u1ed5 ch\u1ee9c s\u1ef1 ki\u1ec7n","To\u00e1n h\u1ecdc","Tomcat","Trang \u0111\u00edch","Tranh bi\u1ebfm h\u1ecda \u0026 Phim ho\u1ea1t h\u00ecnh","Tri\u1ec3n khai ERP","Tr\u00ecnh b\u00e0y","Tr\u1ee3 l\u00ed tr\u1ef1c tuy\u1ebfn","Tr\u01b0\u1edbc s\u1ea3n xu\u1ea5t","Truy\u1ec7n ng\u1eafn","Truy\u1ec1n th\u00f4ng","T\u1ef1 \u0111\u1ed9ng h\u00f3a","Tuy\u1ec3n d\u1ee5ng","Twitter API","Twitter Marketing ","TYPO3 Flow","Underscore","Unity 2D","Vaadin","V\u1eadt l\u00fd","V\u1eadt l\u00fd h\u1ecdc thi\u00ean th\u1ec3","VBA","V\u1ebd k\u0129 thu\u1eadt","V\u1ebd minh h\u1ecda","Vi \u0111i\u1ec1u khi\u1ec3n","Video Editing","Vi\u1ec5n th\u00e1m","Vi\u1ec5n t\u01b0\u1edfng","Vi\u1ebft b\u00e0i","Vi\u1ebft b\u00e1o ","Vi\u1ebft b\u00e1o c\u00e1o","Vi\u1ebft Blog","Vi\u1ebft Blog\/Forum","Vi\u1ebft di\u1ec5n v\u0103n","Vi\u1ebft du l\u1ecbch","Vi\u1ebft \u0111\u01a1n xin t\u00e0i tr\u1ee3","Vi\u1ebft h\u1ed3 s\u01a1 \u0111\u1ec1 xu\u1ea5t","Vi\u1ebft h\u1ecdc thu\u1eadt","Vi\u1ebft k\u0129 thu\u1eadt","Vi\u1ebft k\u1ecbch b\u1ea3n","Vi\u1ebft l\u1eddi qu\u1ea3ng c\u00e1o","Vi\u1ebft lu\u1eadn","Vi\u1ebft n\u1ed9i dung b\u00e1o ch\u00ed","Vi\u1ebft qu\u1ea3ng c\u00e1o","Vi\u1ebft review","Vi\u1ebft s\u00e1ch","Vi\u1ebft s\u00e1ng t\u1ea1o","Vi\u1ebft y h\u1ecdc","Vi\u1ebft y h\u1ecdcVisual Basic cho \u1ee8ng d\u1ee5ng","Visual Basic for Applications","Web content","Webbnc","Website Analytics","Woocommerce","Wordpress","Xamarin","X\u00e2y d\u1ef1ng h\u00e0ng kh\u00f4ng","X\u00e2y d\u1ef1ng h\u1ec7 th\u1ed1ng s\u1ed5 s\u00e1ch","X\u00e2y d\u1ef1ng thang b\u1ea3ng l\u01b0\u01a1ng","Xenforo","X\u1eed l\u00ed d\u1eef li\u1ec7u","X\u1eed l\u00ed s\u1ef1 c\u1ed1","X\u1eed l\u00fd \u0111\u01a1n h\u00e0ng","Xu\u1ea5t b\u1ea3n","Y t\u1ebf","Yii","Yii 1","Yii 2","Youtube","Zbrush","Zend","Zendesk"];
+                        </script>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="row-fluid">
+            <div class="span5 offset2 job-closed-at">
+                <div class="control-group closeat wrapper append-white">
+    <label class="required" for="vlance_jobbundle_jobtype_closeAt" >Hạn cuối nhận chào giá của freelancer    </label>    <div class="datepicker-widget input-append">
+        <input type="text" id="vlance_jobbundle_jobtype_closeAt"
+name="vlance_jobbundle_jobtype[closeAt]"
+required="required"                     placeholder="VD: 15/06/2019"                         title=""                 data-toggle="popover"                 data-placement="top"                 data-content="Hạn nhận báo giá, VD: 24/11/2016"                 data-trigger="hover"                 class="popovers-input span12"
+        />
+    <span class="add-on"><i class="i32 i32-calendar"></i></span></div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#vlance_jobbundle_jobtype_closeAt').datepicker({
+            format:   'dd/mm/yyyy',
+            language: 'vn',
+            autoclose: true,
+            weekStart: 1,
+                        startDate: '17/05/2019',
+                                    endDate: '15/06/2019'
+                    });
+    });
+</script>    </div>            </div>
+        </div>
+    </div>
+    <div class="control-group primary-type">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="sprites-job-posting sprites-3"></div>
+            </div>
+            <div class="span10">
+                <h4>Yêu cầu khác với freelancer</h4>
+                <div class="row-fluid">
+                    <div class="span6 job-fl-city">
+                        <div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobtype_city" >Cần tuyển freelancer làm việc tại    </label>    <select
+    id="vlance_jobbundle_jobtype_city"
+name="vlance_jobbundle_jobtype[city]"
+required="required"             data-toggle="popover"                 data-placement="top"                 data-content="Chọn vị trí của freelancer, VD: Hà Nội"                 data-trigger="hover"                 class="popovers-input span12"    >
+    <option  disabled="disabled" selected="selected">- Nơi cần thuê -</option>
+                            {% for ThanhPho in thanhphos %}
+        <option value="{{ ThanhPho.id }}">{{ ThanhPho.title }}</option>
+            {% endfor %}
+                        </select>    </div>                    </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group primary-type">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="sprites-job-posting sprites-4"></div>
+            </div>
+            <div class="span10">
+                <h4>Ngân sách dự kiến chi cho công việc này</h4>
+                <div class="control-group wrapper append-white combo-row-1st span6 budget">
+    <label class="required" for="vlance_jobbundle_jobtype_budget" >Số tiền tối đa tôi có thể trả là    </label>    <div class="  input-append ">
+        <input type="text" id="vlance_jobbundle_jobtype_budget"
+name="vlance_jobbundle_jobtype[budget]"
+required="required"             pattern="^(0|[1-9][0-9/.]*)$"                 placeholder="VD: 2.500.000"                 data-toggle="popover"                 data-placement="top"                 data-content="Thù lao dự kiến, VD: 2.500.000"                 data-trigger="hover"                 class="popovers-input span12" value=""/>
+    <span class="add-on">VNĐ</span></div>    </div>            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" id="vlance_jobbundle_jobtype__token"
+name="vlance_jobbundle_jobtype[_token]" value="fc239c0e94a9cf999f657e3e2b4b537dd63f8499"/></div>
+
+<div class="more-options">
+    <div class="control-group primary-type">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="sprites-job-posting sprites-5"></div>
+            </div>
+            <div class="span10">
+                <h4>Tùy chọn hiển thị cho công việc này <i>(không bắt buộc)</i></h4>
+
+                                                <label class="is-private checkbox">
+                    <input type="checkbox"
+    id="vlance_jobbundle_jobtype_isPrivate"
+name="vlance_jobbundle_jobtype[isPrivate]"     value="1"    />                    <p>
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <label for="vlance_jobbundle_jobtype_isPrivate" >Tôi muốn việc này được Hiển Thị Bí Mật - chỉ những người nào tôi gửi link việc này cho họ và tôi mời họ làm việc qua vLance.vn, thì mới xem được. (Số lượng hiển thị sẽ rất ít, vì chỉ những người được cho phép mới xem được).    </label>                    </p>
+                </label>
+
+                                                                            </div>
+        </div>
+    </div>
+
+                </div>
+</div>
+<div class="clear"></div>
+
+                                        <div class="row-fluid">
+                        <div class="span10 offset2">
+                            <div class="form-cread-job-btn">
+                                <div class="row-fluid">
+                                    <div class="accept-agreement span12">
+                                        <p>Khi đăng việc, tôi xác nhận đồng ý các <a href="%25agreement_link%25.html" target="_blank">điều khoản sử dụng</a> của vLance.vn, và không để lộ bất kỳ thông tin liên lạc cá nhân nào trong phần mô tả nội dung công việc.</p>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12 ">
+                                        <input id="btn-submit-job" type="button" class="btn btn-primary btn-large popup-validate span12" value="Đăng việc"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup-admin">
+    <div class="message">
+        Bạn gặp khó khăn trong việc đăng việc? <br/> Vlance sẽ giúp bạn đăng việc hấp dẫn nhất
+    </div>
+    <div>
+        <a onclick="vtrack('Click to Page Admin Post Job', {'account': null})" href="login.html" class="btn btn-large btn-primary">Trợ giúp đăng việc</a>
+    </div>
+</div>
+            </div>
+
+
+
+{% endblock %}

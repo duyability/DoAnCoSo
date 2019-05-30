@@ -1,0 +1,8 @@
+<h1>Articles</h1>
+<ul>
+{% for DichVu_DW in post %}
+    <li>{{ DichVu_DW.id }} - {{ DichVu_DW.title }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

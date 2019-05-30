@@ -1,0 +1,435 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+            <div class="main_content">
+                
+<script type='text/javascript'>
+    fbq('track', 'ViewCreateJobPage');
+</script>
+
+
+<div class="content-section create-contest">
+    <div class="header">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6 side-left">
+                    <h1 class="title">Cuộc thi thiết kế</h1>
+                    <div class="content">
+                        <p>Chỉ thanh toán một lần, nhưng nhận hàng chục mẫu thiết kế chất lượng, độc nhất và đầy sáng tạo.</p>
+                        <ul>
+                            <li>Nhận ngay vài chục mẫu thiết kế chỉ trong 5 ngày.</li>
+                            <li>Dễ dàng chọn ra được mẫu xuất sắc nhất.</li>
+                            <li>Không giới hạn số lần chỉnh sửa.</li>
+                            <li>Thanh toán khi hài lòng 100%.</li>
+                        </ul>
+                    </div>
+                    <div class="button">
+                        <a href="#contest-focus" class="btn btn-vl btn-vl-medium btn-vl-orange">Tạo cuộc thi ngay</a>
+                    </div>
+                </div>
+                <div class="span6 side-right">
+                    <img src="{% static 'img/job-contest/cuoc-thi-thiet-ke.png'%}" title="Cuộc thi thiết kế" alt="Cuộc thi thiết kế">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="progress-contest">
+        <div class="container">
+            <li class="step first">
+                <div class="step-number">Bước đầu tiên</div>
+                <div class="tally">Tạo cuộc thi</div>
+            </li>
+            <li class="step">
+                <div class="step-number">Vòng 1</div>
+                <div class="tally">Nhận mẫu thiết kế</div>
+            </li>
+            <li class="step">
+                <div class="step-number">Vòng 2</div>
+                <div class="tally">Chọn 4 thiết kế xuất sắc</div>
+            </li>
+            <li class="step last">
+                <div class="step-number">Vòng cuối</div>
+                <div class="tally">Chọn thiết kế đẹp nhất & Trao thưởng</div>
+            </li>
+        </div>    
+    </div>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="center-side">            
+                <div class="contest_title" id="contest-focus">
+                    <p>Bước đầu tiên:</p>
+                    <h1>Tạo cuộc thi theo ý bạn</h1>
+                </div>
+                <div class="row-fluid">   
+                
+                </div>
+                
+                <script type="text/javascript">
+                    var logged = 'false';
+                </script>
+                                    <div class="block-lr" style="margin-bottom: 20px;">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="sprites-job-posting sprites-6"></div>
+        </div>
+        <div class="span10">
+            <h4>Thông tin người đăng việc</h4>
+            <div class="row-fluid block-type-user">
+                <div class="span6">
+                    <label class="radio checked"><input id="new_user" type="radio" name="typeofuser" value="new" checked> Tôi là người mới</label>
+                </div>
+                <div class="span6 right-check-account">
+                    <label class="radio"><input id="old_user" type="radio" name="typeofuser" value="old"> Tôi đã có tài khoản</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="block-form-lr span10 offset2">
+            <div class="block-form-reg">
+                <form id="register-form-in-form" action="#" method="post">
+    <div class="control-group">
+        <div class="row-fluid field">
+            <div class="span6">
+                <p>Họ và tên</p>
+                <input type="text" id="reg-fullname" name="fullname" value="" required="required" class="span4" placeholder="Ví dụ: Nguyễn Văn A..."/>
+            </div>
+            <div class="span6 input-email">
+                <p>Địa chỉ email</p>
+                <input type="email" id="reg-username" name=email" value="" required="required" class="span4 input-email" 
+                   placeholder="Email đăng nhập" />
+            </div>
+        </div>
+        <div class="row-fluid field">
+            <div class="span6">
+                <p>Mật khẩu</p>
+                <input type="password" id="reg-password" name="password" required="required" class="span4"
+                   placeholder="Mật khẩu" />
+            </div>
+            <div class="span6 re-pass">
+                <p>Xác nhận mật khẩu</p>
+                <input type="password" id="reg-re-password" name="re-password" required="required" class="span4"
+                   placeholder="Mật khẩu" />
+            </div>
+        </div>
+        <div class="row-fluid field">
+            <div class="span4 offset8">
+                <button type="button" id="btn-submit-register" name="_submit" class="btn btn-large btn-primary btn-form-submit">
+                    Đăng ký                </button>
+            </div>
+        </div>
+    </div>
+    <p class="term-condition">Khi tạo tài khoản bạn đồng ý với <a target="_blank" href="page/dieu-khoan-su-dung.html">điều khoản của vLance</a></p>
+</form>
+<script type="text/javascript">
+    var reg_form_in_job = '#register-form-in-form';
+    var reg_form_in_job_params = {"url":"/a/register_job"};
+</script>            </div>
+            <div class="block-form-log deactive">
+                <form id="login-form-in-job" action="#" method="post">
+    <div class="row-fluid field">
+        <div class="span6">
+        <p><label for="login_username">Địa chỉ email</label></p>
+        <input type="email" id="login_username" name="username" required="required" value="" class="span4 input-email" 
+               placeholder="Email đăng nhập" />
+        </div>
+        <div class="span6">
+        <p><label for="login_password">Mật khẩu</label></p>
+        <input type="password" id="login_password" name="password" required="required" class="span4"
+               placeholder="Mật khẩu" />
+        </div>
+    </div>
+    <label for="remember_me" class="checkbox">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        Ghi nhớ mật khẩu    </label>
+    <div class="row-fluid field">
+        <div class="span4">
+            <button type="button" id="btn-submit-login" name="_submit" class="btn btn-large btn-primary btn-form-submit">
+                Đăng nhập            </button>
+        </div>
+    </div>
+    <p class="lost-password">Bạn quên mật khẩu? <a href="a/reset/request.html">Click vào đây</a></p>
+</form>
+<script type="text/javascript">
+    var login_form_in_job = '#login-form-in-job';
+    var login_form_in_job_params = {"url":"/a/login_job"};
+</script>            </div>
+            <script type="text/javascript">
+            </script>
+            <div class="row-fluid">
+                <p class="login-socail-network-label">Hoặc dùng luôn tài khoản sau</p>
+                <div class="login-socail-network">
+                    <a class="btn-facebook btn-social-fb-post-job" onclick="fb_login()"><span><img src="{% static 'img/icon-facebook.png'%}">Facebook</span></a>
+                    <a class="btn-google-plus btn-social-nfb-post-job" onclick="google_login()"><span><img src="{% static 'img/icon-google%2b.png'%}">Google</span></a>
+                    <a class="btn-linkedin btn-social-nfb-post-job" onclick="linkedin_login()"><span><img src="{% static 'img/icon-linkedin.png'%}">LinkedIn</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                
+                <div class="post-contest-job">
+                                        <form id="contest-form" action="/dang-cuoc-thi/new" method="post" enctype="multipart/form-data">
+                        <div id="vlance_jobbundle_jobcontesttype" data-display-track="show-contest-form">
+    <div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobcontesttype_category" >Chọn lĩnh vực cho cuộc thi    </label>    <select
+    id="vlance_jobbundle_jobcontesttype_category"
+name="vlance_jobbundle_jobcontesttype[category]"
+required="required"             placeholder="Chọn lĩnh vực phù hợp"                 data-toggle="popover"                 data-placement="top"                 data-content="Chọn lĩnh vực phù hợp"                 data-trigger="hover"                 class="popovers-input span12"    >
+    <option  disabled="disabled" selected="selected">- Tên lĩnh vực -</option>        <option value="20">Các việc thiết kế khác</option>
+                <option value="43">Thiết kế bộ nhận diện thương hiệu</option>
+                <option value="47">Thiết kế infographic</option>
+                <option value="7">Thiết kế Logo</option></select>    </div>    <div class="control-group service_wrapper hidejs">
+    <label for="vlance_jobbundle_jobcontesttype_service" >Chọn dịch vụ phù hợp với yêu cầu tuyển freelancer của bạn nhất    </label>    <select
+    id="vlance_jobbundle_jobcontesttype_service"
+name="vlance_jobbundle_jobcontesttype[service]"
+            placeholder="Chọn một dịch vụ cần thuê"                 data-toggle="popover"                 data-placement="top"                 data-content="Chọn một dịch vụ cần thuê"                 data-trigger="hover"                 class="popovers-input span12"    >
+    <option  value="">- Tên dịch vụ -</option>        <option value="4">Thiết kế Logo</option>
+                <option value="5">Thiết kế bộ nhận diện thương hiệu</option>
+                <option value="6">Thiết kế brochure</option>
+                <option value="8">Thiết kế cover và banner Facebook</option>
+                <option value="25">Thiết kế giao diện website</option>
+                <option value="44">Thiết kế flyer</option>
+                <option value="45">Thiết kế infographic</option>
+                <option value="46">Thiết kế backdrop</option>
+                <option value="47">Thiết kế áo phông / T-shirt</option>
+                <option value="61">Thiết kế nhãn hiệu / bao bì sản phẩm</option>
+                <option value="63">Thiết kế business card</option>
+                <option value="64">Thiết kế mẫu Powerpoint</option>
+                <option value="121">Thiết kế poster</option>
+                <option value="122">Thiết kế nội thất</option></select>    </div>    <div class="description"></div>
+    <div class="prize-choice">
+        <h3>Giải thưởng</h3>
+        <input type="hidden" id="num_package" name="num_package" value="3">
+        <div id="block-info-price" class="row-fluid">
+            <div class="span4 block-contest-choice">
+                <label id="choice-one" class="radio">
+                    <input type="radio" name="vlance_jobbundle_jobcontesttype[budget]" id="vlance_jobbundle_jobcontesttype_budget">
+                    <div class="budget-choice">
+                        <h4 id="price_one">1.000.000 <span>VNĐ</span></h4>
+                        <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Hơn 15 mẫu thiết kế*.
+                        </p>
+    <!--                    <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Freelancer tốt.
+                        </p>-->
+                    </div>
+                </label>
+            </div>
+            <div class="span4 block-contest-choice">
+                <label id="choice-two" class="radio">
+                    <input type="radio" name="vlance_jobbundle_jobcontesttype[budget]" id="vlance_jobbundle_jobcontesttype_budget">
+                    <div class="budget-choice">
+                        <h4 id="price_two">2.000.000 <span>VNĐ</span></h4>
+                        <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Hơn 40 mẫu thiết kế*.
+                        </p>
+                        <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Designer kinh nghiệm.
+                        </p>
+                    </div>
+                </label>
+            </div>
+            <div class="span4 block-contest-choice checked">
+                <label id="choice-three" class="radio">
+                    <input type="radio" name="vlance_jobbundle_jobcontesttype[budget]" id="vlance_jobbundle_jobcontesttype_budget" checked>
+                    <div class="budget-choice">
+                        <h4 id="price_three">4.000.000 <span>VNĐ</span></h4>
+                        <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Hơn 80 mẫu thiết kế*.
+                        </p>
+                        <p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Designer chuyên gia.
+                        </p>
+                        <!--<p>
+                            <i class="fa fa-check" aria-hidden="true"></i>Freelancer sẽ được chọn bởi vLance.
+                        </p>-->
+                    </div>
+                </label>
+            </div>
+            <div class="span12 note-new-contest"><em>* Đây chỉ là con số tham khảo dựa trên ngân sách bạn đặt ra. Thực tế số lượng bài dự thi bạn có thể nhận được là <b>không giới hạn</b>.(có thể nhiều hoặc ít hơn con số tham khảo trên)</em></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var serPrice = "/contest/new/price";
+    </script>
+    <div><div class="control-group ">
+    <label class="required" for="vlance_jobbundle_jobcontesttype_title" >Điền thông tin cuộc thi    </label>    <input type="text" id="vlance_jobbundle_jobcontesttype_title"
+name="vlance_jobbundle_jobcontesttype[title]"
+required="required" maxlength="255"             placeholder="Tiêu đề cuộc thi (VD: Thiết kế logo tinh tế cho khách sạn cao cấp...)"                 data-toggle="popover"                 data-placement="top"                 data-content="VD: Thiết kế logo"                 data-trigger="hover"                 class="popovers-input span12" value=""/>    </div></div>
+    <div><textarea id="vlance_jobbundle_jobcontesttype_description"
+name="vlance_jobbundle_jobcontesttype[description]"
+required="required"             placeholder="Viết nội dung cuộc thi"                 data-toggle="popover"                 data-placement="top"                 data-trigger="hover"                 class="popovers-input span12"                 rows="14"></textarea></div>
+    <div><div class="fileupload_wrapper">
+            <a class="addupload" href="#" onclick="return false;" data-toggle="collapse" data-target="#vlance_jobbundle_jobcontesttype_files_file_upload_container">
+        Thêm tài liệu đính kèm    </a>
+    <div class="clear"></div>
+            <div id="vlance_jobbundle_jobcontesttype_files" class="control-group fileupload_wrapper ">
+                </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('button[role="confirm"]').click(function() {
+                jQuery(this).parent().parent().modal('hide');
+                jQuery("#" + jQuery(this).attr('target')).remove();
+            });
+        });
+    </script>
+            <div id="vlance_jobbundle_jobcontesttype_files_file_upload_container" class="collapse out">
+        <div class="support_file_attach">Định dạng được hỗ trợ: png, jpg, gif, pdf, psd, xls, xlsx, doc, docx, ppt, pptx, ods, odt, zip, rar</div>
+        <div class="support_file_attach">Kích thước tối đa: 10MB</div>
+        <div id="vlance_jobbundle_jobcontesttype_files_collection_holder" id="vlance_jobbundle_jobcontesttype_files"
+name="vlance_jobbundle_jobcontesttype[files]"
+            data-prototype="&lt;div class=&quot;control-group &quot;&gt;
+        &lt;div id=&quot;vlance_jobbundle_jobcontesttype_files___name__&quot;&gt;
+        &lt;div class=&quot;control-group &quot;&gt;
+        &lt;input type=&quot;file&quot; id=&quot;vlance_jobbundle_jobcontesttype_files___name___file&quot;
+name=&quot;vlance_jobbundle_jobcontesttype[files][__name__][file]&quot;
+required=&quot;required&quot; value=&quot;&quot;/&gt;    &lt;/div&gt;    &lt;/div&gt;    &lt;/div&gt;">
+        </div>
+        <a href="#" class="btn add_inp   ut_file" id="vlance_jobbundle_jobcontesttype_files_job_new_file"><i class="icon-plus"></i> Thêm tài liệu</a>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            var required_one = false;
+                                                                                
+            var newButton = jQuery('');
+            function add_file_input(holder, id) {
+                var input_content = holder.data('prototype');
+                var index = holder.data('index');
+                var new_file = input_content.replace(/__name__label__/g, '').replace(/__name__/g, index);
+                var new_item = jQuery("<div></div>").addClass('new_file_input').append(new_file);
+                add_remove_file_input(new_item);
+
+                holder.append(new_item);
+                jQuery(id + '_' + index.toString() + '_file').on('change', function() {
+                    if(this.files[0]){
+                        jQuery(this).attr('file_size',this.files[0].size);
+                    }
+                });
+                holder.data('index', index + 1);
+                
+                //Validate input file
+                $('.new_file_input input').change(function () {
+                    $(this).rules('add', {
+                            filesize: multiupload_validate["size"],
+                            filetype: multiupload_validate["type"],
+                            messages: {
+                                filesize: multiupload_sizeerror,
+                                filetype: multiupload_typeerror
+                            }
+                        }
+                    );
+                    $(this).valid();
+                });
+                
+                
+            }
+            
+            function add_remove_file_input(new_item) {
+                var remove_button = jQuery('<a href="#" class="remove">x</a>');
+                new_item.append(remove_button);
+                remove_button.on('click', function(e) {
+                    e.preventDefault();
+                    if(required_one){
+                        if(jQuery('.new_file_input input').length == 1){
+                            alert('File đính kèm là bắt buộc.');
+                        } else{
+                            new_item.remove();
+                        }
+                    } else {
+                        new_item.remove();
+                    }
+                })
+            }
+
+            if (jQuery('#vlance_jobbundle_jobcontesttype_files')) {
+                jQuery('#vlance_jobbundle_jobcontesttype_files_collection_holder').data('index', jQuery('#vlance_jobbundle_jobcontesttype_files input').size());
+            } else {
+                jQuery('#vlance_jobbundle_jobcontesttype_files_collection_holder').data('index', 0);
+            }
+            jQuery('#vlance_jobbundle_jobcontesttype_files_job_new_file').click(function(e) {
+                add_file_input(jQuery('#vlance_jobbundle_jobcontesttype_files_collection_holder'), '#vlance_jobbundle_jobcontesttype_files');
+                e.preventDefault();
+            });
+            
+            if(required_one){
+                jQuery('#vlance_jobbundle_jobcontesttype_files_file_upload_container').collapse('show');
+                add_file_input(jQuery('#vlance_jobbundle_jobcontesttype_files_collection_holder'), '#vlance_jobbundle_jobcontesttype_files');
+            }
+        });
+    </script>
+    <script>
+                var multiupload_validate = {"type" : ["png","jpg","gif","pdf","psd","xls","xlsx","doc","docx","ppt","pptx","ods","odt","zip","rar"], "size" : 10485760};
+        var multiupload_sizeerror = "Kích thước file không vượt quá 10MB";
+        var multiupload_typeerror = "File không đúng định dạng ";
+    </script></div></div>
+    <div class="block-private">
+        <div class="row-fluid">
+            <span class="contest_private_block1 span12">
+                <label class="checkbox"><input type="checkbox"
+    id="vlance_jobbundle_jobcontesttype_isPrivateContest"
+name="vlance_jobbundle_jobcontesttype[isPrivateContest]"     value="1"    />Giữ bí mật các bài dự thi (cần thanh toán thêm 15% giá trị giải thưởng)</label>
+            </span>
+            
+        </div>
+        <div class="private_explanation row-fluid">
+            <p>
+                <i>Chỉ mình bạn có quyền được xem tất cả các bài dự thi. Các thí sinh không xem được bài dự thi của nhau. Hạn chế việc sao chép ý tưởng của nhau. Đồng thời đảm bảo được rằng ngoài bạn ra, không một ai khác xem được các mẫu thiết kế tham gia dự thi.</i>
+            </p>
+        </div>
+    </div>
+    
+    <input type="hidden" id="vlance_jobbundle_jobcontesttype__token"
+name="vlance_jobbundle_jobcontesttype[_token]" value="fc239c0e94a9cf999f657e3e2b4b537dd63f8499"/></div>
+
+<!--<div class="more-options">
+    <div class="control-group ">
+        <label></label>
+
+                <div class="promote-choice">
+            <label class="fanpage checkbox">
+                <div class="row-fluid">
+                    <p class="span9"><input name="promote-contest-fb" type="checkbox" value="">
+                                            </p>
+                    <span class="span3"><b></b> VNĐ</span>    
+                </div>
+            </label>
+        </div>  
+        <div class="promote-choice">
+            <label class="checkbox">
+                <div class="row-fluid">
+                    <p class="span9"><input name="promote-contest-hp" type="checkbox" value="">
+                                            </p>
+                    <span class="span3"><b></b> VNĐ</span>
+                </div>    
+            </label>
+        </div>
+    </div>
+</div>-->
+<div class="clear"></div>
+
+                                                <div class="form-cread-job-btn">
+                            <div class="row-fluid">
+                                <div class="span12">    
+                                    <input id="btn-submit-contest" type="button" class="btn btn-primary btn-large popup-validate span12" value="Đăng cuộc thi"/>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="accept-agreement span12">
+                                    <p>
+                                        Khi đăng việc, bạn xác nhận đồng ý các <a href="page/dieu-khoan-su-dung-danh-cho-khach-hang.html" target="_blank">điều khoản sử dụng</a> của vLance.vn                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+            </div>
+            
+          
+
+{% endblock %}

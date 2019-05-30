@@ -1,0 +1,572 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class="main_content">
+<div class="homepage-new">
+    <div class="carousel slide display-desktop">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+<!--            Ẩn banner tự động
+            Cách sử dụng + ví dụ: Ngày bật - Ngày tắt-->
+
+
+            <div class="item">
+                <header class="jumbotron-new carousel-subhead_1">
+                    <div class="container">
+                        <div class="jumbotron-new-even">
+                            <h1 class="lh8 mp-lh6"><b>Đảm bảo hoàn thành dự án</b> với freelancer hàng đầu</h1>
+                            <div class="jumbotron-button">
+                                <a class="btn btn-vl btn-vl-special btn-vl-green" onclick="vtrack('Click post job', {'location':'Homepage'})" href="dang-du-an.html" title="Đăng dự án ngay">Đăng dự án ngay</a>
+                            </div>
+                            <div class="jumbotron-new-content">
+                                <ul>
+                                    <li>
+                                        <p class="step-job">1</p>
+                                        <span>Đăng dự án</span>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">2</p>
+                                        <p>Kết nối với<br/>chuyên gia</p>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">3</p>
+                                        <p>Nhận sản phẩm<br/>đúng yêu cầu</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="item">
+                <header class="jumbotron-new carousel-subhead_2">
+                    <div class="container">
+                        <div class="jumbotron-new-even">
+                            <h1 class="lh8 mp-lh6">Nhận đến <b>100 mẫu thiết kế</b> mỗi cuộc thi</h1>
+                            <div class="jumbotron-button">
+                                <a class="btn btn-vl btn-vl-orange btn-vl-special" onclick="vtrack('Click contest job', {'location':'Homepage'})" href="dang-cuoc-thi.html" title="Tạo cuộc thi mới">Tạo cuộc thi mới</a>
+                            </div>
+                            <div class="jumbotron-new-content">
+                                <ul>
+                                    <li>
+                                        <p class="step-job">1</p>
+                                        <span>Tạo cuộc thi</span>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">2</p>
+                                        <p>Nhận đến 100 mẫu thiết kế</p>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">3</p>
+                                        <p>Chọn mẫu đẹp nhất và thanh toán</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+                        <div class="item">
+                <header class="jumbotron-new carousel-subhead_3">
+                    <div class="container">
+                        <div class="jumbotron-new-even">
+                            <h1 class="lh8 mp-lh6">Dịch vụ Marketing, Thiết kế trọn gói chỉ từ <b>200.000</b> <i>₫</i></h1>
+                            <div class="jumbotron-button">
+                                <a rel="nofollow" class="btn btn-vl btn-vl-blue btn-vl-special" onclick="vtrack('Click Thuengay banner', {'location':'Homepage'})" href="https://www.thuengay.vn/thue-dich-vu?utm_source=vlance.vn&amp;utm_medium=referral&amp;utm_content=homepage-serv-block" target="_blank" title="Xem tất cả dịch vụ">Xem tất cả dịch vụ</a>
+                            </div>
+                            <div class="jumbotron-new-content">
+                                <ul>
+                                    <li>
+                                        <p class="step-job">1</p>
+                                        <p>Chọn dịch vụ <br/>& Đặt hàng</p>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">2</p>
+                                        <span>Làm việc nhanh chóng</span>
+                                    </li>
+                                    <li class="angle-right">
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <p class="step-job">3</p>
+                                        <span>Nhận sản phẩm ưng ý</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+                    </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.carousel .carousel-inner').slick({
+                infinite: true,
+                lazyLoad: 'ondemand',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 8000,
+                arrow: true,
+                dots: true
+              });
+        });
+    </script>
+    <div class=" slide-top-homepage display-mobile">
+                <div class="item">
+            <header class="jumbotron-new carousel-subhead_1">
+                <div class="container">
+                    <div class="jumbotron-new-even">
+                        <h1><b>Đảm bảo hoàn thành dự án</b> với freelancer hàng đầu</h1>
+                        <div class="jumbotron-button">
+                            <a class="btn btn-vl btn-vl-small btn-vl-green" onclick="vtrack('Click post job', {'location':'Homepage'})" href="dang-du-an.html" title="Đăng dự án ngay">Đăng dự án ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="item">
+            <header class="jumbotron-new carousel-subhead_2">
+                <div class="container">
+                    <div class="jumbotron-new-even">
+                        <h1>Nhận đến <b>100 mẫu thiết kế</b> mỗi cuộc thi</h1>
+                        <div class="jumbotron-button">
+                            <a class="btn btn-vl btn-vl-orange btn-vl-small" onclick="vtrack('Click contest job', {'location':'Homepage'})" href="dang-cuoc-thi.html" title="Tạo cuộc thi mới">Tạo cuộc thi mới</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+                <div class="item">
+            <header class="jumbotron-new carousel-subhead_3">
+                <div class="container">
+                    <div class="jumbotron-new-even">
+                        <h1>Dịch vụ Marketing, Thiết kế trọn gói chỉ từ <b>200.000</b> <i>₫</i></h1>
+                        <div class="jumbotron-button">
+                            <a rel="nofollow" class="btn btn-vl btn-vl-blue btn-vl-small" onclick="vtrack('Click contest job', {'location':'Homepage'})" href="https://www.thuengay.vn/thue-dich-vu?utm_source=vlance.vn&amp;utm_medium=referral&amp;utm_content=homepage-serv-block" target="_blink" title="Xem tất cả dịch vụ">Xem tất cả dịch vụ</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+            </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slide-top-homepage.display-mobile').slick({
+                infinite: true,
+                lazyLoad: 'ondemand',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 8000,
+                arrow: true,
+                dots: true
+              });
+        });
+    </script>
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https://www.vlance.vn/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.google.com/search?q=inurl%3Ahttp%3A%2F%2Fwww.vlance.vn%20{search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "WebSite",
+      "name" : "vLance.vn",
+      "alternateName" : "vLance.vn",
+      "url" : "https://www.vlance.vn"
+    }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function addblock(){
+                $(".jumbotron-content").addClass('display_block');
+                $(".jumbotron-even").addClass('display_block_odd');
+            }
+            setTimeout(addblock, 1000);
+        });
+    </script>
+
+    <div class="step-explain-section">
+            <div class="step-detail detail-image">
+                <div class="container row-fluid">
+                    <div class="image-left span6">
+                        <img alt="Đăng dự án miễn phí." src="{% static 'img/homepage-new/buoc-1-tiep-can-chuyen-gia.png' %}" title="Đăng dự án miễn phí.">
+                    </div>
+                    <div class="quotes-right span6">
+                        <h4 class="lh7">Đăng dự án <span>không mất phí</span>,</br>Tiếp cận ngay <span>chuyên gia</span></h4>
+                        <p class="lh3">Bạn sẽ nhanh chóng nhận được chào giá từ các freelancer hàng đầu. Hệ thống tin nhắn của vLance giúp bạn chủ động phỏng vấn và tìm ra được người phù hợp nhất.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="step-detail detail-quotes">
+                <div class="container row-fluid">
+                    <div class="quotes-left span6">
+                        <h4 class="lh7">Cam kết <span>chặt chẽ,</span> </br>Hoàn thành <span>đúng tiến độ</span></h4>
+                        <p class="lh3">Hệ thống giúp bạn tạo cam kết và đặt cọc tiền nhanh chóng cho dự án. Công việc được đảm bảo thực hiện theo đúng kế hoạch bạn đề ra.</p>
+                    </div>
+                    <div class="image-right span6">
+                        <img src="{% static 'img/homepage-new/buoc-2-lam-viec.png' %}" title="Cam kết chặt chẽ. Làm việc nhanh chóng" alt="Cam kết chặt chẽ, Làm việc nhanh chóng">
+                    </div>
+                </div>
+            </div>
+            <div class="step-detail detail-image">
+                <div class="container row-fluid">
+                    <div class="image-left span6">
+                        <img src="{% static 'img/homepage-new/buoc-3-thanh-toan.png' %}" title="Nhận sản phẩm ưng ý. Thanh toán dễ dàng" alt="Nhận sản phẩm ưng ý. Thanh toán dễ dàng">
+                    </div>
+                    <div class="quotes-right span6">
+                        <h4 class="lh7">Nhận kết quả <span>100% hài lòng,</span></br>Thanh toán <span>an toàn</span></h4>
+                        <p class="lh3">vLance bảo vệ tiền đặt cọc của bạn từ đầu cho đến hết dự án. Bạn chỉ thanh toán khi hài lòng tuyệt đối với kết quả cuối cùng.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="separator5"></div>
+    <div class="top-jobs-section">
+        <h4 class="top-job-title lh4">Công việc được thuê nhiều nhất</h4>
+        <div class="job-list container">
+            <div class="job-row row-fluid">
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-1">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-thiet-ke_chash_thiet-ke-website.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Thiết kế website</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-2">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-viet-lach_chash_dich-thuat.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Dịch thuật</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-3">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-thiet-ke_chash_thiet-ke-website.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Lập trình website</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-4">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-thiet-ke_chash_lam-video-clip.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Làm video clip</p>
+                    </div>
+                </div>
+            </div>
+            <div class="job-row row-fluid">
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-5">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-it-va-lap-trinh_chash_toi-uu-cho-cong-cu-tim-kiem-seo.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Tối ưu hóa công cụ tìm kiếm seo</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-6">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-viet-lach_chash_viet-noi-dung-cho-website.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Viết nội dung website</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-7">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-thiet-ke_chash_thiet-ke-logo.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Thiết kế logo</p>
+                    </div>
+                </div>
+                <div class="job-item span3">
+                    <div class="job-item-show job-show-8">
+                        <a href="viec-lam-freelance/cpath_cac-cong-viec-it-va-lap-trinh_chash_ung-dung-di-dong.html" title="Đăng dự án, nhận chào giá">
+                            <div class="job-item-overlay-upper tf200">
+                            </div>
+                            <div class="job-item-overlay-inner tf200">
+                                <span class="btn btn-top-job">Đăng dự án</span>
+                                <span class="job-item-price">Giá tham khảo 1.000.000 VNĐ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-title">
+                        <p>Ứng dụng di động</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="separator5"></div>
+    <div class="reviews-section">
+        <h3 class="review-client-title">Khách hàng hài lòng về chất lượng dịch vụ</h3>
+        <div class="review-clients container">
+            <div class="row-fluid slide-reviews">
+                <div class="slide-reviews-client">
+                    <div class="client-item">
+                        <div class="review-avatar">
+                            <img src="{% static 'img/homepage-new/avatar-client-02.jpg' %}" alt="Nguyễn Quang Nhật" title="Nguyễn Quang Nhật">
+                        </div>
+                        <div class="review-title">
+                            <h4 class="name-client">Nguyễn Quang Nhật</h4>
+                            <p>Khách hàng</p>
+                        </div>
+                        <div class="review-quote">
+                            <p>“Freelancer hoàn thành công việc rất tốt và chuyên nghiệp, đáp ứng tất cả những yêu cầu của tôi đưa ra. Sẽ làm việc lại với freelancer này trong tương lai.”</p>
+                            <div class="feedback-star">
+                                <img src="{% static 'img/homepage-new/star3.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-reviews-client">
+                    <div class="client-item">
+                        <div class="review-avatar">
+                            <img src="{% static 'img/homepage-new/avatar-client-01.jpg' %}" alt="Linh Đặng" title="Linh Đặng">
+                        </div>
+                        <div class="review-title">
+                            <h4 class="name-client">Linh Đặng</h4>
+                            <p>Khách hàng</p>
+                        </div>
+                        <div class="review-quote">
+                            <p>"Freelancer làm việc nhiệt tình và chiều ý khách. Xu hướng cập nhập nhanh. Giao tiếp lễ phép lịch sự. Quá trình làm việc rất suôn sẻ và cảm thấy dễ chịu. Mong em có nhiều đơn hàng."</p>
+                            <div class="feedback-star">
+                                <img src="{% static 'img/homepage-new/star3.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-reviews-client">
+                    <div class="client-item">
+                        <div class="review-avatar">
+                            <img src="{% static 'img/homepage-new/avatar-client-03.jpg' %}" alt="Đặng Đức Toàn" title="Đặng Đức Toàn">
+                        </div>
+                        <div class="review-title">
+                            <h4 class="name-client">Đặng Đức Toàn</h4>
+                            <p>Khách hàng</p>
+                        </div>
+                        <div class="review-quote">
+                            <p>“Nhiệt tình, trách nhiệm, đáp ứng deadline công việc. Freelancer sẵn sàng chỉnh sửa theo các yêu cầu của khách hàng, đồng thời có thể đưa ra nhiều option để khách hàng lựa chọn. Một freelancer có thể hợp tác lâu dài.”</p>
+                            <div class="feedback-star">
+                                <img src="{% static 'img/homepage-new/star3.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-reviews-client">
+                    <div class="client-item">
+                        <div class="review-avatar">
+                            <img src="{% static 'img/homepage-new/avatar-client-04.jpg' %}" alt="Lê Trí Minh" title="Lê Trí Minh">
+                        </div>
+                        <div class="review-title">
+                            <h4 class="name-client">Lê Trí Minh</h4>
+                            <p>Khách hàng</p>
+                        </div>
+                        <div class="review-quote">
+                            <p>“Hoàng Anh là freelancer rất tích cực trong công việc và giao tiếp, nhanh nhẹn và thông minh. Sẵn sàng hợp tác với bạn khi có dự án mới.”</p>
+                            <div class="feedback-star">
+                                <img src="{% static 'img/homepage-new/star3.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slide-reviews').slick({
+                centerMode: true,
+                centerPadding: '0px',
+                slidesToShow: 3,
+                responsive: [
+                  {
+                    breakpoint: 976,
+                    settings: {
+                      centerMode: true,
+                      centerPadding: '0px',
+                      slidesToShow: 2
+                      }
+                  },
+                  {
+                    breakpoint: 639,
+                    settings: {
+                      centerPadding: '0px',
+                      slidesToShow:1,
+                      slidesToScroll: 1
+                    }
+                  }
+                ]
+              });
+            });
+        </script>
+
+        <div class="review-media">
+            <div class="review-media-title">
+                <h3 class="lh2">Vinh danh trên báo chí</h3>
+            </div>
+            <div class="container row-fluid">
+                <div class="stats-col-left stats-col-left-new span12">
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="http://dantri.com.vn/kinh-doanh/nguoi-viet-khoi-nghiep-gan-10-trieu-usd-da-duoc-dau-tu-988768.htm" target="_blank"><i class="cat-dantri"></i></a>
+                    </div>
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="http://ictnews.vn/khoi-nghiep/goc-doanh-nghiep/vlance-thuc-day-thi-truong-freelance-viet-nam-chuyen-nghiep-hon-116351.ict" target="_blank"><i class="cat-ict"></i></a>
+                    </div>
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="http://songmoi.vn/kinh-te-thi-truong/san-giao-dich-“cuu-canh”-cho-nghe-tu-do" target="_blank"><i class="cat-kt"></i></a>
+                    </div>
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="http://seatimes.com.vn/startup-weekend-hanoi-2014-vinh-danh-du-an-cong-dong-freelancer-n89808.html" target="_blank"><i class="cat-seatime"></i></a>
+                    </div>
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="http://english.vietnamnet.vn/fms/society/98323/freelancers-look-at-work-from-a-fresh-perspective.html" target="_blank"><i class="cat-vietnamnet"></i></a>
+                    </div>
+                    <div class="stats-col stats-row row-fluid">
+                        <a rel="nofollow" href="https://www.dealstreetasia.com/stories/exclusive-vlance-targets-vns-largest-freelance-service/" target="_blank"><i class="cat-tech"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="professional-apply-section">
+        <div class="container">
+            <h3 class="title lh8 mp-lh6">
+                Bạn có trên <span>3 năm kinh nghiệm</span>
+                Và muốn tìm việc để <span>tăng thu nhập?</span>
+            </h3>
+            <div class="professional-apply-button">
+                <a class="btn btn-vl btn-vl-special btn-vl-green" title="Đăng ký làm chuyên gia" href="a/register/freelancer.html">Đăng ký làm chuyên gia</a>
+            </div>
+        </div>
+    </div>
+        <div class="landing-statistics-section">
+        <div class="container">
+            <div class="span5 count-job">
+                <p>
+                    <span>
+                        <a href="freelancers.html">
+                            332.519                        </a>
+                    </span>
+                </p>
+                <p class="text">Freelancers</p>
+            </div>
+            <div class="span5 count-client">
+                <p>
+                    <span>
+                        <a href="viec-lam-freelance.html">
+                            29.371                        </a>
+                    </span>
+                </p>
+                <p class="text">Dự án đã đăng</p>
+            </div>
+        </div>
+        <div class="separator-statistics"></div>
+    </div>
+    <script>
+        jQuery(function($) {
+            jQuery('.home-statistics-section .span4 span a').anicounter({
+                number: 332519,
+                step: 15
+            });
+            $('.home-statistics-section .span3 span a').anicounter({
+                number: 29371,
+                step: 4
+            });
+            $('.home-statistics-section .span5.last span a').anicounter({
+                number: 221238753677,
+                suffix: ' <span>VNĐ</span>'
+            });
+        });
+
+    </script>
+
+    <div class="separator2"></div>
+</div>
+
+            </div>
+{% endblock %}

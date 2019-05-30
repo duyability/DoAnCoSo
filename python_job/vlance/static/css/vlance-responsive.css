@@ -1,0 +1,2555 @@
+.screen-1200 {display: block; padding-bottom: 25px;}
+.screen-960 {display: none;}
+.screen-750 {display: none;}
+.screen-620 {display: none;}
+.screen-320 {display: none;}
+.img_fb{display: block; margin-left: auto; margin-right: auto;}
+.invite-friend h2{margin-left: 0px; text-align: center;}
+.btn_tt {display: none}
+.text-right-tt {display: none}
+/***** IPAD/TABLET LANDSCAPE *****/
+@media (max-width: 1200px) {
+    .credit_vip_mobile{display: block;}
+    .credit_vip_desktop{display: none;}
+    .screen-1200 {display: none;}
+    .screen-960 {display: block;}
+    .screen-750 {display: none;}
+    .screen-620 {display: none;}
+    .screen-320 {display: none;}
+    /* head */
+    .navbar-static-top.nav-new .menu-item.third-tn a {padding:0px 15px;}
+    .navbar-mini .container,
+    .job_show .container{width: 960px;}
+    .navbar .span7 {width: 54.446809%;}
+    
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container,.container-vlance{width:980px;max-width: 100%;}
+    
+    /* Onsite job */
+    .onsite-properties {padding-left: 16px; padding-right: 16px;}
+    .onsite-properties .prop-company-name {margin-left: 12px;}
+    .onsite-properties .prop-mixed dt {width: 90px; overflow: initial; text-overflow: initial; white-space: initial;}
+    .onsite-properties .prop-mixed dd {margin-left: 100px;}
+    .body-view .span10 {width: 100%;}
+    .onsite-cv .freelancer-row-img .images img {width: 80px;}
+    
+    /*** ladding-page ***/
+    .navbar-static-top.nav-new .container {width:960px;}
+    /* page login and register*/
+    .float-box-section .login-box,.float-box-section .signup-box {width:960px}
+    /* step-explain-section */
+    .step-explain-section .step-detail .container {width:960px;}
+    .step-explain-section .quotes-right p {width:405px;}
+    /* top-jobs-section */
+    .top-jobs-section .job-list.container {width:960px;}
+    .top-jobs-section .job-item-show {width:209px;height:167px;background-size: cover;}
+    .top-jobs-section .job-item .job-show-2 {background-position: 0px -167px;}
+    .top-jobs-section .job-item .job-show-3 {background-position: 0px -334px;}
+    .top-jobs-section .job-item .job-show-4 {background-position: 0px -501px;}
+    .top-jobs-section .job-item .job-show-5 {background-position: 0px -668px;}
+    .top-jobs-section .job-item .job-show-6 {background-position: 0px -835px;}
+    .top-jobs-section .job-item .job-show-7 {background-position: 0px -1003px;}
+    .top-jobs-section .job-item .job-show-8 {background-position: 0px -1171px;}
+    .top-jobs-section .job-item-overlay-upper {width:209px;height:167px;}
+    .top-jobs-section .job-item-overlay-inner {width:209px;height:167px;}
+    /* reviews-section */
+    .review-clients.container {width:960px;}
+    .review-clients .review-quote {width:auto;padding:0 15px 0;}
+    .slide-reviews .slick-prev {left:-5px;} 
+    .slick-slider .slick-next {right:-5px;}
+    
+    /* review-media */
+    .review-media .container {width:960px;}
+    .stats-col-left-new .stats-col {width: 150px;}
+
+    /* landing-statistics-section */
+    .landing-statistics-section .container {width:960px;}
+    .landing-statistics-section .count-job {margin-left:81px;}
+    
+    /* footer-links-section */
+    .footer-links-section.grey-bg .container {width: 960px;}
+    .footer-links-parter .container {width: 960px;}
+    /* bottom-logo */
+    .bottom-logo .container {width: 960px;}
+    
+    .block-statistics-section .container {width:960px;}
+    .block-statistics-section .count-job {margin-left:81px;}
+    
+    /*** Page community ***/
+    /* head */
+    .navbar-static-top.nav-community .container {width:960px;}
+    /* page community-list */
+    .community-list .body-view .container {width:960px;}
+    .community-list .body-view .show-case-item {width: 28.914894%;}
+    .community-list #fadeable {width:960px;}
+    
+    /* Goc lam viec */
+    .row-fluid .span3-b {width:322px;margin-left:0px;}
+    .navbar .nav > li a {padding:0px 7px;}
+    .navbar .nav>li.first a{padding-left:10px;padding-right:10px}
+    .upper-section .span7 {width: 54.93617%;}
+    .nav-account .account-menu a.dropdown-toggle {max-width: 124px;}
+    .navbar .menu-item.third-tn {display:none;}
+    
+    /*Credit*/
+    .section-buy-vip .wrapper-credit .section-choose-pack-credit .pack-credit > .span2,
+    .section-buy-vip .section-choose-payments .choose-payments > .span2{
+        width:18.8999999%;
+    }
+    .section-buy-vip .wrapper-credit .section-choose-pack-credit .pack-credit > .span2:nth-child(1) .sec-price-for-each-credit:before{left:8px}
+    .section-buy-vip .section-choose-payments .choose-payments > .span2 .button-payments input[type='button']{width:83%}
+    .section-buy-vip .wrapper-credit .section-choose-pack-credit .pack-credit > .span2 .sec-price-for-each-credit .btn-price-for-each-
+    credit:nth-child(n+3) input[type='button'],
+    .section-buy-vip .wrapper-credit .section-choose-pack-credit .pack-credit > .span2 .sec-price-for-each-credit .btn-price-for-each-
+    credit:nth-child(1) input[type='button']{
+        width:87%;
+    }
+    .section-buy-vip .wrapper-credit .section-help-user-use-credit .content-help-user-1 > div:nth-child(3), 
+    .section-buy-vip .wrapper-credit .section-help-user-use-credit .content-help-user-2 > div:nth-child(3){
+        margin-left:10px;
+        width:33%;
+    }
+    .section-buy-vip .wrapper-credit .section-help-user-use-credit .content-help-user-1 > div:nth-child(2), 
+    .section-buy-vip .wrapper-credit .section-help-user-use-credit .content-help-user-2 > div:nth-child(2){
+        padding-left:0;
+        width:24.404255%
+    }
+    .section-buy-vip .section-choose-payments .sec-attention{margin-right: 1px;padding-top:0;}
+
+
+
+    /*-------- credit --------*/
+    .section-none{display:none}
+    input[type="radio"]:focus{outline: none}
+    .credit_vip_mobile{background-color: #fff;margin-top:10px}
+    .wrapper-mobile{box-shadow: 0px 0px 6px #ccc;}
+    .wrapper-mobile .header-mobile{min-height: 56px;padding: 16px 10px 16px;box-sizing: border-box;position: relative}
+    .wrapper-mobile .header-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 
+    100%;left:0}
+    .header-mobile .span8 .credit-user-mobile{color:#13a538;font-size:16px;font-weight: bold}
+    .header-mobile .span8{padding-top: 7px}
+    .header-mobile .span4{text-align: right;padding-top: 7px}
+    .header-mobile .span4 .nav-tabs-history{padding-right:10px}
+
+    .wrapper-mobile .section-help-user-use-credit-mobile{position: relative}
+    .wrapper-mobile .section-help-user-use-credit-mobile:before{content:"";display: block;height: 1px;width: 100%;background:#e6e6e6;position: absolute;top: 100%;left:0}
+    .wrapper-mobile .title-help-user-mobile h3{font-size:16px;font-weight: bold;text-align: center;margin-top:14px}
+    .wrapper-mobile .content-help-user-mobile{margin-top:4px;padding-left:10px;box-sizing:border-box}
+    .wrapper-mobile .content-help-user-mobile .span6 .row-fluid:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(1){padding-left: 11%;}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(2){margin-left:0;padding-left: 7%;}
+    .wrapper-mobile .attention-help-user-mobile{margin-top:24px;padding:0 10px 0;box-sizing: border-box;text-align: justify;margin-bottom:31px}
+
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile{min-height: 88px;border:1px solid #8dd39d;margin:0 10px 0;width:95%;box-sizing:border-box;border-radius: 5px}
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .package-credit-mobile  span{font-size:40px;font-weight: 600}
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile .span5:nth-child(2) {margin: 30px 0 24px;}
+    .wrapper-mobile .package-credit-mobile .span2{padding-left: 19px;margin: 30px 0 24px}
+    .wrapper-mobile .section-choose-payments-mobile{padding-bottom: 40px;}
+    .wrapper-mobile #radio-pay-mobile input{-webkit-appearance: none;border: 1px solid #cccccc;width: 13px;height: 13px;border-radius: 
+    100%;transform: scale(1.5);-webkit-transform: scale(1.5);-moz-transform: scale(1.5) }
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit{position: relative}
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit:before{content:'';position: absolute;}
+    .wrapper-mobile #radio-pay-mobile input:checked + .radio-checked-credit:before{content: "";color: #13a538;font-size: 47px;text-align: 
+    center;border-radius: 100%;border: 1px solid #13a538;width: 9px;height: 9px;background: #13a538;bottom:1px;left:1px; }
+    .wrapper-mobile #radio-pay-mobile input:checked{border: 1.3px solid #13a538;}
+    .wrapper-mobile #radio-pay-mobile .span5:nth-child(3){margin:8px 0 9px;text-align: right}
+    .wrapper-mobile #radio-pay-mobile .span5.no-discount{margin-top:16px;}
+    .wrapper-mobile #radio-pay-mobile .span6.no-discount{margin:18px 0 0}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile b{font-size:18px}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{margin-top: 4px;}
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{color:#999}
+    .wrapper-mobile #radio-pay-mobile:nth-child(3) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(4) .sale-off-credit-mobile{font-weight: bold;color:#13a538;}
+    .wrapper-mobile #radio-pay-mobile:nth-child(5) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(6) .sale-off-credit-mobile{font-weight: bold;color:#fd7700;}
+    .wrapper-mobile .sec-choose-credit-mobile .attention-credit-mobile{text-align: center;padding: 10px 10px 30px 10px;box-sizing: border-
+    box}
+
+    .wrapper-mobile .section-choose-payments-mobile{background-color: #f7f7f7;}
+    .wrapper-mobile .section-choose-payments-mobile .choose-payments{margin-top: 16px;}
+    .wrapper-mobile .choose-payments .pay-card-mobile{border-radius: 5px;width:95%;background-color: #fff;box-sizing: border-box;margin: 0 10px 0;min-height: 56px;border:1px solid #8dd39d;padding-top: 14px;padding-bottom: 7px;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile{padding-top:7px;}
+
+    .wrapper-mobile .choose-payments .img-pay-method-mobile{text-align: center;}
+    .wrapper-mobile .choose-payments .img-pay-method-mobile img{width:31%;}
+    .wrapper-mobile .choose-payments .pay-by-bank-mobile .img-pay-method-mobile img,
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .img-pay-method-mobile img{width: 25%;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .img-pay-method-mobile{padding-top:5px}
+    .wrapper-mobile .choose-payments  .span8{padding-top: 3px;font-size: 14px;font-weight: 600;width:70%}
+    .wrapper-mobile .choose-payments .btn-pay-method-mobile{padding-left: 19px;width: 10%;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .btn-pay-method-mobile {padding-top: 7px;}
+
+    .modal.modal-paysms .modal-body .click-contact .telephone-sms .button-group a{display:block}
+    .modal-credit#pay-buy-paypal .modal-body .content p{padding:0 6px}
+    .modal-credit.modal-paysms .modal-body .btn-pay-banktransfer{width: 100%;}
+    #pay-buy-paypal{width: 320px;left:50%}
+    
+    /*upgarate Vip*/
+    .wrapper-mobile{min-height: 100px;background-color: #fff;}
+    .subpage-tab .nav-tabs .nav-tabs-spend-credit.spend-credit-old{margin:8px 0 0}
+    .wrapper-mobile .sec-header-upgrade-account{color: #fff;font-size: 14px;font-weight: 600;background-color: #063bb7;text-align: center;height: 40px;}
+    .wrapper-mobile .sec-header-upgrade-account div{padding-top:10px;padding-bottom:8px}
+    .wrapper-mobile .account-of-client-mobile{min-height: 56px;position: relative}
+    .wrapper-mobile .account-of-client-mobile .span8{padding-top: 18px;padding-left: 15px;font-size: 14px;}
+    .wrapper-mobile .account-of-client-mobile .span4{text-align: right;padding-top: 18px;padding-right: 15px;}
+    .wrapper-mobile .helper-upgrade-account-mobile{margin-top: 6px;margin-bottom:14px;position:relative}
+    .wrapper-mobile .sec-why-upgrade-mobile{border-radius: 0px}
+    .wrapper-mobile .sec-why-upgrade-mobile .header-why-vip-mobile{background-color: #f5f5f5;font-size:14px;font-weight: bold;position: relative;box-sizing: border-box;}
+    .wrapper-mobile .header-why-vip-mobile .fa-angle-up{font-size: 18px;font-weight: bold;position: absolute;left: 91%;}
+    .wrapper-mobile .body-why-upgrade-mobile > .row-fluid:nth-child(1){line-height: 1.75;text-align: justify;}    
+
+    .wrapper-mobile .wrapper-upgrade-mobile .helper-upgrade-account-mobile .sec-why-upgrade-mobile .body-why-upgrade-mobile > .sec-field-mobile:nth-child(2){margin-top:16px}
+    .wrapper-mobile .body-why-upgrade-mobile .header-field-mobile{position:relative;background-color: #f5f5f5;color:#063bb7;width: 100%;box-sizing: border-box;border: 1px solid #e6e6e6}
+    .wrapper-mobile .header-field-mobile a{padding-bottom: 0;}
+    .wrapper-mobile .sec-field-mobile:nth-child(3) a{padding-bottom:8px}
+    .wrapper-mobile .header-field-mobile .span11{padding-top:1.5px;margin-left:2px;}
+    .wrapper-mobile .header-field-mobile .fa-angle-up{font-size: 18px;font-weight: bold;position: absolute;right: 12px;}
+    .wrapper-mobile .wrapper-upgrade-mobile .helper-upgrade-account-mobile .sec-why-upgrade-mobile .body-why-upgrade-mobile > .sec-field-mobile .contents-field-mobile{padding: 13px 16px 13px;line-height: 2.45;box-sizing: border-box;border: 1px solid #e6e6e6;border-top: none;border-bottom: none;}
+    .wrapper-mobile .border-space:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 103%;left:0;}
+
+    .wrapper-mobile .sec-choose-package-vip-mobile{padding: 0px 10px 0px;box-sizing: border-box;margin-bottom:30px}
+    .wrapper-mobile .sec-choose-package-vip-mobile .label-time-package-mobile{padding-top: 16px;font-size:15px;}
+    .wrapper-mobile .sec-choose-package-vip-mobile .choose-package-vip-mobile{box-sizing: border-box}
+    .wrapper-mobile .border-pack-vip{margin-top: 12px;border: 1px solid #cccccc;border-top-left-radius: 4px;border-top-right-radius: 4px;text-align: center;box-sizing:border-box;}
+    .wrapper-mobile .border-pack-vip label{margin-bottom:0;}
+    .wrapper-mobile .choose-package-vip-mobile .package-months-mobile label{margin-bottom: 0;}
+    .wrapper-mobile .sec-choose-package-vip-mobile .months-package-vip{border-radius: 4px}
+    .wrapper-mobile .months-package-vip .tab-month-6-mobile,
+    .wrapper-mobile .choose-package-vip-mobile .package-month-6-mobile{border-left: 1px solid #cccccc;border-right: 1px solid #cccccc;}
+    .wrapper-mobile .months-package-vip .span4{padding: 13px 0 13px;width: 33.314894%;font-weight: bold;margin-left:0}
+    .wrapper-mobile .choose-package-vip-mobile .span4{padding: 12px 0 25px;width: 33.314894%;line-height: 2.05}
+    .choose-package-vip-mobile #pk-vip input{position: absolute;-webkit-appearance: none;}
+    .wrapper-mobile .choose-package-vip-mobile b{font-size: 16px;}
+    .wrapper-mobile .label-choose-package-vip-mobile{font-size:15px;margin-top:28px;}
+    .wrapper-mobile .choose-package-vip-mobile .contents-package-months-mobile{box-sizing: border-box;padding: 20px 0px 32px 15px;border: 1px solid #cccccc;min-height: 100px;border-top: none;background-color: #f7f7f7;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}
+    .wrapper-mobile .choose-package-vip-mobile .fa-check,
+    .wrapper-mobile .choose-package-vip-mobile .font-color-blue-pv{color:#0a46d0}
+    .wrapper-mobile .contents-package-months-mobile .span10,
+    .wrapper-mobile .contents-package-months-mobile .span11{margin-left: 1px;}
+
+    /*history buy credit*/
+    .subpage-content .buy-credits .sec-history-buy-none .content-history-buy-none{width:39%}
+    .subpage-content .buy-credits .btn-history-buy-none{width:18%}
+
+    /*history spend credit*/
+    .wrapper-buy-credit .spent-credit .sec-history-spend-none .content-history-spend-none{width:39%}
+    .wrapper-buy-credit .spent-credit .btn-history-spend-none{width:18%}
+
+    .btn-old-credit{display:inline-block}
+    
+    /*thanh toán sms tam dung hoat dong*/
+    .wrapper-mobile .choose-payments .pay-card-mobile.sec-stop-sms{border: 1px solid red;}
+    .wrapper-mobile .choose-payments .stop-btn-sms{color: red;padding-top:5px}
+
+    /*fix header*/
+    .upper-section .sec-account-menu .account-menu{width:267px}
+    .nav-account .account-menu a.dropdown-toggle.show-cate-acc{max-width: 197px;}
+    .upper-section .span3-b{width: 390px}
+    
+    /*block danh sach viec*/
+    .block_jobs .jobs-account .block-tilte_jobs{width: 30%;text-align: center;}
+    .job-list.jobs-account .description .rating-box{margin-top: 2px}
+    .job-list.jobs-account .job-item .avata-client{padding-top: 0}
+    .job-list.jobs-account .slick-prev,.job-list.jobs-account .slick-next{top: -22%;}
+    
+    .sec-package-credit-mobile .package-credit-mobile .label-green{font-weight: bold;color: #13a538;}
+    .sec-package-credit-mobile .package-credit-mobile .label-orange{font-weight: bold;color: #fd7700;}
+    
+    /*block thong bao tam dung thanh toan*/
+    .sec-vip .block-alert-maintain{width: 100%;margin-top: 27px;margin-bottom: 0}
+    .credit_balance .block-buy-vip .block-alert-maintain{margin-top: 0;margin-bottom: 10px}
+    
+    /*doi tac footer*/
+    .footer-links-parter .vlance-partner{padding-left:30px}
+}
+@media (max-width: 976px) {
+    .credit_vip_desktop{display:none}
+    .credit_vip_mobile{display: block;}
+    .screen-1200 {display: none;}
+    .screen-960 {display: none;}
+    .screen-750 {display: block;}
+    .screen-620 {display: none;}
+    .screen-320 {display: none;}
+    
+    /*** MOVED FROM VLANCE.CSS ***/
+    body.account_show, body.workshop_bid{min-width: initial;}
+    body.freelancer_list, body.vlance_homepage, body.freelance_job_list, body.contest_list, body.cms_page, body.account_register, 
+    body.fos_user_security_login, body.account_show.account_show_alias, body.jobs_create_project,
+    body.two-columns-left.email_invite, body.two-columns-left.userpaymentmethod, body.two-columns-left.config_user,
+    body.two-columns-left.transaction, body.two-columns-left.transaction_withdraw, body.one-column.job_new,
+    body.one-column.jobs_bid_project, body.one-column.fos_user_resetting_request, body.two-columns-right.account_show_client, body.one-column {min-width: initial;padding: 0px;}
+
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .job_contest_view .container,.container-vlance {width:750px;}
+    .block-step .container, .block-view-more .container{width: 750px;}
+    .content-section .page-configuration input {clear: both; margin-bottom: 6px;}
+    .content-section .col2-right.span10{padding-left: 50px;}
+    .job_show_freelance_job .content-section.container.detail{margin-right:auto;margin-left:auto;}
+    body.two-columns-left.transaction .col2-left.span2 {width:100%;}
+    body.two-columns-left.transaction .nav-left li {clear:none; float:left;}
+    body.two-columns-left.transaction .nav-left li a{padding-left:33px; padding-right:33px; width:auto;}
+    .category-view  .content-text {width: 340px;}
+    .category-cta {margin-left:30px;}
+    .sub-category .item {width: 235px;}
+    
+    /* Onsite job */
+    .onsite-cv .freelancer-row-img .images img {width: 70px;}
+
+    .error-page .error-section .map-error {background: url('../img/404.png') no-repeat 50px}
+    .error-page .error-section .map-error div {font-size: 26px;}
+
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top{margin: 0px;}
+    .navbar .container{width: 750px;}
+    .navbar .span3{width: 23%; padding: 0px 0px;}
+    .navbar .span7{width: 45%; margin: 0px;}
+    .navbar .span3.btn-connect{width: 27%; margin: 15px 0px 0px 0px;}
+    .navbar .menu-inner{width: 379px; margin: auto;}
+    .navbar .nav {margin: 0px;}
+  /*.navbar .nav li{min-height: 60px;}*/
+    .navbar-static-top.display-desktop {display: none;}
+    .navbar-static-top.display-mobile {display: block;}
+    .navbar .nav > li > a{line-height: 115px; padding: 0px 15px;}
+    .navbar .nav > li > a.tro-giup{padding: 0px 20px;}
+    .navbar .login-vlance{padding: 0px 0px;}
+    .navbar .network-socail{width: auto; margin: 8px 0px 12px 0px; text-align: center;}
+    .navbar .create-account-vlance{width: auto; text-align: center;  margin-left: 30px;}
+    .container .emblem {width: 20.6%;margin-top:11px;}
+
+    /*Navbar Mini*/
+
+    .navbar.navbar-static-top.navbar-mini .upper-section .span10-b .nav-account > div{padding: 12px 8px;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu {width: 100%;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li+li+li+li{display: block;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li a{padding: 11px 13px 10px 13px;}
+    .upper-section .logo{margin: 1px 0px;width:16.4%;} 
+    .page-tabs .border{border: 0px solid #EEEEEE;}
+
+    .content-section .container{width: 750px; margin: auto;}
+
+    /* workshop freelancer page */
+    .col2-right .bid-info .profile-job .profile-job-left {width: 55.446809%;border-right: 0px;}
+    .col2-right .bid-info .profile-job .profile-job-right {width: 42.425532%;}    
+    .col2-right .bid-info .profile-job-left .body-view {width: 100%;}
+    .col2-right .bid-info .profile-job-right .freelancer-row-img {width: 100%;}
+    .col2-right .bid-info .profile-job-right .span8 {width: 100%;margin-top: 8px;}
+    .col2-right .bid-info .profile-job-right .price {font-size: 21px;}
+    .col2-right .bid-info .profile-job-right .price .less-important {font-size: 19px;}
+    .col2-right .bid-info .freelancer-row-img .images {width: 89px;height: 89px;}
+    .col2-right .bid-info .freelancer-row-img .images img {width: 89px;height: 89px;}
+    .col2-right .bid-info .profile-job-right-bottom-lower {margin-left: 0px;}
+    .btn-flat-xlarge {font-size: 19px;padding-right: 17px; padding-left: 17px;}
+
+    /*Khach-hang info detail*/
+    .account_show_client .content-section #right_content > .block {width:516px;}
+
+    /*freelancer info detail*/
+    .block.ads-1 .layered-block, .block.ads-2 .layered-block, 
+    .block.ads-3 .layered-block {padding: 0;-webkit-box-shadow: none;box-shadow: none;-moz-box-shadow: none;}
+    .block.ads-1 a, .block.ads-2 a, .block .layered-block ins.adsbygoogle {margin: 0 3px !important;}
+    .showcity .buttoncity, .showskill .buttonskill {margin-left: 78px;}
+    .col2-left.span8{width: 100%;}
+    .col2-left.span8 #main_content{width: 750px; margin: auto;}
+    .col2-left.span8 #main_content .left-profile{width: 170px;}
+    .col2-left.span8 #main_content .right-profile{width: 530px; margin: 0px 0px 0px 50px;}
+    .content-section #right_content{width: 100%; margin: 0px;}
+    .content-section #right_content > .block{width: 750px;margin: auto;}
+    .account_show_freelancer .content-section #right_content > .block {width: 516px;}
+
+    body.two-columns-left.transaction ul.nav-left{width:100%;}
+    body.two-columns-left.transaction .nav-left li{width:initial;}
+    body.two-columns-left.transaction .content-section.container .col2-right.span10{padding-left:0px; margin-left:0px; width:100%;}
+    body.two-columns-left.transaction .nav-left li {height:34px; margin-left:1px;}
+    body.two-columns-left.transaction .dropdown.clearfix{margin-bottom: 27px;}
+    body.two-columns-left.transaction_withdraw #form-withdrawal select#bank{width:173px;}
+    body.two-columns-left.transaction_withdraw .withdrawal-method p.offset6 a{margin-left:27px;}
+    .nav-left li a:hover {color: #666; font-weight: normal;}
+    .nav-left li a.active:hover {font-weight: bold;}
+
+
+    /*CMS*/
+    .cms-section.container{width: 750px; margin: auto;}
+    .cms-section.container .span12{width: 750px; margin: 0px; padding: 0px;}
+    .cms-section.container .span12 .xac-thuc{margin: 0px 0px 0px 0px;}
+    .cms-section.container .span12 img{margin: 0px 0px 0px 0px;}
+
+    .cms-section h1{font-size: 30px;}
+    .cms-section.container .span8.offset2{width: 750px; margin: 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section{margin: 0px 0px 20px 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section div:first-of-type{margin: 0px;}
+    .cms-section.container .span8.offset2 .span6.text{margin: 0px 0px 0px 10px; width: 633px;}
+    .cms-section.container .span8.offset2 .span6.text h3{font-size: 20px; line-height: 45px;}
+
+    /*Freelance job - Freelancer*/
+    body.one-column.job_show {min-width: initial;padding: 0px;} 
+    body.one-column.job_show .body-view{width:100%;} 
+    .job_show .container {width:750px;}
+    body.one-column.job_new .container.create-job .quick-guide.span5.offset1.affix {margin-left:447px !important;width:300px;}   /*dang_viec*/
+    .job_show .login_view_job {margin-left: 0;}
+    .job_show .profile-job-right-top .row-fluid .span6{width:120px;}                                                               
+    .job_show_freelance_job .count_bid_declined.span12{margin-left:0px;}
+    .job_show_freelance_job .form-bid .overlay-bidform{position: absolute;width: 728px;height:425px;padding: 36px 10px; margin:-36px -10px;}    /*Fix mục chua_co_quyen_chao_gia*/
+    .job_show_freelance_job .out-of-bid{position:absolute; width:410px; z-index:101; margin:45px 100px; padding:12px 60px 17px;}
+    .job_show_freelance_job .container.detail .span4.job-information.offset1{width:35.914894%;margin-left:6.638298%;}
+    .job_show profile-winning .winning{width:120px;}
+    .job_show row-fluid.form-bid .span7{width:432px;}
+    .job_show .information-bidding.row-fluid .span3.client-bidding-right{display:none;}  
+    .job_show .profile-job .span5.profile-job-right{width: 44.425532%;}
+    .job_show .profile-job .profile-job-left{width: 53.446809%;}
+    .job_show .row-fluid.feedback-block .span4.feedback-option.offset1.left-col{width:44.914894%; margin-left: -0.489362%;}   /*Fix muc bo_xung_thong_tin, nang_ngan_sach*/
+    .job_show .row-fluid.feedback-block .span5.feedback-option.offset1{width: 45.425532%; margin-left:8.638298%;}
+    .job_show .row-fluid.form-bid .out-of-bid h2{font-size: 28px;}    
+    .job_show .row-fluid .client-view-bottom.span12 .span3.freelan-invite {height:155px;} /*moi_lam_viec in job_view*/                                                       
+    tml{display:none;}
+    .job_show .container.client-view .form-actions{float:left !important; padding: 10px 0px 10px 0px !important;}
+    .job_show .container.client-view .span5.offset1.attach{width:170px;}
+    .job_show .span5.offset1.attach .i32.i32-attach.span2{width:30px;}
+
+    /* Onsite job */
+    .job-onsite .onsite-item-detail {width:100%;}
+    .job-onsite .info-client {width:100%;}
+    .job-onsite .block-right {width: 100%;}
+    .job-onsite .block-right ul {text-align: right;}
+    .job-onsite .block-right li {display: inline; margin-right: 20px;}
+    
+    .fr-info .fr-summary .history-job {display: inline-block;}
+    .fr-summary .history.span9 {width:74.46808510638297%}
+    .fr-summary .rating-block.span3 {width:23.404255319148934%}
+
+    .new-job-block .btn-primary.p-job {padding: 14px 30px 12px;}
+    .search-block .inner-content {margin-left: 0px;}
+    .search-block .input-append {width: 50%;}
+
+    /*Login*/
+    .container.login-section{width: 740px; margin: 0px auto;}
+    .container.login-section .span5{width: 320px; margin: 20px 25px;}
+    .container.login-section .quick-guide .small-pic span{margin: 15px 38px;}
+
+    /*Sign Up*/
+    .container.signup-section{width: 740px;}
+    .container.signup-section .signup-box.span8{width: 540px; margin: 0px 80px;}
+    .container.signup-section .quick-guide .small-pic span{margin: 15px 38px;}
+    .container.signup-section .span5{width: 320px; margin: 20px 25px;}
+
+    .footer-links-section.grey-bg .span2{width: 33.333336%; margin: 0px; float: left; padding: 0px 40px; min-height: 200px;}
+
+    /* Workshop */
+    .progress-job ul li {padding-right: 0px;padding-left: 5px;}
+    .message-left .below-listing {width: initial;}
+    .workshop_bid .content-section .col2-left{margin-bottom:15px;width:100%}
+    .workshop_bid .content-section .col2-right{margin-left:0px;width:100%}
+
+    /*  .progress-job ul li span {font-size: 13px;margin-left: 2px;font-family: 'Open Sans',sans-serif;letter-spacing: -0.05em;}*/
+    .workshop_bid .form-message .control-group textarea {min-height: 150px;}
+    .col2-right .bid-info .profile-job-right-bottom.lower {margin-left:1px;}
+
+    /* After login page */
+    .edit-form{float: left;margin-left: 0px;}
+    .edit-acc-wrapper{margin-left: 215px;}
+
+
+    /*stept- work*/
+    .progress-job ul li {margin-left: 0px;}
+    .progress-job ul li .tally {margin: 13px 15px 10px 0px;}
+    .progress-job ul li .number{margin-top: 4px;margin-bottom: 4px;margin-right: 6px;margin-left: 0px;}
+    .progress-job ul li.done .tally {margin: 13px 15px 0px 0px;}
+    /* .progress-job ul li.last i.unactive{display: block;margin-right: -9px;} */
+    .progress-job ul li.last.done .tally{margin-right: 20px;}
+    .progress-job ul li.last i.active{display: block;margin-right: -15px;}
+    .progress-job ul li.last i.unactive{display: block;margin-right: -19px;}
+    .progress-job-wrapper .progress-job{width: 760px;}
+    .progress-job-wrapper .progress-job ul>li>i{display: none;}
+
+    /* Ad-quang_cao */
+    .ad-728-90.job-list-bottom {display:none;}
+    .ad-970-90.profile-job, .ad-970-250.profile-job {display:none;}
+    .content-section #right_content .adv-right-profile{display: none;}
+    
+    /* footer-partner */
+    .footer-links-parter {min-height:151px;}
+    .footer-links-parter .funding {padding-left:40px;}
+    .footer-links-parter .vlance-partner {margin-left:15px;padding-left:86px;}
+    .mixpanel-footer {margin-left:0px;margin-top:22px;}
+    .vtc-academy-footer {padding-bottom:10px;margin-right:0px;}
+    .topcv-footer {margin-top:14px;margin-right: 54px;}
+    .ybox-footer {margin-top:14px;}
+    .vl-funding .mixpanel-footer {margin-left:0px;}
+    .vlance-partner .ybox-footer a {background-position: 0px -296px;width: 100px;}
+    
+    /* nut button khi login */
+    .btn-facebook {padding: 4px 12px 1px 7px;}
+    .btn-google-plus {padding: 5px 18px 2px 9px;}
+    .btn-linkedin {padding: 3px 10px 2px 9px;}
+    
+    /* trang doi tac partners */
+    /*.cms_partners .partner-mages a {background-position: 0px 0px;}
+    .cms_partners .partner-moneylover a {background-position: 0px -50px;}
+    .cms_partners .partner-topcv a {background-position: 0px -100px;}
+    .cms_partners .partner-ybox a {background-position: 0px -150px;} */
+    .cms_funding .funding-aws a {background-position: 0px -250px;}
+    .cms_funding .funding-sw a {background-position: 0px -361px;}
+    .cms_funding .funding-founder a {background-position: 0px -411px;}
+    .cms_partners .partner-vtc,.cms_funding .funding-google {padding-right:0px;}
+    .cms_partners .partner-moneylover,.cms_partners .partner-ybox,.cms_funding .funding-magic {padding-left:10px;margin-left:10px;}
+    .cms_partners .partner-mages,.cms_partners .partner-topcv {margin-left:0px !important;}
+    .cms_partners .partner-mages p,.partner-moneylover p,.partner-vtc p,.partner-topcv p,.partner-ybox p {width:230px;}
+    .main_content .cms_partners .partner-mages img, .main_content .cms_partners .partner-moneylover img {margin-bottom:30px;}
+    .main_content .cms_partners .partner-vtc img {margin-bottom:27px;}
+    .main_content .cms_partners .partner-topcv img {margin-bottom: 20px;}
+    .main_content .cms_partners .partner-ybox img {margin-bottom:23px;}
+    .cms_funding .funding-aws {padding-left:0px;}
+    
+    /* feature freelance */
+    .feature-freelancer.guider-block .content.inner {padding-left:0px;}
+    .feature-freelancer.guider-block .cta-button a {padding-right:43px; padding-left:43px;}
+    .search-results .feature-freelancer .detail {padding-left:0px;}
+    .search-results .guider-block .cta-button a {padding-right:43px; padding-left:43px;}
+    .search-results .guider-block .container-image img {height:auto;}
+    
+    /* pay-sms */
+    .form-bid .checkbox input {margin-top:-36px;}
+    /*** MOVED FROM VLANCE.CSS ***/
+    
+    /* head */
+    .navbar-mini .container {width:750px;}
+    .navbar-static-top.nav-new .container {width:750px;}
+    .navbar-static-top.nav-new .menu-item.last {display: none;}
+    .navbar-static-top.nav-new .span6 {width:45%;}
+    .navbar-static-top.nav-new .btn-connect {width:43%;margin-top:2px;}
+    .nav-account > div {padding-right:21px;}
+    .upper-section .span7 {width:40%;}
+    .header-list-job .nav-tabs>li>a, .header-list-job .nav-tabs>li .nav-item-job.item-tn {padding-left: 22px;padding-right: 22px;}
+    /*** ladding-page ***/
+    /* page login and register*/
+    .float-box-section .login-box,.float-box-section .signup-box {width:750px}
+    /* step-explain-section */
+    .step-explain-section .step-detail .container {width:750px;}
+    .step-explain-section .quotes-right h4 {margin-top:0px;font-size:30px;}
+    .step-explain-section .quotes-left h4 {font-size:30px;}
+    .step-explain-section .quotes-left {margin-top: 0px;}
+    .step-explain-section .quotes-right {padding-left:50px;}
+    .step-explain-section .quotes-right p {width:auto;}
+    .step-explain-section .quotes-left p {width:360px;}
+    .step-explain-section .image-right {padding-left:50px;}
+    /* top-jobs-section */
+    .top-jobs-section .job-list.container {width:750px;}
+    .top-jobs-section .job-item {margin-left:0px;padding-left:56px;width:50%;}
+    .top-jobs-section .job-item:first-child {margin-left: 0px;padding-left:56px;}
+    .top-jobs-section .job-item-show {width:250px;height:200px;}
+    .top-jobs-section .job-item .job-show-2 {background-position: 0px -200px;}
+    .top-jobs-section .job-item .job-show-3 {background-position: 0px -400px;}
+    .top-jobs-section .job-item .job-show-4 {background-position: 0px -600px;}
+    .top-jobs-section .job-item .job-show-5 {background-position: 0px -800px;}
+    .top-jobs-section .job-item .job-show-6 {background-position: 0px -1000px;}
+    .top-jobs-section .job-item .job-show-7 {background-position: 0px -1200px;}
+    .top-jobs-section .job-item .job-show-8 {background-position: 0px -1400px;}
+    .top-jobs-section .job-item-overlay-upper {width:250px;height:200px;}
+    .top-jobs-section .job-item-overlay-inner {width:250px;height:200px;}
+    .top-jobs-section .item-title {padding-right:52px; height: 40px;}
+    
+    /* reviews-section */
+    .review-clients.container {width:750px;}
+    .stats-col-left-new .stats-col {width: 16.2%;}
+    .slide-reviews .slick-active {opacity: 1;}
+    
+    /* review-media */
+    .review-media .container {width:750px;}
+    .stats-col-left-new .stats-col {width: 32.2%;}
+    
+    /* landing-statistics-section */
+    .landing-statistics-section .container {width:750px;}
+    .landing-statistics-section .count-job, .landing-statistics-section .count-client {margin:auto;width:375px;}
+    
+    /* footer-links-section */
+    .footer-links-section.grey-bg .container {width: 750px;}
+    .footer-links-section.grey-bg .span2 {min-height: 315px;}
+    .footer-links-parter .container {width: 750px;}
+    /* bottom-logo */
+    .bottom-logo .container {width: 750px;}
+    .bottom-logo .vlance-logo p {width:73%;}
+    
+    /*** End ladding-page ***/
+    
+    /* edit account */
+    body.two-columns-left-small {min-width: 320px;}
+    .account_basic_edit .content-section .col2-right, .account_edit .content-section .col2-right, .account_portfolio_edit .content-section .col2-right{padding-left:0px;}
+    .account_basic_edit .content-section.container .col2-left,.account_edit .content-section.container .col2-left,.account_portfolio_edit .content-section.container .col2-left {width:100%;}
+    .account_basic_edit .nav-left, .account_edit .nav-left, .account_portfolio_edit .nav-left, .account_verify_information .nav-left, .credit_balance .nav-left {margin-bottom:15px;}
+    .account_basic_edit .nav-left li,.account_edit .nav-left li,.account_portfolio_edit .nav-left li {clear: none;float: left;margin-right: 1px;height: 34px;width: auto;padding-right: 0px;padding-left: 0px;}
+    .edit-form textarea {min-width:550px;}
+    
+    /* Credit form */
+    .modal-credit {width: 600px;left: 50%; margin-left: -300px;}
+    .modal-credit .load-spinner img {margin: 200px 270px;}
+    
+    /* Bid form */
+    .form-bid .container{padding: 10px 10px 10px;}
+    .form-bid .dl-horizontal dt{width: inherit;}
+    .form-bid .dl-horizontal dd{margin-left: 107px;}
+    .form-bid .input-append {margin-left: 11px;}
+    .form-bid .input-append input{width: 65%;}
+    .form-bid .input-prepend{width: 88%;}
+    .form-bid .input-prepend.telephone {width:41%;}
+    .form-bid .input-prepend.skype{width:42%;margin-left: 42px;}
+    .form-bid label.error{padding: 0px 27px 0px 5px;}
+    .form-bid .block-duration{margin-top: 17px;}
+    .form-bid .bidtype_description {margin-right: 15px;}
+    .form-bid .bidtype_introdescription {margin-right: 15px;}
+    .form-bid .form-textarea {width:395px;max-width: 395px;min-width: 330px;}
+  
+    .form-bid-onsite .container{padding: 10px 10px 10px;}
+    .form-bid-onsite .dl-horizontal dt{width: inherit}
+    .form-bid-onsite .dl-horizontal dd{margin-left: 107px;}
+    .form-bid-onsite .input-append {margin-left: 11px;}
+    .form-bid-onsite .input-append input{width: 93%;}
+    .form-bid-onsite .input-prepend{width: 88%;}
+    .form-bid-onsite .input-prepend.telephone {width:41%;}
+    .form-bid-onsite .input-prepend.skype{width:42%;margin-left: 42px;}
+    .form-bid-onsite label.error{padding: 0px 27px 0px 5px;}
+    .form-bid-onsite .block-duration{margin-top: 17px;}
+    .form-bid-onsite .bidtype_description {margin-right: 15px;}
+    .form-bid-onsite .bidtype_introdescription {margin-right: 15px;}
+    .form-bid-onsite .form-textarea {width:128%; max-width: 160%; min-width: 85%;}
+    .form-bid-onsite .input-prepend input{width: 100%}
+    .layout-table-onsite .row-fluid .span6{margin-right: unset}
+    .form-bid-onsite .block-submit{margin-top: -25px}
+    .btn-table-onsite .row{margin-left: -30%; margin-right: -17%;}
+    
+    /* workdii_homepage */
+    .headerslider .span6 {width:48%;}
+    .main-top-overlay .container {width:750px;}
+    .main-top-overlay .col-right {padding-left:10px;}
+    .main-top-overlay .col-left h2 {font-size:32px;width:auto;}
+    .headerslider p.desc {font-size:16px;}
+    
+    /* Workroom */
+    .overlay-bidform.compact-style {width: 528px; height: 260px; }
+    .out-of-bid.compact-style {width: 490px;margin: 25px 0px; padding: 10px 20px 15px;}
+    .out-of-bid.compact-style h2 {font-size: 26px;}
+
+    /* email invite */
+    .invite-friend .form-invite-email {width:750px;}
+    .invite-friend .mail-invited {width:750px;}
+    #form-invite-email .network-socail-gmail .button-gmail {padding: 10px 58px 10px 87px;background-position: 59px 12px;margin-left:50px;}
+    .form-invite-email .form-input {padding-right:46px;}
+    .social-invite-mail {width:750px;}
+    .invite-friend .text-email-invited {width:750px;}
+    .network-socail-gmail .text-choice {right:20px;}
+    .network-socail-gmail .text-note {margin-left:85px;}
+    .description_inviteemail #form_list_email {min-height: 85px;max-width: 320px;min-width: 320px;}
+    
+    /* Category view page */
+    .sub-category .item img{border-radius: 3px; min-height: 141px;}
+    .top-freelancer .block-top-freelancer{margin-right: 10px; margin-bottom: 10px;}
+    .top-freelancer .block-top-freelancer.first{margin-left: 15px;}
+    .top-freelancer .block-top-freelancer.last{display: block;}
+    .top-freelancer .big-block-top-freelancer{padding-left: 60px;}
+    .banner-single-post .container .entry-meta{margin-top: 30px}
+    .category-view.container{margin-bottom: 10px;}
+    .top-freelancer.container{margin-top: 10px;}
+    
+    /* proflie freelancer */
+    .job-list.job-worked .description {padding-left:31px;}
+    
+    /* list suggest freelancer */
+    .client-view-bottom .open-popup-suggest{width: 175.531px; height: 155px;}
+    .client-view-bottom .open-popup-suggest .block-button{margin-top: 45px;}
+    .client-view-bottom .open-popup-suggest .block-button a{width: 100px; margin-left: 10px; margin-right: 10px;}
+    .client-view-bottom .profile-job .links a{display: inline-block;}
+    .freelan-invite img.blur{margin: 0px 46px 0px;}
+    
+    /* service */
+    .block-top-freelancer.last-service{display: none;}
+    
+    /* Page job view not login */
+    .job-show-not-login .project-view-fl .usercard {margin-bottom:20px;}
+    
+    /* page list-contest */
+    .search-results .job-contest .span7 {width:71.446809%;}
+    .search-results .job-contest .span5 {width:26.425532%;}
+    .search-results .product-fl {display: none;}
+    .search-results .product-fl.no-apply {display: initial;}
+    .search-results .product-fl.more.apply-fl {display: initial;float:right;}
+    
+    /* contest */
+    .job_contest_view .profile-contest {width:50%;margin:auto;}
+    .job_contest_view .bid-contest {width:222px;margin:auto;margin-bottom:20px;}
+    .information-contest .client-bidding-between span {display: initial;}
+    
+    .progress-contest .step {padding-left:0px;padding-right: 45px;text-align: center;}
+    .progress-contest .step.last {width:180px;}
+    .create-contest .header .container {width:750px;}
+    .create-contest .progress-contest .container {width:750px;}
+    .create-contest .header .side-right img {height:auto;}
+    .progress-contest .step.first {padding-right:45px;}
+    
+     /* huong dan khach hang dang viec */
+    .block-statistics-section .container {width:750px;}
+    .block-statistics-section .count-job, .block-statistics-section .count-client {margin:auto;width:375px;}
+     
+    /*** Page community ***/
+    /* head */
+    .navbar-static-top.nav-community .container {width:750px;}
+    /* page community-list */
+    .community-list .body-view .container {width:750px;}
+    .community-list #fadeable {width:750px;}
+    .community-list .filter-bar {height:140px;}
+    .community-list .filter-bar ul,.block-admin-post-job div.content div.sec-step ul.list-step li.step-child .span9 {margin-left:0px;}
+    
+    /* Goc lam viec */
+    .row-fluid .span3-b {width:309px;}
+    
+     /*-------- credit --------*/
+    .section-none{display:none}
+    input[type="radio"]:focus{outline: none}
+    .credit_vip_mobile{background-color: #fff;margin-top:10px}
+    .wrapper-mobile{box-shadow: 0px 0px 6px #ccc;}
+    .wrapper-mobile .header-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .header-mobile .span8 .credit-user-mobile{color:#13a538;font-size:16px;font-weight: bold}
+    .header-mobile .span8{padding-top: 7px}
+    .header-mobile .span4{text-align: right;padding-top: 7px}
+    .header-mobile .span4 .nav-tabs-history{padding-right:10px}
+
+    .wrapper-mobile .section-help-user-use-credit-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .wrapper-mobile .content-help-user-mobile .span6 .row-fluid:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(1){padding-left: 11%;}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(2){margin-left:0;padding-left: 7%;}
+    .wrapper-mobile .attention-help-user-mobile{margin-top:24px;padding:0 10px 0;box-sizing: border-box;text-align: justify;margin-bottom:31px}
+
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .package-credit-mobile  span{font-size:40px;font-weight: 600}
+    .wrapper-mobile .section-choose-payments-mobile{padding-bottom: 40px;}
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit:before{content:'';position: absolute;}
+    .wrapper-mobile #radio-pay-mobile input:checked + .radio-checked-credit:before{content: "";color: #13a538;font-size: 47px;text-align: center;border-radius: 100%;border: 1px solid #13a538;width: 9px;height: 9px;background: #13a538;bottom:1px;left:1px; }
+    .wrapper-mobile #radio-pay-mobile input:checked{border: 1.3px solid #13a538;}
+    .wrapper-mobile #radio-pay-mobile .span6.no-discount{margin:18px 0 0}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile b{font-size:18px}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{margin-top: 4px;}
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{color:#999}
+    .wrapper-mobile #radio-pay-mobile:nth-child(3) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(4) .sale-off-credit-mobile{font-weight: bold;color:#13a538;}
+    .wrapper-mobile #radio-pay-mobile:nth-child(5) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(6) .sale-off-credit-mobile{font-weight: bold;color:#fd7700;}
+    
+    .wrapper-mobile .section-choose-payments-mobile{background-color: #f7f7f7;}
+    .wrapper-mobile .section-choose-payments-mobile .choose-payments{margin-top: 16px;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile{padding-top:7px;}
+    
+    .wrapper-mobile .choose-payments .img-pay-method-mobile img{width:47%;}
+    .wrapper-mobile .choose-payments .pay-by-bank-mobile .img-pay-method-mobile img,
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .img-pay-method-mobile img{width: 37%;}
+    
+    .modal.modal-paysms .modal-body .click-contact .telephone-sms .button-group a{display:block}
+    .modal-credit#pay-buy-paypal .modal-body .content p{padding:0 6px}
+    .modal-credit.modal-paysms .modal-body .btn-pay-banktransfer{width: 100%;}
+    #pay-buy-paypal{width: 320px;left:50%}
+    
+    /*history buy and spend credit*/
+    .subpage-content .buy-credits .sec-history-buy-none .content-history-buy-none,
+    .wrapper-buy-credit .spent-credit .sec-history-spend-none .content-history-spend-none{width:55%;}
+    .subpage-content .buy-credits .btn-history-buy-none,
+    wrapper-buy-credit .spent-credit .btn-history-spend-none{width:24%;}  
+    .btn-old-credit{display:inline-block}
+    .upper-section .span3-b{width: 440px}
+    
+    /*Menu mobile*/
+    .nav-new.display-desktop{display: none;}
+    .nav-new.display-mobile{display: block; width: 100%; height: 50px;}
+    .navbar-static-top.nav-new {height: 50px; min-height: 50px; top:0;}
+    .navbar-static-top.nav-new .container {width: 100%;}
+    .nav-new.display-mobile ul.list-menu {display: inline-block; width: 100%; text-align: center; list-style: none;height: 50px; line-height: 50px;vertical-align: middle; margin: 0;}
+    .toggle {width:100%;text-align:center;box-sizing:border-box;color:#8d8d8d;font-size:20px;}
+    .list-menu div.menu-item-1{float: left; margin: 14px;}
+    .list-menu div.menu-item-2{position: absolute; width: 100%;}
+    .menu-item-2 .logo{text-align: center;}
+    .list-menu div.button{float: right;}
+    .list-menu div.button a{font-size: 13px; margin: 10px 14px; padding: 3px 10px; font-weight: normal;}
+    .overlay-transparent-grey {display: block; opacity: 0; width: 100%; height: 100%; position: fixed;top: 0; background: rgba(0,0,0,0.6);overflow: auto;z-index: 98; transition: opacity .1s .3s ease-in-out;-moz-transition: opacity .1s .3s ease-in-out;-webkit-transition: opacity .1s .3s ease-in-out;}
+    .overlay-transparent-grey.show-grey{display: none;}
+    .show-grey-1{opacity: 1;}
+    .list-menu div.button.avata a{margin: -5px 0 0 0; padding: 0;}
+    
+    /*Search job*/
+    #search-job-form{width: 750px;}
+    #search-job-form input {width: 540px;}
+    .popular-search{width:730px;}
+    .autocomplete-items{width: 730px;}
+    
+    /* trang hướng dẫn freelancer */
+    .guider-fl .guider-more .article-list li{height: 90px;}
+    .guider-fl .guider-more .article-list li a{height: 40px; padding: 16px 23px 16px 16px;}
+    .guider-fl .guider-more .article-list .fa-angle-right{top:28px;}
+    
+    /*alert-success*/
+    #messages{top: 60px;}
+}
+
+
+/***** IPHONE/MOBILE LANDSCAPE *****/
+@media (max-width: 768px) {
+    .credit_vip_desktop{display: none;}
+    .credit_vip_mobile{display: block;}
+    .screen-1200 {display: none;}
+    .screen-960 {display: none;}
+    .screen-750 {display: none;}
+    .screen-620 {display: block;}
+    .screen-320 {display: none;}
+    
+    /*** MOVED FROM VLANCE.CSS ***/
+    body.account_show{min-width: initial;}
+    body.freelancer_list,body.vlance_homepage,body.freelance_job_list,body.cms_page,body.account_register,
+    body.fos_user_security_login,body.account_show.account_show_alias,body.jobs_create_project,
+    body.two-columns-left.transaction {min-width:initial;padding:0}
+    body.two-columns-left.transaction .nav-left li{width:initial;}
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .job_contest_view .container, .container-vlance{width: 620px;margin: auto;}
+    
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top{margin: 0px;}    
+    .navbar .container{width: 620px;}
+    .navbar .span3{width: 30%; padding: 0px 7px;}
+    .navbar .span3.btn-connect{width: 100%; margin: 0px 0px 15px 0px;}
+    .logo {text-align: right;}
+    .logo img{width: 178px}
+    .navbar .menu-inner{width: 440px; margin: auto;}
+    .navbar .nav{margin: 0px;}
+    .navbar .nav li{min-height: 60px;margin-right:0px;}
+    .navbar .nav > li > a.tro-giup{padding: 0px 15px;}
+    .navbar .login-vlance{padding: 0px 0px;}
+    .navbar .network-socail{width: 47%;}
+    .navbar .create-account-vlance{ text-align: left;margin-left: 234px;}
+    .navbar .btn-connect .btn{margin: 5px 0px 0px 7px;}
+    .category-view .content-text {width: 80%; margin: 0px 90px;}
+    .category-cta {margin: 35px 120px 0px 150px;}
+    .sub-category .item {width: 100%;margin-bottom:25px;}
+    .sub-category .item .cat-thumb {width: 100%;}
+    .error-page .error-section .map-error div {width: 63px;float: right;top: 85px;line-height: 30px;}
+
+    .quick-guide.span5.offset1.affix-top {display:none;}
+    .container .emblem {width:26%;}
+    /*Navbar Mini*/
+
+    .navbar.navbar-static-top.navbar-mini .upper-section .span10-b{width: 400px;}
+    .navbar.navbar-static-top.navbar-mini .upper-section .span10-b .nav-account > div{padding: 12px 8px;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li+li+li+li{display: block;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li a{padding: 11px 3px 10px 13px;}
+    .upper-section .logo{margin: 0px 0px;width:20.2%;}
+    .page-tabs .border{border: 0px solid #EEEEEE;}
+    .pull-right.nav-account.account-mail-menu{display: none;}
+    .header-list-job .nav-tabs>li>a, .header-list-job .nav-tabs>li .nav-item-job.item-tn {padding-left: 8px;padding-right: 8px;}
+    .header-list-job .nav-tabs>li {margin-right: 4px;}
+    
+    /*khach-hang job - profile khach hang*/
+    .account_show_client .col3-left.span4.left-profile #___plusone_0 {display:none !important;}
+    .account_show_client .content-section #right_content > .block {width: 580px;margin: auto;}
+
+    /*Freelance job - Freelancer*/
+    .ads-1, .ads-2, .ads-3{display: none !important; }
+
+    .content-section .container{width: 620px; margin: auto;}
+    .content-section .col2-left.span3{width: 620px;}
+    .content-section .col2-left.span3 .control-group{width: 620px;}
+    .content-section .col2-left.span3 .control-group{display: none;}
+    /*    .content-section .col2-left.span3 .control-group:first-of-type{display: block;}*/
+    .content-section .col2-right.span9{width: 620px; margin: 0px;}
+    .job_show .span7.news-detail{width:100%;} 
+    .job_show .login_view_job{margin-left: 75px;}
+    .job_show .news-client-view {width:100%;}  /*Fix jow_view*/
+    .job_show .container{width:620px;}
+    body.one-column.job_new .container.create-job .quick-guide.span5.offset1.affix {display:none;} /*dang_viec*/
+    body.two-columns-left.email_invite .row-fluid .col2-left.span2{width:100%;} /*fix moi_ban_be*/
+    body.two-columns-left.email_invite ul.nav-left li{clear:none; float:left; height:34px; padding:0px 19px 0px 4px;margin-right:1px; width:auto;}
+    body.two-columns-left.email_invite .content-section .col2-right.span10{width:initial; padding-left:0px; margin-left:0px;}
+    body.two-columns-left.email_invite .content-section .col2-right h1{margin-top:15px;}
+    
+    .profile-job-left-bottom .body-view .textbody{width:255px;}
+    .job_show .job-information{width:100%;margin-left:0px;}   /*Fix jow_view*/
+    .job_show_freelance_job .row-fluid.feedback-block {padding:0px;display:none;}
+    .job_show_freelance_job .progress-job ul{max-height:initial;}
+    .job_show .job-information > .row-fluid {width:50%;float: left;}
+    .job_show_freelance_job .progress-job{width:620px;}
+    .job_show .information-bidding .client-bidding-between{width:320px;}
+    
+    /*onsite chào giá*/
+    .profile-job-left-bottom-onsite .body-view .textbody{width:255px;}          
+        
+    /*.job_show .top_content{display:none;}*/
+    .job_show .freelancer-row-img .images{width:89px; height:auto;}
+    .job_show .freelancer-row-img .images img{width:89px; height:auto;}
+    .job_show_freelance_job .row-fluid.form-bid .overlay-bidform{width:585px; height:460px;padding:40px 20px 20px 20px; margin:-36px -35px -16px -5px;} /*Fix mục chua_co_quyen_chao_gia*/
+    .job_show_freelance_job .row-fluid.form-bid .out-of-bid{width:450px; margin:13px 15px; padding:12px 60px 17px;}
+    .job_show .container.detail .span4.job-information.offset1{background:#fff; margin-left:0px;width: 320px;}
+    .job_show .profile-job .profile-job-left{width:44.446809%;}
+    .job_show .profile-job .span5.profile-job-right{width:55.425532%; margin-left:0;}
+    .job_show .row-fluid .profile-job.span12{padding:10px;}
+    .job_show .detail-bottom.span12 .span4.profile-job-right{width:35.914894%;}
+    .job_show .profile-job-left.bid-freelancer{width: 44.93617%;}
+    .job_show span.bid-lowest, .job_show span.bid-highest{display:none;}
+    .job_show .client-bidding-between span{display:none;}
+    .job_show .client-bidding-between span.bid-average, 
+    .job_show .client-bidding-between span.value, 
+    .job_show .information-bidding.row-fluid .span3.client-bidding-right{display:initial;}
+    .job_show .row-fluid.form-bid h2.title{margin-top:40px;}
+
+    .fr-avatar.span2{width: 14.8936%; margin: 0px 0px 15px 0px;}
+    .fr-info.span10{width: 82.9787%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 15px;}
+    .fr-profile .span4{width: 100%;}
+    .fr-profile .span8{width: 100%;}
+    .fr-profile .span3.offset1{width: 100%; float: left; margin: 0px;}
+    .fr-profile .number_bid{text-align: left;}
+    
+/*    fix giao dien giao dich tien*/
+    .text_type {display: none}
+    .info_type {display: none}
+
+/*    end giao dich tien*/
+    
+    /* Onsite job */
+    .onsite-cv .freelancer-row-img .images img {width: 75px;}
+    
+    /*Freelancer Info Detail*/
+    .col2-left.span8{width: 100%;}
+    .col2-left.span8 #main_content{width: 620px; margin: auto;}
+    .col2-left.span8 #main_content .left-profile{width: 40%;}
+    .col2-left.span8 #main_content .avata{width: 100%; float: left; height: 170px;}
+    .col2-left.span8 #main_content .dropdown{width: 70%; float: right;}
+    .col2-left.span8 #main_content .nav-left{width: 100%; margin: 0px 0px 0px 0px;}
+    .col2-left.span8 #main_content .nav-left li:last-child{display: none;}
+    .col2-left.span8 #main_content .right-profile{width: 60%; margin: auto; padding: 0px 20px;}
+    .results-paging a {padding: 7px 13px; border: 1px solid #eeeeee;}
+    .results-paging span.current {padding: 8px 14px;}
+    .results-paging span.dots {margin: 0 5px 0 0;}
+
+    .content-section #right_content{width: 100%; margin: 0px;}
+    .content-section #right_content > .block{width: 580px;margin: auto;}
+    .content-section #right_content .adv-right-profile{display: none;} 
+    .account_show_freelancer .content-section #right_content > .block {width: 580px; margin: auto;}
+
+    .list .transaction-title-job {min-width:89px;}
+    body.two-columns-left.transaction_withdraw .withdrawal-method.span7{width:100%;}
+    body.two-columns-left.transaction .nav-left li a{padding-left:20px; padding-right:20px;}
+    body.two-columns-left.userpaymentmethod .col2-left.span2{width:100%;}
+    body.two-columns-left.userpaymentmethod .col2-left.span2 .nav-left li{clear:none; float:left; width:auto; height:34px; margin-right:1px; padding-right:19px; padding-left:5px;}
+    body.two-columns-left.userpaymentmethod .content-section .col2-right.span10{padding-left:0px; width:100%; margin-top:15px;}
+    body.two-columns-left.config_user .content-section.container .col2-left.span2{width:100%;}
+    body.two-columns-left.config_user .col2-left.span2 .nav-left li{clear:none; float:left; margin-right:1px; height:34px; width:auto; padding-right:20px; padding-left:5px;}
+    body.two-columns-left.config_user .content-section .col2-right.span10{padding-left:0px; width:100%; margin-top:15px;}
+    body.two-columns-right.account_show.account_show_freelancer .col3-center.span8.right-profile iframe{display:none;} /*profile freelancer*/
+    body.two-columns-right.account_show.account_show_freelancer .col3-center.span8.right-profile .invite-project{width:0px; margin-left:192px;}
+    body.two-columns-left.transaction_withdraw .content-section .withdrawal-method p.offset6 {margin-top:15px;}
+
+    /*CMS*/
+    .cms-section.container{width: 620px; margin: auto;}
+    .cms-section.container .span12{width: 620px; margin: 0px; padding: 0px;}
+    .cms-section.container .span12 .xac-thuc{margin: 0px 0px 0px 0px;}
+    .cms-section.container .span12 img{margin: 0px 0px 0px 0px !important;}
+
+
+    .cms-section h1{font-size: 30px;}
+    .cms-section.container .span8.offset2{width: 620px; margin: 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section{margin: 0px 0px 20px 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section div:first-of-type{margin: 0px;}
+    .cms-section.container .span8.offset2 .span6.text{margin: 0px 0px 0px 10px; width: 503px;}
+    .cms-section.container .span8.offset2 .span6.text h3{font-size: 20px; line-height: 45px;}
+
+    /*Login*/
+    .container.login-section{width: 530px; margin: 0px auto;}
+    .container.login-section .span5{width: 450px; margin: 0px 40px;}
+    .container.login-section .quick-guide .small-pic span{margin: 0px 10px 0px 0px;}
+    /*footer*/
+
+    /*Sign Up*/
+    .container.signup-section{width: 530px; margin: 0px auto;}
+    .container.signup-section .signup-box.span8{width: 530px; margin: 0px 40px;}
+    .container.signup-section .quick-guide .small-pic span{margin: 0px 10px 0px 0px;}
+    .container.signup-section .span5{width: 450px; margin: 0px 40px;}
+
+    .footer-links-section.grey-bg .span2{width: 33.333336%; margin: 0px; float: left; padding: 0px 25px; min-height: 200px;}
+
+    /* Workshop */
+    .workshop_bid .content-section .col2-left.span3{margin-bottom: 15px;}
+    .workshop_bid .message-left ul {clear: initial}
+    .workshop_bid .message-left ul li {clear: initial; border: 1px solid #eeeeee; margin: 1px;}
+    .workshop_bid .message-left ul.freelancer-list li {padding-top:1px;}
+    .workshop_bid .page-tabs {margin-bottom: 15px;}
+    .col2-right .bid-info .profile-job-right-bottom.lower {margin-left: 0px;} 
+    .btn-flat-xlarge {padding-right: 33px; padding-left: 33px;}
+
+    /* After login page */
+    .edit-acc-wrapper{margin-left: 150px;width:320px;}
+
+
+    .progress-job-wrapper .progress-job{width: 620px;}
+    .progress-job-wrapper .progress-job ul > li.unactive .tally{display: none;}
+    .progress-job-wrapper .progress-job ul > li.done .tally{display: none;}
+    .progress-job-wrapper .progress-job ul > li.last.done{display: block;padding-right: 15px;}
+    .progress-job-wrapper .progress-job ul > li.active .tally{display: block;margin: 13px 8px 0px 0px;}
+    .progress-job-wrapper .progress-job ul > li.last.done .tally{display: block;margin: 13px 0px 0px 0px;}
+    .progress-job-wrapper .progress-job ul > li i {display: block;}
+    .progress-job ul li.last i.unactive {margin-right: -19px;}
+
+    .progress-job ul li .number{margin-left: 10px;margin-right: 10px;margin-top: 4px;margin-bottom: 4px;}
+    .progress-job ul li{padding-left: 20px;padding-right: 5px;  margin: 0px;}
+    .progress-job ul li i{margin-right: -10px;}
+    .progress-job ul li .tally{margin: 13px 25px 0px 0px;}
+    .progress-job ul li.last i.active {background: url('../img/progress-job-start-2.png') -38px 7px no-repeat;width: 25px;}
+
+    /* Ad-quang_cao */
+    .ad-728-90.job-list-bottom {display:none;}
+    
+     /* footer-partner */
+    .footer-links-parter .vlance-partner {margin-left:13px;padding-left:0px;}
+    .mixpanel-footer {margin-right:10px;}
+    .founder-footer {margin-right:10px;}
+    .google-footer {margin-right:15px;}
+    .money-lover-footer {margin-right:0px;padding-bottom:10px;}
+    .vlance-partner .money-lover-footer {margin-right:0px;}
+    
+    /* nut button khi login */
+    .navbar .network-socail {width:100%;margin-bottom:22px;}
+    .btn-facebook {padding: 4px 12px 1px 7px;margin-right: 6px;}
+    
+    /* trang doi tac partners*/
+    /*.cms_partners .partner-mages a {background-position: 206px 0px;}
+    .cms_partners .partner-moneylover a {background-position: 224px -50px;}
+    .cms_partners .partner-topcv a {background-position: 261px -100px;}
+    .cms_partners .partner-ybox a {background-position: 238px -150px;} */
+    .cms_partners .cms_vl-partners .wrapper-content .row-fluid:not(:first-child){margin-top: 0px}
+    .cms_funding .funding-google a {background-position: 249px -200px;}
+    .cms_funding .funding-aws a {background-position: 247px -250px;}
+    .cms_funding .funding-magic a {background-position: 225px -311px;}
+    .cms_funding .funding-sw a {background-position: 238px -361px;}
+    .cms_funding .funding-founder a {background-position: 245px -411px;}
+    .cms_partners .define-partners, .cms_funding .define-funding {width:400px;}
+    .cms_partners .partner-vtc{margin-top:40px;width:100%;}
+    .cms_funding .wrapper-content {margin-top:55px;}
+    .cms_funding .funding-google{margin-top:0px;width:100%;}
+    .cms_partners .partner-mages p, .partner-moneylover p, .partner-vtc p, .partner-topcv p, .partner-ybox p {margin-top:5px;width:400px;}
+    .cms_partners .partner-mages, .cms_partners .partner-kico {margin-top:40px;margin-left:0px;padding-left:0px;width:100%;}
+    .cms_partners .partner-moneylover,.cms_partners .partner-topcv,.cms_partners .partner-ybox,.cms_funding .funding-magic,.cms_funding .funding-mixpanel,.cms_funding .funding-sw {width:100%;margin-top:40px;margin-left:0px;padding-left:0px;padding-right:0px;}
+    .cms_funding .funding-aws {margin-left:0px;margin-top:40px;width:100%;}
+    .cms_funding .funding-founder {margin-top:50px;margin-left:0px;padding-right:0px;width:100%;}
+    .cms_funding .funding-google p,.cms_funding .funding-aws p, .cms_funding .funding-mixpanel p, .cms_funding .funding-magic p, .cms_funding .funding-sw p, .cms_funding .funding-founder p {margin-top:5px;width:400px;}
+    
+    /* pay-sms */
+    #pay-verifytel, #pay-buy-credit {width:645px;left:50%;margin-left:-322px;}
+    #sms-telephone, #sms-confirm-code {width:200px;}
+    .modal-paysms .click-contact {padding-top:0px;padding-bottom:0px;}
+    .modal-new .click-contact.loading {width: 555px;}
+    .telephone-sms p {margin-bottom: 10px;}
+    .modal-new .pay-dialog.pay-request {width: 542px;}
+    .modal-body {min-height: 310px;}
+    .click-contact.loading .content-telephone {margin-left: initial; width: 39.914893617021278%;}
+    .click-contact.loading {width:560px;}
+    .click-contact.loading .title {font-size: 16px;margin:0px;}
+    .click-contact.loading .note-telephone {padding:7px;}
+    .pay-dialog.pay-request {width:550px;margin:auto;}
+    .pay-dialog.pay-request .link,.pay-dialog.pay-confirm .link,.pay-dialog.pay-confirm .link-after {width:170px;}
+    .pay-dialog .telephone-sms {padding-left: 0px;width:60%;}
+    .progress-sms-wrapper {width:542px;margin-left:auto;margin-right:auto;margin-bottom: 10px;}
+    .progress-sms-wrapper .tally-sms.first {padding-left: initial; text-align: center;}
+    .progress-sms-wrapper .tally-sms.last {padding-left:0px;}
+    .progress-sms-wrapper ul {height: 32px;}
+    .form-bid .checkbox input {margin-top:-56px;}
+    .btn-large.yes {padding:11px 52px;}
+    /*** MOVED FROM VLANCE.CSS ***/
+    
+    
+    
+    /* Hide some blocks */
+    body > a[title=SumoMe] {height: 0 !important;width: 0 !important;}
+
+    /* head */
+    .navbar-mini .container {width:620px;}
+    .navbar-static-top.nav-new .span6 {margin-top:0px;}
+    .navbar-static-top.nav-new .btn-connect {float:none;width:70%;}
+    .navbar-static-top.nav-new .menu-item.third-tn a {padding: 0px 12px;}
+    
+    /*** ladding-page ***/
+    .navbar-static-top.nav-new .container {width:620px;}
+    /* page login and register*/
+    .float-box-section .login-box,.float-box-section .signup-box {width:620px}
+    /* step-explain-section */
+    .step-explain-section .step-detail .container {width:620px;}
+    .step-explain-section .quotes-left p {width:auto;}
+    .step-explain-section .quotes-right {padding-left:28px;}
+    .step-explain-section .image-right {padding-left:30px;}
+    /* top-jobs-section */
+    .top-jobs-section .job-list.container {width:620px;}
+    .top-jobs-section .job-item {padding-left:23px;}
+    .top-jobs-section .job-item:first-child {padding-left:20px;}
+    .top-jobs-section .item-title {padding-right:20px;}
+    
+    /* reviews-section */
+    .review-clients.container {width:620px;}
+    .review-clients .review-quote {width:220px;}
+    .stats-col-left-new .stats-col {width: 32.9121%;}
+    
+    /* review-media */
+    .review-media .container {width:620px;}
+    
+    /* landing-statistics-section */
+    .landing-statistics-section .container {width:620px;}
+    .landing-statistics-section .count-job, .landing-statistics-section .count-client {width:310px;}
+    
+    /* footer */
+    footer .category-block.span4{display: none;}
+    footer .right-footer-block.span8 {width: 100%;margin-left:0px;}
+    footer .right-footer-block.span8 .sub-col {width: 48%;}
+    footer .right-footer-block.span8 .sub-col.footer-fl {margin-left: 0;}
+    
+    /* footer-links-section */
+    .footer-links-section.grey-bg .container {width: 620px;}
+    .footer-links-parter .container {width: 620px;}
+    .footer-links-section.grey-bg {padding-right:10px;padding-left:10px;}
+    
+    /* bottom-logo */
+    .bottom-logo .container {width: 620px;}
+    
+    /*** End ladding-page ***/
+    
+    /* Configuration page */
+    .two-columns-left-small .col2-left{ float: left; width: 100%;}
+    .two-columns-left-small .col2-left .nav-left li{clear: initial; float: left;height:initial; margin-right: 1px; width: initial; border-radius: 0;}
+    .two-columns-left-small .col2-right.span10 {padding-left: 0; width: 100%; margin-left: 0;}
+    
+    /* edit account */ 
+    .account_edit .edit-form .dl-horizontal dt {margin-bottom:5px;padding-top:20px;text-align: left;float:none;}
+    .account_edit .edit-form .dl-horizontal dd {margin-left:0px;}
+    .edit-form textarea {min-width:400px;}
+    .edit-form .dl-horizontal dt {text-align: left;}
+    
+    /* Create job page */
+    .create-job .left-side {width: 100%;}
+  
+    /* Credit form */
+    .modal-credit {width: 320px;left: 50%; margin-left: -160px;}
+    .modal-credit.fade.in {top:2%;}
+    .modal-credit .load-spinner img {margin: 130px 130px;}
+    .modal-credit .screen-confirm .modal-body {padding: 15px;}
+    .modal-credit .screen-confirm .preview {display: none;}
+    
+    /* Bid form*/
+    .form-bid .span7 .hr-line-0 {display: inherit;}
+    .form-bid .hr-line-10 {margin: 5px 127px 18px;}
+    .form-bid .dl-horizontal {height:40px;}
+    .form-bid .dl-horizontal dt{width: 40%; margin-top: 13px;text-align:right;}
+    .form-bid .dl-horizontal dd{width: 32%; margin-left: 290px;}
+    .form-bid .input-append{margin-left:0px;margin-bottom: 1px;}
+    .form-bid .input-prepend input{width: 73%;padding: 10px 20px 10px 10px;}
+    .form-bid label.error.contact{position: relative;}
+    .form-bid label.error{padding: 0px 62px 0px 5px;}
+    .form-bid .input-prepend.telephone {width:48%;}
+    .form-bid .input-prepend.skype {width:49%;margin-left:14px;}
+    .form-bid .form-textarea {width:99%;max-width:100%;}
+    
+    form#submit_bid_form .span5 {width:100%;}
+    form#submit_bid_form .span7 {width:100%;margin-left:0px;}
+    
+    .pay-credit-get-contact .modal-body {padding: 15px 20px;}
+    .pay-credit-get-contact .contact-sms .contact-info {padding: 7px 0 0;}
+    .pay-credit-get-contact .contact-sms .info-photo {display: none;}
+    .pay-credit-get-contact .contact-sms .info-photo img {width: 70px; margin: 0 105px;}
+    .pay-credit-get-contact .contact-sms .info-detail {margin: 0; width: 100%; padding: 10px;}
+    .pay-credit-get-contact .contact-sms .info-detail p {text-align: center;}
+    .pay-credit-get-contact .contact-sms .info-detail p span.info-label{display: none;}
+    .pay-credit-get-contact .contact-sms .info-detail p.full-name {font-size: 15px;}
+    .pay-credit-get-contact .contact-sms .suggest-create-job {padding: 25px 25px 15px; margin: 25px 0px 10px;}
+    #pay-credit-contact-client .contact-sms .suggest-create-job {padding: 15px 15px 5px; margin: 25px 0px 10px;}
+    #pay-credit-contact-client .contact-sms .suggest-create-job p {line-height: initial; font-size: 13px; text-align: justify;}
+    
+    /* workdii_homepage */ 
+    .headerslider .span6 {width:100%;}
+    .main-top-overlay .container {width:620px;}
+    .main-top-overlay .col-right {padding-left:0px;margin-left:0px;}
+    .how-it-works.sprite-my .span4 {width:100%;}
+    .services-grid .span4 {width:100%;margin-left:0px !important;margin-bottom:15px;}
+    .headerslider .logo-big {margin: 0px auto 40px;}
+    .main-top-overlay .col-left h2 {text-align:center;}
+    .headerslider p.desc {text-align: center;}
+    
+    /* Workroom */
+    .overlay-bidform.compact-style {width: 590px;}
+    .out-of-bid.compact-style {margin: 25px 30px;}
+    
+    /* email invite */
+    .invite-friend .form-invite-email {width:620px;}
+    .invite-friend .mail-invited {width:620px;}
+    #form-invite-email .network-socail-gmail {width:100%;margin-left:0px;text-align: center;}
+    #form-invite-email .network-socail-gmail .button-gmail {padding: 12px 58px 12px 87px;background-position: 59px 14px;margin-top:0px;margin-left:0px;}
+    #form-invite-email .form-input {padding-right:0px;width:100%;text-align: center;}
+    #form-invite-email .button-invite {width:320px;margin:auto;margin-top:10px;}
+    .network-socail-gmail .text-choice {right:-277px;top:77px;position:initial;}
+    .network-socail-gmail .text-note,.block-admin-post-job div.content div.sec-step ul.list-step li.step-child .span9 {margin-left:0px;}
+    .social-invite-mail {width:620px;}
+    .invite-friend .text-email-invited {width:620px;}
+    .invite-friend .control-group.description_inviteemail {width:320px;margin:auto;}
+    .description_inviteemail #form_list_email {padding:8px 6px 6px;}
+    
+    /* Category view page */
+    .sub-category .item img{border-radius: 3px; min-height: 180px;}
+    .top-freelancer .block-top-freelancer.first{margin-left: 15px;}
+    .block-top-freelancer .block-info p:first-child {margin-left: 0px;}
+    .top-freelancer .big-block-top-freelancer{padding-left: 0;}
+    
+    /* proflie freelancer */
+    .job-list.portfolios .three-img-profile {width:562px;}
+    .job-list.portfolios .img-profile {width:185px;}
+    .job-list.job-worked .description {padding:3px;}
+    .img-profile.slick-slide img {width:162px;}
+    .col3-left .id_profile {text-align: left;}
+    .account_show.account_show_freelancer #right_content {margin-top:10px;margin-left:0px;}
+    
+    /* list suggest freelancer */
+    .client-view-bottom .open-popup-suggest{width: 145.094px; height: 155px;}
+    .client-view-bottom .open-popup-suggest .block-button a{width: 85px;}
+    .freelan-invite img.blur{margin: 0px 33px 0px;}
+    
+    /* service */
+    .block-top-freelancer.last-service{display: none;}
+    
+    /* navbar top */
+    .nav-account .account-menu a.dropdown-toggle {max-width: 103px;}
+    .nav-account > div {padding:12px 7px 12px 7px}
+    
+    /*** Contest-cuoc thi ***/ 
+    .job_contest_view .news-detail {width:100%;}
+    .job_contest_view .job-information {width:100%;margin-left:0px;}
+    .job_contest_view .guider-block img {height:auto;}
+    #block-confirm-apply .span4 {margin-left:0px;}
+    .create-contest .header .container {width:640px;}
+    .create-contest .header .span6 {width:100%;}
+    .create-contest .header .side-right {margin-top:50px;}
+    .create-contest .progress-contest .container{width:639px;}
+    .progress-contest .step {padding-right: 34px;padding-left: 34px;text-align: center;width: 242px;height: 70px;}
+    .progress-contest .step.first {padding-left:34px;}
+    .progress-contest .step.last {width:242px;}
+    /*** End contest-cuoc thi ***/
+    
+    /*** trang hướng dẫn khách hàng ***/
+    .block-head .container,.block-step .container,.block-deposit-note .container,.block-view-more .container {width:620px;}
+    .block-statistics-section .container {width:620px;}
+    .block-statistics-section .count-job, .block-statistics-section .count-client {width:310px;}
+    /* hướng dẫn cách thuê freelancer */
+    .guider-hire-fl .guider-step1-section .span7,.guider-hire-fl .guider-step3-section .span7 {width:100%;margin-bottom:50px;text-align: center;}
+    .guider-hire-fl .guider-step2-section .span5,.guider-hire-fl .guider-step4-section .span5 {width:100%;margin-left:0px;}
+    .guider-hire-fl .guider-step4-section .span7,.guider-hire-fl .guider-step2-section .span7 {margin-bottom:50px;}
+    .guider-hire-fl .guider-text {width:100%;text-align: center;}
+    .guider-hire-fl .guider-step1-section img,.guider-hire-fl .guider-step2-section img,.guider-hire-fl .guider-step3-section img,.guider-hire-fl .guider-step4-section img {width:auto; height:auto;}
+    .guider-hire-fl .guider-more .container {padding: 50px 0px;}
+    .guider-hire-fl .guider-more .article-list {-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+    
+    /* huong dan khach trang khác */
+    .block-step img {margin-left:0px;height:auto;}
+    .block-step .separater, .block-step .separater-step-2 {margin-left:130px;}
+    .guider-step-note {padding-left:0px;}
+    
+    /* Goc lam viec */
+    .row-fluid .span3-b {width:233px;}
+    
+    /*-------- credit --------*/
+    .section-none{display:none}
+    input[type="radio"]:focus{outline: none}
+    .credit_vip_mobile{background-color: #fff;margin-top:10px}
+    .wrapper-mobile{box-shadow: 0px 0px 6px #ccc;}
+    .wrapper-mobile .header-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .wrapper-mobile .header-mobile .span8 .credit-user-mobile{color:#13a538;font-size:16px;font-weight: bold}
+    .wrapper-mobile .header-mobile .span8{padding-top: 7px}
+    .wrapper-mobile .header-mobile .span4{text-align: right;padding-top: 7px}
+    .wrapper-mobile .header-mobile .nav-tabs-history{padding-right:10px}
+    
+    .wrapper-mobile .section-help-user-use-credit-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .wrapper-mobile .content-help-user-mobile .span6 .row-fluid:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(1){width:43%}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(2){width:57%;margin-left:0}
+    .wrapper-mobile .attention-help-user-mobile{margin-top:24px;padding:0 10px 0;box-sizing: border-box;text-align: justify;margin-bottom:31px}
+
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile:nth-child(n+2){margin-top:8px}
+    .wrapper-mobile .package-credit-mobile  span{font-size:40px;font-weight: 600}
+    .wrapper-mobile #radio-pay-mobile .span5:nth-child(2) {margin: 33px 0 12px;}
+
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit:before{content:'';position: absolute;}
+    .wrapper-mobile #radio-pay-mobile input:checked + .radio-checked-credit:before{content: "";color: #13a538;font-size: 47px;text-align: center;border-radius: 100%;border: 1px solid #13a538;width: 9px;height: 9px;background: #13a538;bottom:1px;left:1px; }
+    .wrapper-mobile #radio-pay-mobile input:checked{border: 1.3px solid #13a538}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile b{font-size:18px}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{margin-top: 4px;}
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{color:#999}
+    .wrapper-mobile #radio-pay-mobile:nth-child(3) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(4) .sale-off-credit-mobile{font-weight: bold;color:#13a538;}
+    .wrapper-mobile #radio-pay-mobile:nth-child(5) .sale-off-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile:nth-child(6) .sale-off-credit-mobile{font-weight: bold;color:#fd7700;}
+    
+    .wrapper-mobile .section-choose-payments-mobile{background-color: #f7f7f7;}
+    .wrapper-mobile .section-choose-payments-mobile .choose-payments{margin-top: 16px;}
+    .wrapper-mobile #radio-pay-mobile .pay-by-sms-mobile{padding-top:7px;}
+    
+    .wrapper-mobile .choose-payments .img-pay-method-mobile img{width:45%;}
+    .wrapper-mobile .choose-payments .pay-by-bank-mobile .img-pay-method-mobile img,
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .img-pay-method-mobile img{width: 33%;}
+    
+    .modal.modal-paysms .modal-body .click-contact .telephone-sms .button-group a{display:block}
+    .modal-credit#pay-buy-paypal .modal-body .content p{padding:0 6px}
+    .modal-credit.modal-paysms .modal-body .btn-pay-banktransfer{width: 100%;}
+    #pay-buy-paypal{width: 320px;left:50%}
+    
+    /*history buy credit*/
+    .subpage-content .buy-credits .sec-history-buy-none .content-history-buy-none,
+    .wrapper-buy-credit .spent-credit .sec-history-spend-none .content-history-spend-none{width:52%;}
+    .subpage-content .buy-credits .btn-history-buy-none,
+    .wrapper-buy-credit .spent-credit .btn-history-spend-none{width:23%}
+    .btn-old-credit{display:inline-block}
+    
+    /*sua popup trang view job onsite*/
+    .job-onsite-content .block-onsite-option{width: 100%;box-sizing: border-box;max-height: 570px;}
+
+    /*responsive khuyen cao FL*/
+    .content-section.fl-view .form-contest-apply .span12{padding-left: 0;padding-right: 0}
+    .content-section.fl-view .form-contest-apply .overlay-bidform{height: 671px;width: 100%;}
+    .content-section.fl-view .form-contest-apply .out-of-bid{margin: 0;padding: 13px 0 5px 4px;width: 100%;margin-top: 160px;}
+    .upper-section .span3-b{width: 440px}
+    
+    /*Menu mobile*/
+    .nav-new.display-desktop{display: none;}
+    .nav-new.display-mobile{display: block; width: 100%; height: 50px;}
+    .navbar-static-top.nav-new {height: 50px; min-height: 50px;}
+    .navbar-static-top.nav-new .container {width: 100%;}
+    .nav-new.display-mobile ul.list-menu {display: inline-block; width: 100%; text-align: center; list-style: none;height: 50px; line-height: 50px;vertical-align: middle; margin: 0;}
+    .toggle {width:100%;text-align:center;box-sizing:border-box;color:#8d8d8d;font-size:20px;}
+    .list-menu div.menu-item-1{float: left; margin: 14px;}
+    .list-menu div.menu-item-2{position: absolute; width: 100%;}
+    .menu-item-2 .logo{text-align: center;}
+    .list-menu div.button{float: right;}
+    .list-menu div.button a{font-size: 13px; margin: 10px 14px; padding: 3px 10px; font-weight: normal;}
+    .list-menu div.button.avata a{margin: -5px 0 0 0; padding: 0;}
+    
+    /*Search job*/
+    #search-job-form{width: 620px;}
+    #search-job-form input {width: 410px;}
+    .popular-search{width:600px;}
+    .autocomplete-items{width: 600px;}
+}
+
+
+/***** IPHONE/MOBILE PORTRAIT *****/
+@media (max-width: 639px) {
+    .credit_vip_desktop{display: none;}
+    .credit_vip_mobile{display: block;}
+    .screen-1200 {display: none;}
+    .screen-960 {display: none;}
+    .screen-750 {display: none;}
+    .screen-620 {display: none;}
+    .screen-320 {display: block;}
+    .display-mobile {display: block;}
+    .display-desktop {display: none;}
+    
+    /*** MOVED FROM VLANCE.CSS ***/
+    body{min-width: 320px;}
+    body.freelancer_list, body.vlance_homepage, body.freelance_job_list, body.cms_page, body.account_register,
+    body.fos_user_security_login, body.account_show.account_show_alias, body.jobs_create_project {min-width: 320px; padding: 0px;}
+    
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container{width: 320px;margin: auto;}
+    .container-vlance{width: 100%;margin: auto;}
+    .withdraw_money {width: 320px; margin: auto}
+    .content-section .account-bank {margin-left:0;}
+    .content-section .row-fluid h1 {margin-left: 0px;}
+    .content-section .page-configuration {margin-left: 0px;}
+    .create-job .quick-guide{display:none;} /* none quick-guide in Dang_Viec */
+    .create-job >.row-fluid >.span6 {width: 100%;} /* Fix Dang_Viec */
+    .content-section .col2-right.span10 {padding-left: 0;}
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top{margin: 0px;}
+    .container, 
+    .navbar .container,
+    .navbar-static-top .container,
+    .navbar-fixed-top .container,
+    .navbar-fixed-bottom .container,
+    .job_show .container,
+    .job_contest_view .container {width:310px;}
+    .category-view .content-text {width: 90%; margin: 0px 25px;}
+    .category-cta {margin: auto;}
+
+    .error-page .error-section h1 {line-height: initial;font-size: 51px;height: 140px;}
+    .error-page .error-section p {font-size: 15px;}
+    .error-page .error-section .map-error {background-size: 493px;background-position: 0px;height: 370px;margin-bottom: 200px;}
+    .error-page .error-section .map-error div {display:none;}
+    .error-page .error-section .map-error-500 {height: 300px; margin-bottom: 200px;}
+    #formmessage, #popup-refusal, #popup-report_violations {width:320px; left: initial;margin-left: 0px;} /* Fix popup trang Job_view*/
+    .modal-body form#send-message textarea {min-width: 266px;}
+    
+    /* top */
+    .navbar .span3{width: 35%; padding: 0px;}
+    .navbar .span6{width: 65%; margin: 0;}
+    .navbar .span3.btn-connect{width: 100%; margin: 10px 0px;}
+    .logo {text-align: right;}
+    .logo img{width: 145px;margin-top: 0px;}
+    .navbar .menu-inner{width: 207px; margin: auto;}
+    .navbar .nav{margin: 0px;}
+    .navbar .nav li.first {padding-left: 0;padding-right: 0;}
+    .navbar .nav li.last{display: none;}
+    .navbar .nav > li > a{line-height: 20px; padding: 10px 0px;}
+    .navbar .nav > li > a.tro-giup{padding: 0px 20px;}
+    .navbar .login-vlance{padding: 0px 0px;}
+    .navbar .create-account-vlance{ margin-left: 93px; text-align: left;}
+    .navbar .btn-connect .btn{margin: 0px 0px 0px 10px;}
+    .nav-account .account-menu .avata {margin-right: 5px; }
+    .nav-account .account-menu .avata img {width: 32px !important; height: 32px !important;}
+    /*end top */
+    
+    .header-list-job .menu-hamburger .nav-tabs>li {margin: 0; border-radius: 3px 3px 0 0; width: 100%;}
+    .header-list-job .menu-hamburger .nav-tabs>li>a {margin: 0; border-radius: 3px 3px 0 0;}
+    .header-list-job .menu-hamburger .nav>.dropdown.active>a:hover, .header-list-job .menu-hamburger .nav>.dropdown.active>a:focus {background: #bdbdbd; }
+    .header-list-job .menu-hamburger .icon-hamburger {float: right; font-size: 1.5em; margin: 5px;}
+    .header-list-job .menu-hamburger .dropdown-menu {width: 100%; border-radius: 0; border: 0;margin-top: 0;padding-top: 0;}
+    .header-list-job .menu-hamburger .dropdown-menu > li > a {padding: 18px 25px;}
+    .header-list-job .menu-hamburger .dropdown-menu .nav-item-job.item-tn {width: 270px; float: left;}
+    .header-list-job .menu-hamburger .dropdown-menu .item-tn-wrapper {display: inline-block;float: left;}
+    .header-list-job .nav-tabs>li>a, .header-list-job .nav-tabs>li .nav-item-job.item-tn {padding-left:25px;padding-right:25px;}
+
+    /*Navbar Mini*/
+    .navbar.navbar-static-top.navbar-mini .upper-section .span10-b{width: 231px;margin-left:0px}
+    .navbar.navbar-static-top.navbar-mini .upper-section .span10-b .nav-account > div{padding: 12px 4px 13px;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu {width: 320px; margin: 0px;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li+li+li+li{display: none;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li+li+li .label-new{display: none;}
+    .page-tabs .border{border: 0px solid #EEEEEE;}
+    .pull-right.nav-account.account-mail-menu{display: none;}
+
+    /*Khach-hang-job - Profile khach-hang*/
+    .account_show_client .content-section #right_content > .block {width: 320px;margin: auto;}
+    .account_show_client .col2-left.span8 #main_content .nav-left {padding-left: 0px;}
+
+    /*Freelance job - Freelancer*/
+    .header-list-job .menu-desktop {display:none;}
+    .header-list-job .menu-hamburger {display:initial;}
+    .ads-1, .ads-2, .ads-3{display: none !important; }
+
+    .content-section .container{width: 100%;}
+    .content-section .col2-left.span3{width: 320px;}
+    .content-section .col2-left.span3 .control-group{width: 320px;}
+    .content-section .col2-right.span9{width: 100%;}
+    .content-section .col2-left.span3 .layered-block.ln-category{padding: 15px 60px;}
+
+    .fr-avatar.span2{width: 100%; margin: 0px 0px 15px 0px;}
+    .fr-avatar.span2 img{width: 160px; height: 160px;}
+    .fr-info.span10{width: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;}
+    .fr-profile .span4{width: 100%;}
+    .fr-profile .span8{width: 100%;}
+    .fr-profile .span3.offset1{width: 100%; float: left; margin: 0px;}
+    .fr-profile .number_bid{text-align: left;}
+    .fr-info .fr-summary .remain-job {width: auto;margin-left: 0px;}
+    .fr-info .fr-summary .history {width:100%;}
+    .fr-service {display:none;}
+
+    body.one-column.job_show .span6.client-bidding-between{width:auto;}  /*Fix jow_view*/
+    body.one-column.job_show .span7.news-detail{width:100%;padding:0px 10px;} 
+    body.one-column.job_show .container{width:100%;}
+    body.one-column.job_show .detail .profile-job-left-bottom .textbody{display:none;}
+    body.one-column.job_show .profile-job .profile-job-left-bottom .textbody {display: block;border-bottom:0px;}
+    body.one-column.job_new .post-job .combo-row-1st.span5.budget{width:100%;}  /*dang_viec*/
+    body.one-column.job_new .post-job .combo-row-2nd.span5.offset2{margin-left:0px; width:100%;}
+    .job_show .profile-job-bid .profile-job-left {width:100%;margin-bottom:20px;padding:0px 0px 10px;border-right: 0px;border-bottom:1px solid #dbdbdb;}
+    .job_show_freelance_job .row-fluid.feedback-block{padding:0px;display:none;}  
+    .job_show .span7.news-client-view {width:100%;}
+    .job_show_freelance_job client-view.offset1{margin-left:1.638298%;}
+    .job_show_freelance_job .span5.feedback-option.client-view.offset1 {margin:auto;}
+    .job_show_freelance_job .span5.feedback-option.client-view.offset1 {width:100%;}
+    .job_show_freelance_job .span4.feedback-option.client-view.offset1.left-col{width:100%;margin-left:0px;} /*Fix jow_view*/
+    .job_show_freelance_job .span4.profile-job-right{display:none;}
+    .job_show .row-fluid .client-view-bottom.span12 .span3.freelan-invite{width:144px; margin:8px;}
+    .job_show .container.client-view .profile-job-left{width:100%; border-right:0px;padding-right:0px;}
+    .profile-job-bid .profile-job-left .footer-bid-client {padding-top:5px;}
+    .profile-job-left .footer-bid-client .fb-text-star {width:inherit;}
+
+    .job_show_freelance_job .profile-job-left-bottom{width: 100%;}
+    .job_show_freelance_job .profile-job-left-bottom{width: 100%;padding-left:0px;}
+    .profile-job-left-bottom .drop-menu {padding-right:0px;}
+    .job_show .job-information{width:100%;}
+    .job_show .job-information > .row-fluid{width:100%;}
+    .job_show_freelance_job .detail-bottom.span12 .textbody{display:none;}
+    .job_show_freelance_job .progress-job{width:320px;}
+    .job_show_freelance_job .row-fluid.notice-information .span12{display:none;}
+    .job_show_freelance_job .row-fluid.form-bid .span7{width:320px;}
+    .job_show_freelance_job .footer-links-section.grey-bg .row-fluid{width:auto;}
+    .job_show_freelance_job .row-fluid.form-bid .overlay-bidform{width:320px; height:640px;padding:36px 0px 0px 0px; margin:-36px 0px 0px 0px;}/*Fix mục chua_co_quyen_chao_gia*/
+    .job_show_freelance_job .row-fluid.form-bid .out-of-bid{width:290px; padding: 30px 5px; margin-top: 80px; margin-left: 0; margin-right: 0;}
+    .job_show .profile-job.span12 .span2{width: 30.893617%;}
+    .job_show .client-view-bottom .span5.profile-job-right{width:100%;}
+    .job_show .container.detail .span4.job-information.offset1{width:100%;}
+    .job_show .container.detail .job-information .job-information-inner {margin: 10px; background: #fafafa;}
+    .job_show .container.detail .job-information .job-view-fb-page-box {margin: 30px 10px;}
+    .job_show .profile-job-right .dl-horizontal{display:none;}
+    .job_show .profile-job.span12{padding-left:10px;}
+    .job_show .profile-job-right-top .span8{padding-left:10px;}
+    .job_show .profile-job-left.bid-freelancer {width: 63.93617%;margin-left: 5.12766%;}
+    
+    /*onsite chào giá*/
+    body.one-column.job_show .detail .profile-job-left-bottom-onsite .textbody{display:none; word-break: unset}
+    body.one-column.job_show .profile-job .profile-job-left-bottom-onsite .textbody {display: block;border-bottom:0px;}
+    .job_show_freelance_job .profile-job-left-bottom-onsite{width: 100%;}
+    .job_show_freelance_job .profile-job-left-bottom-onsite{width: 100%;padding-left:0px;}
+    .profile-job-left-bottom-onsite .drop-menu {padding-right:0px;}
+    .profile-job-left-bottom-onsite{padding-left: unset; margin-top: 15px}    
+    
+/*    .job_show .container.detail .profile-job-left{display:none;}*/
+    .job_show .span5.profile-job-right{width:100%;}
+    .job_show .form-bid .form-textarea{width:320px; min-width:298px; max-width:298px;}
+    .job_show .profile-job .span5.profile-job-right{width:100%;}
+    .job_show .row-fluid.form-bid .out-of-bid p{margin-left:14px;}
+    .job_show .information-bidding.row-fluid .span3.client-bidding-right{display:none;}
+    .job_show .row-fluid.page-tabs li a{padding:14px 22px}
+    .job_show .row-fluid.form-bid .out-of-bid h2{line-height:32px; font-size:26px;}
+    .job_show .breadcrumbs {padding: 0px 10px;}
+    .profile-job-right .profile-job-right-bottom .price {font-size: 26px;}
+    form#submit_bid_form .span5 {width:320px;margin-top:15px;margin-left:0px;padding:0px 10px;}
+    .fileupload_wrapper {padding-left:5px;}
+    
+    /*css onsite mobile*/
+    .row-fluid .form-bid .form-textarea{width:320px; min-width:298px; max-width:320px;}
+    .well .job_show .form-bid .form-textarea{width:95%; min-width:80%; max-width:100%;}
+    
+    /* Onsite job */
+    .onsite-properties .onsite-properties-left {width: 100%;}
+    .onsite-properties .prop-salary-range {font-size: 21px; font-weight: 700;}
+    .onsite-properties .onsite-properties-right {width: 100%; margin-left: 0; margin-top: 20px;}
+    body.two-columns-left.transaction_withdraw .withdrawal-method p.offset6 a {margin-left: 0}
+    body.two-columns-left.transaction_withdraw .content-section .withdrawal-method p.offset6 {padding-left: 27px}
+    .onsite-properties .onsite-properties-right .prop-mixed {margin-left: 0;}
+    .onsite-properties .prop-mixed .dl-horizontal {margin-bottom: 0;}
+    .onsite-properties .prop-mixed dt {width: 135px; margin-bottom: 8px;}
+    .onsite-properties .prop-mixed dd {margin-left: 135px;  margin-bottom: 8px;}
+    .onsite-cv.view-client .profile-job-left.onsite {display: block;width: 100%; padding: 15px 10px;}
+    .onsite-cv.view-client .profile-job-right.onsite {padding: 15px 10px; border: none; margin-left: 0;}
+    .content-section.container.create-job.post-job-onsite .block-guide {padding:30px 15px;}
+    
+    .search-block .input-append {width: auto;}
+    .search-block .inner-content {width:auto; float: left; margin-bottom: 10px;height:auto;padding-bottom:12px;}
+    .new-job-block .sub-text {margin-left: 15px;margin-top:10px;}
+    .new-job-block .sub-text p {font-size:17px;}
+    .new-job-block .btn-primary.p-job {padding-right:52px;padding-left:52px;margin-left: 49px;}
+    	    
+    .row-fluid .layout-mobile-onsite .span6{width: unset;}
+    
+    /*Freelancer Info Detail*/
+    .col2-left.span8{width: 100%;}
+    .col2-left.span8 #main_content{width: 310px; margin: auto;}
+    /*    .col2-left.span8 #main_content div:first-of-type{display: none;}*/
+    .col2-left.span8 #main_content .left-profile{width: 100%;}
+    .col2-left.span8 #main_content .avata{width: 43%;float: left;height: 140px;}
+    .col2-left.span8 #main_content .dropdown{width: 55%; float: right;}
+    .col2-left.span8 #main_content .nav-left{width: 100%; margin: 0px 0px 0px 0px;}
+    .col2-left.span8 #main_content .nav-left li:last-child{display: none;}
+    .col2-left.span8 #main_content .right-profile{width: 100%; margin: auto; padding: 0px 10px;}
+
+    .content-section #right_content{width: 100%; margin: 0px;}
+    .content-section #right_content > .block{width: 320px;margin: auto;}
+    .content-section #right_content .adv-right-profile{display: none;}
+    .content-section.container th.bid-freelancer{display:none} /* fix goc_cong_viec */
+    .content-section.container td.num-bid{display:none} 
+    .account_show_freelancer .content-section #right_content > .block {width: 310px; margin: auto;}
+
+    body.one-column.jobs_create_project .freelancer {display:none;}                                                   
+    body.one-column.jobs_create_project .row-fluid.page-tabs a{padding: 10px 23px;} 
+    body.one-column.jobs_bid_project .client{display: none;}    
+    body.one-column.jobs_bid_project .page-tabs li a {padding:10px 23px;} 
+    body.one-column.jobs_bid_project td.payment-startus-job {min-width: 110px;}
+    body.two-columns-left.transaction td.transaction-date {min-width:initial;} /*giao_dich_tien*/
+    body.two-columns-left.transaction td.transaction-title-job {min-width:initial;}
+    body.two-columns-left.transaction td.transaction-type{min-width:initial;}
+    body.two-columns-left.transaction td.transaction-status{min-width:initial;}
+    body.two-columns-left.transaction td.transaction-price{min-width:initial;}
+    body.two-columns-left.transaction{width:initial; margin:auto;}
+    body.two-columns-left.transaction .col2-left.span2 .nav-left li a{padding-left:6px; padding-right:7px;}
+    body.two-columns-left.email_invite .col2-left.span2 ul.nav-left li{width:auto; padding-right:5px;} /*moi_ban_be*/
+    body.two-columns-left.email_invite .col2-left.span2 ul.nav-left li a{padding-left:2px;}
+    body.two-columns-left.userpaymentmethod .col2-left.span2 .nav-left li{padding-right:5px; padding-left:0px;}
+    body.two-columns-left.userpaymentmethod .col2-left.span2 .nav-left li a{padding-left:5px;}     /*tai_khoan_ngan_hang*/
+    body.two-columns-left.config_user .col2-left.span2 .nav-left li{padding-right:5px; padding-left:0px;}
+    body.two-columns-left.config_user .col2-left.span2 .nav-left li a{padding-left:6px;}
+    body.two-columns-left.transaction_withdraw .col2-left.span2{width:100%}
+    body.two-columns-left.transaction_withdraw .col2-left.span2 .nav-left li{width:initial; clear:none; float:left; padding-right:7px; padding-left:0px; height:34px; margin-right:1px;}
+    body.two-columns-left.transaction_withdraw .col2-left.span2 .nav-left li a{padding-left:5px;}
+    body.two-columns-left.transaction_withdraw .content-section .row-fluid h1{margin-top:15px;}
+
+    /*CMS*/
+    .cms-section.container{width: 310px; margin: auto;}
+    .cms-section.container .span12{width: 320px; margin: 0px; padding: 0px;}
+    .cms-section.container .span12 .xac-thuc{margin: 0px 0px 0px 0px;}
+    .cms-section.container .span12 img{margin: 0px 0px 0px 0px !important;}
+
+    .cms-section h1{font-size: 30px;}
+    .cms-section.container .span8.offset2{width: 320px; margin: 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section{margin: 0px 0px 20px 0px;}
+    .cms-section.container .span8.offset2 .xac-thuc-ho-so-section div:first-of-type{margin: 0px;}
+    .cms-section.container .span8.offset2 .span6.text{margin: 0px 0px 0px 10px; width: 203px;}
+    .cms-section.container .span8.offset2 .span6.text h3{font-size: 18px; line-height: 33px;}
+    p a.btn.btn-large{margin-bottom: 20px; margin-left: 0px; margin-right: 0px !important; margin-top: 0px;}
+
+    /*Login*/
+    .container.login-section{width: 320px; margin: 0px auto;}
+    .container.login-section .span5{width: 320px; margin: 0px;}
+    .container.login-section .quick-guide .small-pic span{margin: 15px 38px;}
+
+    /*Sign Up*/
+    .container.signup-section{width: 320px; margin: 0px auto;}
+    .container.signup-section .signup-box.span8{width: 320px; margin: 0px;}
+    .container.signup-section .quick-guide .small-pic span{margin: 15px 38px;}
+    .container.signup-section .span5{width: 320px; margin: 0px auto;}
+
+    /*bottom*/
+    .footer-links-section.grey-bg .container{width: 320px; margin: auto;}
+    .footer-links-section.grey-bg .span2{width: 50%; margin: 0px; float: left; padding: 0px; min-height: 200px;}
+    .footer-links-section.grey-bg .sub-col.footer-fl,.footer-links-section.grey-bg .footer-cl {min-height: 250px;}
+    .footer-links-section.grey-bg .span8.right-footer-block{display: block;}
+    .footer-links-section.grey-bg .span8.right-footer-block .span2{clear: left;}
+    
+    /*end bottom*/
+
+    /* Workshop */
+    .workshop_bid .content-section {margin-top: 10px;margin-bottom: 0;}
+    .workshop_bid .container h1 {font-size: 18px; line-height: initial;}
+    .workshop_bid .page-tabs li a {padding: 10px 13px;border:none;font-size: 15px;}
+    .workshop_bid .table-message {font-size: 13px;}
+
+    .col2-right .bid-info .profile-job .profile-job-left {width: 100%;margin-top: 10px;}
+    .col2-right .bid-info .profile-job .profile-job-right {width: 100%;border-right: 0px;margin-bottom: 10px;}
+    .col2-right .bid-info .profile-job-right .dl-horizontal {display:none;}
+    .col2-right .bid-info .profile-job-right .freelancer-row-img {width: 32%;}
+    .col2-right .bid-info .profile-job-right .span8 {width: 65%;}
+    .col2-right .bid-info .profile-job-right .price {line-height: initial; display: block;}
+    .col2-right .bid-info .profile-job-right-bottom.upper {width: 65%;margin-top: 0px;margin-left: 7px;float: right;}
+    .col2-right .bid-info .profile-job-right-bottom.lower {width: 100%;margin-top: 15px;margin-left: 8px;}
+    .col2-right .profile-job .less-note {display:none;}
+    .btn-flat-xlarge {padding-right: 50px; padding-left: 50px;}
+    .profile-job-right-top .title a {margin-right: 8px;}
+
+    /*review form*/
+    #feedback_client .recommend{margin-top:0}
+    #feedback_client .recommend label{width:270px}
+    #formmessage_feedback_client .modal-body{min-height:390px}
+    .message-left #formmessage_feedback_client .control-group.comment{margin-top: 0px;}
+    .modal-body form#feedback_client textarea{max-width:228px;min-width:228px;}
+    .modal-body form#feedback_freelance textarea{max-width:268px;min-width:268px}
+
+    /*.workshop_bid .table-message*/
+    .workshop_bid .table-message thead {display:none;}
+    .workshop_bid .table-message td {float:left; width: 304px;border-top:none;padding:8px;}
+    .workshop_bid .table-message tbody td {padding-top: 15px;padding-bottom: 15px;line-height: initial;}
+    .workshop_bid .table-message td.first {display:none;}
+    .workshop_bid .table-message td.center {border-top:1px solid #eeeeee;;}
+    .workshop_bid .table-message td.last {padding-top: 0px; padding-bottom: 10px;font-style: italic;color: #aaaaaa;}
+    .workshop_bid .message-left ul.freelancer-list li {padding-top: 0px;}
+
+    /* After login page */
+    .edit-acc-wrapper{margin-left: 0;} 
+
+    .progress-job-wrapper .progress-job{width: 320px;}
+    .progress-job-wrapper .progress-job ul > li.unactive{display: none;}
+    .progress-job-wrapper .progress-job ul > li.done{display: none;}
+    .progress-job-wrapper .progress-job ul > li.last.done{display: block;padding-left: 0px;padding-right: 10px;}
+    .progress-job-wrapper .progress-job ul > li.active .tally{display: block;}
+    .progress-job-wrapper .progress-job ul > li.last.done .tally{display: block;padding-right:10px;}
+    .progress-job-wrapper .progress-job ul > li i {display: block;margin-right: -5px;}
+    .progress-job ul li.last i.active{width: 25px;} 
+
+    /* feature freelance */
+    .feature-freelancer.guider-block .content.inner {padding-left:0px;width:100%;}
+    .feature-freelancer.guider-block .content.detail {margin-top:15px;width:100%;}
+    .feature-freelancer.guider-block .cta-button {text-align: center;}
+    
+    /* 4 step work */
+    .guider-block .content.inner {width: 100%;padding-left: 55px;}
+    .guider-block .content.detail {width: 100%;margin-left: 0px;padding-left:8px;padding-right:8px;}
+    .guider-block .sub-info {padding-left: 8px;padding-right: 8px;margin-right: 0px;}
+    .guider-block .content.detail .note ul li {margin-right: 7px;}
+
+    /* Ad-quang_cao */
+    .ad-300-250.job-list-bottom, .ad-300-250.job-view-interlaced, .adv-300-250-profile-freelancer-bottom,.adv-300-250-profile-client-bottom, .ad-300-250.job-view-bottom {display: inline-block;margin-top:10px;margin-left:8px; margin-bottom:10px;border: 1px solid #DADADA;box-shadow: 0px 2px 3px 0px #DADADA;-webkit-box-shadow: 0px 2px 3px 0px #DADADA;-moz-box-shadow:0px 2px 3px 0px #DADADA;}
+    
+    /* footer-partner */
+    .footer-links-parter .vl-funding {padding-left:0px;width:100%;}
+    .footer-links-parter .vlance-partner {margin-top:10px;margin-left:0px;padding-left:0px;width:100%;}
+    .google-footer {margin-left: 0px;margin-top:15px;margin-right:25px;}
+    .mixpanel-footer { margin-left: 10px;margin-right: 0px;margin-top:11px;}
+    .aws-footer {margin-right:18px;}
+    .vtc-academy-footer {margin-right:0px;margin-top:10px;}
+    .ybox-footer {margin-top:3px;margin-bottom:10px;}
+    .footer-links-section .social a {margin-right:1px;}
+    .vlance-partner .kicoworking-footer, .vlance-partner .magestore-footer, .vlance-partner .money-lover-footer,.vlance-partner .topcv-footer,.vlance-partner .ybox-footer {margin: 0px 0px 15px 0px; width: 150px; padding: 0px;}
+    
+    /* nut button khi login */
+    .one-column.vlance_homepage .emblem,.container .emblem{width:35%;}
+    
+    /*onsite chào giá*/
+    .profile-job-left-bottom-onsite .title span {margin-top:10px;margin-bottom:7px;margin-right:0px;width:100%;}
+    .profile-job-left-bottom-onsite .body-view .textbody{width:auto;padding-left:0px;}
+        
+    /* bid,job noi bat */
+    .featured-job .fr-info .fr-name {margin-top:31px;}
+    .profile-job-left-bottom .title span {margin-top:10px;margin-bottom:7px;margin-right:0px;width:100%;}
+    #pay-verifytel {margin-left:-154px;width:355px; top: 1%;}  
+    .main_content #formassignment {width: 327px;margin-left: -163px;}
+    .modal-body form#send-message textarea {min-width:267px;}
+    .profile-job-right .btn-flat-large {padding:10px 19px 11px;font-size:13px;}
+    .client-view-bottom .profile-job .links a {margin-left: 50px;}
+    .btn-flat-xlarge {font-size:17px;}
+    .profile-job-left-bottom .body-view .textbody{width:auto;padding-left:0px;}
+    .featured-job .content.inner,.feature-bid .content.inner {padding-left:10px;padding-right:10px;}
+    .guider-block.featured-job .content.detail .cta-button a {margin-left:13px;}
+    #pay-verifytel .login_view_job .center {padding-left:0px;}
+    .job-login-vlance {margin-top: 15px;}
+    .modal-paysms .span3.btn-connect {padding-left:0px;padding-right:0px;margin-left:0px;width:100%;}
+    .btn-flat-new.btn-linkedin-flat {margin-top:7px;}
+    
+    /* trang doi tac */
+    .cms_partners .define-partners, .cms_funding .define-funding {width:320px;}
+    /*.cms_partners .partner-mages a {background-position-x: 55px;}
+    .cms_partners .partner-moneylover a {background-position-x: 73px;}
+    .cms_partners .partner-topcv a {background-position-x: 111px;}
+    .cms_partners .partner-ybox a {background-position-x: 88px;} */
+    .cms_funding .funding-google a {background-position-x: 97px;}
+    .cms_funding .funding-aws a {background-position-x: 90px;}
+    .cms_funding .funding-magic a {background-position-x: 81px;}
+    .cms_funding .funding-sw a {background-position-x: 88px;}
+    .cms_funding .funding-founder a {background-position-x: 100px;}
+    .cms_partners .partner-mages p, .partner-moneylover p, .partner-vtc p, .partner-topcv p, .partner-ybox p {width:300px;}
+    .cms_funding .funding-google p,.cms_funding .funding-aws p, .cms_funding .funding-mixpanel p, .cms_funding .funding-magic p, .cms_funding .funding-sw p, .cms_funding .funding-founder p {width:300px;}
+    
+    /* pay-sms */
+    #pay-verifytel,#pay-verifytel,#pay-buy-credit {width:330px;left:50%;margin-left:-165px;}
+    #pay-verifytel .modal-body {min-height: 310px;}
+    #sms-telephone, #sms-confirm-code {width: 212px;margin-left: 3px;}
+    .modal-new .click-contact.loading {width: 320px;}
+    .click-contact.loading .title {font-size: 16px;margin-bottom:10px;}
+    .progress-sms-wrapper {margin-bottom: 20px;width: 320px;}
+    .telephone-sms p {margin-bottom: 10px;}
+    .progress-sms-wrapper .tally-sms.first {padding-left: initial; text-align: center;}
+    .modal-new .pay-dialog.pay-request {width: 320px;}
+    .modal-body {padding:5px 5px 15px;}
+    .click-contact.loading {width:auto;padding:0px;}
+    .pay-dialog.pay-request .link {width:72px;}
+    .pay-dialog.pay-request {width:auto;}
+    .pay-dialog.pay-confirm .link {width:72px;}
+    .pay-dialog.pay-confirm .link-after {width:72px;}
+    .pay-dialog.pay-confirm .btn-large.yes,.pay-dialog.pay-confirm .btn-large.no {margin-bottom:0px;}
+    .pay-dialog.pay-result .title {margin-bottom:10px;}
+    .pay-dialog.pay-result .email {margin-top:17px;}
+    .progress-sms-wrapper ul {margin-left:33px;}
+    .progress-sms-wrapper .tally-sms.firs {padding-left:0px;text-align:center;}
+    .progress-sms-wrapper .tally-sms.last {padding-left:0px;}
+    .pay-dialog.pay-request .telephone-sms,.pay-dialog.pay-confirm .telephone-sms{width:100% !important;padding-left:0px;}
+    .click-contact.loading .content-telephone {width:100%; margin-left: 0;}
+    .btn-large.no {margin-left:7px !important;}
+    .pay-dialog.pay-result .contact-sms {width:320px;}
+    .pay-dialog.pay-result .contact-sms .ava-sms {margin-left:95px;width:40%;}
+    .pay-dialog.pay-result .contact-sms .email,.pay-dialog.pay-result .contact-sms .cellphone {margin-left:20px;}
+    .pay-dialog.pay-result .recommen-fl {width:auto;}
+    .pay-dialog.pay-result .recommen-fl img {margin-left:0px;}
+    .telephone-sms .button-group {text-align:center;}
+    /*** MOVED FROM VLANCE.CSS ***/
+    
+    
+    
+    .mp-lh6 {line-height: 48px;}
+    /* head */
+    .navbar-mini .container {width:100%;}
+    .navbar-static-top.nav-new .span6 {width:71%;}
+    .navbar-static-top.nav-new .menu-item a {line-height:20px;}
+    .navbar-static-top.nav-new li.first a {padding:25px 5px 5px;}
+    .navbar-static-top.nav-new li.second a {padding:25px 5px 5px;}
+    .navbar-static-top.nav-new .btn-connect {width:100%;padding-top:4px;}
+    .navbar.nav-new .btn-connect .btn {padding: 6px 19px;}
+    .nav-new .login-vlance .create-account-vlance {margin-bottom:10px;}
+    .navbar-static-top.nav-new .menu-item.third-tn {width:170px;}
+    .navbar-static-top.nav-new .menu-item.third-tn a {padding:6px 0px;}
+    .navbar .span6 {width: 71%;}
+    .navbar.navbar-static-top.navbar-mini .menu-section .nav-menu li a{padding: 11px 13px 10px 5px;}
+    .navbar .upper-section li.first a {padding: 32px 7px 5px;}
+    .navbar .upper-section li.second a {padding: 32px 4px 10px;}
+    .navbar .upper_scoll_display li.first a {padding-top:20px;}
+    .navbar .upper_scoll_display  li.second a {padding-top:20px;}
+    .navbar .upper_scoll_display .span4-b {display: none;}
+    .navbar .upper_scoll_display li.first a {padding: 12px 7px 10px;}
+    .navbar .upper_scoll_display li.second a {padding: 12px 7px 10px;}
+    .navbar .upper_scoll_display .nav > li > a {height: initial;}
+
+    .navbar .row-fluid .span3-b {width:100%;}
+    .nav-account > div {padding: 12px 25px 12px 20px;}
+    .navbar .nav > li > a {height:32px;}
+    .upper-section .nav-menu .menu-item a {line-height: 20px;}
+    .upper-section .logo{margin: 2px 0px;width: 27%;}
+    /* navbar top */
+    .nav-account .account-menu .dropdown-menu {top:73px;right:-38px;}
+    .nav-account .account-menu a.dropdown-toggle {max-width: 150px;}
+     /*** ladding-page ***/
+    /*.navbar-static-top.nav-new .container {width:320px;}*/
+    .homepage-new .jumbotron-new.subhead h1 {width:auto;font-size:46px;line-height: 54px;}
+    .homepage-new .jumbotron-new-content.display_block {width:320px;}
+    .homepage-new .jumbotron-new-content ul {margin-left:0px;}
+    .homepage-new .jumbotron-new-content ul .angle-right {display: none;}
+    .homepage-new .jumbotron-new-content ul li {margin-bottom:15px;width:60%;text-align: left;}
+    .homepage-new .jumbotron-new-content ul li:first-child,.homepage-new .jumbotron-new-content ul li:last-child {width:60%;} 
+    .homepage-new .jumbotron-new-content ul li span {right:0px;}
+    
+    .homepage-new .jumbotron-new.carousel-subhead_promotion_1 .container {min-height:164px;margin-bottom:0px;background: url("../media/banner/20180221_thuengay_chiendichlixi_mobile_800x164.jpg") center no-repeat;text-align: center;width: 100%;position: relative;background-size: cover;}     
+    .homepage-new .jumbotron-new.carousel-subhead_1,.homepage-new .jumbotron-new.carousel-subhead_2,.homepage-new .jumbotron-new.carousel-subhead_3 {min-height: 136px;margin-bottom:0px;padding-top: 28px;padding-bottom: 0px;}
+    .homepage-new .jumbotron-new.carousel-subhead_1 h1, .homepage-new .jumbotron-new.carousel-subhead_2 h1,.homepage-new .jumbotron-new.carousel-subhead_3 h1 {width:300px;margin-bottom:12px;font-size: 20px;line-height: 28px;letter-spacing: -0.04em;}
+    .homepage-new .jumbotron-button {margin-bottom:22px;}
+    .homepage-new .jumbotron-new.carousel-subhead_3 h1 i {font-size:14px;bottom:4px;}
+    .carousel-control-next .active {margin-left: 30px;margin-right: 30px;}
+    
+    /* page login and register*/
+    .float-box-section .login-box,.float-box-section .signup-box {width:320px}
+    .float-box-section.head-box .modal-close button {margin-top:20px;}
+    .signup-box .modal-close button {margin:8px 0 0px;}
+    
+    /* step-explain-section */
+    .step-explain-section .step-detail .container {width:320px;}
+    .step-explain-section .image-left {width:100%;}
+    .step-explain-section .quotes-right {padding-left:0px;width:100%;text-align: center;}
+    .step-explain-section .image-right {padding-left:0px;width:100%;text-align: center;}
+    .step-explain-section .quotes-left {width:100%;margin-bottom:20px;text-align: center;}
+    .step-explain-section .quotes-right h4 {margin-top:20px;font-size:26px;line-height: 48px;}
+    .step-explain-section .quotes-left h4 {font-size:30px;line-height: 48px;}
+    .step-explain-section .quotes-right p {width:auto;}
+    
+    /* top-jobs-section */
+    .top-jobs-section .top-job-title {margin:auto;padding-top:40px;width:320px;font-size:26px;line-height: 40px;}
+    .top-jobs-section .job-list.container {width:320px;}
+    .top-jobs-section .job-row {margin-bottom:0px;}
+    .top-jobs-section .job-item {min-height: 195px;margin-left:0px;margin-bottom:20px;padding-left:0px;width:49%;}
+    .top-jobs-section .job-item:first-child {padding-left:0px;}
+    .top-jobs-section .item-title {margin-top:10px;padding-right:0px;}
+    .top-jobs-section .job-item-show {width:initial;height:108px;margin:auto;margin-left:5px;}
+    .top-jobs-section .job-item .job-show-2 {background-position:0 -108px;}
+    .top-jobs-section .job-item .job-show-3 {background-position:0 -217px;}
+    .top-jobs-section .job-item .job-show-4 {background-position:0 -326px;}
+    .top-jobs-section .job-item .job-show-5 {background-position:0 -435px;}
+    .top-jobs-section .job-item .job-show-6 {background-position:0 -543px;}
+    .top-jobs-section .job-item .job-show-7 {background-position:0 -652px;}
+    .top-jobs-section .job-item .job-show-8 {background-position:0 -761px;}
+    .top-jobs-section .btn-top-job{padding:8px 12px;margin-bottom:10px;}
+    .top-jobs-section .job-item-overlay-inner {width:137px;height:87px;top:22px}
+    .top-jobs-section .job-item-overlay-upper {width:137px;height:108px}
+    .carousel-control-next a {margin:0 10px;height:50px;width:64px;}
+    .carousel-control-next .active {margin:0px 15px;}
+    .job-item .item-thumbnail {text-align: center;}
+    .homepage-new .footer-job-list {width:initial;margin-top:30px;padding:0px 10px;}
+    .slide-top-homepage.display-mobile {display: block;}
+    .slide-top-homepage.slick-slider {margin-bottom: 20px;}
+    .slide-top-homepage .item {display: none;}
+    .slide-top-homepage .item.slick-slide {display: block;}
+    .slide-top-homepage .slick-next:before {content:no-close-quote;}
+    .slide-top-homepage .slick-dots .slick-active button:before {width:10px;background:url(../img/slider-service.png) no-repeat;background-position:0px -29px;opacity:1;content:no-close-quote;}
+    .slide-top-homepage .slick-dots button:before{width:10px;background:url(../img/slider-service.png) no-repeat;background-position:-30px -29px;opacity:1;content:no-close-quote;}
+    .slide-top-homepage .slick-dots {margin:0px;bottom:-25px;background-color: #f5f5f5;}
+    .homepage-new .slick-dots li {width:8px;}
+    
+    /* reviews-section */
+    .review-clients.container {width:320px;}
+    .reviews-section .review-client-title {width:320px;margin:auto;text-align: center;}
+    .stats-col-left-new .stats-col {width: 49%;}
+    .slick-slider .slick-next {right:0px;}
+    .slide-reviews .slick-prev {left:0px;z-index: 99;} 
+    
+    /* review-media */
+    .review-media .container {width:320px;}
+    .homepage-new .stats-col-left-new .stats-col {width:43%;margin:auto}
+    .homepage-new .stats-col-left-new .stats-row i.cat-dantri {background-position: 15px -241px;}
+    .homepage-new .stats-col-left-new .stats-row i.cat-kt {background-position: -536px -241px;}
+    .homepage-new .stats-col-left-new .stats-row i.cat-vietnamnet {width:124px;background-position: -1100px -241px;}
+    .homepage-new .stats-col-left-new .stats-row i:hover {background-position-y: -321px;}
+    .homepage-new .stats-col-left-new .stats-row i.cat-dantri:hover {background-position: 30px -321px;}
+    .homepage-new .stats-col-left-new .stats-row i.cat-kt:hover {background-position: -521px -321px;}
+    .homepage-new .stats-col-left-new .stats-row i.cat-vietnamnet:hover {background-position: -1080px -321px;}
+    
+    /* landing-statistics-section */
+    .landing-statistics-section .container {width:320px;}
+    .landing-statistics-section .count-job {margin-left: 0px;width:auto;}
+    .landing-statistics-section .count-client {margin-left:60px;width:auto;text-align: right;}
+    .landing-statistics-section p span {font-size:38px;}
+    /* professional-apply-section */
+    .professional-apply-section .professional-apply-title {margin:auto;padding-top:42px;width:320px;font-size:38px;line-height: 48px;}
+    .professional-apply-register {font-size:16px;}
+    .professional-apply-section .title {padding-top:48px;font-size:38px;}
+    .professional-apply-button .btn-vl-special {font-size:18px;}
+    /* footer-links-section */
+    .footer-links-section.grey-bg .container {width: 100%;}
+    .footer-links-parter .container {width: 320px;}
+    .footer-links-section.grey-bg .span2 {min-height:160px;}
+    /* bottom-logo */
+    .bottom-logo .container {width: 320px;}
+    .bottom-logo .container .row-fluid {margin-bottom:10px;}
+    .bottom-logo .container .span9 {width:100%;}
+    .bottom-logo .container .span3 {width:100%;margin-left: 0px;}
+    .bottom-logo .switch-language {margin-top:20px;width:100%;}
+    .bottom-logo .vlance-logo a {width:100%;}
+    .bottom-logo .vlance-logo p {width:65%;}
+    .bottom-logo .footer-language {padding-right:0px;}
+    .bottom-logo .footer-payment {margin-top:15px;}
+    .bottom-logo .dkkd{width:100%;}
+    /*** End ladding-page ***/
+    
+    /* edit account */ 
+    .edit-form .dl-horizontal dd {margin-left:0px;}
+    .edit-form .dl-horizontal dt {margin-bottom:5px;padding-top:20px;float:none;}
+    .edit-form .images img {margin-top:5px;}
+    .edit-form input {margin-bottom:7px;width:266px;}
+    .edit-form textarea {min-width: 295px;}
+    .edit-form .datepicker-widget input {width:240px;}
+    .edit-form .datepicker-widget .add-on {position: initial;}
+    
+    /* Nang cap goi Vip */
+    .block-buy-vip #upgrade-account .span3 {width:90%;margin-left:0px;padding-left:15px;}
+
+    /** Deposit 10% to send message to freelancer **/
+    body.one-column.job_show .guider-block-after-post-job {width: 100%; margin-left: 0;}
+
+    /* Credit form */
+    .modal-credit {width: 320px;left: 50%; margin-left: -160px;}
+    .modal-credit.fade.in {top:2%;}
+    .modal-credit .load-spinner img {margin: 130px 130px;}
+    .modal-credit .screen-confirm .preview {display: none;}
+    
+    /* Bid form */
+    form#submit_bid_form {width:100%;}
+    form#submit_bid_form .span5 {width:100%; padding:0px 0px;}
+    form#submit_bid_form .span7 {width:inherit;margin-left:0px}
+    
+    .form-bid .hr-line-0{margin: 10px 0px;}
+    .form-bid .span7 .hr-line-0 {margin:20px 0 24px;}
+    .form-bid .hr-line-10{display: none;}
+    .form-bid .dl-horizontal {height:35px;}
+    .form-bid .dl-horizontal dt{width: inherit; margin-top: 13px;}
+    .form-bid .dl-horizontal dd{width: inherit; margin-left: 107px;}
+    .form-bid .input-append{margin-left: 11px;}
+    .form-bid .input-append input{width: 70%;}
+    .form-bid .bidtype_pay .input-append {width:90%;margin-top:0px;margin-left:20px;}
+    .form-bid .input-prepend input{padding: 10px 0px 10px 0px;}
+    .form-bid .input-prepend.telephone {width:43%;margin-right:20px;}
+    .form-bid .input-prepend.skype {width:45%;margin-left:0px;}
+    .form-bid .input-prepend .add-on {padding:4px 0px;border-radius: 5px 0px 0px 5px;}
+    .form-bid .block-submit{width: initial; margin-right: 0px; margin-top: 15px; margin-bottom: 5px; padding-bottom: 0px;}
+    .job_show .form-bid .form-textarea{width: 278px; max-width: 278px; min-width: 278px;font-size:12px;}
+    .form-bid .block-amount .block-amount-detail{padding: 10px 10px 26px;}
+    .form-bid label.error{padding: 0px 17px 0px 5px; width: initial;}
+    .form-bid label.error.contact{width: 92%;}
+    .form-bid .bidtype_description {margin-right: 5px;}
+    .form-bid .bidtype_introdescription {margin-right: 35px;}
+    .form-bid .ques-text{margin-right: 10px;}
+    .form-bid .input-prepend input{width: 80%;border-radius: 0px 4px 4px 0px;}
+    
+    .layout-mobile-onsite .form-bid .input-append input{width: 180%}
+    .btn-mobile-onsite .span6{width: unset}
+    .well .span6{width: unset; margin-left: unset}
+    .well .rowfluid{margin-bottom: 20px}
+    .row-fluid .layout-mobile-onsite{margin-bottom: 100px}
+    .well .span6 .ques-text{margin: -1px; margin-right: -96px}
+    .layout-mobile-onsite .span6 .title-in-form{margin-top: 25px;}
+    .well .row-fluid .span6{margin-left: unset; padding-right: unset}
+/*  .row-fluid .span1{margin-bottom: -30px}*/
+    
+    /* đấu thầu */
+    .job_show .detail-bottom.span12{width: inherit;}
+    
+    /* workdii_homepage */
+    .main-top-overlay .container {width:320px;}
+    .stories .each-story {width: 90%;}
+    
+    /* workdii_service_job */
+    .content-section.create-service-job {width:100%;}
+    .content-section.create-service-job .container {width:100%;}
+    .create-service-job .whitebase .span5 {width:100%;}
+    .create-service-job .whitebase .span7 {width:100%;}
+    .service-request-form {border-left:0px;}
+    .service-request-form .form-group {padding-left:5px;}
+    
+    /* Workroom */
+    .overlay-bidform.compact-style {width: 290px;}
+    .out-of-bid.compact-style {margin: 10px 0; width: 270px; padding: 10px 10px 0px;}
+    .out-of-bid.compact-style h2 {font-size: 20px; font-weight: 600; line-height: 1.3em;}
+    
+    /* email invite */
+    .invite-friend .form-invite-email {width: 320px;}
+    .invite-friend h2 {margin-left:0px;text-align: center;}
+    .invite-friend .mail-invited {width:320px;}
+    .social-invite-mail{width:320px;height:200px;}
+    .social-invite-mail .input-prepend {margin-bottom: 24px;}
+    .social-invite-mail input {width: auto;}
+    .social-invite-mail .btn-facebook-share {margin-left:0px;}
+    .invite-friend .text-email-invited{width:320px;}
+    #form-invite-email .button-invite {margin-top:15px;}
+    #form-invite-email .network-socail-gmail {padding-top:20px;}
+    #form-invite-email .network-socail-gmail .button-gmail {margin-top:10px;margin-left:0px;}
+    .network-socail-gmail .text-note {margin-left: 22px;}
+    .network-socail-gmail .text-choice {top:12px;right:-139px;}
+    
+    /* login-invite-email */
+    .signup-email-invite .signup-section {margin-top:20px;}
+    .signup-email-invite .login-socail-network {width:320px;}
+    .signup-email-invite .btn-facebook {margin-right:0px;}
+    .signup-email-invite .btn-google-plus {padding: 8px 40px 5px;}
+    .signup-email-invite .btn-linkedin {padding: 8px 37px 5px;}
+    .signup-email-invite .login-choice {width:320px;}
+    .signup-email-invite .login-choice img {width:138px;}
+    .signup-email-invite #register_submit {width:320px;}
+    .signup-email-invite .register-type {width:320px;}
+    .header-login-invite p {padding-top:42px;line-height:36px;}
+    #signup-invite-form .control-group input {width:320px;}
+    .signup-email-invite .signup-section h1 {width:320px;}
+    .signup-email-invite .text-note {width:320px;}
+    
+    /* Category view page */
+    .category-view .category-content{margin-left: 0;}
+    .category-cta{width: initial;}
+    .category-view.container{margin-bottom: 0;}
+    
+    .banner-single-post .container .entry-meta a{font-size: 18px;color: #FFF;}
+    .banner-single-post .container .entry-meta{margin-top: 20px; margin-bottom: 15px;}
+    
+    .top-freelancer .top-freelancer-title{margin-left: 10px;}
+    .top-freelancer .big-block-top-freelancer{width: 180px; margin: auto;}
+    .top-freelancer .block-top-freelancer{margin-right: 0; margin-left: 0;}
+    .top-freelancer.container{margin-top: 0;}
+    .top-freelancer h2{line-height: initial;}
+    .top-freelancer .block-top-freelancer{margin-bottom: 10px;}
+    .top-freelancer .block-top-freelancer.first{margin-left: 0px;}
+    .top-freelancer .block-top-freelancer.four{display: none;}
+    .top-freelancer .block-top-freelancer.five{display: none;}
+    .top-freelancer .block-top-freelancer.last{display: none;}
+    
+    .post-job-category .block-statistics {padding: 20px; margin-top: 0; margin-bottom: 0;}
+    .post-job-category .block-statistics .counted a{font-size: 20px;}
+    
+    .job-projects .table .table-name-column {display: none;}
+    .job-projects .table .table-statistics td {display: inline-table; text-align: center;}
+    .job-projects .table .table-statistics td.span2 {width: 100px;}
+    .job-projects .table .table-statistics .cut-on-mobile{display: none;}
+    .job-projects .table .table-statistics .job-Location {display: none;}
+    .job-projects .table .table-statistics .job-Block-Bid .numBid {display: none;}
+    .job-projects .table .table-statistics .job-Block-Bid{border-top: none;}
+    .job-projects .table .table-statistics .job-Budget{border-top: none;}
+    .job-projects .table .table-statistics .job-Deadline{border-top: none;}
+    .job-projects .table td:first-child{width: 310px; text-align: left;}
+    .job-projects .table .text{margin-left: 0;}
+    .job-projects .table-footer{margin-top: 10px;}
+    .job-projects .block-job-projects{margin-left: 10px;}
+    
+    .post-job-category .block-post-job{padding: 20px;}
+    
+    .other-category-footer .block-other-category{margin-left: 10px;}
+    
+    /* footer-partner */
+    .footer-links-parter .vl-relationship {margin-left: 10px; width: 310px;}
+    .vl-funding .google-footer {margin-right: 20px;}
+    .vl-funding .aws-footer {margin-right: 20px;}
+    .footer-links-section.grey-bg .footer-fl {padding-left:0px;}
+    
+    /* proflie freelancer */
+    .job-list.job-worked .job-item .span2 {display:none;}
+    .job-list.job-worked .description {width: 33.404255%;}
+    .job-list.portfolios .three-img-profile {width:265px;}
+    .job-list.portfolios .img-profile {width:180px !important;padding-right:38px;padding-left:40px}
+    .job-list.job-hired .span2 {display:none;}
+    .job-list.job-hired .job-comment {width: 61.446809%;}
+    .job-list.job-hired .description {width: 33.404255%;}
+    .job-list.job-hired .description .price {float:right;}
+    .job-item .description .rating-number {display:none;}
+    .account_show.account_show_freelancer #right_content {width:100%;margin-left:0px;}
+    .account_show_freelancer #right_content {margin-left:0px;margin-top:25px;}
+    .account_show_freelancer .col2-left.span8 #main_content .left-profile {padding-left:0px;margin-bottom: 20px;}
+    .col3-center.right-profile .span12 h1 { float:none !important; text-align: center;}
+    .col3-center.right-profile .career {text-align: center;}
+    .col3-center .regional-price {text-align: center;}
+    .col2-left.span8 #main_content .avata{width: 100%;text-align: center;}
+    .col3-left .id_profile {margin-top:167px;text-align: center;}
+    .col3-left .time-online-last {text-align: center;}
+    .col3-left .avata .update-link a {width:320px;}
+    .img-profile.slick-slide img {width:180px;}
+    .profile-content .overview .body,.profile-content .overview h2 {padding-left:5px;padding-right:5px;}
+    .summary-profile.mobile {display: block !important;-webkit-box-shadow: 0px 1px 2px 0px #C4C4C4;box-shadow: 0px 1px 2px 0px #DADADA;}
+    .summary-profile.mobile h2 {border-bottom: 0px;}
+    .summary-profile.mobile .list-summary-profile {padding-bottom:5px;}
+    
+    /* list suggest freelancer */
+    .modal{width: 320px; margin-left: -159px; margin-right: 6px;}
+    .btn-invite-suggested{padding: 3px 6px 3px;}
+    .suggested-freelancer{padding: 8px;}
+    .client-view-bottom .open-popup-suggest{width: 144px; margin: 8px;}
+    .freelan-invite img.blur{margin: 0px 31px 0px;}
+    .suggested-freelancer .profile-suggested-fl .info-fl .name-fl .checked{display: none;}
+    .suggested-freelancer .profile-suggested-fl .info-fl .title-fl {display: none;}
+    .suggested-freelancer .button-invite-suggested-fl a{margin-top: 2px;}
+    .suggested-freelancer .load-spinner {padding: 25px 17px;}
+    
+    /* service */
+    .block-top-freelancer.cut-on-mobile{display: none;}
+    
+    /* when register will get credit */
+    .account_register_by_referrer .top-bg p {padding-top:48px;line-height: 52px;width:320px;margin:auto;}
+    .account_register_by_referrer .register-credit {width:320px;}
+    .register-credit .btn-linkedin {padding:8px 40px 7px}
+    .register-credit .btn-google-plus {padding: 9px 43px 7px;}
+    .register-credit .choice-register img {width:134px;}
+    .register-credit #signup-freelancer-form input {width:298px;}
+    .register-credit #fos_user_registration_form_city, .register-credit #fos_user_registration_form_category {width:320px;}
+    .register-credit input#fos_user_registration_form_type_0, .register-credit input#fos_user_registration_form_type_1 {width:auto;}
+    .register-credit h1 {margin-top:32px;}
+    
+    /* share link fb */
+    #noti-ctc{margin-right: 0px;}
+    
+    /* trang credit */
+    td.transaction-date {min-width: initial;}
+    th.credit-payment {padding-right:8px;}
+    td.transaction-price {min-width:initial;max-width: initial;}
+    td.transaction-note {min-width: initial;}
+    .table th, .table td {padding-left:2px;padding-right:2px}
+    
+/*    fix trang giao dich tien*/
+    .table-condensed{font-size: 12px}
+    .info_status {word-break: break-word;}
+    .text_status {width: 120px}
+    .table-condensed .text_action {text-align: right}
+    .text_type {display: none}
+    .text_form {display: none}
+    .text_date {display: none}
+    .info_type {display: none}
+    .info_form {display: none}
+    .info_date {display: none}
+    .text-right-tt {display: block}
+    .text-right {display: none}
+    .btn_tt {display: block; float: right; margin-right: 0!important}
+    .text-right-tt {float: left; padding-right: 2px}
+    
+    
+    /* Xac thuc tai khoan */
+    .title-verify-account {padding:0 15px;}
+    .verify-account .explain-content .span6 {width:100%;margin:0px 0px 10px 0px;}
+    .verify-account .edit-form {width:100%;}
+    .verify-account .edit-form .span7 {width:100%;}
+    .two-columns-left-small .nav-tabs li {height:50px;}
+    .account_basic_edit .edit-form {padding:0px 15px;}
+    .account_basic_edit .edit-form select {width:288px;}
+    form#form-create-id-number .span7, form#form-create-id-number .span5 {margin-top:0px;}
+    
+    .edit-form .images-id{width: 286px;}
+    .edit-form .images-id img{width: 286px;}
+    .edit-form select{width: 286px;}
+    
+    /* inbox */
+    .inbox-menu .block-new-message {width:320px;right:-5px;}
+    
+    /* Create job page */
+    .one-column .create-job {width:310px;}
+    .one-column .create-job  .span10.offset2 {width:100%;margin-left:0px;}
+    .create-job .edit_job_title {line-height: 48px;}
+    #edit-job-form .control-group.service_wrapper {margin-left:0px}
+    #edit-job-form #vlance_jobbundle_jobtype .span10 {width:100%;margin-left:0px;}
+    #edit-job-form #vlance_jobbundle_jobtype .span2 {display:none;}
+    .post-job .more-options .span2 {display:none;}
+    .create-job .form-cread-job-btn .span5, .create-job .form-cread-job-btn .span10 {width:100%;}    
+    .create-job .form-cread-job-btn .accept-agreement {width:100%;margin-top:0px;padding-left:0px;}
+    .create-job .primary-type .span10 {width:100%;margin-left:0px;}
+    .post-job .offset2.job-closed-at {width:100%;margin-left: 0px;padding-right:0px;}
+    .post-job .job-fl-city {width:100%;padding-right:0px;}
+    .post-job .job-fl-experi {width:100%;margin-left:0px;padding-left:0px;}
+    .post-job .wrapper.combo-row-1st {width:100%;padding-right:0px;}
+    .post-job label.is-private label {width:270px;}
+    .post-job .primary-type h4 {margin-bottom:0px;}
+    .create-job .block-form-lr {width:100%}
+    .create-job .block-lr .span2 {display: none;}  
+    .create-job .block-lr .span10 {width:100%;margin-left:0px;}
+    .create-job .block-type-user .span6 {margin-left:0px;}
+    .block-form-lr .block-form-reg .span6 {width:100%;margin-bottom:10px;}
+    .block-form-lr .block-form-log .span6 {width:100%;margin-left:0px;margin-bottom:10px;}
+    .block-lr .block-form-lr .login-socail-network-label {margin-top:8px;}
+    .block-lr .block-form-lr input {width:258px}
+    .block-lr .block-form-lr .input-email, .block-lr .block-form-lr .re-pass {margin-left:0px;padding-left:0px;}
+    .block-lr .block-form-lr .login-socail-network {text-align: center;}
+    #reg-form .field {margin-bottom:0px;}
+    .btn-social-fb-post-job {padding:6px 85px 3px;margin-bottom:10px;margin-right:0px;}
+    .btn-social-nfb-post-job {margin-left:0px;padding-left:25px;padding-right:25px;}
+    
+    /*** Page job view not login ***/
+    .job-show-not-login .description-view-job .container {padding-left:15px;padding-right:15px;}
+    .job-show-not-login .guide-fl-find-job .container {padding-left:15px;padding-right:15px;}
+    .description-view-job .span7 {width:100%;}
+    .description-view-job .span5 {width:100%;padding-left:0px;}
+    .description.blurry-text-bao .login_view_job{margin-left: 0; width: 320px; height: initial;}
+    .job-show-not-login .guide-fl-find-job h4 {padding-left:0px;line-height:36px;}
+    .job-show-not-login .guide-fl-find-job .span7 {width:100%;padding-left:0px;}
+    .job-show-not-login .guide-fl-find-job .span5 {width:100%;margin-left:0px;}
+    .job-show-not-login .project-view-fl h4 {line-height: 40px;}
+    
+    /* Contest-cuoc thi */ 
+    .create-contest .header .container {width:320px;}
+    .create-contest .progress-contest .container {width:320px;}
+    .create-contest .side-left .content {width:320px;}
+    .create-contest .header .side-right {margin-left:0px;}
+    .create-contest .center-side {width:100%;margin-left:0px;}
+    .create-contest .contest_title h1 {font-size:28px;}
+    .create-contest .note-new-contest {margin-left:0px;}
+    
+    .form-contest-apply {display: inline-block;}
+    .form-contest-apply .container {padding-left:15px;padding-right:15px;}
+    .form-contest-apply .span7 {width:100%;}
+    .form-contest-apply .span5 {width:100%;margin-top:20px;margin-left:0px;}
+    .form-contest-apply .block-submit-btn {margin-top:0px;}
+    .form-contest-apply .file_upload {padding-left:7px;}
+    .form-contest-apply .note-image {margin-bottom:0px;}
+    
+    .job_contest_view .guider-block {padding: 15px 15px;}
+    .job_contest_view .guider-block .span6 {width:100%;}
+    .job_contest_view .guider-client-right {margin-top:10px;padding-left:0px}
+    
+    /* guider nạp tien contest */
+    .guider-contest-block {width:320px;margin-left: -160px;}
+    .guider-contest-block .guider-contest-title {margin-right:15px;}
+    .guider-contest-block .content.step-contest {padding: 16px 10px 40px 10px;}
+    .content.step-contest .span1 {width:13.382979%;}
+    .content.step-contest .span11 {width: 84.489362%;}
+    .content.step-contest .account-information {display:none;}
+    .content.step-contest .account-information-mobile {display:initial;}
+    .content.step-contest .account-information-mobile p {font-weight:700;}
+    .content.step-contest .account-information-mobile span {margin-left:5px;font-weight:400;}
+    
+    /* page list-contest */
+    .search-results .job-contest .span7 {width:100%;}
+    .search-results .job-contest .span5 {width:100%;margin-top:10px;padding-left: 5px;}
+    .search-results .product-fl {display: initial;}
+    .search-results .product-fl.more.apply-fl {float:left;}
+    .search-results .data-contest .span4 {text-align: right;}
+    .contest_list .search-results .job-contest .fr-info {width:100%;margin-left:0px;padding-left: 15px;padding-right: 15px;}
+    .contest_list .data-contest .budget-contest {width:120px;}
+    .contest_list .data-contest .status-time {width:130px;}
+    /* contest-statiscs */
+    .job_contest_view .profile-contest {width:100%;margin:auto;margin-bottom:10px;}
+    .job_contest_view .confirm-contest-apply .span8 {width:100%;text-align: center;}
+    .job_contest_view .confirm-contest-apply .span4 {width:100%;text-align:center;margin-bottom:10px;margin-left:0px;}
+    .job_contest_view .num-apply {padding:15px 0px 15px;}
+    
+    /*** End contest - cuoc thi ***/
+    
+    /* hướng dẫn khách hàng va fl */
+    .guider-hire-fl .title-hire-fl {font-size:35px;line-height:40px;}
+    .guider-hire-fl .title h3 {font-size:35px;}
+    .guider-fl .guider-more .article-list{column-count: 1;}
+    .guider-fl .guider-step1-section .span7, .guider-fl .guider-step3-section .span7{width: 100%; margin-bottom: 50px; text-align: center;}
+    .guider-fl .guider-step2-section .span5, .guider-fl .guider-step4-section .span5{width: 100%; margin-bottom: 50px; text-align: center;}
+    .guider-fl .guider-text{width: 97.5%; text-align: center;}
+    
+    .block-head .container,.block-head-fl .container,.block-step .container,.block-deposit-note .container,.block-view-more .container {width:310px;}
+    .block-head h1,.block-head-fl h1 {padding-top:50px;font-size:32px;line-height: 50px;}
+    .block-step img {min-height:auto;}
+    .block-step .separater, .block-step .separater-step-2 {width:300px;margin-left:8px;}
+    .block-view-more a {width:auto;margin-bottom:10px;}
+    .guider-step-note {width:320px;}
+    
+    .block-statistics-section .container {width:320px;}
+    .block-statistics-section .count-job {margin-left: 0px;width:auto;}
+    .block-statistics-section .count-client {margin-left:60px;width:auto;text-align: right;}
+    .block-statistics-section p span {font-size:38px;}
+    
+    .guider-client .title-guider-fl {font-size:35px;line-height: 48px;}
+    .guider-client .title h3 {font-size:35px;line-height: 48px;}
+    .guider-client .guider-step1-section .span7,.guider-client .guider-step3-section .span7 {width:100%;margin-bottom:50px;text-align: center;}
+    .guider-client .guider-step2-section .span5,.guider-client .guider-step4-section .span5 {width:100%;margin-left:0px;}
+    .guider-client .guider-step4-section .span7,.guider-client .guider-step2-section .span7 {margin-bottom:50px;}
+    .guider-client .guider-text {width:100%;text-align: center;margin: 0;}
+    .guider-client .guider-step1-section img,.guider-client .guider-step2-section img,.guider-client .guider-step3-section img,.guider-client .guider-step4-section img {width:auto; height:auto;}
+    .guider-client .guider-more .container {padding: 50px 0px;}
+    .guider-client .guider-more .article-list {-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+    .block-post-job-section h3 {line-height: 48px;}
+    
+    /*** Page community ***/
+    /* head */
+    .navbar-static-top.nav-community .container {width:320px;}
+    /* Đăng bài */
+    .community-post-new .container {width:320px;}
+    input#vlance_cmsbundle_communityposttype_title {width: 298px;}
+    /* Page view */
+    .community-view .container,.community-view .view-more .container {width:320px;}
+    .community-view .block-hire-fl .container {width:320px;padding-top:0px;}
+    .community-view .block-hire-fl .button {padding-top:32px;}
+    .community-view .bottom-view-section .container {width:320px;padding-top:10px;}
+    .community-view .bottom-view-section h1 {margin-top:0px;}
+    
+    /* page community-list */
+    .community-list .head-block .container {width:320px;padding-top:35px;}
+    .community-list .body-view .container {width:320px;}
+    .community-list #fadeable {width:320px;}
+    .community-list .body-view .show-case-item {width:100%;margin-left:0px;}
+    .community-list .filter-bar .button {top:76px;right:86px;}
+    /*** End Page community ***/
+    
+    /* Goc lam viec */
+    .menu-section .verify-tel-menu {display:none;}
+    .jobs_bid_project .news-client-view .span4 {width: 57.914894%;}
+    .jobs_bid_project .news-client-view .span8 {width: 39.957447%;}
+    .jobs_create_project .news-client-view .span8 { width: 42.914894%;} 
+    .jobs_create_project .news-client-view .span4 {width: 54.914894%;}
+    
+    /* Onsite job*/
+    .content-cv .content-col-left {width:100%;}
+    .row-fluid.form-bid .content-cv h2.title {margin-top:0px;}
+    .content-cv .suggest-cv-fl {width:100%;margin-left:0px;}
+    .content-section.fl-view .content-cv {padding:30px 10px;}
+    .content-cv .input-prepend.telephone,.content-cv .input-prepend.skype {width:100%;}
+    .content-cv .input-prepend input {padding-left:6px;}
+    .content-cv .description label {margin-bottom:8px;line-height: 20px;}
+    #edit-job-form .control-group .span2 {display: none;}
+    #edit-job-form .control-group .span6 {width:100%;margin-left:0px;}
+    #edit-job-form .form-budget .span6 {width:100%;margin-left:0px;}
+    #edit-job-form .control-group .input-append input {width:215px;}
+    
+    /* popup ad tool signature */
+    .sticky-screen-banner.right.display-desktop {display: none;}
+    
+    #mini-vip-category {max-width: 300px;margin-left:-150px;top: 90px;}
+    #mini-vip-category .content .input-category{width: 250px;}
+    
+    #popup-admin {background-color: #ececec; margin-right: 0;}
+    #popup-admin .message {display: none;}
+    
+    /*su dung dich vu*/
+    .block-admin-post-job div.content div.sec-step{margin-top: 0;padding: 9px;box-sizing: border-box;}
+    .block-admin-post-job div.content div.section-service:before{width: 95%;left: 8px }
+    .block-admin-post-job div.content div.section-service .section-service-content > div.span6{padding-left: 0}
+    .block-admin-post-job div.content div.section-service .section-service-content > div,
+    .block-admin-post-job div.content div.section-service .section-service-btn,
+    .block-admin-post-job div.content div.sec-step,.block-admin-post-job div.content div.sec-send-request{
+        width: 100%;
+    }
+    .block-admin-post-job div.content div.section-service .section-service-content > div:nth-child(n) .row-fluid > div.span10{width: 91%;}
+    
+    .block-admin-post-job div.content div.section-service .section-service-content:nth-child(1) > div,
+    .block-admin-post-job div.content div.section-service .section-service-content:nth-child(2) > div:nth-child(1){
+        margin-top: 16px
+    }
+    .block-admin-post-job div.content div.section-service .section-service-content:nth-child(n+2) > div{margin-top: 8px}
+    .block-admin-post-job div.content div.section-service{padding: 8px;box-sizing: border-box}
+    .block-admin-post-job div.content div.section-service .section-service-content > div:nth-child(2n+2),
+    .block-admin-post-job > div:nth-child(3),
+    .block-admin-post-job div.content div.sec-send-request,
+    .block-admin-post-job div.content div.sec-step ul.list-step li.step-child .span9{
+        margin-left: 0;
+    }
+    .block-admin-post-job div.content div.sec-step ul.list-step .step-child:nth-child(1) > div.span9:nth-child(2) br.enter-line,
+    .block-admin-post-job .header h1{
+        display: none
+    }
+    .block-admin-post-job div.content div.sec-step ul.list-step .step-child:nth-child(n) > div.span3:nth-child(n),
+    .block-admin-post-job div.content div.sec-step ul.list-step .step-child:nth-child(n) > div.span9:nth-child(n),
+    .block-admin-post-job div.content div.sec-send-request #form-admin-post-job #submit-form{
+        margin-top: 24px;
+    }
+    
+    .block-admin-post-job div.content h2.title-new{text-align: center;width: 239px;margin-left:  auto;margin-right:  auto;line-height: 32px;margin-top: 32px;margin-bottom: 0}
+    .block-admin-post-job div.content div.section-service .section-service-btn{display: block;background: #33cc66;font-size: 16px;height: 55px;margin-bottom: 40px;margin-top: 16px;}
+    .block-admin-post-job div.content div.section-service{margin-top: 0}
+    /*quy trinh lam viec*/
+    .block-admin-post-job div.content div.sec-send-request #form-admin-post-job{padding-left: 9px;padding-right: 9px;box-sizing: border-box;width: 100%;}
+    .block-admin-post-job div.content .title-process{text-align: center;margin-top: 32px;margin-bottom: 0}
+    .block-admin-post-job div.content div.section-service .section-service-content:nth-child(2){
+        margin-top: 0;
+    }
+    .block-admin-post-job div.content div.sec-send-request{margin-top: 32px;}
+    
+    /*-------- credit --------*/
+    .section-none{display:none}
+    input[type="radio"]:focus{outline: none}
+    .credit_vip_mobile{background-color: #fff;margin-top:10px}
+    .credit_vip_mobile .span6 .row-fluid{height: 30px;}
+    .wrapper-mobile{box-shadow: 0px 0px 6px #ccc;}
+    .wrapper-mobile .header-mobile{min-height: 56px;padding: 16px 10px 16px;box-sizing: border-box;position: relative}
+    .header-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .header-mobile .span8 .credit-user-mobile{color:#13a538;font-size:16px;font-weight: bold}
+    .header-mobile .span8{padding-top: 7px}
+    .header-mobile .span4{text-align: right;padding-top: 7px}
+    .header-mobile .nav-tabs-history{padding-right:10px}
+    
+    .wrapper-mobile .section-help-user-use-credit-mobile{position: relative}
+    .wrapper-mobile .section-help-user-use-credit-mobile:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 100%;left:0}
+    .wrapper-mobile .title-help-user-mobile h3{margin-top:14px;font-size:16px;font-weight: bold;text-align: center}
+   
+    .wrapper-mobile .content-help-user-mobile{margin-top:4px;padding-left:10px;box-sizing:border-box}
+    .wrapper-mobile .content-help-user-mobile .span6 .row-fluid:nth-child(n+2){margin-top:14px}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(1){width:43%;padding-left:0;}
+    .wrapper-mobile .content-help-user-mobile .span6:nth-child(2){width:57%;margin-left:0}
+    .wrapper-mobile .attention-help-user-mobile{margin-top:24px;padding:0 10px 0;box-sizing: border-box;text-align: justify;margin-bottom:31px}
+
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile{min-height: 88px;border:1px solid #8dd39d;margin:0 10px 0;width:95%;box-sizing:border-box;border-radius: 5px}
+    .wrapper-mobile .package-credit-mobile span{font-size:40px;font-weight: 600}
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile .span5:nth-child(2) {margin: 30px 0 2px;}
+    .wrapper-mobile #radio-pay-mobile .package-credit-mobile .span2{padding-left: 19px;margin: 30px 0 24px}
+    .wrapper-mobile .section-choose-payments-mobile{padding-bottom: 40px;}
+    .wrapper-mobile #radio-pay-mobile input{-webkit-appearance: none;border: 1px solid #cccccc;width: 13px;height: 13px;border-radius: 100%;transform: scale(1.5);-webkit-transform: scale(1.5);-moz-transform: scale(1.5) }
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit{position: relative}
+    .wrapper-mobile #radio-pay-mobile .radio-checked-credit:before{content:'';position: absolute;}
+    .wrapper-mobile #radio-pay-mobile input:checked + .radio-checked-credit:before{content: "";color: #13a538;font-size: 47px;text-align: center;border-radius: 100%;border: 1px solid #13a538;width: 9px;height: 9px;background: #13a538;bottom:1px;left:1px; }
+    .wrapper-mobile #radio-pay-mobile input:checked{border: 1.3px solid #13a538}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile b{font-size:18px}
+    .wrapper-mobile #radio-pay-mobile .price-credit-mobile,
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{margin-top: 4px;}
+    .wrapper-mobile #radio-pay-mobile .one-credit-mobile{color:#999}
+    .wrapper-mobile .sec-choose-credit-mobile .attention-credit-mobile{text-align: center;padding: 10px 10px 30px 10px;box-sizing: border-box}
+    
+    .wrapper-mobile .section-choose-payments-mobile{background-color: #f7f7f7;}
+    .wrapper-mobile .choose-payments{margin-top: 16px;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile{padding-top:7px;}
+    
+    .wrapper-mobile .choose-payments .btn-pay-method-mobile{padding-left: 19px;width: 10%;}
+    .wrapper-mobile .choose-payments .img-pay-method-mobile img{width:36px;}
+    .wrapper-mobile .choose-payments .pay-by-bank-mobile .img-pay-method-mobile img,
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .img-pay-method-mobile img{width: 27px;}
+    .wrapper-mobile .choose-payments .pay-by-sms-mobile .btn-pay-method-mobile{padding-top: 7px;}
+    .wrapper-mobile .choose-payments  .span8{padding-top: 3px;font-size: 14px;font-weight: 600;width:70%}
+    
+    /*upgrate vip*/
+    .wrapper-mobile{min-height: 100px;background-color: #fff;}
+    .subpage-tab .nav-tabs .nav-tabs-spend-credit.spend-credit-old{margin:8px 0 0}
+    .wrapper-mobile .sec-header-upgrade-account{color: #fff;font-size: 14px;font-weight: 600;background-color: #063bb7;text-align: center;height: 40px; padding-top: 15px;}
+    .wrapper-mobile .sec-header-upgrade-account div{padding-top:10px;padding-bottom:8px}
+    .wrapper-mobile .account-of-client-mobile{min-height: 56px;position: relative}
+    .wrapper-mobile .account-of-client-mobile .span8{padding-top: 18px;padding-left: 15px;font-size: 14px;}
+    .wrapper-mobile .account-of-client-mobile .span4{text-align: right;padding-top: 18px;padding-right: 15px;}
+    .wrapper-mobile .helper-upgrade-account-mobile{margin-top: 6px;margin-bottom:14px;position:relative}
+    .wrapper-mobile .sec-why-upgrade-mobile{border-radius: 0px}
+    .wrapper-mobile .sec-why-upgrade-mobile .header-why-vip-mobile{background-color: #f5f5f5;font-size:14px;font-weight: bold;position: relative;box-sizing: border-box;}
+    .wrapper-mobile .header-why-vip-mobile .fa-angle-up{font-size: 18px;font-weight: bold;position: absolute;left: 91%;}
+    .wrapper-mobile .body-why-upgrade-mobile > .row-fluid:nth-child(1){line-height: 1.75;text-align: justify;}    
+
+    .wrapper-mobile .wrapper-upgrade-mobile .helper-upgrade-account-mobile .sec-why-upgrade-mobile .body-why-upgrade-mobile > .sec-field-mobile:nth-child(2){margin-top:16px}
+    .wrapper-mobile .body-why-upgrade-mobile .header-field-mobile{position:relative;background-color: #f5f5f5;color:#063bb7;width: 100%;box-sizing: border-box;border: 1px solid #e6e6e6}
+    .wrapper-mobile .header-field-mobile a{padding-bottom: 0;}
+    .wrapper-mobile .sec-field-mobile:nth-child(3) a{padding-bottom:8px}
+    .wrapper-mobile .header-field-mobile .span11{padding-top:1.5px;margin-left:2px;}
+    .wrapper-mobile .header-field-mobile .fa-angle-up{font-size: 18px;font-weight: bold;position: absolute;right: 12px;}
+    .wrapper-mobile .wrapper-upgrade-mobile .helper-upgrade-account-mobile .sec-why-upgrade-mobile .body-why-upgrade-mobile > .sec-field-mobile .contents-field-mobile{padding: 13px 16px 13px;line-height: 2.45;box-sizing: border-box;border: 1px solid #e6e6e6;border-top: none;border-bottom: none;}
+    .wrapper-mobile .border-space:before{content:"";display: block;height: 1px;width: 100%;background: #e6e6e6;position: absolute;top: 103%;left:0;}
+
+    .wrapper-mobile .sec-choose-package-vip-mobile{padding: 0px 10px 0px;box-sizing: border-box;margin-bottom:30px}
+    .wrapper-mobile .sec-choose-package-vip-mobile .label-time-package-mobile{padding-top: 16px;font-size:15px;}
+    .wrapper-mobile .sec-choose-package-vip-mobile .choose-package-vip-mobile{box-sizing: border-box}
+    .wrapper-mobile .border-pack-vip{margin-top: 12px;border: 1px solid #cccccc;border-top-left-radius: 4px;border-top-right-radius: 4px;text-align: center;box-sizing:border-box;}
+    .wrapper-mobile .border-pack-vip label{margin-bottom:0;}
+    .wrapper-mobile .choose-package-vip-mobile .package-months-mobile label{margin-bottom: 0;}
+    .wrapper-mobile .sec-choose-package-vip-mobile .months-package-vip{border-radius: 4px}
+    .wrapper-mobile .months-package-vip .tab-month-6-mobile,
+    .wrapper-mobile .choose-package-vip-mobile .package-month-6-mobile{border-left: 1px solid #cccccc;border-right: 1px solid #cccccc;}
+    .wrapper-mobile .months-package-vip .span4{padding: 13px 0 13px;width: 33.314894%;font-weight: bold;margin-left:0}
+    .wrapper-mobile .choose-package-vip-mobile .span4{padding: 12px 0 25px;width: 33.314894%;line-height: 2.05}
+    .choose-package-vip-mobile #pk-vip input{position: absolute;-webkit-appearance: none;}
+    .wrapper-mobile .choose-package-vip-mobile b{font-size: 16px;}
+    .wrapper-mobile .label-choose-package-vip-mobile{font-size:15px;margin-top:28px;}
+    .wrapper-mobile .choose-package-vip-mobile .contents-package-months-mobile{box-sizing: border-box;padding: 20px 0px 32px 15px;border: 1px solid #cccccc;min-height: 100px;border-top: none;background-color: #f7f7f7;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}
+    .wrapper-mobile .choose-package-vip-mobile .fa-check,
+    .wrapper-mobile .choose-package-vip-mobile .font-color-blue-pv{color:#0a46d0}
+    .wrapper-mobile .contents-package-months-mobile .span10,
+    .wrapper-mobile .contents-package-months-mobile .span11{margin-left: 1px;}
+    
+    .modal.modal-paysms .modal-body .click-contact .telephone-sms .button-group a{display:block}
+    .modal-credit#pay-buy-paypal .modal-body .content p{padding:0 6px}
+    .modal-credit.modal-paysms .modal-body .btn-pay-banktransfer{width: 100%;}
+    #pay-buy-paypal{width: 320px;left:50%}
+    #pay-buy-credit-banktransfer{left:50%}
+    
+    /*history buy credit*/
+    .subpage-content .buy-credits .sec-history-buy-none .content-history-buy-none,
+    .wrapper-buy-credit .spent-credit .sec-history-spend-none .content-history-spend-none{width:84%;}
+    .subpage-content .buy-credits .btn-history-buy-none,
+    .wrapper-buy-credit .spent-credit .btn-history-spend-none{width:40%;}
+    .subpage-tab .nav-tabs .nav-tabs-spend-credit, .subpage-tab .nav-tabs .nav-tabs-history{margin: 22px 10px 0px;}
+    .subpage-tab .nav-tabs .nav-tabs-spend-credit #letter-history-buy, 
+    .subpage-tab .nav-tabs .nav-tabs-history #font-color-buy-credit-green,
+    .subpage-tab .nav-tabs .nav-tabs-spend-credit #font-color-buy-credit-green, 
+    .subpage-tab .nav-tabs .nav-tabs-history #letter-history-buy {display: none;}
+    
+    .btn-old-credit{display:inline-block}
+    .label-tag{padding: 2px 1px;}
+    .sec-banktransfer-old .modal-header-old{padding:0 15px}
+    .sec-banktransfer-old .modal-header-old .close{line-height: 23px;}
+    
+    .menu-package-mmedium {width: 44.914894%;}
+    
+    /*responsive khuyen cao FL*/
+    .content-section.fl-view .form-contest-apply .span12{padding-left: 0;padding-right: 0}
+    .content-section.fl-view .form-contest-apply .overlay-bidform{height: 671px;width: 100%;}
+    .content-section.fl-view .form-contest-apply .out-of-bid{margin: 0;padding: 13px 0 5px 4px;width: 100%;margin-top: 160px;}
+    
+    /*sua popup trang view job onsite*/
+    .job-onsite-content .block-onsite-option{width: 100%;box-sizing: border-box;padding: 20px 6px 36px 10px;max-height: 570px;}
+    .job-onsite-content .block-onsite-option input{margin-right: 8px}
+    .job-onsite-content .block-onsite-option .onsite-option .span2,
+    .job-onsite-content .block-onsite-option .systerm-message p{padding-right: 8px}
+    .job-onsite-content .block-onsite-option .amount .span10{width: 76%}
+    .job-onsite-content .block-onsite-option .amount .span2{width: 20%;padding-right:0}
+    
+    /*nut dang nhap dang ki trang dang du an*/
+    .job_new .block-form-lr .offset8{width: 100%;margin-left: 0}
+    #verify_telephone_popup.modal{width: 320px}
+    
+    /*fix giao dien admin*/
+    .admin-menu-wrapper #usercash-form .span4, .admin-menu-wrapper #credit .span6{width:100%;margin-left: 0}
+    
+    /*fix header*/
+    .upper-section .sec-account-menu .account-menu{width:245px}
+    .nav-account .account-menu a.dropdown-toggle.show-cate-acc{max-width: 205px;}
+    
+    /*block danh sach viec trong profile*/
+    .job-list.jobs-account .job-item .span2{display: none}
+    .job-list.jobs-account .job-item .description{width: 37%;line-height: 10px;}
+    .job-list.jobs-account .job-item .job-comment{margin-left: 9.5px;}
+    .job-list.jobs-account .description .rating-box{margin-top: 5px}
+    .block_jobs .jobs-account .block-tilte_jobs{width: 60%;text-align: center}
+    .job-list.jobs-account .slick-next,.job-list.jobs-account .slick-prev{top: -22%;}
+    .job-canceled.jobs-account .slick-next,.job-canceled.jobs-account .slick-prev{top: -29%;}
+    .job-working.jobs-account .slick-next,.job-working.jobs-account .slick-prev{top: -13%;}
+    
+    /*Search job*/
+    #search-job-form{display: none;}
+    #search-job-form-mobile{width: 310px; max-width: 100%; display: block;text-align: center; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto;}
+    #search-job-form-mobile button{position: absolute; background: #14d76e; color: white; height: 42px; margin-left: -44px; border-radius: 0 3px 3px 0;}
+    #search-job-form-mobile input{width: 238px; max-width: 100%; padding-right: 55px; font-size: 14px;}
+    #search-job-form-mobile i.fa {font-size: 16px;}
+    .popular-search{width:305px;}
+    .popular-search a:nth-child(3){display: none;}
+    .popular-search a{padding-right: 15px;}
+    .autocomplete-items{width: 303px; max-height: 205px;}
+    .autocomplete-items div{padding: 10px;}
+}
+
+@media (max-width: 480px){
+    .admin-control.form-actions .admin-menu-wrapper .nav-tabs{display: block;}
+    .admin-control.form-actions .admin-menu-wrapper .nav-tabs li{clear: both;}
+    .admin-control.form-actions .admin-menu-wrapper li.active > a{border: 1px solid #ddd; border-radius: 0px;}
+}
+
+@media (max-width: 370px) and (min-width:320px){
+    /*fix header*/
+    .upper-section .sec-account-menu .account-menu{width:193px}
+    .nav-account .account-menu a.dropdown-toggle.show-cate-acc{max-width: 153px;}
+}
+
+@media (max-width: 639px) and (min-width:500px){
+    /*** Trang hồ sơ năng lực ***/
+    .show_portfolio .portfolio-file-info-banner, .show_portfolio .portfolio-file-info-download { padding-left: 20px}
+    .show_portfolio .previous-portfolio, .show_portfolio .next-portfolio {width: 30%; }
+    .show_portfolio .portfolio-file-info-name { width: 25%;padding-left: 30px;}
+    /*** Kết thúc trang hồ sơ năng lực ***/
+    .block-admin-post-job div.content div.sec-step ul.list-step li.step-child .span9{margin-left: -8%;}
+}
+@media (max-width: 499px) and (min-width:340px){
+    /*** Trang hồ sơ năng lực ***/
+    .show_portfolio .portfolio-file-info-banner, .show_portfolio .portfolio-file-info-download { padding-left: 20px}
+    .show_portfolio .previous-portfolio, .show_portfolio .next-portfolio {width: 30%; }
+    .show_portfolio .portfolio-file-info-name { width: 25%;padding-left: 30px;}
+    /*** Kết thúc trang hồ sơ năng lực ***/
+    .block-admin-post-job div.content div.sec-step ul.list-step .step-child:nth-child(n) > div.span9:nth-child(2){margin-left: -8px;width: 79%;}
+}
+@media (max-width: 339px){
+     /*** Trang hồ sơ năng lực ***/
+    .show_portfolio .portfolio-file-info-banner, .show_portfolio .portfolio-file-info-download { padding-left: 20px}
+    .show_portfolio .prevjious-portfolio, .show_portfolio .next-portfolio {width: 30%; }
+    .show_portfolio .portfolio-file-info-name { width: 25%;padding-left: 30px;}
+    /*** Kết thúc trang hồ sơ năng lực ***/
+}
+
