@@ -1,0 +1,6 @@
+{% load static %}
+{% if request.user.is_authenticated %}
+{% include 'layout/header.html' %}
+{% else %}
+{% include 'layout/header-out.html' %}
+{% endif %}

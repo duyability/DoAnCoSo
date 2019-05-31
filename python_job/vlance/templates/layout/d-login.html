@@ -1,0 +1,160 @@
+
+{% load static %}
+{% if request.user.is_authenticated and request.user.role == 'NhaTuyenDung' %}
+
+<div class="span3 span3-b">
+                    <div class="pull-right nav-account sec-account-menu">
+                        <div class="inbox-menu pull-right">
+                            <div class="popover-mail">
+
+
+    <div class="i32 i32-mail">
+                <div class="mail-counter mail-counter-invite"></div>
+    </div>
+    <div class="block-new-message" style="display: none;">
+        <ul class="nav nav-tabs" id="tab_messages_listinvite">
+            <li class="active"><a data-toggle="tab" href="#tab_messages">Tin nhắn</a></li>
+            <li><a data-toggle="tab" href="#tab_list_invite">Mời chào giá</a></li>
+        </ul>
+        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_messages">
+                    <div class="no-message">Bạn không có tin nhắn mới</div>
+                </div>
+
+            <div class="tab-pane" id="tab_list_invite">
+                <div class="no-message">Bạn không có lời mời chào giá nào</div>            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tab_messages_listinvite a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+        $('.mail-counter-invite').append($( "#tab_list_invite ul" ).attr( "att-count" ));
+    });
+</script>
+
+                        </div>
+                        <div class="account-menu dropdown pull-right">
+                            <div class="avata">
+                                    <a href="/freelancer/pham-minh-duc-11">
+                                    <img width="48" height="48" src="https://www.vlance.vn/uploads/48x48/8d94975cc4a2c31ed649c8827555a6a7362a31771.jpg" alt="DUC PHAM MINH" title="DUC PHAM MINH">
+                                </a>
+                            </div>
+                            <a class="dropdown-toggle name-acc-menu show-cate-acc" data-toggle="dropdown" href="#"><p>DUC PHAM MINH </p><b class="caret"></b></a>
+                            <div class="credit-balance">
+                                <span><a class="id-user" href="/freelancer/pham-minh-duc-11">Id. 172016 | </a></span>
+                                <a id="animategoCredit" href="/credit/balance">
+                                    <span data-credit="balance">0</span> CREDIT -
+                                    <span>THƯỜNG                                    </span>
+                                </a>
+                            </div>
+                            <div id="popover-in"></div>
+                            <ul class="dropdown-menu">
+                                <li><a href="/freelancer/pham-minh-duc-11">Hồ sơ cá nhân</a></li>
+                                <li><a href="/a/172016/editbasic">Chỉnh sửa hồ sơ</a></li>
+                                <li><a href="/options/general">Cài đặt</a></li>
+                                <li><a href="/a/moi-ban-be?dropdown">Mời bạn bè</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/credit/balance?dropdown">Mua credit</a></li>
+                                <li><a href="/credit/balance?dropdown">Nâng cấp tài khoản</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+{% elif request.user.is_authenticated and request.user.role == 'Freelance' %}
+
+<div class="span3 span3-b">
+                    <div class="pull-right nav-account sec-account-menu">
+                        <div class="inbox-menu pull-right">
+                            <div class="popover-mail">
+
+
+    <div class="i32 i32-mail">
+                <div class="mail-counter mail-counter-invite"></div>
+    </div>
+    <div class="block-new-message" style="display: none;">
+        <ul class="nav nav-tabs" id="tab_messages_listinvite">
+            <li class="active"><a data-toggle="tab" href="#tab_messages">Tin nhắn</a></li>
+            <li><a data-toggle="tab" href="#tab_list_invite">Mời chào giá</a></li>
+        </ul>
+        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_messages">
+                    <div class="no-message">Bạn không có tin nhắn mới</div>
+                </div>
+
+            <div class="tab-pane" id="tab_list_invite">
+                <div class="no-message">Bạn không có lời mời chào giá nào</div>            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %}<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tab_messages_listinvite a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+        $('.mail-counter-invite').append($( "#tab_list_invite ul" ).attr( "att-count" ));
+    });
+</script>{% endcomment %}
+
+                        </div>
+                        <div class="account-menu dropdown pull-right">
+                            <div class="avata">
+                                    <a href="/freelancer/pham-minh-duc-11">
+                                    <img width="48" height="48" src="https://www.vlance.vn/uploads/48x48/8d94975cc4a2c31ed649c8827555a6a7362a31771.jpg" alt="DUC PHAM MINH" title="DUC PHAM MINH">
+                                </a>
+                            </div>
+                            <a class="dropdown-toggle name-acc-menu show-cate-acc" data-toggle="dropdown" href="#">
+                                <p>{% if request.user.role == 'Freelance' %}
+                                    {{ request.user.first_name }} {{ request.user.last_name }}
+                                {% else %}
+                                    {{ request.user.first_name }}
+                                {% endif %}</p>
+
+                                <b class="caret"></b></a>
+                            <div class="credit-balance">
+                                <span><a class="id-user" href="/freelancer/pham-minh-duc-11">Id. {{ request.user.id }} | </a></span>
+                                <a id="animategoCredit" href="#">
+                                    <span data-credit="balance">{{ request.user.role }}</span>
+                                </a>
+                            </div>
+                            <div id="popover-in"></div>
+                            <ul class="dropdown-menu">
+                                <li><a href="/freelancer/pham-minh-duc-11">Hồ sơ cá nhân</a></li>
+                                <li><a href="/a/172016/editbasic">Chỉnh sửa hồ sơ</a></li>
+                                <li><a href="/options/general">Cài đặt</a></li>
+                                <li><a href="/a/moi-ban-be?dropdown">Mời bạn bè</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/credit/balance?dropdown">Mua credit</a></li>
+                                <li><a href="/credit/balance?dropdown">Nâng cấp tài khoản</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+{% else %}
+
+
+   <div class="span3 btn-connect">
+                    <div class="login-vlance">
+                        <div class="create-account-vlance">
+                            <a id="btn-register" href="/tai-khoan/freelance">Đăng ký </a>
+                            <a id="btn-login" rel="nofollow" href="/login">Đăng nhập</a>
+                        </div>
+                    </div>
+                   
+    </div>
+
+
+ {% endif %}
+
