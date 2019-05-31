@@ -67,8 +67,9 @@
                 <script type="text/javascript">
                     var logged = 'false';
                 </script>
-                                    <div class="block-lr" style="margin-bottom: 20px;">
-    <div class="row-fluid">
+    {% comment %}
+    <div class="block-lr" style="margin-bottom: 20px;">
+        <div class="row-fluid">
         <div class="span2">
             <div class="sprites-job-posting sprites-6"></div>
         </div>
@@ -81,7 +82,7 @@
                 <div class="span6 right-check-account">
                     <label class="radio"><input id="old_user" type="radio" name="typeofuser" value="old"> Tôi đã có tài khoản</label>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
     <div class="row-fluid">
@@ -153,7 +154,9 @@
 <script type="text/javascript">
     var login_form_in_job = '#login-form-in-job';
     var login_form_in_job_params = {"url":"/a/login_job"};
-</script>            </div>
+</script>
+
+            </div>
             <script type="text/javascript">
             </script>
             <div class="row-fluid">
@@ -166,7 +169,8 @@
             </div>
         </div>
     </div>
-</div>                
+</div>   {% endcomment %}
+
                 <div class="post-contest-job">
                                         <form id="contest-form" action="/dang-cuoc-thi/new" method="post" enctype="multipart/form-data">
                         <div id="vlance_jobbundle_jobcontesttype" data-display-track="show-contest-form">
