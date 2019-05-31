@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'python_job.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME':  ('job_mongo'),
-
-    }
-}
+'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'job_python',
+    'HOST': 'localhost',
+    'PORT': '3306',
+    'USER': 'root',
+    'PASSWORD': '',
+}}
 
 
 # Password validation

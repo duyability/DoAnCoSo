@@ -1,5 +1,9 @@
 from django.db import models
+
+from django.conf import settings
 from python_job.utils import get_unique_slug
+
+User = settings.AUTH_USER_MODEL
 
 
 # Create your models here.
