@@ -5078,3 +5078,15 @@ label.error{float:unset}
 .col2-right .profile-job .profile-job-left-bottom-onsite  {width:initial;padding:0px 15px;}
 .onsite-cv .profile-job-left-bottom-onsite {margin-bottom: initial; float: none; width: initial;}
 .onsite-cv .profile-job-left-bottom-onsite  .dropdown-toggle {position: absolute; right: 0;float: none;}
+
+
+
+span.flc {
+    background: #e01313;
+    color: white;
+    border-radius: 4px;
+    padding: 6px;
+}
+span.flc a {
+    color: white;
+}

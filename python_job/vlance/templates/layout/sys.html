@@ -1,5 +1,5 @@
 {% load static %}
-{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated or request.user.is_superuser == '1' %}
 {% include 'layout/header.html' %}
 {% else %}
 {% include 'layout/header-out.html' %}

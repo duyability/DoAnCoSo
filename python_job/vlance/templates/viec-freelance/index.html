@@ -1,5 +1,5 @@
 {% extends 'layout/base-in.html' %}
-{% extends 'layout/lo' %}
+
     {% load static %}
 {% block content %}
 
@@ -149,7 +149,7 @@
 
             <h3 class="title">
                 <a href="/khach-hang/nam-25" title="Nam">
-                        Nam                </a>
+                       {{ VC.user.get_full_name }}              </a>
                 <i class="icon-info icon-user" title="Tài khoản khách hàng đã có đủ thông tin cơ bản"></i>
                                                 </h3>
             <div class="work-title">Nhan vien cao cap</div>
@@ -172,7 +172,7 @@
             <dt>Đến từ</dt>
             <dd>Hà Nội</dd>
             <dt>Tham gia</dt>
-            <dd>08/11/2017</dd>
+            <dd>{{ VC.user.date_joined }} </dd>
             <dt>Đã đăng</dt>
             <dd><a href="/khach-hang/nam-25" title="4">
                        4 việc
@@ -214,16 +214,16 @@
                 <div class="block-amount-detail">
                     <dl class="dl-horizontal">
                         <dt class="block-amount-label price">
-                            Bạn muốn nhận
+                            Ngân sách tối đa
                         </dt>
                         <dd class="block-amount-price">
                             <div class="input-append">
-                                <input id="vlance_jobbundle_bidtype_customers_pay" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="2.700.000">
+                                <input id="vlance_jobbundle_bidtype_customers_pay" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="{{ VC.NSden }}">
                                 <span class="add-on bonus">VNĐ</span>
                             </div>
                         </dd>
                     </dl>
-                    <dl class="dl-horizontal block-commision">
+                 {% comment %}   <dl class="dl-horizontal block-commision">
                         <dt class="block-amount-label commision">
                             +10% phí vLance
                         </dt>
@@ -233,17 +233,17 @@
                                 <span class="add-on bonus">VNĐ</span>
                             </div>
                         </dd>
-                    </dl>
+                    </dl>{% endcomment %}
 
                     <hr class="hr-line-10">
 
                     <dl class="dl-horizontal">
                         <dt class="block-amount-label price">
-                            Khách hàng trả
+                            Báo giá :
                         </dt>
                         <dd class="block-amount-price">
                             <div class="bidtype_pay">
-                                                                <div class="  input-append ">
+                             <div class="  input-append ">
         <input type="text" id="vlance_jobbundle_bidtype_amount" name="vlance_jobbundle_bidtype[amount]" required="required" pattern="^(0|[1-9][0-9/.]*)$" class="span9 popovers-input" data-toggle="popover" data-placement="top" data-trigger="focus" autocomplete="off" value="" placeholder="3.000.000" data-original-title="" title="">
     <span class="add-on">VNĐ</span></div>                            </div>
                         </dd>
@@ -408,7 +408,7 @@ required=&quot;required&quot; value=&quot;&quot;/>    </div>    </div>    </div>
                     <span class="add-on verified">
                         <i class="fa fa-phone block-contact-icon verified" aria-hidden="true"></i>
                     </span>
-                    <input id="bidform_telephone" name="input_telephone" disabled="" value="0969641652" placeholder="Số điện thoại">
+                    <input id="bidform_telephone" name="input_telephone" disabled="" value="{{ VC.user.hotline }}" placeholder="Số điện thoại">
                 </div>
                 <div class="input-prepend skype span6">
                     <span class="add-on"><i class="fa fa-skype block-contact-icon" aria-hidden="true"></i></span>

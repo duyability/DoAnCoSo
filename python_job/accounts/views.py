@@ -38,7 +38,7 @@ class RegisterEmployeeView(CreateView):
 class RegisterEmployerView(CreateView):
     model = User
     form_class = EmployerRegistrationForm
-    template_name = 'tai-khoan/Freelance/dang-ki.html'
+    template_name = 'tai-khoan/Nhatuyendung/dang-ki.html'
     success_url = '/'
 
     extra_context = {

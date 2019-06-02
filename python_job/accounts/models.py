@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from accounts.managers import UserManager
+from vlance.models import ThanhPho
 
 GENDER_CHOICES = (
     ('male', 'Nam'),
@@ -14,6 +15,7 @@ class User(AbstractUser):
         'required': "Role must be provided"
     })
     gender = models.CharField(max_length=10, blank=True, null=True, default="")
+    hotline = models.CharField(max_length=15,null=False,default='')
     email = models.EmailField(unique=True, blank=False,
                               error_messages={
                                   'unique': "Email của bạn đã tồn tại.",

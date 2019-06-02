@@ -1,7 +1,10 @@
+from datetime import timezone
+
 from django.db import models
 
 from django.conf import settings
 from python_job.utils import get_unique_slug
+#from accounts.models import User
 
 User = settings.AUTH_USER_MODEL
 
@@ -63,6 +66,7 @@ class ThanhPho(models.Model):
 
 
 class ViecTheoDuAn(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default='')
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     title = models.CharField("Tiêu đề",max_length=255,default='')
     slug = models.SlugField(max_length=255)
@@ -82,3 +86,11 @@ class ViecTheoDuAn(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+class Applicant(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    job = models.ForeignKey(ViecTheoDuAn, on_delete=models.CASCADE, related_name='applicants')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.user.get_full_name()

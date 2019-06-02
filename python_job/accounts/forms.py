@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 from accounts.models import User
+from vlance.models import ThanhPho
 
 GENDER_CHOICES = (
     ('male', 'Nam'),
@@ -11,6 +12,7 @@ GENDER_CHOICES = (
 
 class EmployeeRegistrationForm(UserCreationForm):
     # gender = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=GENDER_CHOICES)
+
 
     def __init__(self, *args, **kwargs):
         super(EmployeeRegistrationForm, self).__init__(*args, **kwargs)
@@ -37,6 +39,12 @@ class EmployeeRegistrationForm(UserCreationForm):
                 'placeholder': 'Enter Email',
             }
         )
+        self.fields['hotline'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Hotline',
+            }
+        )
+
         self.fields['password1'].widget.attrs.update(
             {
                 'placeholder': 'Enter Password',
@@ -50,7 +58,7 @@ class EmployeeRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'password1', 'password2', 'gender']
+        fields = ['first_name', 'last_name', 'email','hotline', 'password1', 'password2', 'gender']
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
@@ -103,6 +111,11 @@ class EmployerRegistrationForm(UserCreationForm):
                 'placeholder': 'Enter Email',
             }
         )
+        self.fields['hotline'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Số Điện Thoại',
+            }
+        )
         self.fields['password1'].widget.attrs.update(
             {
                 'placeholder': 'Enter Password',
@@ -116,7 +129,7 @@ class EmployerRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'hotline','email', 'password1', 'password2']
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
