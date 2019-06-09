@@ -4,7 +4,7 @@ from django.core.exceptions import PermissionDenied
 def user_is_employer(function):
     def wrap(request, *args, **kwargs):
         user = request.user
-        if user.role == 'NhaTuyenDung':
+        if user.role == "NhaTuyenDung":
             return function(request, *args, **kwargs)
         else:
             raise PermissionDenied

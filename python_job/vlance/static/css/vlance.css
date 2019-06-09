@@ -903,7 +903,7 @@ footer .address a:hover{color:#ccc;}
 .search-content .results-counter .nav-pills a b {background: #cee8f5;padding:0px 5px;font-size: 12px;color:#0088cc;opacity: 0.4; font-weight: 800;border-radius:3px;}
 .search-content .results-counter .nav-pills .active b {background: #006ba1;color:#fff;}
 .search-results .row-result:not(.last) {padding:30px 0;border-bottom: 1px solid #EDEDED;}
-.search-results .row-result:last-child{border-bottom: 0px;margin-bottom: 30px;}
+.search-results .row-result:last-child{border-bottom: 0px;margin-bottom: 0px;}
 .search-content .advertising {width: 120px; margin-left: 20px;}
 .search-content .advertising .ad-120-600 {margin-bottom: 20px;}
 .search-content .layered-heading{padding-bottom: 10px; border-bottom: solid 1px #EDEDED;}

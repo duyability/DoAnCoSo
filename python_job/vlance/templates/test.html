@@ -1,8 +1,125 @@
-<h1>Articles</h1>
-<ul>
-{% for DichVu_DW in post %}
-    <li>{{ DichVu_DW.id }} - {{ DichVu_DW.title }}</li>
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>{{ field.name }} {{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+<div class="ss">
+                    <form id="job-main-form" method="post" action="" class="job-add-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12" style="text-align: center;font-weight: bold;font-size: 15px;">
+                                <h4>Chi tiết dự án</h4>
+                                <p class="text-muted text-small">Some additional info for this screen about validity of
+                                    the ads, etc. </p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <label for="title">Tiêu Đề</label>
+                                <input id="title" name="title" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <label for="text">Job Description</label>
+                                <textarea id="text" name="infojob" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="type">Chọn Thành Phố </label>
+                                <select id="Thanh_Pho" name="Thanh_Pho" placeholder="Chọn thành phố"
+                                        class="form-control select2">
+                                    {% for ThanhPho in thanhphos %}
+                                    <option value="{{ ThanhPho.id }}">{{ ThanhPho.title }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <label for="type">Dịch Vụ</label>
+                                <select id="Dich_Vu" name="Dich_Vu" placeholder="Chọn Dịch Vụ"
+                                        class="form-control select2">
+                                    {% for DichVu in dv %}
+                                    <option value="{{ DichVu.id }}">{{ DichVu.title }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="type">Chọn Lĩnh Vực </label>
+                                <select id="Linh_Vuc" name="Linh_Vuc" placeholder="Chọn Lĩnh Vực"
+                                        class="form-control select2">
+                                    {% for LinhVuc in post1 %}
+                                    <option value="{{ LinhVuc.id }}">{{ LinhVuc.title }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 form-group">
+                                <label for="time_ex">Hạn Chào Gía</label>
+                                <input id="time_ex" name="time_ex" type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <hr class="margin-bottom--big">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Company details</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="form-check form-check-inline" style="display: inline-flex;">
+                                 <label for="validity"style="background: #fbff00;">Chọn Kỹ Năng</label>
+                                 {% for KyNang in kn %}
+                                <input class="form-check-input" name="Ky_Nang"style="margin-left: 15px;" type="checkbox" id="{{ KyNang.id }}" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">{{ KyNang.title }}</label>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <hr>
+                                <div class="checkbox text-center">
+                                    <label>
+                                        <input type="checkbox"> I agree with the <a href="#">Terms and conditions</a>.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <hr>
+                                <button type="submit" class="btn btn-outline-white-primary"><i class="fa fa-magic"></i>
+                                    Save and publish
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+    </div>
+            </div>
+            </div>
+        </div>
+    </section>

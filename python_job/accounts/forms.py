@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 from accounts.models import User
-from vlance.models import ThanhPho
+#from vlance.models import ThanhPho
 
 GENDER_CHOICES = (
     ('male', 'Nam'),
@@ -12,7 +12,6 @@ GENDER_CHOICES = (
 
 class EmployeeRegistrationForm(UserCreationForm):
     # gender = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=GENDER_CHOICES)
-
 
     def __init__(self, *args, **kwargs):
         super(EmployeeRegistrationForm, self).__init__(*args, **kwargs)
@@ -144,6 +143,7 @@ class EmployerRegistrationForm(UserCreationForm):
     def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)
         user.role = "NhaTuyenDung"
+        user.is_staff = '1'
         if commit:
             user.save()
         return user

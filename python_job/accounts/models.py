@@ -2,7 +2,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from accounts.managers import UserManager
-from vlance.models import ThanhPho
 
 GENDER_CHOICES = (
     ('male', 'Nam'),

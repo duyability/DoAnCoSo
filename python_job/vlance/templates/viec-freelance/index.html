@@ -22,28 +22,24 @@
 
     <div class="main_content">
 
-<script type="text/javascript">
-    fbq('track', 'ViewJob');
-</script>
-
 
 <div class="content-section container detail fl-view">
     <div class="row-fluid">
         <div class="span12">
             <div style="display: none;">
     <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-      <a href="/viec-lam-freelance.html" itemprop="url">
+      <a href="/viec-lam-freelance" itemprop="url">
         <span itemprop="title">Việc freelance</span>
       </a>
     </div>
-    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"> › <a href="/viec-lam-freelance/cpath_cac-cong-viec-it-va-lap-trinh_chash_cac-cong-viec-lap-trinh-khac" itemprop="url">
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"> › <a href="/viec-lam-freelance" itemprop="url">
                 <span itemprop="title">{{VC.Linh_Vuc}}</span>
             </a>
             </div>
 </div>
 <div class="breadcrumbs">
     <ul>
-      <a href="/viec-lam-freelance.html" title="Việc freelance">
+      <a href="/viec-lam-freelance" title="Việc freelance">
           <span>Việc freelance</span>
                         </a>
                     </li>
@@ -69,10 +65,10 @@
                         </div>
 
                                         <div class="row-fluid body-view">
-                                                                                                    <div class="row-fluid">
+                                 <div class="row-fluid">
                                 <div class="service-need-hire">
                                     <div class="service-title">
-                                        Dịch vụ cần thuê: <b>{{VC.Dich_Vu}}</b>
+                                        Dịch vụ cần thuê: <b>{{VC.Nganh_Nghe}}</b>
                                     </div>
                                            <div class="service-suggest">
                                             Bạn có thể cung cấp dịch vụ này? <a href="/a/172016/edit#service-can-provide">Thêm vào hồ sơ làm việc</a>.
@@ -84,7 +80,7 @@
 
                             <div class="">
                                 <p>
-                                   {{VC.infojob}}
+                                   {{VC.description}}
                                 </p>
                                                                                                                                 </div>
                         </div>
@@ -94,7 +90,7 @@
                                 <ul>
                                  <li class="row-fluid">
                                      <div class="i32 i32-attach"></div>
-                                     <a href="/HinhAnh/{{ VC.hinh }}" class="span10 file_upload_name" title="{{ VC.hinh }}">{{ VC.hinh }}                                                </a>
+                                     <a href="/HinhAnh/{{ VC.file }}" class="span10 file_upload_name" title="{{ VC.file }}">{{ VC.file }}                                                </a>
                                       </li>
                                                                     </ul>
                             </div>
@@ -103,8 +99,8 @@
                                      <div class="row-fluid body-view">
                                     <div class="span10 skill">
                                 <span>Kỹ năng</span>
-                                      <a href="/viec-lam-freelance/kynang_aws" title="AWS"> AWS</a>,<a href="/viec-lam-freelance/kynang_html" title="HTML"> HTML</a>,                                                                                                       <a href="/viec-lam-freelance/kynang_mobile-application" title="Mobile application"> Mobile application</a>,                                                                                                       <a href="/viec-lam-freelance/kynang_moodle" title="Moodle"> Moodle</a>,                                                                                                       <a href="/viec-lam-freelance/kynang_python" title="Python"> Python</a>,                                                                                                       <a href="/viec-lam-freelance/kynang_code" title="code"> code</a>                                                            </div>
-                        </div>
+                                    {{ VC.skill }}
+                                    </div></div>
 
                            <div class="row-fluid fb-like fb_iframe_widget" data-href="https://www.vlance.vn/viec-freelance/viet-truong-trinh-su-ly-text-hoac-pdf" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=197321233758025&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-freelance%2Fviet-truong-trinh-su-ly-text-hoac-pdf&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 122px; height: 20px;"><iframe name="f32bfc9ec6ca078" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=197321233758025&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df3acc5488315508%26domain%3Dwww.vlance.vn%26origin%3Dhttps%253A%252F%252Fwww.vlance.vn%252Ff5309f05e11ea4%26relation%3Dparent.parent&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-freelance%2Fviet-truong-trinh-su-ly-text-hoac-pdf&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false" style="border: none; visibility: visible; width: 122px; height: 20px;" class=""></iframe></span></div>
 
@@ -120,19 +116,19 @@
         <dt>ID dự án</dt>
         <dd>{{ VC.id }}</dd>
         <dt>Ngày đăng</dt>
-                        <dd>{{ VC.created_on }} </dd>
+                        <dd>{{ VC.created_at }} </dd>
         <dt>Ngày hết hạn</dt>
-                    <dd>{{ VC.time_ex }}</dd>
+                    <dd>{{ VC.last_date }}</dd>
 
         <dt>Địa điểm</dt>
         <dd>{{ VC.Thanh_Pho }}</dd>
 
 
         <dt>Ngân sách từ</dt>
-        <dd>{{ VC.NStu }} đ</dd>
+        <dd>{{ VC.NS_tu }} đ</dd>
 
         <dt>Ngân sách đến</dt>
-        <dd>{{ VC.NSden }} đ</dd>
+        <dd>{{ VC.NS_den }} đ</dd>
 
     </dl>
 </div>                        </div>
@@ -170,12 +166,12 @@
     <div class="info-employment-bottom row-fluid">
         <dl class="dl-horizontal">
             <dt>Đến từ</dt>
-            <dd>Hà Nội</dd>
+            <dd>{{ VC.Thanh_Pho }}</dd>
             <dt>Tham gia</dt>
             <dd>{{ VC.user.date_joined }} </dd>
             <dt>Đã đăng</dt>
             <dd><a href="/khach-hang/nam-25" title="4">
-                       4 việc
+                       10 việc
                 </a>
             </dd>
         </dl>
@@ -185,19 +181,6 @@
 
                                                                                                                                                             </div>
 
-                    <div class="job-view-fb-page-box">
-                        <h3>Like page để nhận được việc sớm nhất</h3>
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=197321233758025";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/vlance.vn" data-small-header="false" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=197321233758025&amp;container_width=383&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvlance.vn&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false"><span style="vertical-align: bottom; width: 340px; height: 214px;"><iframe name="f22839e2b9285f" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/plugins/page.php?app_id=197321233758025&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df5f50e9b0d2f94%26domain%3Dwww.vlance.vn%26origin%3Dhttps%253A%252F%252Fwww.vlance.vn%252Ff5309f05e11ea4%26relation%3Dparent.parent&amp;container_width=383&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvlance.vn&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 214px;" class=""></iframe></span></div>                    </div>
                 </div>
 
                                                                                                         <div class="row-fluid form-bid">
@@ -218,7 +201,7 @@
                         </dt>
                         <dd class="block-amount-price">
                             <div class="input-append">
-                                <input id="vlance_jobbundle_bidtype_customers_pay" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="{{ VC.NSden }}">
+                                <input id="vlance_jobbundle_bidtype_customers_pay" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="{{ VC.NS_den }}">
                                 <span class="add-on bonus">VNĐ</span>
                             </div>
                         </dd>
@@ -255,7 +238,7 @@
                                 <select id="vlance_jobbundle_bidtype_duration" name="vlance_jobbundle_bidtype[duration]" required="required" pattern="[0-9]*" placeholder="ví dụ: 14" class="row-fluid span12">
             <option value="1">1 Ngày</option>
                 <option value="2">2 Ngày</option>
-                <option value="3" selected="selected">3 Ngày</option>
+                <option value="3">3 Ngày</option>
                 <option value="5">5 Ngày</option>
                 <option value="7">7 Ngày</option>
                 <option value="10">10 Ngày</option>
@@ -868,14 +851,7 @@ jQuery(document).ready(function(){
     </div>
 <div class="ad-970-250 profile-job span12 ">
     <!-- vlance.app job view 970x250 -->
-    <div style="display:inline-block;width:1200px;height:250px">
-        <a rel="nofollow" href="https://www.thuengay.vn/cong-cu/alo-ngay?ref=vlance_view_job" target="_blank" onclick="vtrack('Page Signature', {'location':'vlviewjob'})">
-            <img src="/img/ad/1200x250--banner-thuengay.png">
-        </a>
     </div>
-    </div>
-                            <div class="count_bid_declined span12">
-                Có 1 chào giá bị từ chối.            </div>
 
                             </div>
 

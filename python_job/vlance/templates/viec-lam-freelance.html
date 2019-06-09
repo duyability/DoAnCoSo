@@ -235,19 +235,19 @@
                 <div class="row-fluid">
                     <div class="span12">
                                                 <a class="screen-1200" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top" target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z" style="margin: 20px auto 0;">
-                            <img src="/media/banner/thuengay/1200x150.jpg">
+                            <img src="/static/media/banner/thuengay/1200x150.jpg">
                         </a>
                         <a class="screen-960" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top" target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z" style="margin: 0 auto 20px;">
-                            <img src="/media/banner/thuengay/960x150.jpg">
+                            <img src="/static/media/banner/thuengay/960x150.jpg">
                         </a>
                         <a class="screen-750" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top" target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z" style="margin: 0 auto 20px;">
-                            <img src="/media/banner/thuengay/960x250.jpg">
+                            <img src="/static/media/banner/thuengay/960x250.jpg">
                         </a>
                         <a class="screen-620" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top" target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z" style="margin: 0 auto 0;">
-                            <img src="/media/banner/thuengay/960x250.jpg">
+                            <img src="/static/media/banner/thuengay/960x250.jpg">
                         </a>
                         <a class="screen-320" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top" target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z" style="margin: 0 auto 0;width: 320px;">
-                            <img src="/media/banner/thuengay/320x150.jpg">
+                            <img src="/static/media/banner/thuengay/320x150.jpg">
                         </a>
                                         </div>
                 </div>
@@ -267,45 +267,18 @@
                 <a href="/">
                     Tất cả                                    </a>
             </li>
-            {% for LinhVuc in lv %}
+            {% for NghanhNghe in NN %}
             <li class="cat-item ">
-                        <a href="/viec-lam-freelance/{{ LinhVuc.slug }}">
-                            {{ LinhVuc.title }}
+                        <a href="/viec-lam-freelance/{{ NghanhNghe.slug }}">
+                            {{ NghanhNghe.title }}
                         </a>
                     </li>
             {% endfor %}
         </ul>
     </div>
-</div>    </div>    <div class="control-group ">
-        <div class="layered-block ln-category">
-    <h2 class="layered-heading">Trạng thái</h2>
-    <div class="block-content subcategory_status">
-        <ul class="subcategory unstyled">
-                                                            <li class="sub-item">
-                        <a href="/viec-lam-freelance">
-                            <i class="spanb checked"></i>
-                            <div>
-                                                                    Nhận chào giá                                 </div>
-                        </a>
-                    </li>
-                                                                <li class="sub-item">
-                        <a href="/viec-lam-freelance/status_nap-tien">
-                            <i class="spanb "></i>
-                            <div>
-                                                                    <span class="label-tag label-green">Đã nạp tiền </span>
-                                </div>
-                        </a>
-                    </li>
-                                                                <li class="sub-item">
-                        <a href="/viec-lam-freelance/status_tat-ca">
-                            <i class="spanb "></i>
-                            <div>
-                                                                    Tất cả                                 </div>
-                        </a>
-                    </li>
-                                    </ul>
-    </div>
-</div>    </div>    <div class="control-group ">
+</div>
+        </div>
+ <div class="control-group ">
         <div class="layered-block ln-category ln-category-city showcity hidecity">
     <h2 class="layered-heading">Thành phố</h2>
     <div class="block-content subcategory_city">
@@ -318,7 +291,7 @@
                     </li>
             {% for ThanhPho in tp %}
                         <li class="sub-item ">
-                        <a href="/viec-lam-freelance/{{ThanhPho.slug}}">
+                        <a href="{{ThanhPho.slug}}">
                             <i class="span1 "></i>
                             <div>{{ ThanhPho.title }}
                             </div>
@@ -340,49 +313,18 @@
         });
             });
 
-</script>    </div>    <div class="control-group ">
-        <div class="layered-block ln-category ln-category-skill showskill hideskill">
-    <h2 class="layered-heading">Kỹ năng</h2>
-    <div class="block-content subcategory_skill">
-        <ul class="subcategory unstyled">
-                    <li class="sub-item checked">
-                        <a href="/viec-lam-freelance">
-                            <i class="span1 checked"></i>
-                            <div>Tất cả                                                             </div>
-                        </a>
-                    </li>
-            {% for KyNang in kn %}
-                     <li class="sub-item ">
-                        <a href="/viec-lam-freelance/{{ KyNang.slug }}">
-                            <i class="span1 "></i>
-                            <div>{{ KyNang.title }}
-                             </div>
-                        </a>
-                    </li>
-            {% endfor %}
+</script>    </div>
 
-                                    </ul>
-    </div>
-    <div id="bottomskill"><span class="buttonskill"></span></div>
 
-</div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(".buttonskill" ).click(function() {
-            $('.ln-category-skill').toggleClass( "hideskill" );
-            $('.layered-navigation').toggleClass("hide-adv");
-        });
-            });
-
-</script>    </div>    <input id="form__token" name="form[_token]" value="f77c2189f3024bed444d76fe3b4460e381f35121" type="hidden">    </div>    </div>
+    </div>    </div>
 
                                                     <div class="block ads-1">
                                 <div class="control-group ">
                                     <div class="layered-block ln-category">
                                         <div class="block-content subcategory_city">
                                                                                         <div style="display:inline-block;width:160px;height:600px;background-color: #fff;margin: 0px 11px 10px;">
-                                                                                                    <a rel="nofollow" href="https://www.thuengay.vn/cong-cu/alo-ngay?ref=vlance_banner_left" target="_blank">
-                                                        <img src="/img/ad/banner-alo-ngay-160x600.jpg">
+                                     <a rel="nofollow" href="https://www.thuengay.vn/cong-cu/alo-ngay?ref=vlance_banner_left" target="_blank">
+                                                        <img src="static/img/ad/banner-alo-ngay-160x600.jpg">
                                                     </a>
                                                                                             </div>
                                         </div>
@@ -551,19 +493,22 @@
 </div>
 
             <!----job -->
-            {% for ViecTheoDuAn in VL %}
+            {% for Job in vl %}
 <div class="row-fluid row-result"style=" border-bottom: 1px solid #EDEDED;">
     <div class="fr-info span12">
                 <h3 class="fr-name">
 
-                <a href="/viec-freelance/{{ ViecTheoDuAn.slug }}">
-                   {{ ViecTheoDuAn.title }} </a>
+                <a href="/viec-freelance/{{ Job.slug }}">
+                   {{ Job.title }} </a>
                  <span class="label-new">Mới</span>
                 </h3>
         <div class="fr-title">
 
             <div id="client-rating-box" class="list-job-rating">
-                                <div class="box-rating-client" data-toggle="popover" data-placement="right" data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div><div>Việc đã đăng : <b>1</b> việc</div><div>Việc đã giao : <b>0</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
+                                <div class="box-rating-client"
+                                     data-toggle="popover"
+                                     data-placement="right"
+                                     data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div><div>Việc đã đăng : <b>1</b> việc</div><div>Việc đã giao : <b>0</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
                     <div class="rating-box-client">
                         <div class="rating-client" style="width:0%"></div>
                     </div>
@@ -574,40 +519,39 @@
                     })
                 </script>
             </div>
-            <a href="/khach-hang/diggory-nguyen" title="{{ ViecTheoDuAn.user.get_full_name }}">
-                <span>{{ ViecTheoDuAn.user.get_full_name }}</span>
+            <a href="/khach-hang/diggory-nguyen" title="{{ Job.user.get_full_name }}">
+                <span>{{ Job.user.get_full_name }}</span>
             </a>
                             <i class="icon-info icon-user inactive" title="Tài khoản khách hàng thiếu thông tin cơ bản"></i>
                                 </div>
         <div class="fr-summary row-fluid">
             <div class="history span8">
                 <span class="location">
-                   {{ ViecTheoDuAn.Thanh_Pho }}               </span>
+                   {{ Job.Thanh_Pho }}               </span>
                 <span class="separator">|</span>
 
-                    <span class="category">{{ ViecTheoDuAn.Linh_Vuc }}</span>
+                    <span class="category">{{ Job.Nganh_Nghe }}</span>
                                 <span class="separator hidejs" style="display: inline;">|</span>
 
 
-                <span class="history-job hidejs" style="display: inline;">{{ ViecTheoDuAn.NStu }} đ - {{ ViecTheoDuAn.NSden }} đ                                        <a href="#" class="vlance-popover icon-question-sign" data-trigger="hover" data-placement="bottom" data-html="true" data-content="Vui lòng <a href='#'>đăng nhập</a> để biết mức ngân sách thực tế." data-original-title="" title=""></a>
+                <span class="history-job hidejs" style="display: inline;">{{ Job.NS_tu }} đ - {{ Job.NS_den }} đ                                        <a href="#" class="vlance-popover icon-question-sign" data-trigger="hover" data-placement="bottom" data-html="true" data-content="Vui lòng <a href='#'>đăng nhập</a> để biết mức ngân sách thực tế." data-original-title="" title=""></a>
                                     </span>
             </div>
             <div class="span4 remain-job hidejs" style="">
                 <div class="remain">
-                    Hạn chào giá: {{ ViecTheoDuAn.time_ex }}                                  </div>
+                    Hạn chào giá: {{ Job.last_date }}                                  </div>
             </div>
         </div>
         <div class="fr-service">
-            {{ ViecTheoDuAn.infojob }}...
-            <a class="read_more" href="/viec-freelance/{{ ViecTheoDuAn.slug }}">
-                        xem thêm                    </a>
+            {{ Job.description |truncatewords:50}}...
+            <a class="read_more"
+               href="/viec-freelance/{{ Job.slug }}">xem thêm</a>
                                     </div>
         <div class="fr-profile row-fluid">
                                         <div class="skill-list span8 row-fluid">
-                                            <span class="service-tag"><a title="Cần thuê dịch vụ &quot;{{ ViecTheoDuAn.Dich_Vu }}&quot;">{{ ViecTheoDuAn.Dich_Vu }}</a></span>
-                                        <span>{% for Ky_nang in ViecTheoDuAn.Ky_nang.all %}
-                                         <a href="/viec-lam-freelance/{{ Ky_nang.slug }}" title="Việc freelance {{ Ky_nang }}">{{Ky_nang}}</a>
-                                            {% endfor %}
+                                            <span class="service-tag"><a title="Cần thuê dịch vụ &quot;{{ Job.Nganh_Nghe }}&quot;">{{ Job.Nganh_Nghe }}</a></span>
+                                        <span>
+                                            {{ Job.skill }}
                                         </span>
                 </div>
                         <div class="span4">
