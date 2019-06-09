@@ -1,368 +1,225 @@
 {% extends 'layout/base.html' %}
-
 {% block index %}
     {% load static %}
-{% comment %}    <div class="clearfix"></div>
-<section class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="heading">Add a new position</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-                    <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    {% if form.errors %}
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                <div class="alert alert-danger alert-dismissable">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <strong>{{ field.name }} {{ error|escape }}</strong>
+
+<div class="content-section container create-job">
+    <div class="row-fluid">
+        <div class="span12 left-side">
+            <h1 class="new_job_title">Đăng việc mới</h1>
+
+            <div class="post-job">
+                <form id="edit-job-form" action="" method="post" enctype="multipart/form-data"
+                novalidate="novalidate">
+                    {% csrf_token %}
+                    <div id="vlance_jobbundle_jobtype">
+                        <div class="control-group primary-type">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <div class="sprites-job-posting sprites-1"></div>
                                 </div>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-                    <form id="edit-job-form" method="post" action="" class="job-add-form" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="span10 offset2">
-                                <h4>Job details</h4>
-                                <p class="text-muted text-small">Some additional info for this screen about validity of
-                                    the ads, etc. Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                    fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-                                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien
-                                    ullamcorper pharetra. </p>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label for="title">Job Title</label>
-                                <input id="title" name="title" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label for="text">Job Description</label>
-                                <textarea id="text" name="description" rows="5" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 form-group">
-                                <label for="skill">Kỹ Năng</label>
-                                  <textarea id="skill" name="skill" type="text" rows="3" placeholder="..PHP ,HTML5 ,CSS3 ,...."
-                                       class="form-control"></textarea>
-                            </div>
-                            <div class="col-lg-6 form-group">
-                                <label for="category">Thành Phố </label>
-                               {% include 'from/thanhpho-inc.html' %}
+                                <div class="span10">
+                                    <h4>Việc cần tuyển freelancer</h4>
+                                    <div class="control-group ">
+                                        <label class="required" for="vlance_jobbundle_jobtype_category">Chọn lĩnh vực cần tuyển </label>
+                                        {% include 'from/vieclam-inc.html' %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-xl-3 form-group">
-                                <label for="NStu">Ngân sách từ</label>
-                                <input id="NStu" name="NS_tu" type="number" class="form-control">
+                        <div class="control-group">
+                            <div class="row-fluid">
+                                <div class="span10 offset2">
+                                    <div class="control-group ">
+                                        <label class="required" for="vlance_jobbundle_jobtype_title">Đặt tên cụ thể cho công việc cần
+                                            tuyển </label>
+                                        <input type="text" id="title_id" name="title" required="required" maxlength="255"
+                                        placeholder="VD: Thiết kế trang web bán hàng cao cấp"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="Tên công việc, VD: Dịch tiếng anh sang tiếng việt"
+                                        data-trigger="hover" class="popovers-input span12"
+                                        value="">
+                                    </div>
+                                </div>
                             </div>
-                             <div class="col-xl-3 form-group">
-                                <label for="NSden">Ngân sách đến</label>
-                                <input id="NSden" name="NS_den" type="number" class="form-control">
-                            </div>
+                        </div>
+                        <div class="control-group primary-type">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <div class="sprites-job-posting sprites-2"></div>
+                                </div>
+                                <div class="span10">
+                                    <h4>Thông tin đầy đủ về yêu cầu tuyển dụng</h4>
+                                    <div class="control-group ">
+                                        <label class="required" for="vlance_jobbundle_jobtype_description">
+                                            Nội dung chi tiết, và các đầu việc cần Freelancer thực hiện (càng chi tiết,
+                                            freelancer càng có đầy đủ thông
+                                            tin để gửi báo giá chính xác
+                                            hơn).
+                                        </label>
+                                        <textarea id="description_id" name="description"
+                                                  required="required"
+                                                  placeholder=""
+                                                    data-placement="top"
+                                                    class="input span12"
+                                                    rows="14">
 
-                            <div class="col-xl-6 form-group">
-                                <label for="NganhNghe">Lĩnh Vực & Ngành Nghề </label>
-                               {% include 'from/vieclam-inc.html' %}
-                            </div>
-                            <div class="col-xl-6 form-group">
-                                <label for="file">Hình ảnh đính kèm</label>
-                               <input id="file" name="file" type="file" class="form-control">
-                            </div>
-                            <div class="col-xl-6 form-group">
-                                <label for="validity">Hạn chào giá</label>
-                                <input id="validity" name="last_date" type="date" class="form-control">
+                                        </textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <hr class="margin-bottom--big">
+                        <div class="control-group">
+                            <div class="row-fluid">
+                                <div class="span10 offset2">
+                                    <label>File đính kèm</label>
+                                    <div class="control-group ">
+                                        <input id="file" name="file" type="file" class="control-groups">
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h4>Company details</h4>
+                        <div class="control-group">
+                            <div class="row-fluid">
+                                <div class="span10 offset2">
+                                    <label>Kỹ năng yêu cầu freelancer phải có</label>
+                                    <div class="control-group ">
+                                        <textarea id="skill_id" name="skill" required="required" placeholder="Ví dụ: PHP , HTML , CSS..."
+                                        class="popovers-input span12" rows="3">
+
+                                        </textarea>
+
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label for="company_name">Company name</label>
-                                <input id="company_name" name="company_name" type="text" class="form-control">
+                        <div class="control-group">
+                            <div class="row-fluid">
+                                <div class="span5 offset2 job-closed-at">
+                                    <div class="control-group closeat wrapper append-white">
+                                        <label class="required" for="vlance_jobbundle_jobtype_closeAt">Hạn cuối nhận chào giá của freelancer
+                                            </label>
+                                        <div class="datepicker-widget input-append">
+                                            <input type="date" id="last_date_id" name="last_date" required="required"
+                                            placeholder="VD: 09/09/2019"
+                                            title="" data-toggle="popover"
+                                            data-placement="top" data-content="Hạn nhận báo giá, VD: 30/11/2019"
+                                            data-trigger="hover" class="popovers-input span12">
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label for="company_description">Company Description</label>
-                                <textarea id="company_description" name="company_description" rows="3"
-                                          class="form-control"></textarea>
+                        <div class="control-group primary-type">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <div class="sprites-job-posting sprites-3"></div>
+                                </div>
+                                <div class="span10">
+                                    <h4>Yêu cầu khác với freelancer</h4>
+                                    <div class="row-fluid">
+                                        <div class="span6 job-fl-city">
+                                            <div class="control-group ">
+                                                <label class="required" for="vlance_jobbundle_jobtype_city">Cần tuyển freelancer làm
+                                                    việc tại
+                                                </label>
+                                                {% include 'from/thanhpho-inc.html' %}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 form-group">
-                                <label for="company_website">Website</label>
-                                <input id="company_website" name="website" type="url" class="form-control">
+                        <div class="control-group primary-type">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <div class="sprites-job-posting sprites-4"></div>
+                                </div>
+                                <div class="span10">
+                                    <h4>Ngân sách dự kiến chi cho công việc này</h4>
+                                    <div class="control-group wrapper append-white combo-row-1st span6 budget">
+                                        <label class="required" for="vlance_jobbundle_jobtype_budget">Số tiền tối đa tôi có thể trả là
+                                            </label>
+                                        <span>Từ</span>
+                                        <div class="input-append">
+                                            <input type="number" id="NS_tu_id" name="NS_tu" required="required" pattern="^(0|[1-9][0-9/.]*)$"
+                                            placeholder="VD: 2.500.000"
+                                            data-toggle="popover" data-placement="top"
+                                            data-content="Thù lao dự kiến, VD: 500.000"
+                                            data-trigger="hover" class="popovers-input span12"
+                                            value="">
+                                            <span class="add-on">VNĐ</span>
+                                        </div>
+
+                                        <span>Đến</span>
+                                        <div class="input-append">
+                                            <input type="number" id="NS_den_id" name="NS_den" required="required" pattern="^(0|[1-9][0-9/.]*)$"
+                                            placeholder="VD: 2.500.000"
+                                            data-toggle="popover" data-placement="top"
+                                            data-content="Thù lao dự kiến, VD: 500.000"
+                                            data-trigger="hover" class="popovers-input span12"
+                                            value="">
+                                            <span class="add-on">VNĐ</span>
+                                        </div>
+
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <hr>
-                                <div class="checkbox text-center">
-                                    <label>
-                                        <input type="checkbox"> I agree with the <a href="#">Terms and conditions</a>.
+                    </div>
+                    <div class="more-options">
+                        <div class="control-group primary-type">
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <div class="sprites-job-posting sprites-5"></div>
+                                </div>
+                                <div class="span10">
+                                    <h4>Đồng ý với các  <i>điều khoản </i> </h4>
+                                    <label class="is-private checkbox">
+                                        <input type="checkbox" id="filled" name="filled">
+                                        <p>
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <label for="vlance_jobbundle_jobtype_isPrivate"> Tin đăng là hoàn toàn chính
+                                                xác , không lừa đảo , hoàn
+                                                toàn chịu trách nhiệm về
+                                                nội dung mình đăng. </label>
+                                        </p>
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <hr>
-                                <button type="submit" class="btn btn-outline-white-primary"><i class="fa fa-magic"></i>
-                                    Save and publish
-                                </button>
+                    </div>
+            </div>
+            <div class="clear"></div>
+            <div class="row-fluid">
+                <div class="span10 offset2">
+                    <div class="form-cread-job-btn">
+                        <div class="row-fluid">
+                            <div class="accept-agreement span12">
+                                <p>Khi đăng việc, tôi xác nhận đồng ý các
+                                    <a href="%agreement_link%" target="_blank">điều khoản sử dụng</a>của vLance.vn, và không để lộ bất kỳ
+                                    thông tin liên lạc cá nhân nào trong
+                                    phần mô tả nội dung công việc.</p>
                             </div>
                         </div>
-                    </form>
+                        <div class="row-fluid">
+                            <div class="span12 ">
+                                <input id="btn-submit-job" type="submit" class="btn btn-primary btn-large popup-validate span12"
+                                value="Đăng việc">
+                            </div>
+                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-         </div>
-    </section>
-    <div class="clearfix"></div>{% endcomment %}
 
-
-
-<div class="content-section container create-job">
-<div class="row-fluid">
-<div class="span12 left-side">
-<h1 class="new_job_title">Đăng việc mới</h1>
-
-<div class="post-job">
-<form id="edit-job-form" action="" method="post" enctype="multipart/form-data" novalidate="novalidate">
-    {% csrf_token %}
-<div id="vlance_jobbundle_jobtype">
-<div class="control-group primary-type">
-<div class="row-fluid">
-<div class="span2">
-<div class="sprites-job-posting sprites-1"></div>
-</div>
-<div class="span10">
-<h4>Việc cần tuyển freelancer</h4>
-<div class="control-group ">
-<label class="required" for="vlance_jobbundle_jobtype_category">Chọn lĩnh vực cần tuyển </label>
-    {% include 'from/vieclam-inc.html' %}
-</div> </div>
-</div>
-</div>
-
-<div class="control-group">
-<div class="row-fluid">
-<div class="span10 offset2">
-<div class="control-group ">
-<label class="required" for="vlance_jobbundle_jobtype_title">Đặt tên cụ thể cho công việc cần tuyển </label>
-    <input type="text"
-           id="title_id"
-           name="title"
-           required="required" maxlength="255"
-           placeholder="VD: Thiết kế trang web bán hàng cao cấp"
-           data-toggle="popover" data-placement="top"
-           data-content="Tên công việc, VD: Dịch tiếng anh sang tiếng việt"
-           data-trigger="hover"
-           class="popovers-input span12" value="">
-</div>
-</div>
-</div>
-</div>
-<div class="control-group primary-type">
-<div class="row-fluid">
-<div class="span2">
-<div class="sprites-job-posting sprites-2"></div>
-</div>
-<div class="span10">
-<h4>Thông tin đầy đủ về yêu cầu tuyển dụng</h4>
-<div class="control-group ">
-            <label class="required"
-                   for="vlance_jobbundle_jobtype_description">
-                Nội dung chi tiết, và các đầu việc cần Freelancer thực hiện (càng chi tiết, freelancer càng có đầy đủ thông tin để gửi báo giá chính xác hơn).
-            </label>
-    <textarea id="description_id"
-              name="description"
-              required="required"
-              placeholder="Ví dụ: Các giao diện website cần thiết kế như trang chủ, xem hàng, thanh toán..."
-              data-toggle="popover" data-placement="top" data-content="GỢI Ý:
-Bạn nên cung cấp tối thiểu những thông tin sau:
-
-- Giới thiệu qua về dự án cần tìm freelancer.
-- Liệt kê những đầu việc mà bạn dự định sẽ giao cho freelancer làm.
-- Một số lưu ý hoặc thỏa thuận đặc biệt khác (nếu có).
-
-LƯU Ý:
-Dwebtech không cho phép để lộ các tin liên lạc của bạn tại đây. Những công việc có nội dung vi phạm sẽ bị ẩn và khóa tài khoản người đăng."
-              data-trigger="hover"
-              class="popovers-input span12"
-              rows="14">
-
-    </textarea>
-</div>
-</div>
-</div>
-</div>
-<div class="control-group">
-<div class="row-fluid">
-<div class="span10 offset2">
-    <label>File  đính kèm</label>
-<div class="control-group ">
-             <input id="file" name="file" type="file" class="control-groups">
-
-</div>
- </div>
-</div>
-</div>
-<div class="control-group">
-<div class="row-fluid">
-<div class="span10 offset2">
-<label>Kỹ năng yêu cầu freelancer phải có</label>
-<div class="control-group ">
-            <textarea id="skill_id"
-                          name="skill"
-                          required="required"
-                          placeholder="Ví dụ: PHP , HTML , CSS..."
-                          class="popovers-input span12"
-                          rows="3">
-
-            </textarea>
-
-</div>
-<div class="clear"></div>
-</div>
-</div>
-</div>
-<div class="control-group">
-<div class="row-fluid">
-<div class="span5 offset2 job-closed-at">
-<div class="control-group closeat wrapper append-white">
-<label class="required" for="vlance_jobbundle_jobtype_closeAt">Hạn cuối nhận chào giá của freelancer </label>
-    <div class="datepicker-widget input-append">
-<input type="date" id="last_date_id"
-       name="last_date"
-       required="required"
-       placeholder="VD: 09/09/2019" title=""
-       data-toggle="popover" data-placement="top" data-content="Hạn nhận báo giá, VD: 30/11/2019"
-       data-trigger="hover" class="popovers-input span12">
-    </div>
-
-</div>
-</div>
-</div>
-</div>
-<div class="control-group primary-type">
-<div class="row-fluid">
-<div class="span2">
-<div class="sprites-job-posting sprites-3"></div>
-</div>
-<div class="span10">
-<h4>Yêu cầu khác với freelancer</h4>
-<div class="row-fluid">
-<div class="span6 job-fl-city">
-<div class="control-group ">
-<label class="required" for="vlance_jobbundle_jobtype_city">Cần tuyển freelancer làm việc tại </label>
-    {% include 'from/thanhpho-inc.html' %}
-
-    </div> </div>
-</div>
-</div>
-</div>
-</div>
-<div class="control-group primary-type">
-<div class="row-fluid">
-<div class="span2">
-<div class="sprites-job-posting sprites-4"></div>
-</div>
-<div class="span10">
-<h4>Ngân sách dự kiến chi cho công việc này</h4>
-<div class="control-group wrapper append-white combo-row-1st span6 budget">
-<label class="required" for="vlance_jobbundle_jobtype_budget">Số tiền tối đa tôi có thể trả là </label>
-    <span>Từ</span>
-    <div class="input-append">
-            <input type="number"
-                   id="NS_tu_id"
-                   name="NS_tu"
-                   required="required" pattern="^(0|[1-9][0-9/.]*)$"
-                   placeholder="VD: 2.500.000" data-toggle="popover"
-                   data-placement="top"
-                   data-content="Thù lao dự kiến, VD: 500.000"
-                   data-trigger="hover" class="popovers-input span12" value="">
-                    <span class="add-on">VNĐ</span>
-    </div>
-
-     <span>Đến</span>
-     <div class="input-append">
-            <input type="number"
-                   id="NS_den_id"
-                   name="NS_den"
-                   required="required" pattern="^(0|[1-9][0-9/.]*)$"
-                   placeholder="VD: 2.500.000" data-toggle="popover"
-                   data-placement="top"
-                   data-content="Thù lao dự kiến, VD: 500.000"
-                   data-trigger="hover" class="popovers-input span12" value="">
-                    <span class="add-on">VNĐ</span>
-    </div>
-
-
-</div> </div>
-</div>
-</div>
         </div>
-<div class="more-options">
-<div class="control-group primary-type">
-<div class="row-fluid">
-<div class="span2">
-<div class="sprites-job-posting sprites-5"></div>
-</div>
-<div class="span10">
-<h4>Đồng ý với các  <i>điều khoản </i> </h4>
-<label class="is-private checkbox">
-<input type="checkbox" id="filled" name="filled"> <p>
-<i class="fa fa-lock" aria-hidden="true"></i>
-<label for="vlance_jobbundle_jobtype_isPrivate">  Tin đăng là hoàn toàn chính xác , không lừa đảo , hoàn toàn chịu trách nhiệm về nội dung mình đăng. </label> </p>
-</label>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="clear"></div>
-<div class="row-fluid">
-<div class="span10 offset2">
-<div class="form-cread-job-btn">
-<div class="row-fluid">
-<div class="accept-agreement span12">
-<p>Khi đăng việc, tôi xác nhận đồng ý các <a href="%agreement_link%" target="_blank">điều khoản sử dụng</a> của vLance.vn, và không để lộ bất kỳ thông tin liên lạc cá nhân nào trong phần mô tả nội dung công việc.</p>
-</div>
-</div>
-<div class="row-fluid">
-<div class="span12 ">
-<input id="btn-submit-job" type="submit" class="btn btn-primary btn-large popup-validate span12" value="Đăng việc">
-</div>
-</div>
-    </form>
-</div>
-</div>
-</div>
-
-</div>
-</div>
+    </div>
 </div>
 
 

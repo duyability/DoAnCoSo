@@ -116,9 +116,9 @@
         <dt>ID dự án</dt>
         <dd>{{ VC.id }}</dd>
         <dt>Ngày đăng</dt>
-                        <dd>{{ VC.created_at }} </dd>
+                        <dd>{{ VC.created_at|date:'d/m/Y'  }} </dd>
         <dt>Ngày hết hạn</dt>
-                    <dd>{{ VC.last_date }}</dd>
+                    <dd>{{ VC.last_date|date:'d/m/Y' }}</dd>
 
         <dt>Địa điểm</dt>
         <dd>{{ VC.Thanh_Pho }}</dd>
@@ -168,7 +168,7 @@
             <dt>Đến từ</dt>
             <dd>{{ VC.Thanh_Pho }}</dd>
             <dt>Tham gia</dt>
-            <dd>{{ VC.user.date_joined }} </dd>
+            <dd>{{ VC.user.date_joined|date:'d/m/Y' }} </dd>
             <dt>Đã đăng</dt>
             <dd><a href="/khach-hang/nam-25" title="4">
                        10 việc

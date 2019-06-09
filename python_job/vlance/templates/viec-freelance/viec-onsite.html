@@ -1,0 +1,234 @@
+{% extends 'layout/base-in.html' %}
+
+    {% load static %}
+{% block content %}
+<div class="content-section container detail job-onsite-content">
+<div class="row-fluid">
+<div class="span12">
+<!---->
+<div style="display: none;">
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="/viec-lam-freelance" itemprop="url">
+            <span itemprop="title">Việc freelance</span>
+        </a>
+    </div>
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        ›
+        <a href="/viec-lam-freelance/cpath_cac-cong-viec-viet-lach_chash_copywriting"
+        itemprop="url">
+            <span itemprop="title">Copywriting</span>
+        </a>
+    </div>
+</div>
+<!---->
+<div class="breadcrumbs">
+    <ul>
+        <li>
+            <a href="/viec-lam-onsite" title="Việc làm bán thời gian">
+                <span>Việc làm bán thời gian</span>
+            </a>
+        </li>
+        <li><span>›</span>
+        </li>
+        <li>
+            <a href="/viec-lam-onsite/cpath_cac-cong-viec-viet-lach" title="Viết lách &amp; dịch thuật">
+                <span>Viết lách &amp; dịch thuật</span>
+            </a>
+        </li>
+        <li><span>›</span>
+        </li>
+        <li>
+            <a href="/viec-lam-onsite/cpath_cac-cong-viec-viet-lach_chash_copywriting"
+            title="Copywriting">
+                <span>Copywriting</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--------detail--------->
+<div class="row-fluid">
+    <div class="row-fluid">
+        <div class="span7 news-detail onsite-detail">
+            <div class="row-fluid ">
+                <h1 class="title clampMe block-title">
+Copywriter <span class="label-tag label-large label-new" data-original-title="" title="">Mới</span>
+</h1>
+                <div class="clear"></div>
+                <div class="title-sub">
+                    <span>ID dự án: {{ jp.id }}</span>
+                    <span>Ngày đăng: {{ jp.created_at|date:'d/m/Y' }}</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 onsite-properties">
+                    <div class="row-fluid">
+                        <div class="span6 onsite-properties-left">
+                            <div class="row-fluid">
+                                <div class="span12 prop-company">
+                                    <div class="row-fluid">
+                                        <div class="span3 prop-company-logo">
+                                            <img src="/HinhAnh/{{ jp.hinh }}" alt="Logo" style="width: 90px;height: 90px;" title="{{ jp.company_name }}">
+                                        </div>
+                                        <div class="span8 prop-company-name">
+                                            {{ jp.company_name }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12 prop-salary">
+                                    <div class="prop-salary-label">Mức lương tháng (VNĐ)</div>
+                                    <div class="prop-salary-range">
+                                        {{ jp.NS_tu }} - {{ jp.NS_den }}</div> VNĐ
+                                    {% comment %}<div class="prop-apply-deadline">
+                                        <em>Hạn nhận CV: 6 ngày 18 giờ</em>
+                                    </div>{% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span6 onsite-properties-right">
+                            <div class="prop-mixed">
+                                <dl class="dl-horizontal">
+                                    <dt>Ngày bắt đầu làm</dt>
+                                    <dd>{{ jp.date_begin|date:'d/m/Y' }}</dd>
+                                    <div class="clear"></div>
+                                    <dt>Thời hạn</dt>
+                                    <dd>{{ jp.duration }}</dd>
+                                    <div class="clear"></div>
+                                    <dt>Yêu cầu kinh nghiệm</dt>
+                                    <dd>{{ jp.year_exp }}</dd>
+                                    <div class="clear"></div>
+                                    <dt>Nơi làm việc</dt>
+                                    <dd>{{ jp.Thanh_Pho.title }}</dd>
+                                    <div class="clear"></div>
+                                    <dt>Hình thức</dt>
+                                    <dd>{{ jp.location }}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid body-view">
+                <div class="span10 description ">
+                    <div class="">
+                        <p>{{ jp.description }}</p>
+                    </div>
+                </div>
+      <div class="span10 description">
+    <label>File đính kèm:</label>
+    <ul>
+        <li class="row-fluid">
+            <div class="i32 i32-attach"></div>
+            <a href="/HinhAnh/{{ jp.file }}"
+            class="span10 file_upload_name" title="{{ jp.title }}">{{ jp.file }}</a>
+        </li>
+    </ul>
+</div>
+                <div class="clear"></div>
+            </div>
+            <div class="row-fluid body-view">
+                <div class="span10 skill">
+                    <span>Kỹ năng</span>
+                    {{ jp.skill }}
+                    </div>
+            </div>
+            <div class="row-fluid fb-like fb_iframe_widget" data-href="{{ request.path|urlencode }}"
+            data-layout="button_count" data-action="like" data-show-faces="false"
+            data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=197321233758025&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-onsite%2Fcopywriter-6&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 122px; height: 20px;"><iframe name="f8a0c2ba0f4e74" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=197321233758025&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2d37f898f41c54%26domain%3Dwww.vlance.vn%26origin%3Dhttps%253A%252F%252Fwww.vlance.vn%252Ff1eee2dc6217b2c%26relation%3Dparent.parent&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-onsite%2Fcopywriter-6&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false" style="border: none; visibility: visible; width: 122px; height: 20px;" class=""></iframe></span>
+            </div>
+        </div>
+        <div class="span4 job-information offset1">
+            <div class="job-information-inner">
+                <div class="row-fluid">
+                    <h2>Thông tin khách hàng</h2>
+                    <div class="info-employment">
+                        <div class="info-employment-top row-fluid">
+                            <div class="span4">
+                                <a href="/khach-hang/mr-green" title="Mr.CEO">
+                                    <img width="75" height="75" src="/static/img/unknown.png" alt="Mr.CEO">
+                                </a>
+                            </div>
+                            <div class="span8">
+                                <h3 class="title">
+<a href="/khach-hang/mr-green" title="Mr.CEO">
+{{ jp.user.get_full_name }}</a>
+<i class="icon-info icon-user inactive" title="Tài khoản khách hàng thiếu thông tin cơ bản"></i>
+</h3>
+                                <div class="work-title"></div>
+                                <div id="client-rating-box">
+                                    <div class="box-rating-client" data-toggle="popover" data-placement="right"
+                                    data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div>
+                                    <div>Việc đã đăng : <b>10</b> việc </div>
+                                    <div>Việc đã giao : <b>0</b> việc</div>"
+                                    data-trigger="hover" data-html="true"
+                                    data-original-title="" title="">
+                                        <div class="rating-box-client">
+                                            <div class="rating-client" style="width:0%"></div>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function() {
+                                            $(
+                                                '.box-rating-client'
+                                            ).popover();
+                                        })
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-employment-bottom row-fluid">
+                            <dl class="dl-horizontal">
+                                <dt>Đến từ</dt>
+                                <dd>{{ jp.Thanh_Pho.title }}</dd>
+                                <dt>Tham gia</dt>
+                                <dd>{{ jp.created_at|date:'d/m/Y' }}</dd>
+                                <dt>Đã đăng</dt>
+                                <dd><a href="/khach-hang/{{ jp.user.get_full_name|slugify }}" title="1">
+1 việc
+</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12 contact-client">
+                        <a class="btn-flat btn-flat-large btn-light-green" data-toggle="modal"
+                        href="title:{{ jp.user.hotline }}">
+                            <i class="fa fa-dollar"></i> Liên hệ trực tiếp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="job-view-fb-page-box">
+                <h3>Like page để nhận được việc sớm nhất</h3>
+                <div id="fb-root"></div>
+                <script>
+                    (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if(d.getElementById(id)) return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src =
+                            "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=197321233758025";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+                <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/dwebtech.net"
+                data-small-header="false" data-hide-cover="false" data-show-facepile="true"
+                fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=197321233758025&amp;container_width=383&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FvLance.vn.Freelancer.Copywriting&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false"><span style="vertical-align: bottom; width: 340px; height: 196px;"><iframe name="f35e9c54c4d9ad4" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/plugins/page.php?app_id=197321233758025&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df1b6fc37df1d72c%26domain%3Dwww.dwebtech.net%26origin%3Dhttps%253A%252F%252Fdwebtech.net%252Ff1eee2dc6217b2c%26relation%3Dparent.parent&amp;container_width=383&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FvLance.vn.Freelancer.Copywriting&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 196px;" class=""></iframe></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------detail-------->
+{% include 'from/cv-onsite.html' %}
+<!---->
+</div>
+</div>
+</div>
+
+{% endblock %}

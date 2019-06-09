@@ -1,0 +1,317 @@
+<div class="header-list-job">
+    <div class="container">
+        <div class="tabbable menu-desktop">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a class="nav-item-job project-short" href="/viec-lam-freelance" title="Việc theo dự án">
+                        <i class="icon"></i> Việc theo dự án
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-item-job item-onsite" href="/viec-lam-onsite" title="Việc bán thời gian">
+                        <i class="icon"></i> Việc bán thời gian
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-item-job item-contest" href="/cuoc-thi-thiet-ke" title="Cuộc thi thiết kế">
+                        <i class="icon"></i> Cuộc thi thiết kế
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="menu-hamburger">
+            <ul class="nav nav-pills nav-tabs">
+                <li class="dropdown active">
+                    <a class="dropdown-toggle nav-item-job project-short tf200" data-toggle="dropdown"
+                    href="#" title="Việc theo dự án">
+                        <i class="icon"></i> Việc theo dự án
+                        <i class="icon-hamburger fa fa-bars" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-item-job item-onsite" href="/viec-lam-onsite" title="Việc bán thời gian">
+                                <i class="icon"></i> Việc bán thời gian
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item-job item-contest" href="/cuoc-thi-thiet-ke" title="Cuộc thi thiết kế">
+                                <i class="icon"></i> Cuộc thi thiết kế
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!----->
+<div class="head-title-list-job">
+    <div class="container">
+        <h1><b>Việc freelance</b> - Làm online, nhận tiền nhanh chóng</h1>
+        <p>Hơn <b>26689</b> dự án đã đăng và thuê được freelancer thành công.
+            <br>Được bảo đảm thanh toán với những <b>dự án được nạp tiền</b>            qua vLance.vn.</p>
+        <form action="/tim-kiem" method="GET" id="search-job-form" autocomplete="off"
+        novalidate="novalidate">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="form-control" id="input-search-text" name="keyword" placeholder="Tìm việc freelancer, cuộc thi hay công việc mong muốn"
+                    required="" type="text">
+                    <button type="submit" class="btn btn-primary mb-2">Tìm kiếm</button>
+                </div>
+            </div>
+        </form>
+        <form action="/tim-kiem" method="GET" id="search-job-form-mobile" autocomplete="off"
+        novalidate="novalidate">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input class="form-control" id="input-search-text-1" name="keyword" placeholder="Bạn cần tìm việc freelancer thế nào?"
+                    required="" type="text">
+                    <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <script>
+            var category = ["IT và lập trình", "Lập trình web",
+                "Ứng dụng di động", "Thiết kế",
+                "Viết lách & dịch thuật", "Viết báo & tạp chí",
+                "Thiết kế Logo", "Việc lập trình khác",
+                "Lập trình phần mềm",
+                "Tối ưu cho công cụ tìm kiếm - SEO",
+                "Mạng & Quản trị hệ thống", "Thiết kế đồ hoạ",
+                "Thiết kế Website", "Banner quảng cáo",
+                "Nhãn hiệu và bao bì", "Làm video clip",
+                "Ảnh và chỉnh sửa ảnh", "Kiến trúc và nội thất",
+                "Các việc thiết kế khác",
+                "Quản lý blog & fanpage", "Dịch thuật",
+                "Viết sách", "Các công việc viết lách khác",
+                "Marketing & Bán hàng",
+                "Quảng cáo qua công cụ tìm kiếm – SEM",
+                "Quảng bá sản phẩm", "Giới thiệu bán hàng",
+                "Nghiên cứu, khảo sát thị trường",
+                "Việc KD và marketing khác",
+                "Kinh doanh, Nhập liệu & Hành chính",
+                "Nhập dữ liệu", "Tổ chức sự kiện",
+                "Kế toán từ xa", "Tư vấn pháp lý",
+                "Việc hành chính khác", "Lĩnh vực khác",
+                "Chụp ảnh", "Việc khác", "QA/Tester",
+                "Kế toán, Thuế & Pháp lý", "Quản lý dự án",
+                "Thiết kế bộ nhận diện thương hiệu",
+                "Thiết kế flash, HTML5",
+                "Thiết kế ứng dụng di động", "Thiết kế brochure",
+                "Thiết kế infographic", "Copywriting",
+                "Viết nội dung cho website",
+                "Tư vấn bán hàng, marketing",
+                "Quảng cáo facebook", "Tiếp thị qua email",
+                "Forum seeding", "Trợ lý từ xa", "Xử lý dữ liệu",
+                "Hợp đồng", "Hồ sơ pháp lý"
+            ];
+
+            function autocomplete(inp, arr) {
+                /*the autocomplete function takes two arguments,
+                the text field element and an array of possible autocompleted values:*/
+                var currentFocus;
+                /*execute a function when someone writes in the text field:*/
+                inp.addEventListener("input", function(e) {
+                    var a, b, i, pos, val = this.value;
+                    /*close any already open lists of autocompleted values*/
+                    closeAllLists();
+                    if(!val) {
+                        return false;
+                    }
+                    currentFocus = -1;
+                    /*create a DIV element that will contain the items (values):*/
+                    a = document.createElement("DIV");
+                    a.setAttribute("id", this.id +
+                        "autocomplete-list");
+                    a.setAttribute("class",
+                        "autocomplete-items");
+                    /*append the DIV element as a child of the autocomplete container:*/
+                    this.parentNode.appendChild(a);
+                    /*for each item in the array...*/
+                    for(i = 0; i < arr.length; i++) {
+                        /*check if the item starts with the same letters as the text field value:*/
+                        pos = arr[i].toUpperCase().indexOf(
+                            val.trim().toUpperCase());
+                        if(pos != -1) {
+                            /*create a DIV element for each matching element:*/
+                            b = document.createElement(
+                                "DIV");
+                            /*make the matching letters bold:*/
+                            b.innerHTML = arr[i].substr(0,
+                                    pos) + "<strong>" +
+                                arr[i].substr(pos, val.length) +
+                                "</strong>" + arr[i].substr(
+                                    pos + val.length, arr[
+                                        i].length);
+                            /*insert a input field that will hold the current array item's value:*/
+                            b.innerHTML +=
+                                "<input type='hidden' value='" +
+                                arr[i] + "'>";
+                            /*execute a function when someone clicks on the item value (DIV element):*/
+                            b.addEventListener("click",
+                                function(e) {
+                                    /*insert the value for the autocomplete text field:*/
+                                    inp.value = this.getElementsByTagName(
+                                        "input")[
+                                        0].value;
+                                    /*close the list of autocompleted values,
+                                    (or any other open lists of autocompleted values:*/
+                                    closeAllLists();
+                                    /*submit form when click*/
+                                    if($(
+                                            "#search-job-form-mobile"
+                                        ).css(
+                                            'display'
+                                        ) == 'none') {
+                                        document.getElementById(
+                                            "search-job-form"
+                                        ).submit();
+                                    } else {
+                                        document.getElementById(
+                                            "search-job-form-mobile"
+                                        ).submit();
+                                    }
+                                });
+                            a.appendChild(b);
+                        }
+                    }
+                });
+                /*execute a function presses a key on the keyboard:*/
+                inp.addEventListener("keydown", function(e) {
+                    var x = document.getElementById(this.id +
+                        "autocomplete-list");
+                    if(x) x = x.getElementsByTagName(
+                        "div");
+                    if(e.keyCode == 40) {
+                        /*If the arrow DOWN key is pressed,
+                        increase the currentFocus variable:*/
+                        currentFocus++;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if(e.keyCode == 38) { //up
+                        /*If the arrow UP key is pressed,
+                        decrease the currentFocus variable:*/
+                        currentFocus--;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if(e.keyCode == 13) {
+                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                        //e.preventDefault();
+                        if(currentFocus > -1) {
+                            /*and simulate a click on the "active" item:*/
+                            if(x) x[currentFocus].click();
+                        }
+                    }
+                    if(currentFocus > -1) {
+                        var y = document.getElementsByClassName(
+                            "autocomplete-active");
+                        inp.value = y[0].innerText;
+                    }
+                });
+
+                function addActive(x) {
+                    /*a function to classify an item as "active":*/
+                    if(!x) return false;
+                    /*start by removing the "active" class on all items:*/
+                    removeActive(x);
+                    if(currentFocus >= x.length) currentFocus =
+                        0;
+                    if(currentFocus < 0) currentFocus = (x.length -
+                        1);
+                    /*add class "autocomplete-active":*/
+                    x[currentFocus].classList.add(
+                        "autocomplete-active");
+                }
+
+                function removeActive(x) {
+                    /*a function to remove the "active" class from all autocomplete items:*/
+                    for(var i = 0; i < x.length; i++) {
+                        x[i].classList.remove(
+                            "autocomplete-active");
+                    }
+                }
+
+                function closeAllLists(elmnt) {
+                    /*close all autocomplete lists in the document,
+                    except the one passed as an argument:*/
+                    var x = document.getElementsByClassName(
+                        "autocomplete-items");
+                    for(var i = 0; i < x.length; i++) {
+                        if(elmnt != x[i] && elmnt != inp) {
+                            x[i].parentNode.removeChild(x[i]);
+                        }
+                    }
+                }
+            }
+            autocomplete(document.getElementById("input-search-text"),
+                category);
+            autocomplete(document.getElementById(
+                "input-search-text-1"), category);
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#search-job-form, #search-job-form-mobile")
+                    .validate({
+                        rules: {
+                            "keyword": {
+                                required: true,
+                            },
+                        },
+                        messages: {
+                            "keyword": {
+                                required: '',
+                            },
+                        }
+                    });
+            });
+        </script>
+        <div class="popular-search">
+            <div class="title">Tìm nhiều nhất: </div>
+            <div class="key-word">
+                <a href="/tim-kiem?keyword=D%E1%BB%8Bch+thu%E1%BA%ADt" title="">Dịch thuật</a>
+                <a
+                href="/tim-kiem?keyword=thi%E1%BA%BFt+k%E1%BA%BF" title="">thiết kế</a><a href="/tim-kiem?keyword=Vi%E1%BA%BFt+l%C3%A1ch+%26+d%E1%BB%8Bch+thu%E1%BA%ADt"
+                    title="">Viết lách &amp; dịch thuật</a> </div>
+        </div>
+
+    </div>
+</div>
+
+<!----->
+<div class="container link-to-thuengay">
+    <div class="row-fluid">
+        <div class="span12">
+            <a class="screen-1200" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top"
+            target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z"
+            style="margin: 20px auto 0;">
+                <img src="/static/media/banner/thuengay/1200x150.jpg">
+            </a>
+            <a class="screen-960" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top"
+            target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z"
+            style="margin: 0 auto 20px;">
+                <img src="/static/media/banner/thuengay/960x150.jpg">
+            </a>
+            <a class="screen-750" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top"
+            target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z"
+            style="margin: 0 auto 20px;">
+                <img src="/static/media/banner/thuengay/960x250.jpg">
+            </a>
+            <a class="screen-620" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top"
+            target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z"
+            style="margin: 0 auto 0;">
+                <img src="/static/media/banner/thuengay/960x250.jpg">
+            </a>
+            <a class="screen-320" href="https://www.thuengay.vn/thue-dich-vu?ref=vlance-setting-page-top"
+            target="_blank" title="Thuengay.vn - Thuê thiết kế &amp; marketing từ A đến Z"
+            style="margin: 0 auto 0;width: 320px;">
+                <img src="/static/media/banner/thuengay/320x150.jpg">
+            </a>
+        </div>
+    </div>
+</div>

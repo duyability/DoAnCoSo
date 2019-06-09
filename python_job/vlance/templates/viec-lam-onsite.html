@@ -1,0 +1,93 @@
+{% extends 'layout/base-in.html' %}
+    {% load static %}
+{% block content %}
+    <div class="content-section">
+    {% include 'layout/sidebar/content-top.html' %}
+
+            <div class="row-fluid container">
+    {% include 'layout/sidebar/sidebar.html' %}
+<div class="col2-right span9">
+    <div id="main_content">
+        <script type="text/javascript">
+            var href = "/viec-lam-onsite";
+            var canonical = document.createElement("link");
+            canonical.setAttribute('rel', 'canonical');
+            canonical.setAttribute('href', href);
+            $('head')[0].append(canonical);
+        </script>
+        <div class="search-content row-fluid">
+            <div class="layered-block search-results span12">
+                <!---------JOB part Time---->
+                {% if not JPT %}
+		        Chưa có bài viết nào
+		        {% else %}
+                    {% for JobPartTime in JPT %}
+                <div class="row-fluid row-result job-onsite">
+                    <div class="fr-info span12">
+                        <div class="row-fluid">
+                            <div class="span10 onsite-item-detail">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <a href="/viec-onsite/{{ JobPartTime.slug }}">
+                                            <img src="HinhAnh/{{ JobPartTime.hinh }}"
+                                            alt="{{ JobPartTime.company_name }}"
+                                                 style="width: 96px;height: 96px;"
+                                                 title="{{ JobPartTime.company_name }}">
+                                        </a>
+                                    </div>
+                                    <div class="span10">
+                                        <h3 class="fr-name block-title">
+<a href="/viec-onsite/{{ JobPartTime.slug }}" title="{{ JobPartTime.title }}">{{ JobPartTime.title }}</a>
+<span class="label-tag label-purple" data-original-title="" title="">Tuyển dụng</span>
+</h3>
+                                        <div class="info-client row-fluid">
+                                            <div class="company-name-cl" title="{{ JobPartTime.company_name }}">
+                                                {{ JobPartTime.company_name }}
+                                            </div>
+                                            <div class="salary-fl" title="Mức lương"><i></i>{{ JobPartTime.NS_tu }} ₫ - {{ JobPartTime.NS_den }}
+                                                ₫</div>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="info-client row-fluid">
+                                            <div class="time-send-cv span4">
+                                                Số lượng CV: 10 </div>
+                                            <div class="time-send-cv span8" title="Ngày Tạo">
+                                                <div class="has_expired_quote"> Ngày Tạo : {{ JobPartTime.created_at|date:'d/m/Y' }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-list span12 row-fluid">
+                                            <span>
+                                                {{ JobPartTime.skill|truncatewords:15 }}....
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-right span2">
+                                <ul>
+                                    <li class="info-job place-work" title="Nơi làm việc"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        {{ JobPartTime.Thanh_Pho.title }}
+                                    </li>
+                                    <li class="info-job date-begin-work" title="Ngày bắt đầu làm việc"><i></i>{{ JobPartTime.date_begin|date:'d/m/Y' }}</li>
+                                    <li class="info-job time-work" title="Thời gian làm việc"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        {{ JobPartTime.duration }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    {%endfor%}
+                <!---------END JOB part Time---->
+            </div>
+             <br>
+		<!-- Hiện thị phân trang -->
+		{% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
+		{% endif %}
+
+        </div>
+
+    </div>
+</div>
+            </div>
+                {% endblock %}

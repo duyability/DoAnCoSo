@@ -75,12 +75,12 @@ class JobCreateView(CreateView, thanhpho):
 
 # Viec PartTime by Đức
 class PartTimeCreateView(CreateView, thanhpho):
-    template_name = 'dang-du-an.html'
+    template_name = 'dang-viec-tuyen-dung.html'
     form_class = PartTimeFrom
     extra_context = {
         'title': 'Post New Job'
     }
-    success_url = reverse_lazy('vlance:viec-lam')
+    success_url = reverse_lazy('vlance:viec-onsite')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     def dispatch(self, request, *args, **kwargs):

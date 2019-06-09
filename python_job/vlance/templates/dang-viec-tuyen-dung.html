@@ -1,0 +1,240 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class="content-section container create-job post-job-onsite">
+    <h1 class="new_job_title">Đăng tin tuyển dụng việc bán thời gian</h1>
+    <script type="text/javascript">
+        var logged = 'true';
+    </script>
+    <script type="text/javascript">
+        var credit = '0';
+    </script>
+    <div class="row-fluid block-guide">
+        <div class="title">Lợi ích khi đăng việc bán thời gian:</div>
+        <div class="content">
+            <p>Phỏng vấn và trao đổi trực tiếp với các ứng viên trên hệ thống của DwebTech.</p>
+            <p>Tin tuyển dụng sẽ được hiển thị liên tục trong <b>7 ngày</b>.</p>
+            <p>Nhận đến CV ứng tuyển không giới hạn.</p>
+        </div>
+    </div>
+    <div class="post-job">
+        <form id="edit-job-form" action="" method="post" enctype="multipart/form-data" novalidate="novalidate">
+            {% csrf_token %}
+            <div class="control-group primary-type">
+                <div class="row-fluid">
+                    <div class="span2">
+                        <div class="sprites-job-posting sprites-2"></div>
+                    </div>
+                    <div class="span10">
+                        <h4>Vị trí cần tuyển dụng</h4>
+                        <div class="form-title">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_title">Tên vị trí cần tuyển dụng </label>
+                                <input type="text" id="title_id" name="title" required="required" maxlength="300"
+                                       placeholder="VD: Lập trình Web" data-toggle="popover" data-placement="top"
+                                       data-content="Tên công việc, VD: Dịch tiếng anh sang tiếng việt"
+                                       data-trigger="hover" class="popovers-input span12" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="row-fluid">
+                    <div class="span10 offset2">
+                        <div class="form-category">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_category">Lĩnh vực </label>
+                                {% include 'from/vieclam-inc.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="row-fluid">
+                    <div class="span10 offset2">
+                        <div class="form-description">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_description">Thông tin chi tiết </label>
+                                <textarea id="description" name="description" required="required"
+                                          placeholder=""
+                                          data-toggle="popover"
+                                          data-placement="top"
+                                          class="popovers-input span12"
+                                          rows="10">
+
+                                </textarea>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="row-fluid">
+
+                                        <label>File đính kèm</label>
+                                        <div class="control-group ">
+                                            <input id="file" name="file" type="file" class="control-groups">
+                                        </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="row-fluid">
+                    <div class="span10 offset2">
+                        <div class="form-skills">
+                            <label for="vlance_jobbundle_jobonsitetype_skill">Kỹ năng</label>
+                                     <textarea id="skill_id" name="skill" required="required" placeholder="Ví dụ: PHP , HTML , CSS..."
+                                        class="popovers-input span12" rows="3">
+                                     </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-2 control-group primary-type row-fluid">
+                <div class="span2">
+                    <div class="sprites-job-posting sprites-4"></div>
+                </div>
+                <div class="span10">
+                    <h4>Chi phí và thời gian</h4>
+                    <div>
+                        <div class="control-group">
+                            <label class="required" for="vlance_jobbundle_jobonsitetype_budget">Ngân sách dự kiến</label>
+                            <div class="form-budget row-fluid">
+                                <div class="span6 form-min-budget">
+                                    <div class="  input-append ">
+                                        <input type="text" id="NS_tu" name="NS_tu" required="required" pattern="^(0|[1-9][0-9/.]*)$" placeholder="Tối thiểu: 500.000" data-toggle="popover" data-placement="top" data-content="Thù lao dự kiến, VD: 500.000" data-trigger="hover" class="popovers-input span12"  error= "Lỗi chỉ đc nhập số lớn hơn 0" value="">
+                                        <span class="add-on">VNĐ/Tháng</span>
+                                    </div>
+                                </div>
+                                <div class="span6 form-max-budget">
+                                    <div class="  input-append ">
+                                        <input type="text" id="NS_den" name="NS_den" required="required" pattern="^(0|[1-9][0-9/.]*)$" placeholder="Tối đa: 100.000.000" data-toggle="popover" data-placement="top" data-content="Thù lao dự kiến, VD: 500.000" data-trigger="hover" class="popovers-input span12" error="Lỗi chỉ đc nhập số lớn hơn 0" value="">
+                                        <span class="add-on">VNĐ/Tháng</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-date-hired row-fluid">
+                        <div class="form-start-date span6">
+                            <div class="control-group closeat wrapper append-white">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_startedAt">Ngày bắt đầu làm việc </label>
+                                <div class="datepicker-widget input-append">
+                                    <input type="date" id="date_begin" name="date_begin" required="required" placeholder="VD: 03/06/2020" title="" data-toggle="popover" data-placement="top" data-content="Hạn nhận báo giá, VD: 24/11/2016" data-trigger="hover" class="popovers-input span12">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-time-hired span6">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_duration">Công việc kéo dài trong </label>
+                                <select id="id_duration" name="duration" required="required" placeholder="ví dụ: 14" class="row-fluid span12">
+                                    <option value="1 Tháng">1 Tháng</option>
+                                    <option value="2 Tháng">2 Tháng</option>
+                                    <option value="3 Tháng" selected="selected">3 Tháng</option>
+                                    <option value="4 Tháng">4 Tháng</option>
+                                    <option value="5 Tháng">5 Tháng</option>
+                                    <option value="6 Tháng">6 Tháng</option>
+                                    <option value="7 Tháng">7 Tháng</option>
+                                    <option value="8 Tháng">8 Tháng</option>
+                                    <option value="9 Tháng">9 Tháng</option>
+                                    <option value="10 Tháng">10 Tháng</option>
+                                    <option value="11 Tháng">11 Tháng</option>
+                                    <option value="12 Tháng">12 Tháng</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-3 control-group primary-type row-fluid">
+                <div class="span2">
+                    <div class="sprites-job-posting sprites-3"></div>
+                </div>
+                <div class="span10">
+                    <h4>Yêu cầu về Freelancer</h4>
+                    <div class="form-exp">
+                        <div class="control-group ">
+                            <label class="required" for="vlance_jobbundle_jobonsitetype_onsiteRequiredExp">Số năm kinh nghiệm </label>
+                            <select id="year_exp" name="year_exp" required="required" placeholder="ví dụ: 14" class="row-fluid span12">
+                                <option value="Không yêu cầu kinh nghiệm">Không yêu cầu kinh nghiệm</option>
+                                <option value="&lt; 1 năm">&lt; 1 năm</option>
+                                <option value="&gt; 2 năm">&gt; 2 năm</option>
+                                <option value="2 - 5 năm">2 - 5 năm</option>
+                                <option value="5 - 10 năm">5 - 10 năm</option>
+                                <option value="&gt; 10 năm">&gt; 10 năm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="form-city span6">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_city">Làm việc tại </label>
+                               {% include 'from/thanhpho-inc.html' %}
+                            </div>
+                        </div>
+                        <div class="form-location span6">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_onsiteLocation">Hình thức làm việc </label>
+                                <select id="location" name="location" required="required" placeholder="ví dụ: 14" class="row-fluid span12">
+                                    <option value="Làm việc tại văn phòng" selected="selected">Làm việc tại văn phòng</option>
+                                    <option value="Làm online và đến văn phòng khi cần">Làm online và đến văn phòng khi cần</option>
+                                    <option value="Làm hoàn toàn online">Làm hoàn toàn online</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-4 control-group primary-type row-fluid">
+                <div class="span2">
+                    <div class="sprites-job-posting sprites-1"></div>
+                </div>
+                <div class="span10">
+                    <h4>Thông tin về nhà tuyển dụng</h4>
+                    <div class="row-fluid">
+                        <div class="form-company span6">
+                            <div class="control-group ">
+                                <label class="required" for="vlance_jobbundle_jobonsitetype_onsiteCompanyName">Tên công ty </label>
+                                <input type="text" id="company_name" name="company_name" required="required" placeholder="VD: Công ty Dwebtech.Net" data-toggle="popover" data-placement="top" data-content="Tên công việc, VD: Dịch tiếng anh sang tiếng việt" data-trigger="hover" class="popovers-input span12" value=""> </div>
+                        </div>
+                        <div class="form-company-logo span6">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group ">
+                                        <label for="vlance_jobbundle_jobonsitetype_file">Logo công ty </label>
+                                        <input type="file" id="vlance_jobbundle_jobonsitetype_file"
+                                               name="hinh"
+                                               error="Định dạng  hoặc kích thước tài liệu đính kèm không hợp lệ" value=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var onsite_validate = {
+                    "type": ["jpg", "jpeg", "png", "gif"],
+                    "size": 1048576
+                };
+                var onsite_sizeerror = "Kích thước file không vượt quá 1MB";
+                var onsite_typeerror = "File không đúng định dạng jpg, jpeg, png, gif";
+            </script>
+
+
+                <div class="row-fluid">
+                    <div class="offset2 span10 form-cread-job-btn">
+                        <p>Bạn bấm nút "Đăng tuyển dụng", bạn đã xác nhận đồng ý điều khoản sử dụng vLance.vn</p>
+                        <input id="btn-submit-job" type="submit" class="btn btn-primary btn-large popup-validate span12" value="Đăng tuyển dụng" onclick="vtrack('Submit onsite job')">
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+{% endblock %}
