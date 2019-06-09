@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'setting',
     'vlance',
+    'django_mysql',
 
 ]
 
@@ -51,11 +52,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
 ROOT_URLCONF = 'python_job.urls'
+
+WSGI_APPLICATION = 'python_job.wsgi.application'
+
 
 TEMPLATES = [
     {
@@ -74,7 +78,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'python_job.wsgi.application'
 
 
 # Database
@@ -83,12 +86,22 @@ WSGI_APPLICATION = 'python_job.wsgi.application'
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'job_python',
+    'NAME': 'web-job-db',
     'HOST': 'localhost',
     'PORT': '3306',
     'USER': 'root',
-    'PASSWORD': '',
-}}
+    'PASSWORD': '2591998',
+    'OPTIONS': {
+            # Tell MySQLdb to connect with 'utf8mb4' character set
+            'charset': 'utf8mb4',
+        },
+        # Tell Django to build the test database with the 'utf8mb4' character set
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        }
+    }
+}
 
 
 # Password validation
