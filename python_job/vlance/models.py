@@ -5,10 +5,10 @@ from python_job.utils import get_unique_slug
 User = settings.AUTH_USER_MODEL
 
 
-#Create your models here.
+# Create your models here.
 class NganhNghe(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
-    title = models.CharField(max_length=255,default='')
+    title = models.CharField(max_length=255, default='')
     slug = models.SlugField(max_length=255)
 
     def save(self, *args, **kwargs):
@@ -22,7 +22,7 @@ class NganhNghe(models.Model):
 
 class ThanhPho(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
-    title = models.CharField(max_length=255,default='')
+    title = models.CharField(max_length=255, default='')
     slug = models.SlugField(max_length=255)
 
     def save(self, *args, **kwargs):
@@ -33,12 +33,14 @@ class ThanhPho(models.Model):
     def __str__(self):
         return self.title
 
+
+# Viec theo du an - Minh Duc
 class Job(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.SlugField(max_length=255,default='')
-    title = models.CharField(max_length=300,default='')
+    slug = models.SlugField(max_length=255, default='')
+    title = models.CharField(max_length=300, default='')
     description = models.TextField(default='')
-    skill = models.TextField(max_length=300,default='')
+    skill = models.TextField(max_length=300, default='')
     Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
     Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
     last_date = models.DateTimeField()
@@ -50,10 +52,41 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
+
+# Viec theo PartTime
+class JobPartTime(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, null=True) # Ngày tạo Job(auto)
+    slug = models.SlugField(max_length=255, default='')
+    title = models.CharField(max_length=300, default='')
+    description = models.TextField(default='')
+    skill = models.TextField(max_length=300, default='')
+    Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
+    Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
+    date_begin = models.DateTimeField()  # ngay bat dau lam
+    duration = models.CharField(max_length=100,default='')  # Thoi han lam
+    NS_tu = models.IntegerField("Ngân sách từ ", default='')
+    NS_den = models.IntegerField("Ngân sách đến", default='')
+    year_exp = models.CharField("Số Năm Kinh Nghiệm",max_length=300, default='')
+    location = models.CharField("Số Năm Kinh Nghiệm",max_length=300, default='') # Hinh thuc - vi tri lam viec
+    file = models.FileField("File đính kèm",upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/',default='')
+    company_name = models.CharField("Tên Công Ty",max_length=300, default='')
+    hinh = models.ImageField("Logo Công Ty",upload_to='uploads/ViecLamPartTime/logo/%Y/%m/%d/' ,default='')
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = get_unique_slug(self, 'title', 'slug')
+        super().save(*args, **kwargs)
+
 
 class Applicant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

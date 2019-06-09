@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'accounts',
     'setting',
     'vlance',
-    'django_mysql',
 
 ]
 
@@ -86,11 +85,11 @@ TEMPLATES = [
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'web-job-db',
+    'NAME': 'job_python',
     'HOST': 'localhost',
     'PORT': '3306',
     'USER': 'root',
-    'PASSWORD': '2591998',
+    'PASSWORD': '',
     'OPTIONS': {
             # Tell MySQLdb to connect with 'utf8mb4' character set
             'charset': 'utf8mb4',

@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView
 
 from vlance.decorators import user_is_employer
-from vlance.froms import CreateJobForm
+from vlance.froms import CreateJobForm, PartTimeFrom
 from vlance.models import Job, Applicant
 from vlance.views import thanhpho
 
@@ -44,7 +44,8 @@ class ApplicantPerJobView(ListView):
         return context
 
 
-class JobCreateView(CreateView,thanhpho):
+# Viec theo du an by Đức
+class JobCreateView(CreateView, thanhpho):
     template_name = 'dang-du-an.html'
     form_class = CreateJobForm
     extra_context = {
@@ -70,6 +71,36 @@ class JobCreateView(CreateView,thanhpho):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+
+# Viec PartTime by Đức
+class PartTimeCreateView(CreateView, thanhpho):
+    template_name = 'dang-du-an.html'
+    form_class = PartTimeFrom
+    extra_context = {
+        'title': 'Post New Job'
+    }
+    success_url = reverse_lazy('vlance:viec-lam')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
+        if self.request.user.is_authenticated and self.request.user.role != 'NhaTuyenDung':
+            return reverse_lazy('accounts:login')
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(PartTimeCreateView, self).form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
 
 class ApplicantsListView(ListView):
     model = Applicant
