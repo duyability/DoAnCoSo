@@ -5,8 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Language" content="vi">
-
-
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="vLance.vn" />
@@ -29,9 +27,6 @@
     <link itemprop="sameAs" href="https://twitter.com/vlancevn"/>
     <link itemprop="sameAs" href="https://www.linkedin.com/company/vlance-vn"/>
     <link itemprop="sameAs" href="https://plus.google.com/+VlanceVn"/>
-    {% block style %}
-
-    {% endblock %}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&amp;subset=latin,vietnamese' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
@@ -104,7 +99,7 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span2">
-                    <h1 class="logo"><a href="index.html">
+                    <h1 class="logo"><a href="/">
                         <img style="width:87px;" src="{% static 'img/logo.png' %}"
                              alt="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả"
                              title="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả"/></a></h1>
@@ -177,18 +172,18 @@
                 <ul class="nav-menu-mobile">
                     <li class="title"><a title="Thuê Freelancer" href="/freelancers">Thuê Freelancer</a></li>
                     <li class=""><a href="dang-du-an">Đăng việc theo dự án</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="dang-viec-tuyen-dung">Đăng việc bán thời gian</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="dang-cuoc-thi">Đăng cuộc thi thiết kế</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="freelancers">Danh sách Freelancer</a></li>
-                    <li class="title"><a title="Tìm việc làm" href="viec-lam-freelance">Tìm việc làm</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="viec-lam-freelance">Việc theo dự án</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="viec-lam-onsite">Việc bán thời gian</a></li>
-                    <li class=""><a role="menuitem" tabindex="-1" href="cuoc-thi-thiet-ke">Cuộc thi thiết kế</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/dang-viec-tuyen-dung">Đăng việc bán thời gian</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/dang-cuoc-thi">Đăng cuộc thi thiết kế</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/freelancers">Danh sách Freelancer</a></li>
+                    <li class="title"><a title="Tìm việc làm" href="/viec-lam-freelance">Tìm việc làm</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/viec-lam-freelance">Việc theo dự án</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/viec-lam-onsite">Việc bán thời gian</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/cuoc-thi-thiet-ke">Cuộc thi thiết kế</a></li>
                     <li class="divider"></li>
                     <li class=""><a id="btn-register-mobile" href="#">Đăng ký </a></li>
                     <li class=""><a id="btn-login-mobile" rel="nofollow" href="#">Đăng nhập</a></li>
                     <li class="divider"></li>
-                    <li class=""><a href="huong-dan-thue-freelancer" title="">Hướng dẫn làm việc</a></li>
+                    <li class=""><a href="/huong-dan-thue-freelancer" title="">Hướng dẫn làm việc</a></li>
                 </ul>
             </div>
             <div class="close-button"><a><i class="fa fa-close fa-2" aria-hidden="true"></i></a></div>
