@@ -47,4 +47,4 @@ class PartTimeFrom(forms.ModelForm):
 class ApplyJobForm(forms.ModelForm):
     class Meta:
         model = Applicant
-        fields = ('job',)
+        exclude = ('user', 'created_at')

@@ -92,6 +92,11 @@ class Applicant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='applicants')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
+    baogia = models.IntegerField(default='')
+    time = models.CharField(max_length=300,default='')
+    exp_info = models.TextField(max_length=400, default='')
+    dudinh_info = models.TextField(max_length=400, default='')
+    file = models.FileField("File đính kèm", upload_to='uploads/baogia/file/%Y/%m/%d/', default='')
 
     def __str__(self):
         return self.user.get_full_name()

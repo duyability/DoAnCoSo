@@ -9487,7 +9487,7 @@ jQuery.ajaxTransport( function( options ) {
 
 				xhr.open(
 					options.type,
-					options.url,
+					options.urls,
 					options.async,
 					options.username,
 					options.password
@@ -9663,7 +9663,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 			send: function( _, complete ) {
 				script = jQuery( "<script>" ).prop( {
 					charset: s.scriptCharset,
-					src: s.url
+					src: s.urls
 				} ).on(
 					"load error",
 					callback = function( evt ) {
@@ -9708,7 +9708,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 	var callbackName, overwritten, responseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
-			"url" :
+			"urls.py" :
 			typeof s.data === "string" &&
 				( s.contentType || "" )
 					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&

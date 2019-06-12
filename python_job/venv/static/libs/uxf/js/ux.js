@@ -1357,7 +1357,7 @@
 
             // updates the element data
             element.data("type", "json");
-            element.data("url", url);
+            element.data("urls.py", url);
             element.data("cache_d", cacheDisabled);
             element.data("data", {});
             element.data("cache", {});
@@ -16395,7 +16395,7 @@ jQuery.uxvisible = function(element, offset, delta, parent) {
 
                         // retrieves the url information from the slideshow
                         // data and opens the respective url
-                        var url = slideshow.data("url");
+                        var url = slideshow.data("urls.py");
                         if (url) {
                             var _window = event.which == 2
                             _window
@@ -16414,7 +16414,7 @@ jQuery.uxvisible = function(element, offset, delta, parent) {
 
                         // retrieves the url information from the slideshow
                         // data and opens the respective url
-                        var url = slideshow.data("url");
+                        var url = slideshow.data("urls.py");
                         if (url) {
                             var _window = event.which == 2
                             _window
@@ -16515,7 +16515,7 @@ jQuery.uxvisible = function(element, offset, delta, parent) {
 
             // updates the url with the (current) item url and the
             // index value with the target index
-            matchedObject.data("url", item.url);
+            matchedObject.data("urls.py", item.urls);
             matchedObject.data("index", index);
         };
 
@@ -22761,7 +22761,7 @@ TemplateNode.prototype.getParameter = function(name) {
         var _registerHandlers = function() {
             // retrieves the various options that were provided
             // to configure the current matched object
-            var url = options["url"];
+            var url = options["urls.py"];
             var channels = options["channels"];
             var timeout = options["timeout"];
             var pollTimeout = options["pollTimeout"];
@@ -22770,7 +22770,7 @@ TemplateNode.prototype.getParameter = function(name) {
             // updates the matched object with the options that
             // were provided in the initializer
             matchedObject.data("status", DISCONNECTED_STATUS);
-            matchedObject.data("url", url);
+            matchedObject.data("urls.py", url);
             matchedObject.data("channels", channels);
             matchedObject.data("timeout", timeout);
             matchedObject.data("poll_timeout", pollTimeout);
@@ -22785,7 +22785,7 @@ TemplateNode.prototype.getParameter = function(name) {
             // retrieves the url data and the sequence containing
             // the various channels for which the connection is
             // going to be registered
-            var url = matchedObject.data("url");
+            var url = matchedObject.data("urls.py");
             var channels = matchedObject.data("channels");
 
             // creates the channels string by joining the various
@@ -22834,7 +22834,7 @@ TemplateNode.prototype.getParameter = function(name) {
         var _disconnect = function(matchedObject, options) {
             // retrieves the url data and the current connection
             // identifier to be used in the remote call
-            var url = matchedObject.data("url");
+            var url = matchedObject.data("urls.py");
             var connectionId = matchedObject.data("id");
 
             // runs the remote call to the server side to provide
@@ -22866,7 +22866,7 @@ TemplateNode.prototype.getParameter = function(name) {
 
             // retrieves the url data and the current connection
             // identifier to be used in the remote call
-            var url = matchedObject.data("url");
+            var url = matchedObject.data("urls.py");
             var connectionId = matchedObject.data("id");
 
             // runs the remote call to the server side to provide
@@ -22898,7 +22898,7 @@ TemplateNode.prototype.getParameter = function(name) {
 
             // retrieves the url data and the current connection
             // identifier to be used in the remote call
-            var url = matchedObject.data("url");
+            var url = matchedObject.data("urls.py");
             var connectionId = matchedObject.data("id");
 
             // runs the remote call to the server side to provide
@@ -22926,7 +22926,7 @@ TemplateNode.prototype.getParameter = function(name) {
         var _update = function(matchedObject, options) {
             // retrieves the url data and the current connection
             // identifier to be used in the remote call
-            var url = matchedObject.data("url");
+            var url = matchedObject.data("urls.py");
             var connectionId = matchedObject.data("id");
 
             // runs the remote call to the server side to provide
