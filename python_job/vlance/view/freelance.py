@@ -1,14 +1,15 @@
 from django.contrib.auth.decorators import login_required
 from django.core.checks import messages
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, request
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import UpdateView, CreateView
+from django.views.generic import UpdateView, CreateView, ListView
 from accounts.forms import EmployeeProfileUpdateForm
 from accounts.models import User
 from vlance.decorators import user_is_employee
 from vlance.froms import ApplyJobForm
-from vlance.models import Applicant
+from vlance.models import Applicant, Job
 
 
 class EditProfileView(UpdateView):
@@ -39,33 +40,24 @@ class EditProfileView(UpdateView):
         return obj
 
 
+# Viec PartTime by Đức
 class ApplyJobView(CreateView):
     model = Applicant
-    template_name = 'from/cv-onsite.html'
+    template_name = 'from/cv-jop.html'
     form_class = ApplyJobForm
     slug_field = 'job_id'
     slug_url_kwarg = 'job_id'
+    extra_context = {
+        'title': 'Post New Job'
+    }
+    success_url = reverse_lazy('vlance:homepage')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
         return super().dispatch(self.request, *args, **kwargs)
 
-    def post(self, request, *args, **kwargs):
-        form = self.get_form()
-        if form.is_valid():
-            messages.info(self.request, 'Successfully applied for the job!')
-            return self.form_valid(form)
-        else:
-            return HttpResponseRedirect(reverse_lazy('vlance:homepage'))
-
-    def get_success_url(self):
-        return reverse_lazy('jobs:jobs-detail', kwargs={'id': self.kwargs['job_id']})
-
-    # def get_form_kwargs(self):
-    #     kwargs = super(ApplyJobView, self).get_form_kwargs()
-    #     print(kwargs)
-    #     kwargs['job'] = 1
-    #     return kwargs
 
     def form_valid(self, form):
         # check if user already applied
@@ -77,3 +69,16 @@ class ApplyJobView(CreateView):
         form.instance.user = self.request.user
         form.save()
         return super().form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
+
+
+
+

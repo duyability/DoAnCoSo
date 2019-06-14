@@ -2,7 +2,7 @@
 from django.http import Http404, request
 from django.shortcuts import render, get_object_or_404
 
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime
 
 
@@ -36,7 +36,10 @@ class thanhpho(ListView):
     def get_context_data(self, **kwargs):
         context = super(thanhpho,self).get_context_data(**kwargs)
         context['nghe'] = NganhNghe.objects.all()
+        context['jobs'] = Job.objects.all()
         return context
+
+
 
 # Việc Làm Dự án
 class vieclam(ListView):
@@ -84,3 +87,24 @@ def DetaiOnsite(request, slug):
     except JobPartTime.DoesNotExist:
         raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
     return render(request, 'viec-freelance/viec-onsite.html', {'jp': jp})
+
+class JobDetailsView(DetailView):
+    model = Job
+    template_name = 'from/cv-jop.html'
+    context_object_name = 'job'
+    pk_url_kwarg = 'id'
+
+    def get_object(self, queryset=None):
+        obj = super(JobDetailsView, self).get_object(queryset=queryset)
+        if obj is None:
+            raise Http404("Job doesn't exists")
+        return obj
+
+    def get(self, request, *args, **kwargs):
+        try:
+            self.object = self.get_object()
+        except Http404:
+            # redirect here
+            raise Http404("Job doesn't exists")
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)

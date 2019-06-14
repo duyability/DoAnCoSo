@@ -1,5 +1,4 @@
 {% extends 'layout/base-in.html' %}
-
     {% load static %}
 {% block content %}
 
@@ -108,360 +107,98 @@
                                                                             </div>
 
                                 <div class="span4 job-information offset1">
-                    <div class="job-information-inner">
-                        <div class="row-fluid">
-                            <h2>Thông tin dự án</h2>
-<div class="description-job">
-    <dl class="dl-horizontal">
-        <dt>ID dự án</dt>
-        <dd>{{ VC.id }}</dd>
-        <dt>Ngày đăng</dt>
-                        <dd>{{ VC.created_at|date:'d/m/Y'  }} </dd>
-        <dt>Ngày hết hạn</dt>
-                    <dd>{{ VC.last_date|date:'d/m/Y' }}</dd>
+                                    <div class="row-fluid">
+                                        <h2>Thông tin dự án</h2>
+                                        <div class="description-job">
+                                            <dl class="dl-horizontal">
+                                                <dt>ID dự án</dt>
+                                                <dd>{{ VC.id }}</dd>
+                                                <dt>Ngày đăng</dt>
+                                                <dd>{{ VC.created_at|date:'d/m/Y'  }} </dd>
+                                                <dt>Ngày hết hạn</dt>
+                                                <dd>{{ VC.last_date|date:'d/m/Y' }}</dd>
 
-        <dt>Địa điểm</dt>
-        <dd>{{ VC.Thanh_Pho }}</dd>
-
-
-        <dt>Ngân sách từ</dt>
-        <dd>{{ VC.NS_tu }} đ</dd>
-
-        <dt>Ngân sách đến</dt>
-        <dd>{{ VC.NS_den }} đ</dd>
-
-    </dl>
-</div>                        </div>
-                        <div class="row-fluid">
-                            <h2>Thông tin khách hàng</h2>
-<div class="info-employment">
-    <div class="info-employment-top row-fluid">
-        <div class="span4">
-                        <a href="/khach-hang/nam-25" title="Nam">
-                        <img src="https://www.vlance.vn/uploads/75x75/eba5c5c5fc452e3f48da065ac83b623fea15c720.PNG1.png" alt="Nam" title="Nam">
-                            </a>
-        </div>
-        <div class="span8">
-
-            <h3 class="title">
-                <a href="/khach-hang/nam-25" title="Nam">
-                       {{ VC.user.get_full_name }}              </a>
-                <i class="icon-info icon-user" title="Tài khoản khách hàng đã có đủ thông tin cơ bản"></i>
-                                                </h3>
-            <div class="work-title">Nhan vien cao cap</div>
-            <div id="client-rating-box">
-                                <div class="box-rating-client" data-toggle="popover" data-placement="right" data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div> <div>Việc đã đăng : <b>4</b> việc </div><div>Việc đã giao : <b>0</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
-                    <div class="rating-box-client">
-                        <div class="rating-client" style="width:0%"></div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    $(document).ready(function() {
-                        $('.box-rating-client').popover();
-                    })
-                </script>
-            </div>
-        </div>
-    </div>
-    <div class="info-employment-bottom row-fluid">
-        <dl class="dl-horizontal">
-            <dt>Đến từ</dt>
-            <dd>{{ VC.Thanh_Pho }}</dd>
-            <dt>Tham gia</dt>
-            <dd>{{ VC.user.date_joined|date:'d/m/Y' }} </dd>
-            <dt>Đã đăng</dt>
-            <dd><a href="/khach-hang/nam-25" title="4">
-                       10 việc
-                </a>
-            </dd>
-        </dl>
-    </div>
-</div>                        </div>
+                                                <dt>Địa điểm</dt>
+                                                <dd>{{ VC.Thanh_Pho }}</dd>
 
 
-                                                                                                                                                            </div>
+                                                <dt>Ngân sách từ</dt>
+                                                <dd>{{ VC.NS_tu }} đ</dd>
 
-                </div>
+                                                <dt>Ngân sách đến</dt>
+                                                <dd>{{ VC.NS_den }} đ</dd>
 
-                                                                                                        <div class="row-fluid form-bid">
-                                <div class="span12 container">
-                                    <h2 class="title">Thông tin chào giá</h2>
-                                    <hr class="hr-line-0">
+                                            </dl>
+                                        </div>                        </div>
+                                    <div class="row-fluid">
+                                        <h2>Thông tin khách hàng</h2>
+                                        <div class="info-employment">
+                                            <div class="info-employment-top row-fluid">
+                                                <div class="span4">
+                                                    <a href="/khach-hang/nam-25" title="Nam">
+                                                        <img src="https://www.vlance.vn/uploads/75x75/eba5c5c5fc452e3f48da065ac83b623fea15c720.PNG1.png" alt="Nam" title="Nam">
+                                                    </a>
+                                                </div>
+                                                <div class="span8">
 
-
-<form id="submit_bid_form" action="/bid/create/33265" method="post" enctype="multipart/form-data" data-display-track="show-bid-form-bidable" novalidate="novalidate">
-    <div class="row-fluid">
-        <div class="span5">
-            <div class="block-amount vlance_jobbundle_bidtype_amount">
-                <label class="title-in-form">ĐỀ XUẤT CHI PHÍ<span class="text-red">*</span></label>
-                <div class="block-amount-detail">
-                    <dl class="dl-horizontal">
-                        <dt class="block-amount-label price">
-                            Ngân sách tối đa
-                        </dt>
-                        <dd class="block-amount-price">
-                            <div class="input-append">
-                                <input id="vlance_jobbundle_bidtype_customers_pay" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="{{ VC.NS_den }}">
-                                <span class="add-on bonus">VNĐ</span>
-                            </div>
-                        </dd>
-                    </dl>
-                 {% comment %}   <dl class="dl-horizontal block-commision">
-                        <dt class="block-amount-label commision">
-                            +10% phí vLance
-                        </dt>
-                        <dd class="block-amount-price">
-                            <div class="input-append">
-                                <input id="vlance_jobbundle_bidtype_vlance_commision" class="span9" autocomplet="off" type="text" pattern="^(0|[1-9][0-9/.]*)$" disabled="" placeholder="300.000">
-                                <span class="add-on bonus">VNĐ</span>
-                            </div>
-                        </dd>
-                    </dl>{% endcomment %}
-
-                    <hr class="hr-line-10">
-
-                    <dl class="dl-horizontal">
-                        <dt class="block-amount-label price">
-                            Báo giá :
-                        </dt>
-                        <dd class="block-amount-price">
-                            <div class="bidtype_pay">
-                             <div class="  input-append ">
-        <input type="text" id="vlance_jobbundle_bidtype_amount" name="vlance_jobbundle_bidtype[amount]" required="required" pattern="^(0|[1-9][0-9/.]*)$" class="span9 popovers-input" data-toggle="popover" data-placement="top" data-trigger="focus" autocomplete="off" value="" placeholder="3.000.000" data-original-title="" title="">
-    <span class="add-on">VNĐ</span></div>                            </div>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="form-text block-duration">
-                <label class="title-in-form">DỰ KIẾN HOÀN THÀNH TRONG<span class="text-red">*</span></label>
-                                <select id="vlance_jobbundle_bidtype_duration" name="vlance_jobbundle_bidtype[duration]" required="required" pattern="[0-9]*" placeholder="ví dụ: 14" class="row-fluid span12">
-            <option value="1">1 Ngày</option>
-                <option value="2">2 Ngày</option>
-                <option value="3">3 Ngày</option>
-                <option value="5">5 Ngày</option>
-                <option value="7">7 Ngày</option>
-                <option value="10">10 Ngày</option>
-                <option value="14">2 Tuần</option>
-                <option value="21">3 Tuần</option>
-                <option value="28">4 Tuần</option>
-                <option value="42">6 Tuần</option></select>
-            </div>
-        </div>
-        <div class="span7">
-            <hr class="hr-line-0">
-            <label class="title-in-form">ĐỀ XUẤT THUYẾT PHỤC KHÁCH HÀNG<span class="text-red">*</span></label>
-
-            <div class="row-fluid">
-                <label class="ques-text">1.Bạn có những kinh nghiệm và kỹ năng nào phù hợp với dự án này?<span class="text-red">*</span></label>
-                <div class="bidtype_description">
-                                        <div class="control-group ">
-        <textarea id="vlance_jobbundle_bidtype_introDescription" name="vlance_jobbundle_bidtype[introDescription]" required="required" placeholder="- Tôi đã có xx năm kinh nghiệm trong lĩnh vực...
-- Tôi sử dụng thành thạo các công cụ như...
-- Tôi đã từng thực hiện những dự án tương tự..." class="form-textarea" data-placement="right" data-trigger="focus" data-toggle="popover" data-content="- Tôi đã có xx năm kinh nghiệm trong lĩnh vực...
-- Tôi sử dụng thành thạo các công cụ như...
-- Tôi đã từng thực hiện những dự án tương tự..." data-title="form.bid.intro_description"></textarea>    </div>                </div>
-            </div>
-
-            <div class="row-fluid">
-                <label class="ques-text">2.Bạn dự định thực hiện dự án này như thế nào?<span class="text-red">*</span></label>
-                <div class="bidtype_introdescription">
-                                        <div class="control-group ">
-        <textarea id="vlance_jobbundle_bidtype_description" name="vlance_jobbundle_bidtype[description]" required="required" placeholder="- Đầu tiên tôi sẽ...
-- Sau đó tôi sẽ...
-- Tôi tin tưởng có thể hoàn thành đúng theo kế hoạch...
-- Hãy liên hệ với tôi qua vLance để trao đổi thêm..." class="form-textarea" data-placement="right" data-trigger="focus" data-toggle="popover" data-content="- Đầu tiên tôi sẽ...
-- Sau đó tôi sẽ...
-- Tôi tin tưởng có thể hoàn thành đúng theo kế hoạch...
-- Hãy liên hệ với tôi qua vLance để trao đổi thêm..." data-title="form.bid.description"></textarea>    </div>                </div>
-            </div>
-
-            <div class="row-fluid">
-                <div class="fileupload_wrapper">
-                    <div class="fileupload_wrapper">
-            <a class="addupload" href="#" onclick="return false;" data-toggle="collapse" data-target="#vlance_jobbundle_bidtype_files_file_upload_container">
-        Thêm tài liệu đính kèm    </a>
-    <div class="clear"></div>
-            <div id="vlance_jobbundle_bidtype_files" class="control-group fileupload_wrapper ">
-                </div>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            jQuery('button[role="confirm"]').click(function() {
-                jQuery(this).parent().parent().modal('hide');
-                jQuery("#" + jQuery(this).attr('target')).remove();
-            });
-        });
-    </script>
-            <div id="vlance_jobbundle_bidtype_files_file_upload_container" class="collapse out">
-        <div class="support_file_attach">Định dạng được hỗ trợ: png, jpg, gif, pdf, psd, xls, xlsx, doc, docx, ppt, pptx, ods, odt, zip, rar</div>
-        <div class="support_file_attach">Kích thước tối đa: 10MB</div>
-        <div id="vlance_jobbundle_bidtype_files_collection_holder" name="vlance_jobbundle_bidtype[files]" data-prototype="<div class=&quot;control-group &quot;>
-        <div id=&quot;vlance_jobbundle_bidtype_files___name__&quot;>
-        <div class=&quot;control-group &quot;>
-        <input type=&quot;file&quot; id=&quot;vlance_jobbundle_bidtype_files___name___file&quot;
-name=&quot;vlance_jobbundle_bidtype[files][__name__][file]&quot;
-required=&quot;required&quot; value=&quot;&quot;/>    </div>    </div>    </div>">
-        </div>
-        <a href="#" class="btn add_input_file" id="vlance_jobbundle_bidtype_files_job_new_file"><i class="icon-plus"></i> Thêm tài liệu</a>
-    </div>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            var required_one = false;
-
-            var newButton = jQuery('');
-            function add_file_input(holder, id) {
-                var input_content = holder.data('prototype');
-                var index = holder.data('index');
-                var new_file = input_content.replace(/__name__label__/g, '').replace(/__name__/g, index);
-                var new_item = jQuery("<div></div>").addClass('new_file_input').append(new_file);
-                add_remove_file_input(new_item);
-
-                holder.append(new_item);
-                jQuery(id + '_' + index.toString() + '_file').on('change', function() {
-                    if(this.files[0]){
-                        jQuery(this).attr('file_size',this.files[0].size);
-                    }
-                });
-                holder.data('index', index + 1);
-
-                //Validate input file
-                $('.new_file_input input').change(function () {
-                    $(this).rules('add', {
-                            filesize: multiupload_validate["size"],
-                            filetype: multiupload_validate["type"],
-                            messages: {
-                                filesize: multiupload_sizeerror,
-                                filetype: multiupload_typeerror
-                            }
-                        }
-                    );
-                    $(this).valid();
-                });
-
-
-            }
-
-            function add_remove_file_input(new_item) {
-                var remove_button = jQuery('<a href="#" class="remove">x</a>');
-                new_item.append(remove_button);
-                remove_button.on('click', function(e) {
-                    e.preventDefault();
-                    if(required_one){
-                        if(jQuery('.new_file_input input').length == 1){
-                            alert('File đính kèm là bắt buộc.');
-                        } else{
-                            new_item.remove();
-                        }
-                    } else {
-                        new_item.remove();
-                    }
-                })
-            }
-
-            if (jQuery('#vlance_jobbundle_bidtype_files')) {
-                jQuery('#vlance_jobbundle_bidtype_files_collection_holder').data('index', jQuery('#vlance_jobbundle_bidtype_files input').size());
-            } else {
-                jQuery('#vlance_jobbundle_bidtype_files_collection_holder').data('index', 0);
-            }
-            jQuery('#vlance_jobbundle_bidtype_files_job_new_file').click(function(e) {
-                add_file_input(jQuery('#vlance_jobbundle_bidtype_files_collection_holder'), '#vlance_jobbundle_bidtype_files');
-                e.preventDefault();
-            });
-
-            if(required_one){
-                jQuery('#vlance_jobbundle_bidtype_files_file_upload_container').collapse('show');
-                add_file_input(jQuery('#vlance_jobbundle_bidtype_files_collection_holder'), '#vlance_jobbundle_bidtype_files');
-            }
-        });
-    </script>
-    <script>
-                var multiupload_validate = {"type" : ["png","jpg","gif","pdf","psd","xls","xlsx","doc","docx","ppt","pptx","ods","odt","zip","rar"], "size" : 10485760};
-        var multiupload_sizeerror = "Kích thước file không vượt quá 10MB";
-        var multiupload_typeerror = "File không đúng định dạng ";
-    </script></div>
-                </div>
-            </div>
-
-            <hr class="hr-line-0">
-
-            <div class="row-fluid">
-                <label class="title-in-form">THÔNG TIN LIÊN HỆ CỦA BẠN</label>
-                <div class="input-prepend telephone span6">
-                    <span class="add-on verified">
-                        <i class="fa fa-phone block-contact-icon verified" aria-hidden="true"></i>
-                    </span>
-                    <input id="bidform_telephone" name="input_telephone" disabled="" value="{{ VC.user.hotline }}" placeholder="Số điện thoại">
-                </div>
-                <div class="input-prepend skype span6">
-                    <span class="add-on"><i class="fa fa-skype block-contact-icon" aria-hidden="true"></i></span>
-                    <input id="bidform_skype" name="input_skype" value="" placeholder="Skype">
-                </div>
-            </div>
-
-            <div class="row-fluid block-submit">
-                <div class="block-submit-label">
-                    <p>
-                        Khi gửi chào giá, bạn xác nhận đồng ý các <a target="_blank" href="/page/dieu-khoan-su-dung" title="Điều khoản sử dụng">điều khoản sử dụng</a> của vLance.vn, và không để lộ bất kỳ thông tin liên lạc cá nhân nào trong phần đề xuất thuyết phục khách hàng.
-                    </p>
-                    <p style="font-size: 14px;">
-                                                                                    Thoải mái chào giá mà không cần CREDIT <a href="/credit/balance?bidform">NÂNG CẤP VIP NGAY</a>
-                                                                        </p>
-                </div>
-                <div class="block-submit-btn">
-                                                                                                <a href="#popup-credit-bid" role="button" class="btn btn-primary btn-large span12" data-toggle="modal" onclick="vtrack('Show Popup Expend Credit Bid', {'category':'Việc lập trình khác', 'job_budget':'3000000'})">Gửi chào giá</a>
-
-                                        <!-- Modal credit bid -->
-                    <div id="popup-credit-bid" class="modal hide fade popup-credit-bid" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4>Chào giá dự án [33265]</h4>
-                        </div>
-                        <div class="popup-body-credit-bid">
-                            <p class="message-credit-bid">Bạn cần trả <b>1 Credit</b> để chào giá dự án. <br> Bạn có muốn chào giá dự án?</p>
-                            <p class="show-credit-user">
-                                <span style="color: #999999">Bạn hiện có: 0 CREDIT</span> - <a id="btn-buy-credit" href="/credit/balance" data-display-track="show-require-credit-bid-not-enough">MUA THÊM CREDIT</a>
-                            </p>
-                            <p><i><span style="color: red;">Bạn không đủ Credit</span></i></p>
-                            <p style="font-size: 14px;" class="introduce-buy-vip">
-                                                                                                            Thoải mái chào giá mà không cần CREDIT <a href="/credit/balance?bidform">NÂNG CẤP VIP NGAY</a>
-                                                                                                </p>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn" data-dismiss="modal" aria-hidden="true">Đóng</button>
-                                                            <a class="btn btn-primary" href="/credit/balance" data-display-track="show-require-credit-bid-not-enough">MUA THÊM CREDIT</a>
+                                                    <h3 class="title">
+                                                        <a href="/khach-hang/nam-25" title="Nam">
+                                                            {{ VC.user.get_full_name }}              </a>
+                                                        <i class="icon-info icon-user" title="Tài khoản khách hàng đã có đủ thông tin cơ bản"></i>
+                                                    </h3>
+                                                    <div class="work-title">Nhan vien cao cap</div>
+                                                    <div id="client-rating-box">
+                                                        <div class="box-rating-client" data-toggle="popover" data-placement="right" data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div> <div>Việc đã đăng : <b>4</b> việc </div><div>Việc đã giao : <b>0</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
+                                                            <div class="rating-box-client">
+                                                                <div class="rating-client" style="width:0%"></div>
+                                                            </div>
+                                                        </div>
+                                                        <script type="text/javascript">
+                                                            $(document).ready(function() {
+                                                                $('.box-rating-client').popover();
+                                                            })
+                                                        </script>
                                                     </div>
-                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-employment-bottom row-fluid">
+                                                <dl class="dl-horizontal">
+                                                    <dt>Đến từ</dt>
+                                                    <dd>{{ VC.Thanh_Pho }}</dd>
+                                                    <dt>Tham gia</dt>
+                                                    <dd>{{ VC.user.date_joined|date:'d/m/Y' }} </dd>
+                                                    <dt>Đã đăng</dt>
+                                                    <dd><a href="/khach-hang/nam-25" title="4">
+                                                        10 việc
+                                                    </a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
                                     </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-<script type="text/javascript">
-    var quote_min = 750000;
-    var quote_max = 2000000000;
-    var placeholder = "ví dụ";
-    var placeholder_pay = "3.000.000";
-    var placeholder_get = "2.700.000";
-    var placeholder_commision = "300.000";
-    var translations = {
-        'attach_empty': "Không có"
-    };
-    var vlance_commission = 10;
-</script>
                                 </div>
-                            </div>
+        <!----------->
+<div class="span8 vc" style="
+                            border: 1px solid #a0f1a0d1;
+                            padding: 0px 7px 3px 10px;
+                            margin: 0;">
+   
+        <a class="btn btn-vl btn-vl-green btn-vl-medium" href="/bao-gia/{{ VC.id }}" style="
+                                                                                    float: right;
+                                                                                    height: 32px;
+                                                                                    margin: 8px 0 8px 0;
+                                                                                    width: 157px;
+                                                                                    line-height: 32px;
+                                                                                    font-weight: normal;
+                                                                                    background: #2db964;">Báo giá</a>
 
-                                <div class="detail-bottom span12">
-
-
-
-
-<div class="row-fluid">
+</div>
+              {% comment %}  {% include 'from/cv-jop.html' %}{% endcomment %}
+        <!----------->
+<div class="detail-bottom span12">
+    <div class="row-fluid">
     <div class="information-bidding row-fluid">
-                <div class="span2 client-bidding-left">
+        <div class="span2 client-bidding-left">
             <span class="bid-counter">
                 Chào giá:                                        <span class="value">
                         5                    </span>
