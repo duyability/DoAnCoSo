@@ -1,6 +1,8 @@
-
+from django.contrib.auth.decorators import login_required
 from django.http import Http404, request
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, ListView, DetailView
 from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime
@@ -44,7 +46,7 @@ class thanhpho(ListView):
 # Việc Làm Dự án
 class vieclam(ListView):
     template_name = 'viec-lam-freelance.html'
-    paginate_by = 1
+    paginate_by = 5
     model = Job
     context_object_name = 'vl'
     queryset = Job.objects.all()
@@ -79,20 +81,15 @@ class PartTime(ListView):
         context['NN'] = NganhNghe.objects.all()
         return context
 
-
-
-def DetaiOnsite(request, slug):
-    try:
-        jp = JobPartTime.objects.get(slug=slug)
-    except JobPartTime.DoesNotExist:
-        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
-    return render(request, 'viec-freelance/viec-onsite.html', {'jp': jp})
-
 class JobDetailsView(DetailView):
     model = Job
     template_name = 'from/cv-jop.html'
     context_object_name = 'job'
     pk_url_kwarg = 'id'
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(self.request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         obj = super(JobDetailsView, self).get_object(queryset=queryset)
@@ -108,3 +105,38 @@ class JobDetailsView(DetailView):
             raise Http404("Job doesn't exists")
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
+
+
+# ### Detail CV Job PartTime ########
+
+class CVDetail(DetailView):
+    model = JobPartTime
+    template_name = 'from/cv-onsite.html'
+    context_object_name = 'jobpt'
+    pk_url_kwarg = 'id'
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def get_object(self, queryset=None):
+        obj = super(CVDetail, self).get_object(queryset=queryset)
+        if obj is None:
+            raise Http404("Job doesn't exists")
+        return obj
+
+    def get(self, request, *args, **kwargs):
+        try:
+            self.object = self.get_object()
+        except Http404:
+            # redirect here
+            raise Http404("Job doesn't exists")
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+
+def DetaiOnsite(request, slug):
+    try:
+        jp = JobPartTime.objects.get(slug=slug)
+    except JobPartTime.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'viec-freelance/viec-onsite.html', {'jp': jp})

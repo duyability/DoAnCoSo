@@ -1,7 +1,7 @@
 from django.contrib import messages, auth
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, FormView, RedirectView
+from django.views.generic import CreateView, FormView, RedirectView, ListView
 from accounts.forms import *
 from accounts.models import User
 
@@ -107,3 +107,13 @@ class LogoutView(RedirectView):
         auth.logout(request)
         messages.success(request, 'You are now logged out')
         return super(LogoutView, self).get(request, *args, **kwargs)
+
+
+# Việc Làm Dự án
+
+class DsFreelance(ListView):
+    template_name = 'freelance.html'
+    paginate_by = 5
+    model = User
+    context_object_name = 'user'
+    User.role = 'Freelance'

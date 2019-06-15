@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 
-from accounts.models import User
+from accounts.models import User, UpUser
+
 #from vlance.models import ThanhPho
 
 GENDER_CHOICES = (
@@ -58,6 +59,7 @@ class EmployeeRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email','hotline', 'password1', 'password2', 'gender']
+        #exclude = ('thanh_pho', 'nganh_nghe', 'hinh', 'skill', 'sologan', 'description', 'year_exp')
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
@@ -129,6 +131,7 @@ class EmployerRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'hotline','email', 'password1', 'password2']
+        #exclude = ['thanh_pho', 'nganh_nghe', 'hinh', 'skill', 'sologan', 'description', 'year_exp']
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
@@ -182,22 +185,10 @@ class UserLoginForm(forms.Form):
     def get_user(self):
         return self.user
 
-
+# freelance update
 class EmployeeProfileUpdateForm(forms.ModelForm):
 
-    def __init__(self, *args, **kwargs):
-        super(EmployeeProfileUpdateForm, self).__init__(*args, **kwargs)
-        self.fields['first_name'].widget.attrs.update(
-            {
-                'placeholder': 'Enter First Name',
-            }
-        )
-        self.fields['last_name'].widget.attrs.update(
-            {
-                'placeholder': 'Enter Last Name',
-            }
-        )
-
     class Meta:
-        model = User
-        fields = ["first_name", "last_name", "gender"]
+        model = UpUser
+        fields =()
+

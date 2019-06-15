@@ -6,15 +6,15 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import UpdateView, CreateView, ListView
 from accounts.forms import EmployeeProfileUpdateForm
-from accounts.models import User
+from accounts.models import User, UpUser
 from vlance.decorators import user_is_employee
-from vlance.froms import ApplyJobForm
-from vlance.models import Applicant, Job
+from vlance.froms import ApplyJobForm, ApplyCVForm
+from vlance.models import Applicant, Job, CVonsite
 
 
 class EditProfileView(UpdateView):
     model = User
-    form_class = EmployeeProfileUpdateForm
+    #form_class = EmployeeProfileUpdateForm
     context_object_name = 'Freelance'
     template_name = 'jobs/employee/edit-profile.html'
     success_url = reverse_lazy('accounts:employer-profile-update')
@@ -40,7 +40,7 @@ class EditProfileView(UpdateView):
         return obj
 
 
-# Viec PartTime by Đức
+# Gui bao gia
 class ApplyJobView(CreateView):
     model = Applicant
     template_name = 'from/cv-jop.html'
@@ -58,12 +58,49 @@ class ApplyJobView(CreateView):
             return reverse_lazy('accounts:login')
         return super().dispatch(self.request, *args, **kwargs)
 
-
     def form_valid(self, form):
         # check if user already applied
         applicant = Applicant.objects.filter(user_id=self.request.user.id, job_id=self.kwargs['job_id'])
         if applicant:
-            messages.info(self.request, 'You already applied for this job')
+            messages.INFO(self.request, 'Bạn đã gửi báo giá cho công việc này')
+            return HttpResponseRedirect(self.get_success_url())
+        # save applicant
+        form.instance.user = self.request.user
+        form.save()
+        return super().form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
+# Gui CV cng viec PartTime
+
+class ApplyCV (CreateView):
+    model = CVonsite
+    template_name = 'from/cv-onsite.html'
+    form_class = ApplyCVForm
+    slug_field = 'jobpt_id'
+    slug_url_kwarg = 'jobpt_id'
+    extra_context = {
+        'title': 'Post New Job'
+    }
+    success_url = reverse_lazy('vlance:homepage')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        # check if user already applied
+        applicant = CVonsite.objects.filter(user_id=self.request.user.id, jobpt_id=self.kwargs['jobpt_id'])
+        if applicant:
+            messages.Info(self.request, 'Bạn đã gửi báo giá cho công việc này')
             return HttpResponseRedirect(self.get_success_url())
         # save applicant
         form.instance.user = self.request.user

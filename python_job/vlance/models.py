@@ -62,7 +62,7 @@ class Job(models.Model):
 # Viec theo PartTime
 class JobPartTime(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True, null=True) # Ngày tạo Job(auto)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)  # Ngày tạo Job(auto)
     slug = models.SlugField(max_length=255, default='')
     title = models.CharField(max_length=300, default='')
     description = models.TextField(default='')
@@ -70,14 +70,14 @@ class JobPartTime(models.Model):
     Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
     Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
     date_begin = models.DateTimeField()  # ngay bat dau lam
-    duration = models.CharField(max_length=100,default='')  # Thoi han lam
+    duration = models.CharField(max_length=100, default='')  # Thoi han lam
     NS_tu = models.IntegerField("Ngân sách từ ", default='')
     NS_den = models.IntegerField("Ngân sách đến", default='')
-    year_exp = models.CharField("Số Năm Kinh Nghiệm",max_length=300, default='')
-    location = models.CharField("Số Năm Kinh Nghiệm",max_length=300, default='') # Hinh thuc - vi tri lam viec
-    file = models.FileField("File đính kèm",upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/',default='')
-    company_name = models.CharField("Tên Công Ty",max_length=300, default='')
-    hinh = models.ImageField("Logo Công Ty",upload_to='uploads/ViecLamPartTime/logo/%Y/%m/%d/' ,default='')
+    year_exp = models.CharField("Số Năm Kinh Nghiệm", max_length=300, default='')
+    location = models.CharField("Số Năm Kinh Nghiệm", max_length=300, default='')  # Hinh thuc - vi tri lam viec
+    file = models.FileField("File đính kèm", upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/', default='')
+    company_name = models.CharField("Tên Công Ty", max_length=300, default='')
+    hinh = models.ImageField("Logo Công Ty", upload_to='uploads/ViecLamPartTime/logo/%Y/%m/%d/', default='')
 
     def __str__(self):
         return self.title
@@ -88,17 +88,34 @@ class JobPartTime(models.Model):
         super().save(*args, **kwargs)
 
 
+# Gui Bao Gia
 class Applicant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    job = models.OneToOneField(Job, on_delete=models.CASCADE, related_name='applicants')
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='applicants')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
-    baogia = models.CharField(max_length=300,default='')
-    time = models.CharField(max_length=300,default='')
+    baogia = models.CharField(max_length=300, default='')
+    time = models.CharField(max_length=300, default='')
     exp_info = models.TextField(max_length=400, default='')
     dudinh_info = models.TextField(max_length=400, default='')
-    hotline = models.CharField(max_length=15,default='')
+    hotline = models.CharField(max_length=15, default='')
     email = models.CharField(max_length=55, default='')
     file = models.FileField("File đính kèm", upload_to='uploads/baogia/file/%Y/%m/%d/', default='')
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+
+# Nop CV partTime
+class CVonsite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    jobpt = models.ForeignKey(JobPartTime, on_delete=models.CASCADE, related_name='CVonsites')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    baogia = models.CharField(max_length=300, default='')
+    exp_info = models.TextField(max_length=400, default='')
+    dudinh_info = models.TextField(max_length=400, default='')
+    hotline = models.CharField(max_length=15, default='')
+    email = models.CharField(max_length=55, default='')
+    file = models.FileField("File đính kèm", upload_to='uploads/CVonsite/file/%Y/%m/%d/', default='')
 
     def __str__(self):
         return self.user.get_full_name()

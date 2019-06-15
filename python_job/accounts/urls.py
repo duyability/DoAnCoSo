@@ -12,4 +12,5 @@ urlpatterns = [
     path('employee/profile/update', EditProfileView.as_view(), name='employer-profile-update'),
     path('logout', LogoutView.as_view(), name='logout'),
     path('login', LoginView.as_view(), name='login'),
+    path('freelancers', DsFreelance.as_view(), name='freelance'),
 ]+ static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)

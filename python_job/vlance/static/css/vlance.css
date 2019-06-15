@@ -1838,7 +1838,7 @@ ul.error li{list-style-type: none; color: #b94a48;}
 .form-bid .input-prepend .add-on .block-contact-icon{color: #999999; margin: 10px;}
 .form-bid .input-prepend .add-on .block-contact-icon.verified{color: #0fe19b;}
 .form-bid .input-prepend input{height: 28px; width:64%; border-radius: 3px; padding: 10px 32px 10px 10px; border: 1px solid #cccccc; border-width: 1px 1px 1px 0px; border-radius: 0px 3px 3px 0px;}
-.form-bid .input-prepend.telephone {width:47%;margin-left: 0px;}
+.form-bid .input-prepend.telephone {width:45%;margin-left: 0px;}
 .form-bid .input-prepend.skype{width:49%;margin-left: 20px;}
 .form-bid .block-submit{margin-top: 30px; margin-bottom: 20px; padding-bottom: 30px;background: #f0f0f0;}
 .form-bid .block-submit .block-submit-label{margin: 20px; font-size: 12px; letter-spacing: -0.03em;}

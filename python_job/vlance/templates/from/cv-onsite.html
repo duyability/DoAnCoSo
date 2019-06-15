@@ -1,451 +1,142 @@
-<div class="row-fluid form-bid-onsite">
-    <form id="submit_bid_form" action="/bid/onsite/submit/33581" method="post"
-    enctype="multipart/form-data" data-display-track="show-bid-form-bidable"
-    novalidate="novalidate">
-        <div class="well well-lg">
+{% extends 'layout/base.html' %}
+    {% load static %}
+{% block index %}
+    {% load is_already_applied_cv %}
+{% if request.user.is_authenticated %}
+    {% is_already_applied_cv jobpt request.user as is_cvonsite %}
+    {% if is_cvonsite %}
+<div class="row-fluid form-bid">
+    <div class="span12 container">
+        <h2 class="title">Báo giá đã tồn tại - Bạn Chỉ Được Báo Giá 1 Lần  </h2>
+        <span class="span" style="color: red;">Bạn Đã Báo Giá cÔNG Việc Rồi Mà !!  </span>
+        <button type="button" onclick="quay_lai_trang_truoc()">Quay lại trang trước</button>
+
+  <script>
+      function quay_lai_trang_truoc(){
+          history.back();
+      }
+  </script>
+
+    </div>
+</div>
+           {% else %}
+<div class="row-fluid form-bid">
+    <div class="span12 container">
+        <h2 class="title">Thông tin chào giá 2</h2> -
+        <hr class="hr-line-0">
+        <form id="submit_bid_form" action="{% url 'vlance:nop-cv-pt' jobpt.id %}" method="post" enctype="multipart/form-data" data-display-track="show-bid-form-bidable" novalidate="novalidate">
+           {% csrf_token %}
             <div class="row-fluid">
-                <div class="layout-table-onsite">
-                    <div class="row-fluid">
-                        <label class="title-in-form">ĐỀ XUẤT THUYẾT PHỤC KHÁCH HÀNG<span class="text-red">*</span>
+                <div class="span5">
+                                   <span class="s" style="font-weight: bold;">Tên Dự Án :</span> {{ jobpt.title }}
+                    <div class="block-amount vlance_jobbundle_bidtype_amount">
+                        <label class="title-in-form">ID DỰ ÁN : <span class="text-red">*</span></label>
+                            <input type="number" name="jobpt" value="{{ jobpt.id}}" class="span12" readonly >
+                    </div>
+                    <div class="block-amount vlance_jobbundle_bidtype_amount">
+                        <label class="title-in-form">ĐỀ XUẤT CHI PHÍ<span class="text-red">*</span>
                         </label>
-                        <hr class="hr-line-0">
-                        <div class="span6">
-                            <label class="ques-text">1. Bạn giới thiệu về bản thân? <span class="text-red">*</span>
-                            </label>
-                            <div class="bidonsitetype_description">
-                                <div class="control-group ">
-                                    <textarea id="vlance_jobbundle_bidonsitetype_introDescription" name="vlance_jobbundle_bidonsitetype[introDescription]"
-                                    required="required" class="form-textarea"
-                                    data-placement="right" data-trigger="focus"
-                                    data-toggle="popover" data-content="- Tôi đã có xx năm kinh nghiệm trong lĩnh vực...
+                        <div class="block-amount-detail">
+                            <dl class="dl-horizontal">
+                                <dt class="block-amount-label price">
+                            Báo giá :
+                        </dt>
+                                <dd class="block-amount-price">
+                                    <div class="bidtype_pay">
+                                        <div class="  input-append ">
+                                            <input type="number" id="baogia" name="baogia" required="required" pattern="^(0|[1-9][0-9/.]*)$" class="span9 popovers-input" data-toggle="popover" data-placement="top" data-trigger="focus" autocomplete="off" value="" placeholder="3.000.000" data-original-title="" title="">
+                                            <span class="add-on">VNĐ</span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                     <div class="block-amount vlance_jobbundle_bidtype_amount">
+                        <div class="block-amount vlance_jobbundle_bidtype_amount">
+                            <label>File Đính Kèm</label>
+                            <input type="file" id="file" name="file" required="required">
+
+                        </div>
+                    </div>
+
+                    <hr class="hr-line-0">
+
+                    <div class="row-fluid">
+                        <label class="title-in-form">THÔNG TIN LIÊN HỆ CỦA BẠN</label>
+                        <div class="input-prepend telephone span4">
+                            <span class="add-on verified">
+                        <i class="fa fa-phone block-contact-icon verified" aria-hidden="true"></i>
+                    </span>
+                            <input type="tel" id="bidform_telephone" name="hotline" placeholder="Số điện thoại">
+                        </div>
+                        <div class="input-prepend skype span4">
+                            <span class="add-on"><i class="fa fa-envelope block-contact-icon" aria-hidden="true"></i></span>
+                            <input type="email" id="email" name="email" value="" placeholder="Email">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="span7">
+                    <hr class="hr-line-0">
+                    <label class="title-in-form">ĐỀ XUẤT THUYẾT PHỤC KHÁCH HÀNG<span class="text-red">*</span>
+                    </label>
+
+                    <div class="row-fluid">
+                        <label class="ques-text">1.Bạn có những kinh nghiệm và kỹ năng nào phù hợp với dự án này?<span class="text-red">*</span>
+                        </label>
+                        <div class="bidtype_description">
+                            <div class="control-group ">
+                                <textarea id="exp_info" name="exp_info" required="required" placeholder="- Tôi đã có xx năm kinh nghiệm trong lĩnh vực...
+- Tôi sử dụng thành thạo các công cụ như...
+- Tôi đã từng thực hiện những dự án tương tự..." class="form-textarea" data-placement="right" data-trigger="focus" data-toggle="popover" data-content="- Tôi đã có xx năm kinh nghiệm trong lĩnh vực...
 - Tôi sử dụng thành thạo các công cụ như...
 - Tôi đã từng thực hiện những dự án tương tự..." data-title="form.bid.intro_description"></textarea>
-                                </div>
                             </div>
                         </div>
-                        <div class="span5">
-                            <label class="ques-text">2. Bạn có những kinh nghiệm và kỹ năng nào
-                                phù hợp với công việc này? <span class="text-red">*</span>
-                            </label>
-                            <div class="bidonsitetype_introdescription">
-                                <div class="control-group ">
-                                    <textarea id="vlance_jobbundle_bidonsitetype_description" name="vlance_jobbundle_bidonsitetype[description]"
-                                    required="required" class="form-textarea"
-                                    data-placement="right" data-trigger="focus"
-                                    data-toggle="popover" data-content="- Đầu tiên tôi sẽ...
+                    </div>
+
+                    <div class="row-fluid">
+                        <label class="ques-text">2.Bạn dự định thực hiện dự án này như thế nào?<span class="text-red">*</span>
+                        </label>
+                        <div class="bidtype_introdescription">
+                            <div class="control-group ">
+                                <textarea id="dudinh_info" name="dudinh_info" required="required" placeholder="- Đầu tiên tôi sẽ...
+- Sau đó tôi sẽ...
+- Tôi tin tưởng có thể hoàn thành đúng theo kế hoạch...
+- Hãy liên hệ với tôi qua vLance để trao đổi thêm..." class="form-textarea" data-placement="right" data-trigger="focus" data-toggle="popover" data-content="- Đầu tiên tôi sẽ...
 - Sau đó tôi sẽ...
 - Tôi tin tưởng có thể hoàn thành đúng theo kế hoạch...
 - Hãy liên hệ với tôi qua vLance để trao đổi thêm..." data-title="form.bid.description"></textarea>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                   <!---->
+
+                    <div class="row-fluid block-submit">
+                        <div class="block-submit-label">
+                            <p>
+                                Khi gửi chào giá, bạn xác nhận đồng ý các <a target="_blank" href="/page/dieu-khoan-su-dung" title="Điều khoản sử dụng">điều khoản sử dụng</a> của vLance.vn, và không để lộ bất kỳ thông tin liên lạc cá nhân nào trong phần đề xuất thuyết phục khách hàng.
+                            </p>
+
+                        </div>
+                        <div class="block-submit-btn">
+                            <input id="submit" type="submit" class="btn btn-primary btn-large popup-validate span12" value="Gửi CV">
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="layout-mobile-onsite">
-                    <div class="span6" style="margin-right: -64px">
-                        <div class="block-amount vlance_jobbundle_bidonsitetype_amount">
-                            <label class="title-in-form">MỨC LƯƠNG MONG MUỐN<span class="text-red">*</span>
-                            </label>
-                            <div class="">
-                                <dl class="dl-horizontal">
-                                    <dt class="block-amount-label price">Mức lương</dt>
-                                    <dd class="block-amount-price">
-                                        <div class="bidonsitetype_pay">
-                                            <div class="  input-append ">
-                                                <input type="text" id="vlance_jobbundle_bidonsitetype_amount" name="vlance_jobbundle_bidonsitetype[amount]"
-                                                required="required" pattern="^(0|[1-9][0-9/.]*)$"
-                                                class="span9 popovers-input"
-                                                data-toggle="popover" data-placement="top"
-                                                data-trigger="focus" autocomplete="off"
-                                                value="" placeholder="500.000"
-                                                data-original-title=""
-                                                title="">
-                                                <span class="add-on">VNĐ</span>
-                                            </div>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span1"></div>
-                    <div class="span5">
-                        <div class="row-fluid">
-                            <label class="title-in-form">THÔNG TIN LIÊN HỆ CỦA BẠN</label>
-                            <div class="row-fluid">
-                                <div class="input-prepend telephone span5">
-                                    <span class="add-on verified">
-<i class="fa fa-phone block-contact-icon verified" aria-hidden="true"></i>
-</span>
-                                    <input id="bidform_telephone" name="input_telephone" disabled="" value="0969641652"
-                                    placeholder="Số điện thoại">
-                                </div>
-                                <div class="input-prepend skype span5">
-                                    <span class="add-on"><i class="fa fa-skype block-contact-icon" aria-hidden="true"></i></span>
-                                    <input id="bidform_skype" name="input_skype" value="" placeholder="Skype">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="fileupload_wrapper">
-                                <div class="fileupload_wrapper">
-                                    <a class="addupload" href="#" onclick="return false;" data-toggle="collapse"
-                                    data-target="#vlance_jobbundle_bidonsitetype_files_file_upload_container">
-Thêm tài liệu đính kèm </a>
-                                    <div class="clear"></div>
-                                    <div id="vlance_jobbundle_bidonsitetype_files" class="control-group fileupload_wrapper ">
-                                    </div>
-                                    <script type="text/javascript">
-                                        jQuery(document).ready(
-                                            function() {
-                                                jQuery(
-                                                    'button[role="confirm"]'
-                                                ).click(
-                                                    function() {
-                                                        jQuery
-                                                            (
-                                                                this
-                                                            )
-                                                            .parent()
-                                                            .parent()
-                                                            .modal(
-                                                                'hide'
-                                                            );
-                                                        jQuery
-                                                            (
-                                                                "#" +
-                                                                jQuery(
-                                                                    this
-                                                                )
-                                                                .attr(
-                                                                    'target'
-                                                                )
-                                                            )
-                                                            .remove();
-                                                    });
-                                            });
-                                    </script>
-                                    <div id="vlance_jobbundle_bidonsitetype_files_file_upload_container" class="collapse out">
-                                        <div class="support_file_attach">Định dạng được hỗ trợ: png, jpg,
-                                            gif, pdf, psd, xls, xlsx, doc,
-                                            docx, ppt, pptx, ods, odt,
-                                            zip, rar</div>
-                                        <div class="support_file_attach">Kích thước tối đa: 10MB</div>
-                                        <div id="vlance_jobbundle_bidonsitetype_files_collection_holder" name="vlance_jobbundle_bidonsitetype[files]"
-                                        data-prototype="<div class=&quot;control-group &quot;>
-        <div id=&quot;vlance_jobbundle_bidonsitetype_files___name__&quot;>
-        <div class=&quot;control-group &quot;>
-        <input type=&quot;file&quot; id=&quot;vlance_jobbundle_bidonsitetype_files___name___file&quot;
-name=&quot;vlance_jobbundle_bidonsitetype[files][__name__][file]&quot;
-required=&quot;required&quot; value=&quot;&quot;/>    </div>    </div>    </div>">
-                                        </div>
-                                        <a href="#" class="btn add_input_file" id="vlance_jobbundle_bidonsitetype_files_job_new_file"><i class="icon-plus"></i> Thêm
-                                            tài liệu</a>
-                                    </div>
-                                    <script type="text/javascript">
-                                        jQuery(document).ready(
-                                            function() {
-                                                var required_one =
-                                                    false;
+        </form>
 
-                                                var newButton =
-                                                    jQuery('');
-
-                                                function add_file_input
-                                                    (holder, id) {
-                                                        var
-                                                            input_content =
-                                                            holder
-                                                            .data(
-                                                                'prototype'
-                                                            );
-                                                        var index =
-                                                            holder
-                                                            .data(
-                                                                'index'
-                                                            );
-                                                        var
-                                                            new_file =
-                                                            input_content
-                                                            .replace(
-                                                                /__name__label__/g,
-                                                                ''
-                                                            ).replace(
-                                                                /__name__/g,
-                                                                index
-                                                            );
-                                                        var
-                                                            new_item =
-                                                            jQuery(
-                                                                "<div></div>"
-                                                            ).addClass(
-                                                                'new_file_input'
-                                                            ).append(
-                                                                new_file
-                                                            );
-                                                        add_remove_file_input
-                                                            (
-                                                                new_item
-                                                            );
-
-                                                        holder.append(
-                                                            new_item
-                                                        );
-                                                        jQuery(id +
-                                                            '_' +
-                                                            index
-                                                            .toString() +
-                                                            '_file'
-                                                        ).on(
-                                                            'change',
-                                                            function() {
-                                                                if(
-                                                                    this
-                                                                    .files[
-                                                                        0
-                                                                    ]
-                                                                ) {
-                                                                    jQuery
-                                                                        (
-                                                                            this
-                                                                        )
-                                                                        .attr(
-                                                                            'file_size',
-                                                                            this
-                                                                            .files[
-                                                                                0
-                                                                            ]
-                                                                            .size
-                                                                        );
-                                                                }
-                                                            }
-                                                        );
-                                                        holder.data(
-                                                            'index',
-                                                            index +
-                                                            1
-                                                        );
-
-                                                        //Validate input file
-                                                        $(
-                                                            '.new_file_input input'
-                                                        ).change(
-                                                            function() {
-                                                                $
-                                                                    (
-                                                                        this
-                                                                    )
-                                                                    .rules(
-                                                                        'add', {
-                                                                            filesize: multiupload_validate[
-                                                                                "size"
-                                                                            ],
-                                                                            filetype: multiupload_validate[
-                                                                                "type"
-                                                                            ],
-                                                                            messages: {
-                                                                                filesize: multiupload_sizeerror,
-                                                                                filetype: multiupload_typeerror
-                                                                            }
-                                                                        }
-                                                                    );
-                                                                $
-                                                                    (
-                                                                        this
-                                                                    )
-                                                                    .valid();
-                                                            }
-                                                        );
-
-
-                                                    }
-
-                                                function add_remove_file_input
-                                                    (new_item) {
-                                                        var
-                                                            remove_button =
-                                                            jQuery(
-                                                                '<a href="#" class="remove">x</a>'
-                                                            );
-                                                        new_item.append(
-                                                            remove_button
-                                                        );
-                                                        remove_button
-                                                            .on(
-                                                                'click',
-                                                                function(
-                                                                    e
-                                                                ) {
-                                                                    e
-                                                                        .preventDefault();
-                                                                    if(
-                                                                        required_one
-                                                                    ) {
-                                                                        if(
-                                                                            jQuery(
-                                                                                '.new_file_input input'
-                                                                            )
-                                                                            .length ==
-                                                                            1
-                                                                        ) {
-                                                                            alert
-                                                                                (
-                                                                                    'File đính kèm là bắt buộc.'
-                                                                                );
-                                                                        } else {
-                                                                            new_item
-                                                                                .remove();
-                                                                        }
-                                                                    } else {
-                                                                        new_item
-                                                                            .remove();
-                                                                    }
-                                                                }
-                                                            )
-                                                    }
-
-                                                if(jQuery(
-                                                        '#vlance_jobbundle_bidonsitetype_files'
-                                                    )) {
-                                                    jQuery(
-                                                        '#vlance_jobbundle_bidonsitetype_files_collection_holder'
-                                                    ).data(
-                                                        'index',
-                                                        jQuery(
-                                                            '#vlance_jobbundle_bidonsitetype_files input'
-                                                        ).size()
-                                                    );
-                                                } else {
-                                                    jQuery(
-                                                        '#vlance_jobbundle_bidonsitetype_files_collection_holder'
-                                                    ).data(
-                                                        'index',
-                                                        0);
-                                                }
-                                                jQuery(
-                                                    '#vlance_jobbundle_bidonsitetype_files_job_new_file'
-                                                ).click(
-                                                    function(
-                                                        e) {
-                                                        add_file_input
-                                                            (
-                                                                jQuery(
-                                                                    '#vlance_jobbundle_bidonsitetype_files_collection_holder'
-                                                                ),
-                                                                '#vlance_jobbundle_bidonsitetype_files'
-                                                            );
-                                                        e.preventDefault();
-                                                    });
-
-                                                if(required_one) {
-                                                    jQuery(
-                                                        '#vlance_jobbundle_bidonsitetype_files_file_upload_container'
-                                                    ).collapse(
-                                                        'show'
-                                                    );
-                                                    add_file_input
-                                                        (jQuery(
-                                                                '#vlance_jobbundle_bidonsitetype_files_collection_holder'
-                                                            ),
-                                                            '#vlance_jobbundle_bidonsitetype_files'
-                                                        );
-                                                }
-                                            });
-                                    </script>
-                                    <script>
-                                        var multiupload_validate = {
-                                            "type": ["png", "jpg",
-                                                "gif", "pdf",
-                                                "psd", "xls",
-                                                "xlsx", "doc",
-                                                "docx", "ppt",
-                                                "pptx", "ods",
-                                                "odt", "zip",
-                                                "rar"
-                                            ],
-                                            "size": 10485760
-                                        };
-                                        var multiupload_sizeerror =
-                                            "Kích thước file không vượt quá 10MB";
-                                        var multiupload_typeerror =
-                                            "File không đúng định dạng ";
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="span6"></div>
-            <div class="btn-table-onsite">
-                <div class="row">
-                    <div class="btn-mobile-onsite">
-                        <div class="span6" style="float: right">
-                            <div class="row-fluid block-submit">
-                                <div class="block-submit-label">
-                                    <p>
-                                        Khi bấm "Gửi CV", bạn xác nhận đồng ý các
-                                        <a
-                                        target="_blank" href="/page/dieu-khoan-su-dung"
-                                        title="Điều khoản sử dụng">điều khoản sử dụng</a> của vLance.vn.
-                                    </p>
-                                    <p style="font-size: 14px;">
-                                        Thoải mái gửi CV mà không cần CREDIT
-                                        <a
-                                        href="/credit/balance?bidform">NÂNG CẤP VIP NGAY</a>
-                                    </p>
-                                </div>
-                                <div class="block-submit-btn">
-                                    <a href="#popup-credit-bid" role="button" class="btn btn-primary btn-large span12"
-                                    data-toggle="modal" onclick="vtrack('Show Popup Expend Credit Bid', {'category':'Copywriting', 'job_budget':'500000'})">Gửi CV</a>
-                                    <div id="popup-credit-bid" class="modal hide fade popup-credit-bid" tabindex="-1"
-                                    role="dialog" aria-labelledby="myModalLabel"
-                                    aria-hidden="true">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4>Gửi CV [33581]</h4>
-                                        </div>
-                                        <div class="popup-body-credit-bid">
-                                            <p class="message-credit-bid">Bạn cần trả <b>1 Credit</b>                                                để gửi CV.
-                                                <br> Bạn có muốn gừi CV?</p>
-                                            <p class="show-credit-user">
-                                                <span style="color: #999999">Bạn hiện có: 0 CREDIT</span>                                                - <a id="btn-buy-credit"
-                                                href="/credit/balance"
-                                                data-display-track="show-require-credit-bid-not-enough">MUA THÊM CREDIT</a>
-                                            </p>
-                                            <p><i><span style="color: red;">Bạn không đủ Credit</span></i>
-                                            </p>
-                                            <p style="font-size: 14px;" class="introduce-buy-vip">
-                                                Thoải mái gửi CV mà không cần CREDIT
-                                                <a
-                                                href="/credit/balance?bidform">NÂNG CẤP VIP NGAY</a>
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn" data-dismiss="modal" aria-hidden="true">Đóng</button>
-                                            <a class="btn btn-primary" href="/credit/balance" data-display-track="show-require-credit-bid-not-enough">MUA THÊM CREDIT</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <script type="text/javascript">
-        var quote_min = 125000;
-        var quote_max = 2000000000;
-        var placeholder = "ví dụ";
-        var placeholder_pay = "500.000";
-        var placeholder_get = "450.000";
-        var placeholder_commision = "50.000";
-        var translations = {
-            'attach_empty': "Không có"
-        };
-        var vlance_commission = 10;
-    </script>
+    </div>
 </div>
+
+
+    {% endif %}
+{% endif %}
+{% endblock %}

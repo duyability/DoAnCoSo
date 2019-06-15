@@ -15,54 +15,50 @@
     <favorites_list name="python_job" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vlance/templates/from/cv-jop.html">
+        <entry file="file://$PROJECT_DIR$/vlance/templates/freelance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="133" column="53" lean-forward="true" selection-start-line="133" selection-start-column="53" selection-end-line="133" selection-end-column="53" />
+            <state relative-caret-position="170">
+              <caret line="19" column="45" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="45" />
               <folding>
-                <element signature="n#div#0;n#!!top" />
-                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#1067#1086#0#HTML" expanded="true" />
+                <element signature="e#1147#1195#0#HTML" expanded="true" />
+                <element signature="e#1736#1760#0#HTML" expanded="true" />
+                <element signature="e#2684#2700#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vlance/templates/viec-freelance/index.html">
+        <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="184" column="3" lean-forward="true" selection-start-line="184" selection-start-column="3" selection-end-line="184" selection-end-column="3" />
+            <state relative-caret-position="986">
+              <caret line="118" column="4" lean-forward="true" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="27" />
               <folding>
-                <element signature="e#11632#11791#0#HTML" expanded="true" />
-                <element signature="e#11882#12602#0#HTML" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vlance/froms.py">
+        <entry file="file://$PROJECT_DIR$/vlance/view/freelance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vlance/urls.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/accounts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="53">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,20 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vlance/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-              <folding>
-                <element signature="e#1#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vlance/view/freelance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="34">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -93,13 +77,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vlance/view/NhaTuyenDung.py">
+        <entry file="file://$PROJECT_DIR$/accounts/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="87" column="49" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="87" selection-end-column="49" />
+            <state relative-caret-position="189">
+              <caret line="188" column="41" lean-forward="true" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
               <folding>
-                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vlance/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -109,6 +102,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.search-results .row-result:last-child</find>
+      <find>.form-bid .input-prepend.telephone</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,26 +111,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/accounts/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/vlance/templates/from/thanhpho-inc.html" />
-        <option value="$PROJECT_DIR$/vlance/view/homepage.py" />
-        <option value="$PROJECT_DIR$/vlance/templates/from/vieclam-inc.html" />
         <option value="$PROJECT_DIR$/vlance/templates/index.html" />
         <option value="$PROJECT_DIR$/vlance/decorators.py" />
         <option value="$PROJECT_DIR$/vlance/tests.py" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/base-in.html" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/header.html" />
-        <option value="$PROJECT_DIR$/vlance/static/css/vlance.css" />
         <option value="$PROJECT_DIR$/vlance/templates/dang-du-an.html" />
-        <option value="$PROJECT_DIR$/vlance/templates/dang-viec-tuyen-dung.html" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/sidebar/conten-top.html" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/pagination.html" />
         <option value="$PROJECT_DIR$/vlance/templates/viec-lam-onstie.html" />
         <option value="$PROJECT_DIR$/vlance/templates/viec-lam-freelance.html" />
         <option value="$PROJECT_DIR$/vlance/templates/viec-lam-onsite.html" />
-        <option value="$PROJECT_DIR$/vlance/templates/from/cv-onsite.html" />
-        <option value="$PROJECT_DIR$/vlance/view/NhaTuyenDung.py" />
-        <option value="$PROJECT_DIR$/vlance/templates/viec-freelance/viec-onsite.html" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/vlance/templates/tai-khoan/login.html" />
         <option value="$PROJECT_DIR$/vlance/templates/tai-khoan/Nhatuyendung/dang-ki.html" />
@@ -154,24 +139,35 @@
         <option value="$PROJECT_DIR$/backup/urls.py" />
         <option value="$PROJECT_DIR$/python_job/settings.py" />
         <option value="$PROJECT_DIR$/python_job/urls.py" />
-        <option value="$PROJECT_DIR$/vlance/admin.py" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/sidebar/sidebar.html" />
-        <option value="$PROJECT_DIR$/vlance/models.py" />
         <option value="$PROJECT_DIR$/vlance/templates/viec-freelance/index.html" />
-        <option value="$PROJECT_DIR$/vlance/templatetags/is_already_applied.py" />
         <option value="$PROJECT_DIR$/vlance/templates/layout/base.html" />
-        <option value="$PROJECT_DIR$/vlance/froms.py" />
-        <option value="$PROJECT_DIR$/vlance/views.py" />
-        <option value="$PROJECT_DIR$/vlance/templates/from/cv-jop.html" />
         <option value="$PROJECT_DIR$/vlance/templates/from/job-in.html" />
+        <option value="$PROJECT_DIR$/vlance/templates/dang-viec-tuyen-dung.html" />
+        <option value="$PROJECT_DIR$/vlance/view/NhaTuyenDung.py" />
+        <option value="$PROJECT_DIR$/vlance/admin.py" />
         <option value="$PROJECT_DIR$/vlance/urls.py" />
+        <option value="$PROJECT_DIR$/vlance/templates/from/cv-jop.html" />
+        <option value="$PROJECT_DIR$/vlance/templates/viec-freelance/viec-onsite.html" />
+        <option value="$PROJECT_DIR$/vlance/templatetags/is_already_applied.py" />
+        <option value="$PROJECT_DIR$/vlance/templatetags/is_already_applied_cv.py" />
+        <option value="$PROJECT_DIR$/vlance/static/css/vlance.css" />
+        <option value="$PROJECT_DIR$/vlance/templates/from/cv-onsite.html" />
+        <option value="$PROJECT_DIR$/vlance/froms.py" />
+        <option value="$PROJECT_DIR$/vlance/models.py" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/vlance/templates/freelance.html" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/vlance/view/freelance.py" />
+        <option value="$PROJECT_DIR$/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/vlance/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="394" />
-    <option name="y" value="12" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="250" />
+    <option name="y" value="84" />
     <option name="width" value="1026" />
     <option name="height" value="554" />
   </component>
@@ -181,6 +177,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="python_job" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\DoAnCoSo\DoAnCoSo\python_job" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,24 +203,23 @@
             <path>
               <item name="python_job" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_job" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_job" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_job" type="462c0819:PsiDirectoryNode" />
               <item name="vlance" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="python_job" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_job" type="462c0819:PsiDirectoryNode" />
               <item name="vlance" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
             <path>
-              <item name="python_job" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\DoAnCoSo\DoAnCoSo\python_job" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="python_job" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -362,11 +368,15 @@
       <workItem from="1560368727100" duration="5535000" />
       <workItem from="1560455667958" duration="6172000" />
       <workItem from="1560502455398" duration="16188000" />
+      <workItem from="1560524186755" duration="631000" />
+      <workItem from="1560529903461" duration="3775000" />
+      <workItem from="1560533846052" duration="4096000" />
+      <workItem from="1560537983190" duration="9105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74991000" />
+    <option name="totallyTimeSpent" value="92598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,12 +391,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7621359" visible="true" weight="0.16717096" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7621359" visible="true" weight="0.27987897" />
       <window_info id="Structure" order="1" sideWeight="0.23543689" side_tool="true" weight="0.19213313" />
       <window_info id="Favorites" order="2" sideWeight="0.23786408" side_tool="true" weight="0.19515885" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49546143" weight="0.30605564" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49546143" visible="true" weight="0.30605564" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,19 +444,6 @@
     <SUITE FILE_PATH="coverage/python_job$manage.coverage" NAME="manage Coverage Results" MODIFIED="1560369477358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django_backup2csv-0.8-py3.7.egg-info/installed-files.txt" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django_backup2csv-0.8-py3.7.egg-info/SOURCES.txt" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django_backup2csv-0.8-py3.7.egg-info/top_level.txt" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django_backup2csv-0.8-py3.7.egg-info/PKG-INFO" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/functions.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/tests.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/urls.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/templates/b2csv_base.html" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/models.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/backups/admin.py" />
-    <entry file="file://$PROJECT_DIR$/backup/apps.py" />
-    <entry file="file://$PROJECT_DIR$/backup/froms.py" />
-    <entry file="file://$PROJECT_DIR$/backup/tests.py" />
     <entry file="file://$PROJECT_DIR$/vlance/templates/backup/_backup_forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -478,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/from/cv-onsite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6630">
-          <caret line="390" column="17" selection-start-line="390" selection-start-column="17" selection-end-line="390" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python_job/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -497,29 +487,12 @@
         <state relative-caret-position="-483" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vlance/templates/dang-cuoc-thi.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="417" column="160" selection-start-line="417" selection-start-column="36" selection-end-line="417" selection-end-column="160" />
           <folding>
             <element signature="e#2765#7756#0#DjangoTemplate" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -531,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/dang-du-an.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vlance/templates/from/vieclam-inc.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1018" />
@@ -546,13 +512,6 @@
     <entry file="file://$PROJECT_DIR$/vlance/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4131" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-lam-freelance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3791">
-          <caret line="223" column="48" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="48" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vlance/templates/from/thanhpho-inc.html">
@@ -592,15 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templatetags/is_already_applied.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#1#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vlance/templates/layout/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -608,96 +558,215 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="93" column="44" lean-forward="true" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/from/job-in.html">
+    <entry file="file://$PROJECT_DIR$/vlance/templates/from/job-in.html" />
+    <entry file="file://$PROJECT_DIR$/vlance/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/from/cv-jop.html">
+    <entry file="file://$PROJECT_DIR$/vlance/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/urls/resolvers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="133" column="53" lean-forward="true" selection-start-line="133" selection-start-column="53" selection-end-line="133" selection-end-column="53" />
-          <folding>
-            <element signature="n#div#0;n#!!top" />
-            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1249">
+          <caret line="667" selection-start-line="667" selection-end-line="667" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/urls.py">
+    <entry file="file://$PROJECT_DIR$/vlance/templates/dang-du-an.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="289">
+          <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/views.py">
+    <entry file="file://$PROJECT_DIR$/vlance/templates/dang-viec-tuyen-dung.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="86" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/view/NhaTuyenDung.py" />
+    <entry file="file://$PROJECT_DIR$/vlance/templates/from/cv-jop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="55" lean-forward="true" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templatetags/is_already_applied.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templatetags/is_already_applied_cv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/static/css/vlance.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="1840" column="44" selection-start-line="1840" selection-start-column="44" selection-end-line="1840" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-freelance/viec-onsite.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+          <caret line="236" column="7" selection-start-line="236" selection-start-column="7" selection-end-line="236" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/from/cv-onsite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="72" column="30" lean-forward="true" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-freelance/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-lam-freelance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="223" column="48" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-lam-onsite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/templates/freelance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="45" />
           <folding>
-            <element signature="e#1#41#0" expanded="true" />
+            <element signature="e#1067#1086#0#HTML" expanded="true" />
+            <element signature="e#1147#1195#0#HTML" expanded="true" />
+            <element signature="e#1736#1760#0#HTML" expanded="true" />
+            <element signature="e#2684#2700#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="118" column="4" lean-forward="true" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vlance/froms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        <state relative-caret-position="229">
+          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/templates/viec-freelance/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="184" column="3" lean-forward="true" selection-start-line="184" selection-start-column="3" selection-end-line="184" selection-end-column="3" />
-          <folding>
-            <element signature="e#11632#11791#0#HTML" expanded="true" />
-            <element signature="e#11882#12602#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vlance/view/NhaTuyenDung.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="87" column="49" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="87" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vlance/view/freelance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="85">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="188" column="41" lean-forward="true" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vlance/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

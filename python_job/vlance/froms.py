@@ -2,7 +2,7 @@ from django import forms
 from django.http import request
 from django.shortcuts import render
 
-from vlance.models import Job, Applicant, JobPartTime
+from vlance.models import Job, Applicant, JobPartTime, CVonsite
 
 
 # From viec theo du an - Pham Minh Duc
@@ -25,6 +25,7 @@ class CreateJobForm(forms.ModelForm):
             job.save()
         return job
 
+
 # From viec lam part time , ban thoi gian  by Pham Minh Duc
 class PartTimeFrom(forms.ModelForm):
     class Meta:
@@ -40,10 +41,13 @@ class PartTimeFrom(forms.ModelForm):
         return valid
 
     def save(self, commit=True):
-        job = super(PartTimeFrom, self).save(commit=False)
+        j = super(PartTimeFrom, self).save(commit=False)
         if commit:
-            job.save()
-        return job
+            j.save()
+        return j
+
+
+# ######### From gui bao gia ##############
 
 class ApplyJobForm(forms.ModelForm):
     class Meta:
@@ -65,3 +69,23 @@ class ApplyJobForm(forms.ModelForm):
         return job
 
 
+# ######### From nop cv ##############
+
+class ApplyCVForm(forms.ModelForm):
+    class Meta:
+        model = CVonsite
+        exclude = ('user', 'created_at')
+
+    def is_valid(self):
+        valid = super(ApplyCVForm, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        jpt = super(ApplyCVForm, self).save(commit=False)
+        if commit:
+            jpt.save()
+        return jpt

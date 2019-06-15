@@ -1,0 +1,82 @@
+{% extends 'layout/base-in.html' %}
+    {% load static %}
+{% block content %}
+    <div class="content-section">
+    {% include 'layout/sidebar/content-top.html' %}
+
+            <div class="row-fluid container">
+    {% include 'layout/sidebar/sidebar.html' %}
+<div class="col2-right span9">
+    <div id="main_content">
+        <div class="search-content row-fluid">
+            <div class="layered-block search-results span12">
+                <!---------JOB part Time---->
+                {% if not user %}
+		        Chưa có bài viết nào
+		        {% else %}
+                    {% for User in user %}
+                        <div class="row-fluid row-result freelancer-profile featured-profile " fid="241817" data-id="172016-241817">
+    <div class="fr-avatar span2">
+        <a href="/freelancer/tran-doan-dung-1">
+            <img src="https://www.vlance.vn/uploads/99x99/831168de9237748e31f6b775ce6dfbf8564a79fc1.jpg" alt="T. Đ. Dũng" title="T. Đ. Dũng">
+        </a>
+    </div>
+    <div class="fr-info span10">
+        <div>
+            <h3 class="fr-name" style="float: left">
+<a href="/freelancer/tran-doan-dung-1">T. Đ. Dũng</a>
+<img style="margin-top:-3px;width:18px; height:18px;" src="/img/icon-verify-contact.png" data-toggle="tooltip" data-placement="top" alt="đã xác thực số điện thoại" title="" data-original-title="Đã xác thực số điện thoại">
+<script type="text/javascript" language="javascript">
+                jQuery(document).ready(function(){
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+                });
+            </script>
+</h3>
+        </div>
+        <div class="contact-block">
+            <a class="btn btn-primary hidejs" style="display: inline;" data-toggle="modal" href="#pay-sms" data-request="{&quot;fid&quot;:241817, &quot;pid&quot;:172016}" onclick="vtrack('Click contact', {'authenticated':'true','location': 'freelancer list', 'position':'2f', 'category':'Thiết kế đồ họa', 'freelancer':'Trần Đoàn Dũng', 'freelancer_id':'241817'})">
+                <i class="fa fa-phone fa-lg"></i> Liên hệ trực tiếp </a>
+        </div>
+        <div class="clearfix"></div>
+        <div class="fr-title">
+            <span>Thiết kế đồ họa, Website, Logo, Content</span>
+        </div>
+        <div class="fr-summary row-fluid">
+            <div class="history span9">
+                <span class="location">Hà Nội</span>
+                <span class="separator">|</span>
+                <span class="category">Thiết kế đồ họa</span>
+            </div>
+            <div class="rating-block span3">
+                <div class="rating-box">
+                    <div class="rating" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="fr-profile row-fluid">
+            <div class="skill-list span12 row-fluid">
+                <span>
+<a href="/freelancers/kynang_thiet-ke-logo" title="Freelancer Thiết kế logo"> Thiết kế logo</a>
+<a href="/freelancers/kynang_copywriting" title="Freelancer Copywriting"> Copywriting</a>
+<a href="/freelancers/kynang_thiet-ke-do-hoa" title="Freelancer Thiết kế đồ họa"> Thiết kế đồ họa</a>
+</span>
+            </div>
+        </div>
+    </div>
+</div>
+                    {%endfor%}
+                <!---------END JOB part Time---->
+            </div>
+             <br>
+		<!-- Hiện thị phân trang -->
+		{% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
+		{% endif %}
+
+        </div>
+
+    </div>
+</div>
+            </div>
+{% endblock %}

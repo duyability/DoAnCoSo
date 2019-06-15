@@ -80,7 +80,7 @@ class PartTimeCreateView(CreateView, thanhpho):
     extra_context = {
         'title': 'Post New Job'
     }
-    success_url = reverse_lazy('vlance:viec-onsite')
+    success_url = reverse_lazy('vlance:Job-PartTime')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     def dispatch(self, request, *args, **kwargs):
