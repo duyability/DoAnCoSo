@@ -1,5 +1,5 @@
 from django.contrib import messages, auth
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, FormView, RedirectView, ListView
 from accounts.forms import *
@@ -39,11 +39,11 @@ class RegisterEmployerView(CreateView):
     form_class = EmployerRegistrationForm
     template_name = 'tai-khoan/Nhatuyendung/dang-ki.html'
     success_url = '/'
+    exclude = ['thanh_phos', 'nganh_nghes', 'skill', ]
 
     extra_context = {
         'title': 'Đăng Ký'
     }
-
 
     def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -116,4 +116,14 @@ class DsFreelance(ListView):
     paginate_by = 5
     model = User
     context_object_name = 'user'
-    User.role = 'Freelance'
+    queryset = User.objects.filter(role='Freelance')
+
+
+# Detail user
+def DetaiFreelance(request, id):
+    try:
+        u = User.objects.get(id=id)
+    except User.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'tai-khoan/Freelance/detail.html', {'u': u})
+

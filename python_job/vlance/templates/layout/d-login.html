@@ -40,7 +40,7 @@
                         <div class="account-menu dropdown pull-right">
                             <div class="avata">
                                     <a href="/freelancer/pham-minh-duc-11">
-                                    <img width="48" height="48" src="https://www.vlance.vn/uploads/48x48/8d94975cc4a2c31ed649c8827555a6a7362a31771.jpg" alt="DUC PHAM MINH" title="DUC PHAM MINH">
+                                    <img width="48" height="48" src="/HinhAnh/{{ request.user.hinh }}" alt="DUC PHAM MINH" title="{{ request.user.get_full_name }}">
                                 </a>
                             </div>
                             <a class="dropdown-toggle name-acc-menu show-cate-acc" data-toggle="dropdown" href="#">
@@ -51,20 +51,18 @@
                                 {% endif %}</p>
                                 <b class="caret"></b></a>
                             <div class="credit-balance">
-                                <span><a class="id-user" href="/freelancer/pham-minh-duc-11">Id. {{ request.user.id }} | </a></span>
+                                <span><a class="id-user" href="/freelancer/{{ request.user.id }}">Id. {{ request.user.id }} | </a></span>
                                 <a id="animategoCredit" href="#">
                                     <span data-credit="balance">{{ request.user.role }}</span>
                                 </a>
                             </div>
                             <div id="popover-in"></div>
                             <ul class="dropdown-menu">
-                                <li><a href="/freelancer/pham-minh-duc-11">Hồ sơ cá nhân</a></li>
-                                <li><a href="/a/172016/editbasic">Chỉnh sửa hồ sơ</a></li>
-                                <li><a href="/options/general">Cài đặt</a></li>
-                                <li><a href="/a/moi-ban-be?dropdown">Mời bạn bè</a></li>
+                                <li><a href="/freelancer/{{ request.user.id }}">Hồ sơ cá nhân</a></li>
+                                <li><a href="/tai-khoan/freelance/update-basic">Chỉnh sửa hồ sơ</a></li>
+                                <li><a href="/tai-khoan/freelance/update-cv">Chỉnh sửa CV</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/credit/balance?dropdown">Mua credit</a></li>
-                                <li><a href="/credit/balance?dropdown">Nâng cấp tài khoản</a></li>
+                                <li><a href="/tai-khoan/freelance/update-basic">Quản lý việc nhận làm</a></li>
                                 <li class="divider"></li>
                                 <li><a href="/logout">Đăng xuất</a></li>
                             </ul>
@@ -103,8 +101,8 @@
                         </div>
                         <div class="account-menu dropdown pull-right">
                             <div class="avata">
-                                    <a href="/freelancer/pham-minh-duc-11">
-                                    <img width="48" height="48" src="https://www.vlance.vn/uploads/48x48/8d94975cc4a2c31ed649c8827555a6a7362a31771.jpg" alt="DUC PHAM MINH" title="DUC PHAM MINH">
+                                    <a href="/freelancer/{{ request.user.id }}">
+                                    <img width="48" height="48" src="/HinhAnh/{{ request.user.hinh }}" alt="DUC PHAM MINH" title="{{ request.user.get_full_name }}">
                                 </a>
                             </div>
                             <a class="dropdown-toggle name-acc-menu show-cate-acc" data-toggle="dropdown" href="#">
@@ -123,13 +121,11 @@
                             </div>
                             <div id="popover-in"></div>
                             <ul class="dropdown-menu">
-                                <li><a href="/freelancer/pham-minh-duc-11">Hồ sơ cá nhân</a></li>
-                                <li><a href="/a/172016/editbasic">Chỉnh sửa hồ sơ</a></li>
-                                <li><a href="/options/general">Cài đặt</a></li>
-                                <li><a href="/a/moi-ban-be?dropdown">Mời bạn bè</a></li>
+                                <li><a href="/freelancer/{{ request.user.id }}">Hồ sơ cá nhân</a></li>
+                                <li><a href="/tai-khoan/freelance/update-basic">Chỉnh sửa hồ sơ</a></li>
+                                <li><a href="/tai-khoan/freelance/update-cv">Chỉnh sửa CV</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/credit/balance?dropdown">Mua credit</a></li>
-                                <li><a href="/credit/balance?dropdown">Nâng cấp tài khoản</a></li>
+                                <li><a href="/tai-khoan/freelance/update-basic">Quản lý việc nhận làm</a></li>
                                 <li class="divider"></li>
                                 <li><a href="/logout">Đăng xuất</a></li>
                             </ul>

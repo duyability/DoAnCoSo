@@ -1,0 +1,185 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class="content-section container">
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="col2-left span8">
+                <div id="main_content">
+                    <div style="display: none;">
+                        <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <a href="/freelancers" itemprop="url">
+                                <span itemprop="title">{{ u.role }}</span>
+                            </a>
+                        </div>
+                        <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            ›
+                            <a href="/freelancers/cpath_cac-cong-viec-thiet-ke_chash_thiet-ke-do-hoa" itemprop="url">
+                                <span itemprop="title">{{ u.nganh_nghes_id }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row-fluid" itemscope="" itemtype="http://data-vocabulary.org/Person">
+                        <div class="col3-left span4 left-profile">
+                            <div class="avata">
+                                <img itemprop="photo" src="/HinhAnh/{{ u.hinh }}" alt="{{ u.get_full_name }}" title="{{ u.get_full_name }}">
+                            </div>
+                            <div class="id_profile">
+                                Id.{{ u.id }} </div>
+                            <div class="time-online-last">
+                                Tham gia : {{ u.date_joined|date:'d/m/Y' }} </div>
+                        </div>
+                        <div class="col3-center span8 right-profile">
+                            <div class="row-fluid header-profile">
+                                <div class="span12">
+                                    <h1 style="float: left">
+<span itemprop="name">
+{{ u.get_full_name }}<img style="margin-top:-6px;width:25px; height:25px;" src="/static/img/icon-verify-contact.png" data-toggle="tooltip" data-placement="top" alt="đã xác thực số điện thoại" title="Đã xác thực số điện thoại">
+</span>
+</h1>
+                                    <div class="clearfix"></div>
+                                    <div class="career">
+                                        <span itemprop="title editable tf300">
+                                            {{ u.sologan }}
+                                        </span>
+                                    </div>
+                                    <div class="regional-price">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address">
+<span class="location editable tf300" itemprop="region">{{ u.thanh_phos }}</span>
+                                        </span>
+
+
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="skills">
+                                           {% for skill in u.skill.all %}
+                                            <a href="/freelancers/{{ skill.slug }}" title="{{ skill}}">
+                                                <div>{{ skill }}</div>
+                                            </a>
+                                        {% endfor %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content profile-content">
+                            <div class="active tab-pane" id="tong-quan">
+                                <div class="row-fluid overview">
+                                    <h2>
+                                    Giới thiệu </h2>
+                                    <div class="body">
+                                        {{ u.description }}
+                                         </div>
+                                </div>
+                                <div class="service-freelancer">
+                                    <h2>Dịch vụ
+                                        <span class="label-tag label-new">Mới</span>
+</h2>
+                                    <p class="">Ngành Nghề Hoạt Động:</p>
+                                    <div class="body">
+                                       -  {{ u.nganh_nghes }}
+                                         </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            function scrollWindow(select) {
+                                window.scrollTo(0, 100);
+                                $(select).click();
+                            }
+                            $(document).ready(function() {
+                                $('.num_star_rating').popover();
+
+                                $('#tabs-profile a').click(function(e) {
+                                    e.preventDefault()
+                                    $(this).tab('show')
+                                });
+
+                                $(".comment-three .more").click(function() {
+                                    $('.comment-fd-' + jQuery(this).attr("data-id")).toggleClass("hidebody");
+                                    //            document.getElementById("#more-comment-fd-" + jQuery(this).attr("data-id")).innerText ="Rút gọn";
+                                });
+
+                                $(".comment-list .more").click(function() {
+                                    $('.comment-listfd-' + jQuery(this).attr("data-id")).toggleClass("hidebody");
+                                    //            document.getElementById("#more-listfd-" + jQuery(this).attr("data-id")).innerText ="Rút gọn";
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div id="right_content" class="col2-right span4">
+                <div class="block">
+                    <div class="summary-profile contact-direct" itemprop="rating" itemscope="" itemtype="https://schema.org/AggregateRating">
+                        <h2>Thông tin liên lạc</h2>
+                        <div class="list-summary-profile row-fluid">
+                            <label class="span2"><i class="fa fa-phone" style="font-size:24px;color:#0fe19b;"></i>
+                            </label>
+                            <dl class="dl-horizontal span7">
+                                <dd>{{ u.hotline }}</dd>
+                            </dl>
+                        </div>
+                        <div class="list-summary-profile row-fluid">
+                            <label class="span2"><i class="fa fa-envelope" style="font-size:20px;color:#0fe19b;"></i>
+                            </label>
+                            <dl class="dl-horizontal span7">
+                                <dd>{{ u.email }}</dd>
+                            </dl>
+                        </div>
+                        <div class="contact-block">
+                            <a class="btn btn-large btn-contact" data-toggle="modal" href="tel:{{ u.hotline }}">
+Liên hệ trực tiếp</a>
+                            <div>Nhấn <span>Liên hệ trực tiếp</span> để làm việc với freelancer ngay lập tức</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="block">
+                    <div class="summary-profile profile-rate" itemprop="rating" itemscope="" itemtype="https://schema.org/AggregateRating">
+                        <h2>Tóm lược</h2>
+                        <div class="list-summary-profile row-fluid">
+                            <dl class="dl-horizontal span7">
+                                <dt>
+<a title="0" itemprop="ratingValue">1</a>
+</dt>
+                                <dd>
+                                    <div class="rating-box">
+                                        <div class="rating" style="width:90%"></div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <label class="span5" style="font-weight:600;text-align: right;">
+                                <a title="5">5</a> Đánh giá </label>
+                        </div>
+                        <div class="progress-bar">
+                            <span>Hoàn thành việc</span>
+                            <div class="progress">
+                                <div class="bar" style="width: 50%;color:#000000;">50%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="summary-profile profile-rate" itemprop="rating" itemscope="" itemtype="https://schema.org/AggregateRating">
+                        <h2>Làm việc</h2>
+                        <div class="list-summary-profile row-fluid">
+                            <div class="time-work">
+                                <b>Toàn thời gian</b> (40h/tuần)
+                            </div>
+                            <div class="experienced">
+                                *<b>{{ u.year_exp }}</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

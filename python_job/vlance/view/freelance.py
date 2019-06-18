@@ -1,28 +1,69 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.messages.context_processors import messages
 from django.core.checks import messages
 from django.http import Http404, HttpResponseRedirect, request
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import UpdateView, CreateView, ListView
-from accounts.forms import EmployeeProfileUpdateForm
+from accounts.forms import ProfileUpdateBasic , ProfileUpdateCV
 from accounts.models import User, UpUser
 from vlance.decorators import user_is_employee
 from vlance.froms import ApplyJobForm, ApplyCVForm
-from vlance.models import Applicant, Job, CVonsite
+from vlance.models import Applicant, Job, CVonsite, NganhNghe, ThanhPho, KyNang
+from vlance.views import thanhpho
 
 
 class EditProfileView(UpdateView):
     model = User
-    #form_class = EmployeeProfileUpdateForm
-    context_object_name = 'Freelance'
-    template_name = 'jobs/employee/edit-profile.html'
+    form_class = ProfileUpdateBasic
+    context_object_name = 'f'
+    template_name = 'tai-khoan/Freelance/edituser.html'
     success_url = reverse_lazy('accounts:employer-profile-update')
 
+
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    @method_decorator(user_is_employee)
+    #@method_decorator(user_is_employee)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(self.request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        try:
+            self.object = self.get_object()
+        except Http404:
+            raise Http404("User doesn't exists")
+        # context = self.get_context_data(object=self.object)
+        return self.render_to_response(self.get_context_data())
+
+    def get_object(self, queryset=None):
+        obj = self.request.user
+        print(obj)
+        if obj is None:
+            raise Http404("Job doesn't exists")
+        return obj
+
+    # def post(self, request, *args, **kwargs):
+    #     form = self.get_form()
+    #     if form.is_valid():
+    #         return self.form_valid(form)
+    #     else:
+    #         return self.form_invalid(form)
+
+
+#update cv
+
+class EditProfileCVView(UpdateView):
+    model = User
+    form_class = ProfileUpdateCV
+    context_object_name = 'f'
+    template_name = 'tai-khoan/Freelance/editdetail.html'
+    success_url = reverse_lazy('accounts:employer-profile-cv')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    #@method_decorator(user_is_employee)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(self.request, *args, **kwargs)
+
 
     def get(self, request, *args, **kwargs):
         try:

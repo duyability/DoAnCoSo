@@ -17,13 +17,6 @@ def dangcuocthi(request):
 
 ##### Viec lam .
 
-class thanhpho(ListView):
-    template_name = 'from/thanhpho-inc.html'
-    model = ThanhPho
-    context_object_name = 'tp'
-    queryset = ThanhPho.objects.all()
-
-
 def Viecfreelances(request, slug):
     try:
         VC = Job.objects.get(slug=slug)

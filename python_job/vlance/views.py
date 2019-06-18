@@ -1,10 +1,10 @@
 from django.contrib.auth.decorators import login_required
-from django.http import Http404, request
+from django.http import Http404, request, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime
 
 
@@ -42,7 +42,6 @@ class thanhpho(ListView):
         return context
 
 
-
 # Việc Làm Dự án
 class vieclam(ListView):
     template_name = 'viec-lam-freelance.html'
@@ -56,7 +55,6 @@ class vieclam(ListView):
         context['tp'] = ThanhPho.objects.all()
         context['NN'] = NganhNghe.objects.all()
         return context
-
 
 
 def Viecfreelances(request, slug):
@@ -140,3 +138,18 @@ def DetaiOnsite(request, slug):
     except JobPartTime.DoesNotExist:
         raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
     return render(request, 'viec-freelance/viec-onsite.html', {'jp': jp})
+
+
+
+# class detaiNN(ListView):
+#     model = Job
+#     template_name = 'viec-freelance/nganhnghe.html'
+#     context_object_name = 'vl'
+#
+#     def get_queryset(self):
+#         jobs = Job.objects.filter(Nganh_Nghe_slug=self.request.Nganh_Nghe_slug)
+#         return jobs
+
+
+
+

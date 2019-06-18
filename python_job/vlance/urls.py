@@ -22,6 +22,9 @@ urlpatterns = [
                   path('viec-lam-freelance', vieclamfreelance, name='viec-lam'),
 
                   path('viec-freelance/<str:slug>/', Viecfreelances, name='product'),
+
+                  #path('viec-lam-freelance/<str:Nganh_Nghe_slug>/', detaiNN.as_view(), name='detail-nganh-nghe'),
+
                   path('dang-du-an/',JobCreateView.as_view(), name='dang-du-an'),
     # bao gia viec theo du an
                   path('bao-gia/<int:id>/', JobDetailsView.as_view(), name='jobs-detail'),

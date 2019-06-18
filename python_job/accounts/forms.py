@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from accounts.models import User, UpUser
 
-#from vlance.models import ThanhPho
+from vlance.models import ThanhPho, NganhNghe, KyNang
 
 GENDER_CHOICES = (
     ('male', 'Nam'),
@@ -58,8 +58,8 @@ class EmployeeRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email','hotline', 'password1', 'password2', 'gender']
-        #exclude = ('thanh_pho', 'nganh_nghe', 'hinh', 'skill', 'sologan', 'description', 'year_exp')
+        fields = ['first_name', 'last_name', 'email','hotline', 'password1', 'password2', 'gender',]
+
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
@@ -130,8 +130,8 @@ class EmployerRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'hotline','email', 'password1', 'password2']
-        #exclude = ['thanh_pho', 'nganh_nghe', 'hinh', 'skill', 'sologan', 'description', 'year_exp']
+        fields = ['first_name', 'last_name', 'hotline','email', 'password1', 'password2',]
+
         error_messages = {
             'first_name': {
                 'required': 'First name is required',
@@ -146,7 +146,6 @@ class EmployerRegistrationForm(UserCreationForm):
     def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)
         user.role = "NhaTuyenDung"
-        user.is_staff = '1'
         if commit:
             user.save()
         return user
@@ -186,9 +185,94 @@ class UserLoginForm(forms.Form):
         return self.user
 
 # freelance update
-class EmployeeProfileUpdateForm(forms.ModelForm):
+
+exp_choice = (
+    ('Mới đi làm  ( Dưới 2 năm kinh nghiệm) ', 'Mới đi làm  (Dưới 2 năm kinh nghiệm) '),
+    ('Đã có kinh nghiệm ( 2-5 năm kinh nghiệm)', 'Đã có kinh nghiệm (2-5 năm kinh nghiệm)'),
+    ('Chuyên gia ( Trên 5 năm kinh nghiệm)', 'Chuyên gia(Trên 5 năm kinh nghiệm)'))
+
+class ProfileUpdateBasic(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ProfileUpdateBasic, self).__init__(*args, **kwargs)
+        self.fields['gender'].required = True
+        self.fields['first_name'].label = "First Name"
+        self.fields['last_name'].label = "Last Name"
+
+        # self.fields['gender'].widget = forms.CheckboxInput()
+
+        self.fields['first_name'].widget.attrs.update(
+            {
+                'placeholder': 'Enter First Name',
+            }
+        )
+        self.fields['last_name'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Last Name',
+            }
+        )
+        self.fields['email'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Email',
+            }
+        )
+        self.fields['hotline'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Hotline',
+            }
+        )
+
+
+    #year_exp = forms.ChoiceField(widget=forms.Select, choices=exp_choice)
 
     class Meta:
-        model = UpUser
-        fields =()
+        model = User
+        fields = ['first_name', 'last_name', 'email','hotline', 'gender',]
+        error_messages = {
+            'first_name': {
+                'required': 'First name is required',
+                'max_length': 'Name is too long'
+            },
+            'last_name': {
+                'required': 'Last name is required',
+                'max_length': 'Last Name is too long'
+            },
+            'gender': {
+                'required': 'Gender is required'
+            }
+        }
+
+    def clean_gender(self):
+        gender = self.cleaned_data.get('gender')
+        if not gender:
+            raise forms.ValidationError("Gender is required")
+        return gender
+
+    def save(self, commit=True):
+        user = super(ProfileUpdateBasic, self).save(commit=False)
+       # user.role = "Freelance"
+        if commit:
+            user.save()
+        return user
+
+
+
+class ProfileUpdateCV(forms.ModelForm):
+     def __init__(self, *args, **kwargs):
+         super(ProfileUpdateCV, self).__init__(*args, **kwargs)
+         self.fields['year_exp'].label = "Trình Độ"
+
+     year_exp = forms.ChoiceField(widget=forms.Select, choices=exp_choice)
+
+     class Meta:
+         model = User
+         fields = ['hinh', 'sologan','nganh_nghes', 'description','skill','thanh_phos','year_exp', ]
+
+     def save(self, commit=True):
+         user = super(ProfileUpdateCV, self).save(commit=False)
+         #user.role = "Freelance"
+         if commit:
+             user.save()
+         return user
+
 

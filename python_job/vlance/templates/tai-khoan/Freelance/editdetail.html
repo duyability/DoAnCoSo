@@ -1,0 +1,84 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block index %}
+
+<div class="content-section container">
+    <div class="row-fluid">
+{% include 'tai-khoan/Freelance/layout/sidebar.html' %}
+
+
+            <h3 class="heading">Chỉnh sửa thông tin cơ bản</h3>
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form enctype="multipart/form-data" action="" method="post" class="edit-form" >
+                {% csrf_token %}
+            <div class="clear"></div>
+                        <dl class="dl-horizontal">
+                            <dt></dt>
+                            <div class="popovers-input">
+                       <img src="/HinhAnh/{{ f.hinh }}"style="width: 123px;
+                                           height: 122px;
+                                           border-radius: 15px;">
+                            </div>
+                        </dl>
+             <div class="clear"></div>
+                {% for field in form %}
+
+                        <div class="clear"></div>
+                    <dd>
+                        <dl class="dl-horizontal">
+                            <dt>{{ field.label }} <span class="text-red">*</span></dt>
+                            <div class="popovers-input">
+                        {{ field }}
+                            </div>
+                        </dl>
+                    </dd>
+                {% endfor %}
+            <div class="clear"></div>
+            <dl class="dl-horizontal">
+                <dt></dt>
+                <dd>
+                <div class="submit-form-edit-profile">
+                <input type="submit" class="btn btn-large btn-primary" value="Lưu các thay đổi">
+                </div>
+                </dd>
+                <div class="clear"></div>
+                </dl>
+
+                <script>
+                    var account_edit_validate = {
+                        "type": ["jpg", "jpeg", "png", "gif"],
+                        "size": 1048576,
+                        "mail": 'facebook.com'
+                    };
+                    var account_edit_sizeerror = "Kích thước file không vượt quá 1MB";
+                    var account_edit_typeerror = "File không đúng định dạng jpg, jpeg, png, gif";
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+select#id_skill {
+    height: 100%;
+}
+</style>
+
+
+
+{% endblock %}
