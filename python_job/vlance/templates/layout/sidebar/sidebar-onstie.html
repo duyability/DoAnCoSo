@@ -8,13 +8,13 @@
                                 <div class="block-content subcategory">
                                     <ul class="category unstyled">
                                         <li class="cat-item selected">
-                                            <a href="{% url 'vlance:viec-lam' %}">Tất cả </a>
+                                            <a href="{% url 'vlance:Job-PartTime' %}">Tất cả </a>
                                         </li>
 
-            {% for Job in vl %}
+            {% for NghanhNghe in NN %}
                                         <li class="cat-item ">
-                                            <a href="{% url 'vlance:viec-lam' %}/nn/{{ Job.Nganh_Nghe.slug }}">
-            {{ Job.Nganh_Nghe.title }}
+                                            <a href="{% url 'vlance:Job-PartTime' %}/nn/{{ NghanhNghe.slug }}">
+            {{ NghanhNghe.title }}
                                             </a>
                                         </li>
           </ul>   {% endfor %}
@@ -28,16 +28,16 @@
     <div class="block-content subcategory_city">
         <ul class="subcategory unstyled">
                                                 <li class="sub-item checked">
-                        <a href="{% url 'vlance:viec-lam' %}">
+                        <a href="{% url 'vlance:Job-PartTime' %}">
                             <i class="span1 checked"></i>
                             <div>Toàn quốc </div>
                         </a>
                     </li>
-             {% for Job in vl %}
+            {% for ThanhPho in tp %}
                         <li class="sub-item ">
-                        <a href="{% url 'vlance:viec-lam' %}/tp/{{Job.Thanh_Pho.slug}}">
+                        <a href="{% url 'vlance:Job-PartTime' %}/tp/{{ThanhPho.slug}}">
                             <i class="span1 "></i>
-                            <div>{{ Job.Thanh_Pho.title }}
+                            <div>{{ ThanhPho.title }}
                             </div>
                         </a>
                     </li>

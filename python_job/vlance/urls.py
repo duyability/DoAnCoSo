@@ -25,9 +25,10 @@ urlpatterns = [
                   path('viec-freelance/<str:slug>/', Viecfreelances, name='product'),
 
                   path('viec-lam-freelance/nn/<str:slug>', detaiNN, name='detail-nganh-nghe'),
-                  #path('viec-lam-freelance/nn/<str:slug>', detaiNNs.as_view(), name='detail-nganh-nghesss'),
+                  path('viec-lam-onsite/nn/<str:slug>', detaiNN, name='detail-nganh-nghe-ons'),
 
                   path('viec-lam-freelance/tp/<str:slug>', detaiTP, name='detail-SS'),
+                  path('viec-lam-onsite/tp/<str:slug>', detaiTP, name='detail-thanh-pho-s'),
 
                   path('dang-du-an/',JobCreateView.as_view(), name='dang-du-an'),
     # bao gia viec theo du an

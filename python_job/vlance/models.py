@@ -19,6 +19,9 @@ class NganhNghe(models.Model):
     def __str__(self):
         return self.title
 
+    def get_total_cost(self):
+        return sum(item.get_cost() for item in self.items.all())
+
 
 class ThanhPho(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)

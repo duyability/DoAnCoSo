@@ -149,16 +149,32 @@ def DetaiOnsite(request, slug):
 
 
 def detaiNN(request, slug):
+    NN = NganhNghe.objects.all()
+    tp = ThanhPho.objects.all()
+    vl = Job.objects.all()
     try:
-        vl = Job.objects.filter(Nganh_Nghe__slug=slug)
+        vl = vl.filter(Nganh_Nghe__slug=slug)
     except Job.DoesNotExist:
         raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
-    return render(request, 'viec-freelance/nganhnghe.html', {'vl': vl})
+    context = {
+        'vl': vl,
+        'NN': NN,
+        'tp': tp,
+    }
+    return render(request, 'viec-freelance/nganhnghe.html',context)
 
 def detaiTP(request, slug):
-
+    NN = NganhNghe.objects.all()
+    tp = ThanhPho.objects.all()
+    #t = Job.objects.all()
     try:
         t = Job.objects.filter(Thanh_Pho__slug=slug)
     except Job.DoesNotExist:
         raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
-    return render(request, 'viec-freelance/thanhpho.html', {'t': t})
+    context = {
+        't': t,
+        'NN': NN,
+        'tp': tp,
+    }
+
+    return render(request, 'viec-freelance/thanhpho.html',context)

@@ -13,7 +13,7 @@
 
             {% for NghanhNghe in NN %}
                                         <li class="cat-item ">
-                                            <a href="{{ request.path|urlencode }}/nn/{{ NghanhNghe.slug }}">
+                                            <a href="{% url 'vlance:viec-lam' %}/nn/{{ NghanhNghe.slug }}">
             {{ NghanhNghe.title }}
                                             </a>
                                         </li>
@@ -28,14 +28,14 @@
     <div class="block-content subcategory_city">
         <ul class="subcategory unstyled">
                                                 <li class="sub-item checked">
-                        <a href="/{{ request.path|urlencode }}">
+                        <a href="{% url 'vlance:viec-lam' %}">
                             <i class="span1 checked"></i>
                             <div>Toàn quốc </div>
                         </a>
                     </li>
             {% for ThanhPho in tp %}
                         <li class="sub-item ">
-                        <a href="{{ request.path|urlencode }}/tp/{{ThanhPho.slug}}">
+                        <a href="{% url 'vlance:viec-lam' %}/tp/{{ThanhPho.slug}}">
                             <i class="span1 "></i>
                             <div>{{ ThanhPho.title }}
                             </div>

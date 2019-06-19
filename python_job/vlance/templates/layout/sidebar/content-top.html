@@ -52,6 +52,7 @@
         <h1><b>Việc freelance</b> - Làm online, nhận tiền nhanh chóng</h1>
         <p>Hơn <b>26689</b> dự án đã đăng và thuê được freelancer thành công.
             <br>Được bảo đảm thanh toán với những <b>dự án được nạp tiền</b>            qua vLance.vn.</p>
+
         <form action="{% url 'search:search' %}" method="GET" id="search-job-form" autocomplete="off"
         novalidate="novalidate">
 
@@ -59,9 +60,9 @@
                                         data-placement="top" data-content="Chọn vị trí của freelancer, VD: Hà Nội"
                                         data-trigger="hover" class="popovers-input span12 valid">
                 <option disabled="disabled" selected="selected">- Nơi cần thuê -</option>
-                {% for Job in vl.all %}
+                {% for ThanhPho in tp %}
 
-					<option value="{{Job.Thanh_Pho.id }}">{{ Job.Thanh_Pho.title }}</option>
+					<option value="{{ ThanhPho.id }}">{{ ThanhPho.title }}</option>
                 {% endfor %}
 				</select>
 
@@ -69,9 +70,9 @@
                 <select class="popovers-input span12 valid" style="width:220px; padding: 0px;"
                         name="nganhnghe"
                         data-content="Chọn ngành nghề">
-                {% for Job in vl.all %}
+                {% for NganhNghe in NN %}
 
-					<option value="{{Job.Nganh_Nghe.id }}">{{ Job.Nganh_Nghe.title }}</option>
+					<option value="{{NganhNghe.id }}">{{ NganhNghe.title }}</option>
                 {% endfor %}
 				</select>
 

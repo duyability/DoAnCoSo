@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
-from vlance.models import Job
+from vlance.models import Job, NganhNghe, ThanhPho
 
 
 def search(request):
+    NN = NganhNghe.objects.all()
+    tp = ThanhPho.objects.all()
 
     vl = Job.objects.all()
 
@@ -14,10 +16,10 @@ def search(request):
             Q(title__icontains=search) | Q(description__icontains=search)
 
         )
-    tp = request.GET.get('thanhpho')
+    stp = request.GET.get('thanhpho')
     if tp:
         vl = vl.filter(
-            Q(Thanh_Pho__in=tp)
+            Q(Thanh_Pho__in=stp)
 
         )
 
@@ -31,7 +33,9 @@ def search(request):
     context = {
         "vl": vl,
         "search": search,
+        "stp": stp,
         "tp": tp,
         "nn": nn,
+        "NN" : NN,
     }
     return render(request, 'layout/search_job.html', context)
