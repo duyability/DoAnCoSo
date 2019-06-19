@@ -9,7 +9,7 @@ from vlance.models import Job, Applicant, JobPartTime, CVonsite
 class CreateJobForm(forms.ModelForm):
     class Meta:
         model = Job
-        exclude = ('user', 'created_at', 'slug')
+        exclude = ('user', 'created_at', 'slug','filled')
 
     def is_valid(self):
         valid = super(CreateJobForm, self).is_valid()

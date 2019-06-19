@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from vlance.decorators import user_is_employer
 from vlance.froms import CreateJobForm, PartTimeFrom
@@ -12,7 +13,7 @@ from vlance.views import thanhpho
 
 class DashboardView(ListView):
     model = Job
-    template_name = 'jobs/employer/dashboard.html'
+    template_name = 'tai-khoan/Nhatuyendung/dashboard.html'
     context_object_name = 'jobs'
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
@@ -26,7 +27,7 @@ class DashboardView(ListView):
 
 class ApplicantPerJobView(ListView):
     model = Applicant
-    template_name = 'jobs/employer/applicants.html'
+    template_name = 'tai-khoan/Nhatuyendung/appy_job.html'
     context_object_name = 'applicants'
     paginate_by = 1
 
@@ -104,7 +105,7 @@ class PartTimeCreateView(CreateView, thanhpho):
 
 class ApplicantsListView(ListView):
     model = Applicant
-    template_name = 'jobs/employer/all-applicants.html'
+    template_name = 'tai-khoan/Nhatuyendung/all_appy_job.html'
     context_object_name = 'applicants'
 
     def get_queryset(self):
@@ -117,4 +118,23 @@ def filled(request, job_id=None):
     job = Job.objects.get(user_id=request.user.id, id=job_id)
     job.filled = True
     job.save()
-    return HttpResponseRedirect(reverse_lazy('jobs:employer-dashboard'))
+    return HttpResponseRedirect(reverse_lazy('vlance:employer-dashboard'))
+
+
+class DeleteJob(DeleteView):
+    template_name = 'tags/delete.html'
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Job, id=id_)
+
+    def get_success_url(self):
+        return reverse('vlance:employer-dashboard')
+
+class DeleteBG(DeleteView):
+    template_name = 'tags/delete.html'
+    def get_object(self):
+        id_ = self.kwargs.get("user_id")
+        return get_object_or_404(Applicant, user_id=id_)
+
+    def get_success_url(self):
+        return reverse('vlance:employer-dashboard-applicants')

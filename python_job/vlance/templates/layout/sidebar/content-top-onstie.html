@@ -50,16 +50,17 @@
 <div class="head-title-list-job">
     <div class="container">
         <h1><b>Việc freelance</b> - Làm online, nhận tiền nhanh chóng</h1>
-        <p>Hơn <b>26689</b> dự án đã đăng và thuê được freelancer thành công.
-            <br>Được bảo đảm thanh toán với những <b>dự án được nạp tiền</b>            qua vLance.vn.</p>
+        <p>Hơn <b>1969</b> dự án đã đăng và thuê được freelancer thành công.
+            <br>Được bảo đảm thanh toán với những <b>dự án được nạp tiền</b>            qua Dwebtech.net.</p>
 
-        <form action="{% url 'search:search' %}" method="GET" id="search-job-form" autocomplete="off"
+        <form action="{% url 'search:search_onsite' %}" method="GET" id="search-job-form" autocomplete="off"
         novalidate="novalidate">
 
-            <select id="Thanh_Pho" name="thanhpho" style="width:220px; padding: 0px;" data-toggle="popover"
+        <p></p>
+            <select id="Thanh_Pho" name="thanhpho" style="width:200px; padding: 0px;" data-toggle="popover"
                                         data-placement="top" data-content="Chọn vị trí của freelancer, VD: Hà Nội"
                                         data-trigger="hover" class="popovers-input span12 valid">
-                <option disabled="disabled" selected="selected">- Nơi cần thuê -</option>
+                <option value="" selected="selected"> - Nơi cần thuê -</option>
                 {% for ThanhPho in tp %}
 
 					<option value="{{ ThanhPho.id }}">{{ ThanhPho.title }}</option>
@@ -67,20 +68,40 @@
 				</select>
 
 
-                <select class="popovers-input span12 valid" style="width:220px; padding: 0px;"
+                <select class="popovers-input span12 valid" style="width:250px; padding: 0px;"
                         name="nganhnghe"
                         data-content="Chọn ngành nghề">
                 <option value="" selected="selected">- Chọn Ngành Nghề -</option>
                 {% for NganhNghe in NN %}
+
 					<option value="{{NganhNghe.id }}">{{ NganhNghe.title }}</option>
                 {% endfor %}
 				</select>
+        <p></p>
+                <select id="year_exp" name="year_exp" style="width:200px; padding: 0px;"
+                        class="row-fluid span12">
+                                <option value="" selected="selected">- Kinh nghiệm làm việc -</option>
+                                <option value="Không yêu cầu kinh nghiệm">Không yêu cầu kinh nghiệm</option>
+                                <option value="1 năm">&lt; 1 năm</option>
+                                <option value="2 năm">&gt; 2 năm</option>
+                                <option value="2 - 5 năm">2 - 5 năm</option>
+                                <option value="5 - 10 năm">5 - 10 năm</option>
+                                <option value="10 năm">&gt; 10 năm</option>
+                            </select>
+
+                <select id="location" name="location" style="width:250px; padding: 0px;"
+                        class="row-fluid span12">
+                                    <option value="" selected="selected">- Hình Thức Làm Việc -</option>
+                                    <option value="Làm việc tại văn phòng" selected="selected">Làm việc tại văn phòng</option>
+                                    <option value="Làm online và đến văn phòng khi cần">Làm online và đến văn phòng khi cần</option>
+                                    <option value="Làm hoàn toàn online">Làm hoàn toàn online</option>
+                                </select>
+
 
             <div class="form-group">
                 <div class="col-sm-10">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    <input class="form-control" id="input-search-text" name="q"
-                           placeholder="Tìm việc freelancer, cuộc thi hay công việc mong muốn"
+                    <input class="form-control" id="input-search-text" name="q" placeholder="Tìm việc freelancer, cuộc thi hay công việc mong muốn"
                      value="{{search}}" type="text">
                     <button type="submit" class="btn btn-primary mb-2">Tìm kiếm</button>
                 </div>

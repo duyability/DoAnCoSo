@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class="row-delete" style="margin: 50px;">
+<form id="edit-job-form" action='' method='POST'>{% csrf_token %}
+    <span>Bạn có muốn xóa  "<b>{{ object.title }}</b>" không ?</span>
+    <p></p>
+    <p><input type='submit' value='Xóa Nhé' />
+    <p></p>
+    <br><a href='../'>Quay lại - Không Xóa</a></p>
+
+</form>
+</div>
+
+{% endblock %}

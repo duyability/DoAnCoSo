@@ -6,21 +6,6 @@
 <div class="row-fluid">
 <div class="span12">
 <!---->
-<div style="display: none;">
-    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-        <a href="/viec-lam-freelance" itemprop="url">
-            <span itemprop="title">Việc freelance</span>
-        </a>
-    </div>
-    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-        ›
-        <a href="/viec-lam-freelance/cpath_cac-cong-viec-viet-lach_chash_copywriting"
-        itemprop="url">
-            <span itemprop="title">Copywriting</span>
-        </a>
-    </div>
-</div>
-<!---->
 <div class="breadcrumbs">
     <ul>
         <li>
@@ -31,16 +16,16 @@
         <li><span>›</span>
         </li>
         <li>
-            <a href="/viec-lam-onsite/cpath_cac-cong-viec-viet-lach" title="Viết lách &amp; dịch thuật">
-                <span>Viết lách &amp; dịch thuật</span>
+            <a href="/viec-lam-onsite/nn/{{ jp.Nganh_Nghe.title|slugify }}" title="Viết lách &amp; dịch thuật">
+                <span>{{ jp.Nganh_Nghe.title }}</span>
             </a>
         </li>
         <li><span>›</span>
         </li>
         <li>
-            <a href="/viec-lam-onsite/cpath_cac-cong-viec-viet-lach_chash_copywriting"
+            <a href="/viec-onsite/{{ jp.title|slugify}}"
             title="Copywriting">
-                <span>Copywriting</span>
+                <span>{{ jp.title }}</span>
             </a>
         </li>
     </ul>
@@ -51,7 +36,7 @@
         <div class="span7 news-detail onsite-detail">
             <div class="row-fluid ">
                 <h1 class="title clampMe block-title">
-Copywriter <span class="label-tag label-large label-new" data-original-title="" title="">Mới</span>
+{{ jp.title }} <span class="label-tag label-large label-new" data-original-title="" title="">Mới</span>
 </h1>
                 <div class="clear"></div>
                 <div class="title-sub">
@@ -240,6 +225,14 @@ Copywriter <span class="label-tag label-large label-new" data-original-title="" 
                                                                                     background: #2db964;">Gửi CV</a>
 </div>
 <!---->
+    <div class="detail-bottom span8">
+    {% include 'tags/cmt-face.html' %}
+
+
+    </div>
+    <!---->
+
+
 </div>
 </div>
 </div>

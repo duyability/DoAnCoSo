@@ -1,8 +1,9 @@
 from django.conf.urls import url
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, include
 
-from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView
+from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView, DashboardView, ApplicantsListView, \
+    ApplicantPerJobView, filled, DeleteJob, DeleteBG
 from vlance.view.freelance import ApplyJobView, ApplyCV
 from vlance.views import index, dangcuocthi, DetaiOnsite, vieclamfreelance, Viecfreelances, vieclam, PartTime, \
     JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs
@@ -37,6 +38,17 @@ urlpatterns = [
     # bao gia viec part time
                   path('nop-cv/<int:id>/', CVDetail.as_view(), name='cv-detail'),
                   path('nop-cv-pt/<int:jobpt_id>/', ApplyCV.as_view(), name='nop-cv-pt'),
+
+    #dashboard
+                path('nhatuyendung/dashboard/', include([
+                    path('', DashboardView.as_view(), name='employer-dashboard'),
+                    path('all-applicants', ApplicantsListView.as_view(), name='employer-all-applicants'),
+                    path('applicants/<int:job_id>', ApplicantPerJobView.as_view(), name='employer-dashboard-applicants'),
+                    path('mark-filled/<int:job_id>', filled, name='job-mark-filled'),
+                ])),
+    #Delete
+                  path('delete/<int:id>', DeleteJob.as_view(), name='job-delete'),
+                  path('delete_bg/<int:user_id>', DeleteBG.as_view(), name='bao-gia-job-delete'),
 
 
 
