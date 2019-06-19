@@ -56,6 +56,14 @@ class vieclam(ListView):
         context['NN'] = NganhNghe.objects.all()
         return context
 
+class detaiNNs(ListView):
+    model = Job
+    def get_context_data(self, **kwargs):
+        context = super(detaiNN,self).get_context_data(**kwargs)
+        context['tp'] = ThanhPho.objects.all()
+        context['NN'] = NganhNghe.objects.all()
+        return context
+
 
 def Viecfreelances(request, slug):
     try:
@@ -140,16 +148,17 @@ def DetaiOnsite(request, slug):
     return render(request, 'viec-freelance/viec-onsite.html', {'jp': jp})
 
 
+def detaiNN(request, slug):
+    try:
+        vl = Job.objects.filter(Nganh_Nghe__slug=slug)
+    except Job.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'viec-freelance/nganhnghe.html', {'vl': vl})
 
-# class detaiNN(ListView):
-#     model = Job
-#     template_name = 'viec-freelance/nganhnghe.html'
-#     context_object_name = 'vl'
-#
-#     def get_queryset(self):
-#         jobs = Job.objects.filter(Nganh_Nghe_slug=self.request.Nganh_Nghe_slug)
-#         return jobs
+def detaiTP(request, slug):
 
-
-
-
+    try:
+        t = Job.objects.filter(Thanh_Pho__slug=slug)
+    except Job.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'viec-freelance/thanhpho.html', {'t': t})

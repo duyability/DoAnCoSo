@@ -52,28 +52,52 @@
         <h1><b>Việc freelance</b> - Làm online, nhận tiền nhanh chóng</h1>
         <p>Hơn <b>26689</b> dự án đã đăng và thuê được freelancer thành công.
             <br>Được bảo đảm thanh toán với những <b>dự án được nạp tiền</b>            qua vLance.vn.</p>
-        <form action="/tim-kiem" method="GET" id="search-job-form" autocomplete="off"
+        <form action="{% url 'search:search' %}" method="GET" id="search-job-form" autocomplete="off"
         novalidate="novalidate">
+
+            <select id="Thanh_Pho" name="thanhpho" required="required" style="width:220px; padding: 0px;" data-toggle="popover"
+                                        data-placement="top" data-content="Chọn vị trí của freelancer, VD: Hà Nội"
+                                        data-trigger="hover" class="popovers-input span12 valid">
+                <option disabled="disabled" selected="selected">- Nơi cần thuê -</option>
+                {% for Job in vl.all %}
+
+					<option value="{{Job.Thanh_Pho.id }}">{{ Job.Thanh_Pho.title }}</option>
+                {% endfor %}
+				</select>
+
+
+                <select class="popovers-input span12 valid" style="width:220px; padding: 0px;"
+                        name="nganhnghe"
+                        data-content="Chọn ngành nghề">
+                {% for Job in vl.all %}
+
+					<option value="{{Job.Nganh_Nghe.id }}">{{ Job.Nganh_Nghe.title }}</option>
+                {% endfor %}
+				</select>
+
             <div class="form-group">
                 <div class="col-sm-10">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    <input class="form-control" id="input-search-text" name="keyword" placeholder="Tìm việc freelancer, cuộc thi hay công việc mong muốn"
-                    required="" type="text">
+                    <input class="form-control" id="input-search-text" name="q" placeholder="Tìm việc freelancer, cuộc thi hay công việc mong muốn"
+                     value="{{search}}" type="text">
                     <button type="submit" class="btn btn-primary mb-2">Tìm kiếm</button>
                 </div>
             </div>
         </form>
-        <form action="/tim-kiem" method="GET" id="search-job-form-mobile" autocomplete="off"
+
+
+        <form action="{% url 'search:search' %}" method="GET" id="search-job-form-mobile" autocomplete="off"
         novalidate="novalidate">
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input class="form-control" id="input-search-text-1" name="keyword" placeholder="Bạn cần tìm việc freelancer thế nào?"
+                    <input class="form-control" id="input-search-text-1" name="q" placeholder="Bạn cần tìm việc freelancer thế nào?"
                     required="" type="text">
                     <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
         </form>
+
 
         <script>
             var category = ["IT và lập trình", "Lập trình web",

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vlance.urls')),
     path('', include('accounts.urls')),
+    path('search/', include('search.urls')),
 
 
 ]

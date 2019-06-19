@@ -1,10 +1,11 @@
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.urls import path
+
 from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView
 from vlance.view.freelance import ApplyJobView, ApplyCV
 from vlance.views import index, dangcuocthi, DetaiOnsite, vieclamfreelance, Viecfreelances, vieclam, PartTime, \
-    JobDetailsView, CVDetail
+    JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs
 from django.conf import settings
 
 app_name = 'vlance'
@@ -23,7 +24,10 @@ urlpatterns = [
 
                   path('viec-freelance/<str:slug>/', Viecfreelances, name='product'),
 
-                  #path('viec-lam-freelance/<str:Nganh_Nghe_slug>/', detaiNN.as_view(), name='detail-nganh-nghe'),
+                  path('viec-lam-freelance/nn/<str:slug>', detaiNN, name='detail-nganh-nghe'),
+                  #path('viec-lam-freelance/nn/<str:slug>', detaiNNs.as_view(), name='detail-nganh-nghesss'),
+
+                  path('viec-lam-freelance/tp/<str:slug>', detaiTP, name='detail-SS'),
 
                   path('dang-du-an/',JobCreateView.as_view(), name='dang-du-an'),
     # bao gia viec theo du an
@@ -32,6 +36,7 @@ urlpatterns = [
     # bao gia viec part time
                   path('nop-cv/<int:id>/', CVDetail.as_view(), name='cv-detail'),
                   path('nop-cv-pt/<int:jobpt_id>/', ApplyCV.as_view(), name='nop-cv-pt'),
+
 
 
               ] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)

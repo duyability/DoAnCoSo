@@ -1,0 +1,80 @@
+<div class="col2-left span3">
+    <div class="layered-navigation">
+          <div class="block">
+              <div id="form">
+                  <div class="control-group ">
+                        <div class="layered-block ln-category">
+                            <h2 class="layered-heading">Ngành nghề</h2>
+                                <div class="block-content subcategory">
+                                    <ul class="category unstyled">
+                                        <li class="cat-item selected">
+                                            <a href="{% url 'vlance:viec-lam' %}">Tất cả </a>
+                                        </li>
+
+            {% for Job in vl %}
+                                        <li class="cat-item ">
+                                            <a href="{% url 'vlance:viec-lam' %}/nn/{{ Job.Nganh_Nghe.slug }}">
+            {{ Job.Nganh_Nghe.title }}
+                                            </a>
+                                        </li>
+          </ul>   {% endfor %}
+
+                                </div>
+                        </div>
+        </div>
+ <div class="control-group ">
+        <div class="layered-block ln-category ln-category-city showcity hidecity">
+    <h2 class="layered-heading">Thành phố</h2>
+    <div class="block-content subcategory_city">
+        <ul class="subcategory unstyled">
+                                                <li class="sub-item checked">
+                        <a href="{% url 'vlance:viec-lam' %}">
+                            <i class="span1 checked"></i>
+                            <div>Toàn quốc </div>
+                        </a>
+                    </li>
+             {% for Job in vl %}
+                        <li class="sub-item ">
+                        <a href="{% url 'vlance:viec-lam' %}/tp/{{Job.Thanh_Pho.slug}}">
+                            <i class="span1 "></i>
+                            <div>{{ Job.Thanh_Pho.title }}
+                            </div>
+                        </a>
+                    </li>
+            {% endfor %}
+                                    </ul>
+    </div>
+    <div id="bottomcity"><span class="buttoncity"></span></div>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".buttoncity").click(function() {
+            $('.ln-category-city').toggleClass( "hidecity" );
+            $('.ads-2').toggleClass("showpopup");
+            $('.ads-3').toggleClass("showpopup");
+//            document.getElementById("#more-comment-fd-" + jQuery(this).attr("data-id")).innerText ="Rút gọn";
+        });
+            });
+
+</script>
+ </div>
+
+
+    </div>    </div>
+
+                                                    <div class="block ads-1">
+                                <div class="control-group ">
+                                    <div class="layered-block ln-category">
+                                        <div class="block-content subcategory_city">
+                                                                                        <div style="display:inline-block;width:160px;height:600px;background-color: #fff;margin: 0px 11px 10px;">
+                                     <a rel="nofollow" href="https://www.thuengay.vn/cong-cu/alo-ngay?ref=vlance_banner_left" target="_blank">
+                                                        <img src="/static/img/ad/banner-alo-ngay-160x600.jpg">
+                                                    </a>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                                                                                                                            </div>
+                </div>

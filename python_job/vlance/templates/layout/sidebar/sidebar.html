@@ -10,9 +10,10 @@
                                         <li class="cat-item selected">
                                             <a href="">Tất cả </a>
                                         </li>
+
             {% for NghanhNghe in NN %}
                                         <li class="cat-item ">
-                                            <a href="{{ request.path|urlencode }}/{{ NghanhNghe.slug }}">
+                                            <a href="{{ request.path|urlencode }}/nn/{{ NghanhNghe.slug }}">
             {{ NghanhNghe.title }}
                                             </a>
                                         </li>
@@ -34,7 +35,7 @@
                     </li>
             {% for ThanhPho in tp %}
                         <li class="sub-item ">
-                        <a href="{{ request.path|urlencode }}/{{ThanhPho.slug}}">
+                        <a href="{{ request.path|urlencode }}/tp/{{ThanhPho.slug}}">
                             <i class="span1 "></i>
                             <div>{{ ThanhPho.title }}
                             </div>

@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'setting',
+    'search',
+    'django_filters',
     'vlance',
+
 
 
 ]

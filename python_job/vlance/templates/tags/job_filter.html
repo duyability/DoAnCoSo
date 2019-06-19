@@ -1,0 +1,38 @@
+<form class="navbar-form navbar-left" role="search" action="{% url 'search:search' %}" method="get">
+			<div style="margin-left:30px;">
+
+				{{filter_form.Thanh_Pho__id__id}}
+				<!-- <select class="form-control" style="width:220px;">
+					<option>Job Type</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select> -->
+				{{filter_form.add_job_types__id}}
+				<!-- <select class="form-control" style="width:220px;">
+					<option>Job Category</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select> -->
+				{{filter_form.add_job_category__id}}
+				<!-- <select class="form-control" style="width:220px;">
+					<option>Pay</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select> -->
+				<!-- {{filter_form.}} -->
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Pay Amount">
+				</div>
+				<!-- {{filter_form.}} -->
+				<div class="form-group">
+					<input type="text" class="form-control" name="title" placeholder="Company Name">
+				</div>
+				<button type="submit" class="btn btn-default">Search</button>
+			</div>
+		</form>

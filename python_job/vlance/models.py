@@ -87,7 +87,7 @@ class JobPartTime(models.Model):
     NS_tu = models.IntegerField("Ngân sách từ ", default='')
     NS_den = models.IntegerField("Ngân sách đến", default='')
     year_exp = models.CharField("Số Năm Kinh Nghiệm", max_length=300, default='')
-    location = models.CharField("Số Năm Kinh Nghiệm", max_length=300, default='')  # Hinh thuc - vi tri lam viec
+    location = models.CharField("Hình thức làm việc", max_length=300, default='')  # Hinh thuc - vi tri lam viec
     file = models.FileField("File đính kèm", upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/', default='')
     company_name = models.CharField("Tên Công Ty", max_length=300, default='')
     hinh = models.ImageField("Logo Công Ty", upload_to='uploads/ViecLamPartTime/logo/%Y/%m/%d/', default='')
