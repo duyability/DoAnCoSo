@@ -21,8 +21,8 @@ class User(AbstractUser):
                                   'unique': "Email của bạn đã tồn tại.",
                               })
     # update
-    thanh_phos = models.ForeignKey(ThanhPho, on_delete=models.CASCADE,null=True, verbose_name="Chọn Thành Phố", default='1')
-    nganh_nghes = models.ForeignKey(NganhNghe, on_delete=models.CASCADE,null=True, verbose_name="Chọn Ngành Nghề", default='1')
+    thanh_phos = models.ForeignKey(ThanhPho, on_delete=models.CASCADE,null=True, verbose_name="Chọn Thành Phố", )
+    nganh_nghes = models.ForeignKey(NganhNghe, on_delete=models.CASCADE,null=True, verbose_name="Chọn Ngành Nghề",)
     hinh = models.ImageField("Avatar ", upload_to='uploads/User/avatar/%Y/%m/%d/',default='uploads/User/unknown.png',null=True,)
     skill = models.ManyToManyField(KyNang, verbose_name="Chọn kỹ năng", default='',null=True,)
     sologan = models.CharField("Chức danh",max_length=50, blank=True, null=True, default='')

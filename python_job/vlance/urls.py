@@ -12,6 +12,7 @@ from django.conf import settings
 app_name = 'vlance'
 urlpatterns = [
                   path('', index, name='index'),
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('index.html', index, name='homepage'),
                   path('viec-lam-freelance', vieclam.as_view(), name='viec-lam-freelance'),
     # Part Time

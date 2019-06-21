@@ -42,12 +42,6 @@
                         <div class="clear"></div>
                         <div class="control-group">
                             <label for="id_{{ field.name }}">{{ field.label }}</label>
-                           {% comment %} <input type="{{ field.field.widget.input_type }}"
-                                   class="form-control"
-                                   name="{{ field.name }}"
-                                   id="id_{{ field.name }}"
-                                   value="{{ field.value }}"
-                                   placeholder="{{ field.field.widget.attrs.placeholder }}">{% endcomment %}
                         {{ field }}
                     {% endif %}
                 {% endfor %}
@@ -57,72 +51,9 @@
                         <i class="fa fa-signing"></i> Update
                     </button>
                 </div>
+                </div>
             </form>
 
-
-               {% comment %} <form id="edit-acc" class="edit-form" action="" method="post" enctype="multipart/form-data" novalidate="novalidate">
-                   {% csrf_token %}
-                    <div>
-                        <label class="personal-info">Thông tin cơ bản</label>
-                    </div>
-                    <div class="clear"></div>
-                    <dl class="dl-horizontal">
-                        <div class="clear"></div>
-                        <dt>First name<span class="text-red">*</span></dt>
-                        <dd>
-                            <div>
-                                <input type="text" id="first_name" name="first_name" required="required" placeholder="first_name" data-toggle="popover" data-placement="right" data-content="Tên đầy đủ theo CMND của bạn.<br/><i>Lưu ý sử dụng tên thật của bạn. vLance.vn sẽ sử dụng thông tin này khi chuyển tiền thanh toán các dự án cho bạn.</i>" data-trigger="hover" data-html="true" class="popovers-input" value="{{ f.first_name }}" data-original-title="" title=""> </div>
-                        </dd>
-
-                        <div class="clear"></div>
-                        <dt>Last name<span class="text-red">*</span></dt>
-                        <dd>
-                            <div>
-                                <input type="text" id="last_name" name="last_name" required="required" placeholder="first_name" data-toggle="popover" data-placement="right" data-content="Tên đầy đủ theo CMND của bạn.<br/><i>Lưu ý sử dụng tên thật của bạn. vLance.vn sẽ sử dụng thông tin này khi chuyển tiền thanh toán các dự án cho bạn.</i>" data-trigger="hover" data-html="true" class="popovers-input" value="{{ f.last_name }}" data-original-title="" title=""> </div>
-                        </dd>
-
-                        <div class="clear"></div>
-                        <dt>Email<span class="text-red">*</span></dt>
-                        <dd>
-                            <div class="email-invalid">
-                                <div class="control-group ">
-                                    <input type="email" id="email" name="emai" required="required" placeholder="Email" data-toggle="popover" data-placement="right" data-content="Email, VD: hovaten@gmail.com" data-trigger="hover" value="{{ f.email }}"> </div>
-                            </div>
-                        </dd>
-                        <div class="clear"></div>
-                        <dt>Hotline</dt>
-                        <dd>
-                            <div class="skype-invalid">
-                                <div class="control-group ">
-                                    <input type="tel" id="hotline" name="hotline" placeholder="Hotline" data-toggle="popover" data-placement="right" data-content="Skype, VD: freelancer01" data-trigger="hover" data-html="true" class="popovers-input" value="{{ f.hotline }}" data-original-title="" title=""> </div>
-                            </div>
-                        </dd>
-                        <div class="clear"></div>
-                        <dt>Thay đổi mật khẩu</dt>
-{#                        <dd>#}
-{#                            <div class="change_password">#}
-{##}
-{#                                <div id="vlance_accountbundle_accountbasictype_plainPassword">#}
-{#                                    <div class="control-group ">#}
-{#                                        <input type="password" id="password1" name="password1" placeholder="Mật khẩu mới" value=""> </div>#}
-{#                                    <div class="control-group ">#}
-{#                                        <input type="password" id="password2" name="password2" placeholder="Nhập lại mật khẩu mới" value=""> </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </dd>#}
-                        <div class="clear"></div>
-
-                    </dl>
-                    <div class="clear"></div>
-
-                   <dl>
-                        <dd>
-                            <div class="submit-form-edit-profile">
-                                <input type="submit" class="btn btn-large btn-primary" value="Lưu các thay đổi">
-                            </div>
-                        </dd>
-                    </dl>
-                </form>{% endcomment %}
                 <script>
                     var account_edit_validate = {
                         "type": ["jpg", "jpeg", "png", "gif"],
@@ -132,9 +63,14 @@
                     var account_edit_sizeerror = "Kích thước file không vượt quá 1MB";
                     var account_edit_typeerror = "File không đúng định dạng jpg, jpeg, png, gif";
                 </script>
-            </div>
-        </div>
+    <div class="clearfix"></div>
     </div>
 </div>
+
+</div>
+    </div>
+    </div>
+</div></div>
+
 
 {% endblock %}

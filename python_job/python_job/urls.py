@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('vlance.urls')),
     path('', include('accounts.urls')),
     path('search/', include('search.urls')),
-
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 
 ]
 

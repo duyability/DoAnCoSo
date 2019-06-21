@@ -136,7 +136,7 @@
             </div>
         </div>
         <div class="fr-service">
-            {{ Job.description |truncatewords:50}}...
+            {{ Job.description |truncatewords:50|striptags}}...
             <a class="read_more"
                href="/viec-freelance/{{ Job.slug }}">xem thêm</a>
                                     </div>

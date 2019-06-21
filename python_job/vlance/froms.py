@@ -7,13 +7,13 @@ from vlance.models import Job, Applicant, JobPartTime, CVonsite
 
 # From viec theo du an - Pham Minh Duc
 class CreateJobForm(forms.ModelForm):
+
     class Meta:
         model = Job
         exclude = ('user', 'created_at', 'slug','filled')
 
     def is_valid(self):
         valid = super(CreateJobForm, self).is_valid()
-
         # if already valid, then return True
         if valid:
             return valid
@@ -28,6 +28,7 @@ class CreateJobForm(forms.ModelForm):
 
 # From viec lam part time , ban thoi gian  by Pham Minh Duc
 class PartTimeFrom(forms.ModelForm):
+
     class Meta:
         model = JobPartTime
         exclude = ('user', 'created_at', 'slug')

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+    
+    <body class="one-column error-page">
+        
+
+            
+                                    
+        <style>.async-hide { opacity: 0 !important} </style>
+    <script>
+        (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',4000,
+        {'GTM-M38JTTR':true});
+    </script>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-34003187-3', 'vlance.vn');
+        ga('require', 'GTM-M38JTTR'); //Update 20/12/2017
+        ga('send', 'pageview');
+    </script>
+    
+    <!-- Facebook Conversion Code for Visit (any page) -->
+    <script>
+        (function() {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded) {
+              var fbds = document.createElement('script');
+              fbds.async = true;
+              fbds.src = '//connect.facebook.net/en_US/fbds.js';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(fbds, s);
+              _fbq.loaded = true;
+            }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6024217527885', {'value':'0.00','currency':'VND'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6024217527885&amp;cd[value]=0.00&amp;cd[currency]=VND&amp;noscript=1" /></noscript>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WM92T4');</script>
+    <!-- End Google Tag Manager -->
+
+ 
+    
+                <script type="text/javascript" src="/js/form/jquery.validate.min.js"></script>
+        
+    <script type="text/javascript" src="/js/common/login-signup.min.js"></script>
+        <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '197321233758025',    // App ID from the app dashboard
+                channelUrl : '/web/fbchannel.php', // Channel file for x-domain comms
+                status     : true,                 // Check Facebook Login status
+                xfbml      : true                  // Look for social plugins on the page
+            });
+                    };
+
+                (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function fb_login() {
+            window.location.href = "https://www.facebook.com/dialog/oauth?%20client_id=197321233758025&scope=email&redirect_uri=https://www.vlance.vn/a/loginfb";
+        }
+
+        function fb_logout() {
+            FB.logout(function(response) {
+                console.log('Logout thành công');
+            });
+        }
+    </script>
+        
+        <script type="text/javascript">
+        function linkedin_login() {
+            window.location.href = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=7588i5efds8ydr&scope=r_basicprofile%20r_emailaddress&state=53cddbb67061f&redirect_uri=https://www.vlance.vn/linkedin/login";
+        }
+        function google_login() {
+            window.location.href = "https://accounts.google.com/o/oauth2/auth?scope=email%20profile&state=%2Fprofile&redirect_uri=https://www.vlance.vn/gg/login&response_type=code&client_id=395827940644-nhqt5f3610uap23n3i2hbhb8id179h8b.apps.googleusercontent.com&approval_prompt=force";
+        }
+    </script>
+            
+    <div class="navbar navbar-static-top nav-new display-desktop">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="logo"><a href="/">
+                        <img style="width:87px;" src="/img/logo.png" 
+                             alt="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả" 
+                             title="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả"/></a></div>
+                </div>
+                <div class="span7">
+                    <div class="menu-inner">
+                        <ul class="nav nav-menu dropdown">
+                            <li class="menu-item first ">
+                                <a title="Thuê Freelancer" href="/freelancers">Thuê Freelancer<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li class="disabled" role="presentation">Đăng tin tuyển dụng</li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/dang-du-an">Đăng việc theo dự án</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/dang-viec-tuyen-dung">Đăng việc bán thời gian</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/dang-cuoc-thi">Đăng cuộc thi thiết kế</a></li>
+                                    <li class="disabled" role="presentation">Tìm Freelancer</li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/freelancers">Danh sách Freelancer</a></li>
+                                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#"></a></li>-->
+                                </ul>
+                            </li>
+                            <li class="menu-item second ">
+                                <a title="Tìm việc làm" href="/viec-lam-freelance">Tìm việc làm<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/viec-lam-freelance">Việc theo dự án</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/viec-lam-onsite">Việc bán thời gian</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/cuoc-thi-thiet-ke">Cuộc thi thiết kế</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item tool-sign display-desktop">
+                                <a href="/huong-dan-thue-freelancer" title="Hướng dẫn làm việc">Hướng dẫn làm việc</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="span3 btn-connect">
+                    <div class="login-vlance">
+                        <div class="create-account-vlance">
+                            <a id="btn-register" href="#">Đăng ký </a>
+                            <a id="btn-login" rel="nofollow" href="#">Đăng nhập</a>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <a class="btn btn-vl btn-vl-green btn-vl-medium" onclick="vtrack('Click post job', {'location':'Homepage'})" href="/dang-du-an">Đăng dự án</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-static-top nav-new display-mobile">
+        <div class="container">
+            <div class="list-menu">
+                <div class="menu-item-1">
+                    <div class="toggle dropdown icon-hamberger">
+                        <a href="#" class=""><i class="fa fa-bars menu" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="button">
+                    <a class="btn btn-vl btn-vl-green btn-vl-medium" onclick="vtrack('Click post job', {'location':'Homepage'})" href="/dang-du-an">Đăng dự án</a>
+                </div>
+            </div>
+            <div class="menu-item-2" style="padding-left: 120px;">
+                    <div class="logo"><a href="/">
+                        <img style="width:70px;" src="/img/logo.png" 
+                             alt="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả" 
+                             title="vLance.vn - Thuê Freelancer Việt Nam nhanh và hiệu quả"/></a></div>
+            </div>
+        </div>
+        <div class="overlay-transparent-grey"></div>
+        <div class="overlay-block overlay-left" style="height: 800px;">
+            <div class="wrap-mobile">
+                <ul class="nav-menu-mobile">
+                    <li class="title"><a title="Thuê Freelancer" href="/freelancers">Thuê Freelancer</a></li>
+                    <li class=""><a href="/dang-du-an">Đăng việc theo dự án</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/dang-viec-tuyen-dung">Đăng việc bán thời gian</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/dang-cuoc-thi">Đăng cuộc thi thiết kế</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/freelancers">Danh sách Freelancer</a></li>
+                    <li class="title"><a title="Tìm việc làm" href="/viec-lam-freelance">Tìm việc làm</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/viec-lam-freelance">Việc theo dự án</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/viec-lam-onsite">Việc bán thời gian</a></li>
+                    <li class=""><a role="menuitem" tabindex="-1" href="/cuoc-thi-thiet-ke">Cuộc thi thiết kế</a></li>
+                    <li class="divider"></li>
+                    <li class=""><a id="btn-register-mobile" href="#">Đăng ký </a></li>
+                    <li class=""><a id="btn-login-mobile" rel="nofollow" href="#">Đăng nhập</a></li>
+                    <li class="divider"></li>
+                    <li class=""><a href="/huong-dan-thue-freelancer" title="">Hướng dẫn làm việc</a></li>
+                </ul>
+            </div>
+            <div class="close-button"><a><i class="fa fa-close fa-2" aria-hidden="true"></i></a></div>
+        </div>
+    </div>
+<div class="float-box-section head-box">
+    <div class="login-box">
+        <div class="modal-close "><button id="btn-close-log" type="button" class="close" data-dismiss="modal" aria-hidden="true"></button></div>
+        <div class="container">
+            <div class="login-socail-network">
+                <a class="btn-block btn-facebook" onclick="fb_login()"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+                <a class="btn-google-plus" onclick="google_login()"><i class="fa fa-google-plus" aria-hidden="true"></i>Google</a>
+                <a class="btn-linkedin" onclick="linkedin_login()"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+            </div>   
+            <div class="box-choice">
+                <img src="/img/line-2.png">
+                <span>Hoặc</span>
+                <img src="/img/line-2.png">
+            </div>
+            <form id="login-form" action="" method="post">
+    <p><label for="login_username_header">Địa chỉ email</label></p>
+    <input type="email" id="login_username_header" name="username" required="required" value="" class="span4" 
+           placeholder="Email đăng nhập" />
+    <p><label for="login_password_header">Mật khẩu</label></p>
+    <input type="password" id="login_password_header" name="password" required="required" class="span4"
+           placeholder="Mật khẩu" />
+    <label for="remember_me" class="checkbox">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        Ghi nhớ mật khẩu    </label>
+    <div class="row-fluid">
+        <button type="button" id="btn-submit-login-header" name="_submit" class="btn btn-large btn-primary">
+            Đăng nhập        </button>
+    </div>
+    <p class="lost-password">Bạn quên mật khẩu? <a href="/a/reset/request">Click vào đây</a></p>
+</form>
+<script type="text/javascript">
+    var login_form = '#login-form';
+    var login_form_params = {"url":"/a/login_job"};
+</script>        </div>
+    </div>
+</div>
+
+<div class="float-box-section head-box">
+    <div class="signup-box">
+        <div class="modal-close "><button id="btn-close-signup" type="button" class="close" data-dismiss="modal" aria-hidden="true"></button></div>
+        <h3>Tạo tài khoản miễn phí</h3>
+        <div class="container">
+            <div class="login-socail-network">
+                <a class="btn-block btn-facebook" onclick="fb_login()"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+                <a class="btn-google-plus" onclick="google_login()"><i class="fa fa-google-plus" aria-hidden="true"></i>Google</a>
+                <a class="btn-linkedin" onclick="linkedin_login()"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+            </div>
+            <div class="box-choice">
+                <img src="/img/line-2.png">
+                <span>Hoặc</span>
+                <img src="/img/line-2.png">
+            </div>
+            <form id="register-form" action="" method="post">
+    <div class="control-group">
+        <p>Họ và tên</p>
+        <input type="text" id="reg-fullname-header" name="fullname" value="" required="required" class="span4" placeholder="Ví dụ: Nguyễn Văn A..."/>
+        <p>Địa chỉ email</p>
+        <input type="email" id="reg-username-header" name=email" value="" required="required" class="span4" 
+               placeholder="Email đăng nhập" />
+        <p>Mật khẩu</p>
+        <input type="password" id="reg-password-header" name="password" required="required" class="span4"
+               placeholder="Mật khẩu" />
+        <p>Xác nhận mật khẩu</p>
+        <input type="password" id="reg-re-password-header" name="re-password" required="required" class="span4"
+               placeholder="Mật khẩu" />
+        <p>Tôi muốn đăng ký làm</p>
+        <label class="radio">
+            <input type="radio" name="type" value="client" id="register_type_02">
+            <p>Nhà tuyển dụng</p>
+        </label>
+        <label class="radio">
+            <input type="radio" name="type" value="freelancer" id="register_type_01" checked>
+            <p>Freelancer</p>
+        </label>
+    </div>
+    <div class="row-fluid">
+        <button type="button" id="btn-submit-register-header" name="_submit" class="btn btn-large btn-primary">
+            Đăng ký        </button>
+    </div>
+    <p class="term-condition">Khi tạo tài khoản bạn đồng ý với <a target="_blank" href="/page/dieu-khoan-su-dung">điều khoản của vLance</a></p>
+</form>
+<script type="text/javascript">
+    var reg_form = '#register-form';
+    var reg_form_params = {"url":"/a/register_job"};
+</script>        </div>
+    </div>
+</div>
+    
+ 
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.i32-mail').click(function(e) {
+            $('.dropdown-menu').addClass('menuhiden');
+            $('.block-new-message').toggle();
+            e.stopPropagation();
+        });
+        $('body').click(function() {
+            $('.dropdown-menu').removeClass('menuhiden');
+            $('.block-new-message').hide();
+        });
+        $('.block-new-message').click(function(e){
+            e.stopPropagation();
+        });
+    });
+
+    $(function(){
+        $(window).scroll(function(){
+            var aTop = 21, mTop = 1;
+            if($(this).scrollTop()>=aTop){
+                $('.menu_scoll').addClass('menu_scoll_display');
+                $('.pull-right.nav-account').addClass('account-mail-menu');
+                $('account-mail-menu').show();
+                $('.upper_scoll').addClass('upper_scoll_display');
+            };
+            if($(this).scrollTop() <= (aTop)){
+                $('.menu_scoll').removeClass('menu_scoll_display');
+                $('.menu_scoll').addClass('menu_scoll');
+                $('.pull-right.nav-account').removeClass('account-mail-menu');
+                $('account-mail-menu').hide();
+                $('.upper_scoll').removeClass('upper_scoll_display');
+                $('.upper_scoll').addClass('upper_scoll');
+            }
+            if($(this).scrollTop()>=mTop){
+                $('.navbar-static-top.display-mobile').addClass('menu_scoll_display');
+            }
+            if($(this).scrollTop()<mTop){
+                $('.navbar-static-top.display-mobile').removeClass('menu_scoll_display');
+            }
+        });
+    });
+</script>
+<script type="text/javascript"> //Menu mobile
+    $(document).ready(function(){
+        /*Hiện menu trái*/
+        $(".icon-hamberger a").click(function(){
+            $(".overlay-transparent-grey").removeClass("show-grey").delay().queue(function(next){
+                $(this).addClass("show-grey-1");
+                next();
+            });
+            $(".overlay-left").show();
+            $(".overlay-left").addClass("show");
+        });
+        /*Hiện menu phải*/
+        $(".icon-dropdown, .list-menu .button.avata").click(function(){
+            $(".overlay-transparent-grey").removeClass("show-grey").delay().queue(function(next){
+                $(this).addClass("show-grey-1");
+                next();
+            });
+            $(".overlay-right").show();
+            $(".overlay-right").addClass("show");
+        });
+        /*Đóng menu*/
+        $(".overlay-left .close-button, .overlay-right .close-button, .overlay-transparent-grey, #btn-register-mobile, #btn-login-mobile").on('click', function(){
+            $(".overlay-right, .overlay-left").removeClass("show");
+            $(".overlay-transparent-grey").removeClass("show-grey-1").delay(500).queue(function(next){
+                $(this).addClass("show-grey");
+                next();
+            });
+        });
+    });
+</script>
+        <!-- about page -->
+		<div class="error-section container">
+            <div class="row-fluid">
+                <h1>LỖI 404</h1>
+                <p>Có vẻ như bạn đã lạc đường, hãy theo đường <a href="https://www.vlance.vn/">link</a> này để trở lại trang chủ</p>
+                <div class="map-error">
+                    <div>Bạn đang ở đây</div>
+                </div>
+            </div>
+		</div>
+		<!-- End about page -->
+		
+		
+		<!-- Footer -->
+                <div class="block">
+    <footer>
+    <div class="footer-links-parter">
+        <div class="container">
+            <div class="row-fluid vl-relationship">
+                <div class="vl-funding span4">
+                    <p>Tài trợ</p>
+                    <div class="google-footer">
+                        <a href="https://www.google.com/" target="_blank" rel="nofollow" title="Google" alt="Google"></a>
+                    </div>
+                    <div class="aws-footer">
+                        <a href="https://aws.amazon.com/" target="_blank" rel="nofollow" title="Amazon web services" alt="Amazon web services"></a>
+                    </div>
+                    <div class="mixpanel-footer">
+                        <a href="https://mixpanel.com/f/partner" target="_blank" rel="nofollow" title="Mobile Analytics" alt="Mobile Analytics"></a>
+                    </div>
+                </div>
+                <div class="vlance-partner span8">
+                    <p>Đối tác</p>
+                    <div class="kicoworking-footer">
+                        <a target="_blank" rel="nofollow" title="Kicoworking" alt="Kicoworking"></a>
+                    </div>
+                    <div class="magestore-footer">
+                        <a target="_blank" rel="nofollow" title="Magestore" alt="Magestore"></a>
+                    </div>
+                    <div class="money-lover-footer">
+                        <a target="_blank" rel="nofollow" title="Money Lover" alt="Money Lover"></a>
+                    </div>
+                    <div class="topcv-footer">
+                        <a target="_blank" rel="nofollow" title="TopCv" alt="TopCv"></a>
+                    </div>
+                    <div class="ybox-footer">
+                        <a target="_blank" rel="nofollow" title="Ybox.vn" alt="Ybox.vn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-links-section grey-bg">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span4 category-block">
+                    <div class="job-category span6">
+                        <h4><a title="Việc phổ biến nhất">Việc phổ biến nhất</a></h4>
+                        <div class="row-fluid">
+                                                        <ul class="first span12">
+                                <li><a href="/viec/lap-trinh-web">Việc làm web</a></li>
+                                <li><a href="/viec/ung-dung-di-dong">Việc lập trình di động</a></li>
+                                <li><a href="/viec/toi-uu-cho-cong-cu-tim-kiem-seo">Việc làm SEO</a></li>
+                                <li><a href="/viec/cac-cong-viec-marketing-kinh-doanh">Việc marketing online</a></li>
+                                <li><a href="/viec/dich-thuat">Việc dịch thuật</a></li>
+                                <li><a href="/viec/cac-cong-viec-viet-lach">Việc viết lách</a></li>
+                                <li><a href="/viec/cac-cong-viec-thiet-ke">Việc thiết kế</a></li>
+                                <li><a href="/viec/quan-ly-blog-fanpage">Việc quản lý fanpage</a></li>
+                                <li><a href="/viec-lam-freelance">Cuộc thi thiết kế</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="job-category span6">
+                        <h4><a title="Được thuê nhiều nhất">Được thuê nhiều nhất</a></h4>
+                        <div class="row-fluid">
+                            <ul>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-marketing-kinh-doanh">Freelancer Marketing online</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_lap-trinh-web">Freelancer Làm web</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_ung-dung-di-dong">Freelancer Mobile app</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-it-va-lap-trinh_chash_toi-uu-cho-cong-cu-tim-kiem-seo">Freelancer SEO</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-thiet-ke">Freelancer Thiết kế</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-thiet-ke_chash_banner-quang-cao">Freelancer thiết kế banner</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-viet-lach">Freelancer Viết bài</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-viet-lach_chash_dich-thuat">Freelancer Dịch thuật</a></li>
+                                <li><a href="/freelancers/cpath_cac-cong-viec-hanh-chinh_chash_nhap-du-lieu">Freelancer nhập dữ liệu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8 right-footer-block">
+                    <div class="sub-col footer-fl ft-right span4">
+                        <h4><a title="Freelancer">Freelancer</a></h4>
+                        <div class="row-fluid">
+                            <ul class="first span12">
+                                <li><a href="/huong-dan-freelancer-kiem-tien-tren-vlance">Hướng dẫn freelancer kiếm tiền</a></li>
+                                <li><a href="/huong-dan-freelancer-hoan-thien-ho-so-tren-vlance">Hướng dẫn hoàn thiện hồ sơ</a></li>
+                                <li><a href="/huong-dan-freelancer-chao-gia-du-an">Hướng dẫn chào giá dự án</a></li>
+                                <li><a href="/huong-dan-freelancer-nhan-thanh-toan">Hướng dẫn nhận thanh toán</a></li>
+                                <li><a href="/huong-dan-freelancer-xac-thuc-thong-tin-tai-khoan">Hướng dẫn xác thực tài khoản</a></li>
+                                <li><a href="/huong-dan-freelancer-lien-he-khach-hang">Hướng dẫn liên hệ khách hàng</a></li>
+                                <li><a href="/huong-dan-freelancer-mua-credit">Hướng dẫn mua credit</a></li>
+                                <li><a href="/huong-dan-freelancer-mua-vip">Hướng dẫn mua vip</a></li>
+                                <li><a href="/huong-dan-su-dung-voucher" title="Hướng dẫn sử dụng Voucher">Hướng dẫn sử dụng Voucher</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="sub-col footer-cl ft-right span3">
+                        <h4><a title="Khách hàng">Khách hàng</a></h4>
+                        <div class="row-fluid">
+                            <ul class="first span12">
+                                <li><a href="/huong-dan-thue-freelancer">Cách thuê freelancer</a></li>
+                                <li><a href="/huong-dan-dang-viec">Hướng dẫn đăng việc</a></li>
+                                <li><a href="/huong-dan-chon-freelancer">Hướng dẫn chọn freelancer</a></li>
+                                <li><a href="/huong-dan-nap-tien">Hướng dẫn nạp tiền</a></li>
+                                <li><a href="/huong-dan-quan-ly-du-an">Hướng dẫn quản lý dự án</a></li>
+                                <li><a href="/huong-dan-ket-thuc-du-an">Hướng dẫn kết thúc dự án</a></li>
+                                <li><a href="/huong-dan-lien-he-truc-tiep-freelancer">Hướng dẫn liên hệ freelancer</a></li>
+                                <li><a href="/huong-dan-su-dung-voucher" title="Hướng dẫn sử dụng Voucher">Hướng dẫn sử dụng Voucher</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="sub-col about-us ft-right span2">
+                        <h4><a title="Giới thiệu">Giới thiệu</a></h4>
+                        <ul>
+                            <li><a href="/page/gioi-thieu-ve-vlance" title="Về chúng tôi">Về chúng tôi</a></li>
+                                                        <li><a href="/doi-tac" title="Đối tác">Đối tác</a></li>
+                            <li><a target="_blank" href="https://www.vlance.vn/blog" title="Blog vLance">Blog vLance</a></li>
+                        </ul>
+                    </div>
+                    <div class="sub-col information ft-right span3">
+                        <h4>Liên hệ</h4>
+                        <ul>
+                                                        <li><a href="/tro-giup" title="Trợ giúp">Trợ giúp</a></li>
+                            <li><a href="/page/cau-hoi-thuong-gap">Câu hỏi thường gặp</a></li>
+                            <li><a href="#" onclick="_urq.push(['Feedback_Open', 'submit/bug']);">Thông báo lỗi <i class="fa fa-bullhorn" aria-hidden="true"></i></a></li>
+                            <!--<li><a href="/page/huong-dan-su-dung-cho-khach-hang">Hướng dẫn sử dụng</a></li>-->
+                            <li><a rel="nofollow" target="_blank" href="/page/lien-he" title="Liên hệ">Liên hệ</a></li>
+                        </ul>
+                        <div class="social span12">
+                            <h4 class="row-fluid">Kết nối ngay</h4>
+                            <div class="row-fluid">
+                                <ul class="span12">
+                                    <li><a rel="nofollow" href="https://www.facebook.com/vlance.vn" target="_blank" class="i-facebook">
+                                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://plus.google.com/+VlanceVn" target="_blank" class="i-google">
+                                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://www.linkedin.com/company/vlance-vn" target="_blank" class="i-linkedin">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://twitter.com/vlancevn" target="_blank" class="i-twitter">
+                                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="https://www.youtube.com/user/vlancevietnam" target="_blank" class="i-youtube">
+                                            <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-logo">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span9">
+                    <div class="row-fluid">
+                        <div class="vlance-logo span2">
+                            <a href="/" title="Thuê freelancer Việt Nam nhanh và hiệu quả"></a>
+                        </div>
+                        <div class="copyright span8">
+                            <p>Freelancer Việt Nam - Lựa chọn số 1 của doanh nghiệp</p>
+                            <p>© 2019 vLance.vn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="footer-payment">
+                        <div class="nlh-partner">
+                            <ul class="">
+                                <li>
+                                    <a rel="nofollow" class="visacrd" title="Thẻ thanh toán VisaCard" target="_blank">
+                                        <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" class="mastercrd" title="Thẻ thanh toán MasterCard" target="_blank">
+                                        <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" class="paypal" title="Hệ thống thanh toán trực tuyến Paypal" target="_blank">
+                                        <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li><a rel="nofollow" class="vietcombank" title="Ngân hàng TMCP Ngoại Thương Việt Nam" target="_blank"></a></li>			
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span9">
+                    <div class="footer-rule">
+                        <ul>
+                            <li><a href="/page/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng |</a></li>
+                            <li><a href="/page/dieu-khoan-su-dung-danh-cho-khach-hang" title="Điều khoản khách hàng">Điều khoản khách hàng |</a></li>
+                            <li><a href="/page/dieu-khoan-su-dung-danh-cho-freelancer" title="Điều khoản freelancer">Điều khoản freelancer |</a></li>
+                                                        <li><a href="/page/quy-che-hoat-dong" title="Quy chế hoạt động">Quy chế hoạt động |</a></li>
+                            <li><a href="/page/chinh-sach-bao-mat" title="Chính sách bảo mật">Chính sách bảo mật |</a></li>
+                            <li><a href="/page/giai-quyet-khieu-nai" title="Giải quyết khiếu nại">Giải quyết khiếu nại</a></li>
+                        </ul>
+                    </div>
+                    <p class="address">Chủ quản: Công ty Cổ phần Magenweb Việt Nam - Giấy phép đăng ký kinh doanh số 0106119703 - Cấp ngày 11/03/2013 - Tại Sở Kế hoạch và Đầu tư Hà Nội.</p>
+                    <p class="address">Địa chỉ: Tầng 4, số 3, ngõ 18, phố Yên Lãng, phường Láng Hạ, quận Đống Đa, Hà Nội - Hỗ trợ: <a href="mailto:hotro@vlance.vn">hotro@vlance.vn</a> - ĐT: (+84) 024.6684.1818</p>
+                </div>
+                <div class="dkkd">
+                    <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=46478" rel="nofollow" target="blank"><img alt="" title="" src="/media/dkkd-vlance.png" /></a>
+                </div>
+                            </div>
+        </div>    
+    </div>
+    </footer>    </div>
+    
+        <!-- javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+    </body>
+</html>

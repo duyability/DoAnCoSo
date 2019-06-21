@@ -1,3 +1,5 @@
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.conf import settings
 from python_job.utils import get_unique_slug
@@ -55,14 +57,14 @@ class Job(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, default='')
     title = models.CharField(max_length=300, default='')
-    description = models.TextField(default='')
-    skill = models.TextField(max_length=300, default='')
+    description =RichTextField(default='')
+    skill = RichTextUploadingField(max_length=300, default='')
     Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
     Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
     last_date = models.DateTimeField()
     NS_tu = models.DecimalField("Ngân sách từ",decimal_places=3, max_digits=50, default='')
     NS_den = models.DecimalField("Ngân sách đến",decimal_places=3, max_digits=50, default='')
-    file = models.FileField("File đính kèm", default='')
+    file = models.FileField("File đính kèm", default='',null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     filled = models.BooleanField(default=False)
 
@@ -81,8 +83,8 @@ class JobPartTime(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)  # Ngày tạo Job(auto)
     slug = models.SlugField(max_length=255, default='')
     title = models.CharField(max_length=300, default='')
-    description = models.TextField(default='')
-    skill = models.TextField(max_length=300, default='')
+    description = RichTextUploadingField(default='')
+    skill = RichTextUploadingField(max_length=300, default='')
     Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
     Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
     date_begin = models.DateTimeField()  # ngay bat dau lam
@@ -102,6 +104,7 @@ class JobPartTime(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
 
 
 # Gui Bao Gia

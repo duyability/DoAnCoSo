@@ -41,11 +41,28 @@ INSTALLED_APPS = [
     'setting',
     'search',
     'django_filters',
+    'ckeditor',
+    'ckeditor_uploader',
     'vlance',
 
 
 
 ]
+CKEDITOR_UPLOAD_PATH = 'dw-uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'height': 200,
+        'width':600,
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source'],
+        ],
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -144,7 +161,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ALL ='/HinhAnh/'
+MEDIA_URL ='/HinhAnh/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'HinhAnh')
 
 #user

@@ -10,7 +10,9 @@
             <div class="post-job">
                 <form id="edit-job-form" action="" method="post" enctype="multipart/form-data"
                 novalidate="novalidate">
+
                     {% csrf_token %}
+                    {{ form.media }}
                     <div id="vlance_jobbundle_jobtype">
                         <div class="control-group primary-type">
                             <div class="row-fluid">
@@ -57,14 +59,18 @@
                                             tin để gửi báo giá chính xác
                                             hơn).
                                         </label>
-                                        <textarea id="description_id" name="description"
+
+                                        {% comment %}<textarea id="description_id" name="description"
                                                   required="required"
                                                   placeholder=""
                                                     data-placement="top"
                                                     class="input span12"
                                                     rows="14">
 
-                                        </textarea>
+                                        </textarea>{% endcomment %}
+                                            {{ form.description }}
+
+
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +187,7 @@
                                 <div class="span10">
                                     <h4>Đồng ý với các  <i>điều khoản </i> </h4>
                                     <label class="is-private checkbox">
-                                        <input type="checkbox" id="filled" name="filled">
+                                        <input type="checkbox" id="filleds" name="filleds">
                                         <p>
                                             <i class="fa fa-lock" aria-hidden="true"></i>
                                             <label for="vlance_jobbundle_jobtype_isPrivate"> Tin đăng là hoàn toàn chính

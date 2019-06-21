@@ -15,6 +15,7 @@
     <div class="post-job">
         <form id="edit-job-form" action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            {{ form.media }}
             <div class="control-group primary-type">
                 <div class="row-fluid">
                     <div class="span2">
@@ -52,14 +53,7 @@
                         <div class="form-description">
                             <div class="control-group ">
                                 <label class="required" for="vlance_jobbundle_jobonsitetype_description">Thông tin chi tiết </label>
-                                <textarea id="description" name="description" required="required"
-                                          placeholder=""
-                                          data-toggle="popover"
-                                          data-placement="top"
-                                          class="popovers-input span12"
-                                          rows="10">
-
-                                </textarea>
+                                {{ form.description }}
                             </div>
 
                             <div class="control-group">
