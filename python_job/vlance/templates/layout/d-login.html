@@ -58,9 +58,9 @@
                             </div>
                             <div id="popover-in"></div>
                             <ul class="dropdown-menu">
-                                <li><a href="/freelancer/{{ request.user.id }}">Hồ sơ cá nhân</a></li>
+                                <li><a href="/freelancer/{{ request.user.id }}">Hồ Sơ Công Ty</a></li>
                                 <li><a href="/tai-khoan/freelance/update-basic">Chỉnh sửa hồ sơ</a></li>
-                                <li><a href="/tai-khoan/freelance/update-cv">Chỉnh sửa CV</a></li>
+                                <li><a href="/tai-khoan/freelance/update-cv">Chỉnh sửa hồ sơ</a></li>
                                 <li class="divider"></li>
                                 <li><a href="/tai-khoan/freelance/update-basic">Quản lý việc nhận làm</a></li>
                                 <li class="divider"></li>
@@ -69,6 +69,31 @@
                         </div>
                     </div>
                 </div>
+
+       </div>
+        </div>
+        <div class="menu-section row-fluid menu_scoll">
+            <div class="container">
+                                    <ul class="nav-menu span12">
+
+                        <li class="tf200 first ">
+                            <a href="{% url 'vlance:employer-dashboard' %}"><img alt="" title="" src="/static/media/writing.png" style="padding-bottom: 2px;"> Quản lý tin đăng</a>
+                        </li>
+
+                        <li class="tf200 ">
+                            <a href="{% url 'vlance:employer-all-applicants' %}" onclick="vtrack('Click post job', {'location':'Menu'})"><img alt="" title="" src="/media/portfolio.png" style="padding-bottom: 3px" ;="">Quản lý chào giá</a>
+                        </li>
+                        <li class="tf200 ">
+                            <a href="/freelancer/{{ request.user.id }}">Hồ sơ công ty</a>
+                        </li>
+
+                                                <div class="button">
+                            <a class="btn btn-vl btn-vl-green btn-vl-medium" onclick="vtrack('Click post job', {'location':'Homepage'})" href="/dang-du-an">Đăng dự án</a>
+                        </div>
+                    </ul>
+
+            </div>
+        </div>
 
 {% elif request.user.is_authenticated and request.user.role == 'Freelance' %}
 
@@ -132,6 +157,30 @@
                         </div>
                     </div>
                 </div>
+   </div>
+        </div>
+        <div class="menu-section row-fluid menu_scoll">
+            <div class="container">
+                                    <ul class="nav-menu span12">
+
+                        <li class="tf200 first ">
+                            <a href="/freelancer/{{ request.user.id }}"><img alt="" title="" src="/static/media/writing.png" style="padding-bottom: 2px;"> Quản lý báo giá</a>
+                        </li>
+
+                        <li class="tf200 ">
+                            <a href="/freelancer/{{ request.user.id }}" onclick="vtrack('Click post job', {'location':'Menu'})"><img alt="" title="" src="/media/portfolio.png" style="padding-bottom: 3px" ;=""> Quản lý việc nhận làm</a>
+                        </li>
+                        <li class="tf200 ">
+                            <a href="/freelancer/{{ request.user.id }}">Hồ sơ năng lực</a>
+                        </li>
+
+                                                <div class="button">
+                            <a class="btn btn-vl btn-vl-green btn-vl-medium" onclick="vtrack('Click post job', {'location':'Homepage'})" href="/dang-du-an">Đăng dự án</a>
+                        </div>
+                    </ul>
+
+            </div>
+        </div>
 
 {% elif request.user.is_superuser == '1' %}
 <div class="span3 span3-b">

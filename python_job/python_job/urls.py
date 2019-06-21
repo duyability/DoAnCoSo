@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vlance.urls')),
     path('', include('accounts.urls')),
+    path('', include('page.urls')),
     path('search/', include('search.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-
 ]
 
 if settings.DEBUG:

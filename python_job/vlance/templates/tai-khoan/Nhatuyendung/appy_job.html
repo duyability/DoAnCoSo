@@ -1,7 +1,14 @@
 {% extends 'layout/base.html' %}
+
 {% block index %}
+      {% load is_mess_job %}
+
     {% load static %}
  <div class="content-section container">
+
+    <!----------start----------------------->
+
+
     <div class="row-fluid">
         <div class="span12">
             <h1 class="title">Danh sách báo giá với công việc : <b>{{ job.title |truncatechars:50}}</b> </h1>
@@ -128,11 +135,22 @@ Báo cáo sai phạm </a>
 
                     <div class="row-fluid links">
 
-                        <a href="{% url 'accounts:info-freelance' applicant.user.id %}" role="button" data-toggle="modal"
-                           class="btn-flat btn-light-green btn-flat-xlarge formassignment-call-popup"
-                           title="Giao việc">Giao việc</a>
+                    {% if request.user.is_authenticated %}
+                            {% is_mess_job applicant request.user as is_mess %}
+                        {% if is_mess %}
 
-                        <a href="{% url 'vlance:bao-gia-job-delete' applicant.id %}" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
+                             <a href="#myModal_Jo_Ok" role="button" data-toggle="modal"
+                           class="btn-flat btn-light-green btn-flat-xlarge formassignment-call-popup" style="background-color: #ec0404e0;"
+                           title="Giao việc">Đã Giao Việc Này</a>
+                        {% else %}
+                            <a href="#myModal_Job" role="button" data-toggle="modal"
+                           class="btn-flat btn-light-green btn-flat-xlarge formassignment-call-popup"
+                           title="Giao việc">Giao Việc</a>
+
+                        {% endif %}
+                    {% endif %}
+
+                        <a href="{% url 'vlance:job-delete' applicant.id %}" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
 Từ chối  </a>
 
                     </div>
@@ -141,6 +159,7 @@ Từ chối  </a>
         </div>
     </div>
 </div>
+                          {% include 'from/chapnhanbaogiajob.html' %}
                     {% endfor %}
                   <!-------------->
 
@@ -148,5 +167,10 @@ Từ chối  </a>
             </div>
         </div>
     </div>
+
+
+    <!----------end---------------------->
+
+{% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
 </div>
 {% endblock %}

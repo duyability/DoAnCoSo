@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
     'ckeditor_uploader',
+    'page',
     'vlance',
 
 

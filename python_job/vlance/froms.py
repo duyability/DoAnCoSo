@@ -2,7 +2,7 @@ from django import forms
 from django.http import request
 from django.shortcuts import render
 
-from vlance.models import Job, Applicant, JobPartTime, CVonsite
+from vlance.models import Job, Applicant, JobPartTime, CVonsite, GuiTBChapNhanJob, GuiTBChapNhanJobpt
 
 
 # From viec theo du an - Pham Minh Duc
@@ -90,3 +90,47 @@ class ApplyCVForm(forms.ModelForm):
         if commit:
             jpt.save()
         return jpt
+
+
+
+# ######### From nop cv ##############
+
+class ChapnhanJob(forms.ModelForm):
+    class Meta:
+        model = GuiTBChapNhanJob
+        exclude = ('user', 'created_at')
+
+    def is_valid(self):
+        valid = super(ChapnhanJob, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        t = super(ChapnhanJob, self).save(commit=False)
+        if commit:
+            t.save()
+        return t
+
+# ######### From nop cv pt ##############
+
+class ChapnhanJobpt(forms.ModelForm):
+    class Meta:
+        model = GuiTBChapNhanJobpt
+        exclude = ('user', 'created_at')
+
+    def is_valid(self):
+        valid = super(ChapnhanJobpt, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        t = super(ChapnhanJobpt, self).save(commit=False)
+        if commit:
+            t.save()
+        return t

@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+
+
+<div class="guider-manage-job">
+    <div class="block-head">
+        <div class="container">
+            <center>
+            <h1>{{ p.title|truncatewords:50 }}</h1>
+                <br>
+            <p>{{ p.created_at|date:'d/m/Y' }}</p>
+            </center>
+
+        </div>
+    </div>
+
+    <div class = "content-blog" style="display: block; padding: 35px 150px 60px 150px;">
+
+
+{{ p.description |safe}}
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+<!-- Modal -->
+<div id="myModal_Job" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Gửi Thông Báo Chấp Nhận Chào Giá Cho <span style="color: red">{{ applicant.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+
+     <form method='POST' action='{% url 'vlance:chap-nhan-job' applicant.id %}'>
+      {% csrf_token %}
+
+    <label>Tin nhắn </label>
+      <input type="text" name="applicant" value="{{applicant.id }}" readonly>
+      <textarea name="mess">test</textarea>
+
+
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary" type="submit">Gửi Thông Báo</button>
+  </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- Modal giao viec -->
+<div id="myModal_Jo_Ok" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Bạn đã giao việc cho  <span style="color: red">{{ applicant.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+           -Người Nhận Việc :  {{ applicant.user.get_full_name }}
+        <br>
+            -Số Điện Thoại : {{ applicant.user.hotline  }}
+        <br>
+            -Email : {{ applicant.user.email }}
+    <br>
+           -Mức giá đề xuất :  <span>{{ applicant.baogia }} VND</span><br>
+            -Thời Gian Hoàn Thành <span>{{ applicant.time }}</span>
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Đóng Lại </button>
+  </div>
+    </form>
+</div>

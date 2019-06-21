@@ -1,0 +1,39 @@
+{% extends 'layout/base.html' %}
+{% block index %}
+    {% load static %}
+
+<div class = "content-blog" style="display: block; padding: 35px 150px 60px 150px;">
+    {% for Page in p %}
+    <div class="media">
+  <a class="pull-left" href="{{ Page.slug }}.html">
+    <img src="/HinhAnh/{{ Page.thum }}"style="width: 120px;height:80px;">
+  </a>
+  <div class="media-body">
+      <a href="{{ Page.slug }}.html">
+    <h4 class="media-heading">{{ Page.title }}</h4>
+          </a>
+      <span>Create : {{ Page.created_at|date:'d/m/Y' }}</span>
+    <!-- Nested media object -->
+    <div class="media-c">
+        {{ Page.des_cut|truncatechars:100}} <a href="{{ Page.slug }}.html">Xem Tiếp</a>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+<center>{% include 'layout/pagination.html' with page=page_obj %}</center>
+
+
+
+
+</div>
+    <style>
+    .media {
+    display: block;
+    border: 1px solid #ececec;
+    padding: 15px;
+}
+    .media:hover {
+    border: 1px solid #35fd28;
+}
+    </style>
+{% endblock %}

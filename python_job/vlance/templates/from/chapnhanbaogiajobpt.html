@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div id="myModal_Job" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Gửi Thông Báo Chấp Nhận Chào Giá Cho <span style="color: red">{{ applicant.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+
+     <form method='POST' action='{% url 'vlance:chap-nhan-jobpt' CVonsite.id %}'>
+      {% csrf_token %}
+
+    <label>Tin nhắn </label>
+      <input type="text" name="cvonsite" value="{{CVonsite.id }}" readonly>
+      <textarea name="mess">Thông báo bạn đã được nhận vào công ty {{CVonsite.user.get_full_name }}
+      - Liên hệ : {{CVonsite.user.hotline }} để trao đổi thông tin .
+      </textarea>
+
+
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary" type="submit">Gửi Thông Báo</button>
+  </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- Modal giao viec -->
+<div id="myModal_Jo_Ok" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Bạn đã giao việc cho  <span style="color: red">{{ CVonsite.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+           -Người Nhận Việc :  {{ CVonsite.user.get_full_name }}
+        <br>
+            -Số Điện Thoại : {{ CVonsite.user.hotline  }}
+        <br>
+            -Email : {{ CVonsite.user.email }}
+    <br>
+           -Mức giá đề xuất :  <span>{{ CVonsite.baogia }} VND</span><br>
+            -Thời Gian Hoàn Thành <span>{{ CVonsite.time }}</span>
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Đóng Lại </button>
+  </div>
+    </form>
+</div>

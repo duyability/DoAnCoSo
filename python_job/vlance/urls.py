@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView, DashboardView, ApplicantsListView, \
-    ApplicantPerJobView, filled, DeleteJob, DeleteBG
+    ApplicantPerJobView, filled, DeleteJob, ChapnhanBaoGia, filleds, DeleteJobpt, ApplicantPerJPT, ChapnhanBaoGiaPT
 from vlance.view.freelance import ApplyJobView, ApplyCV
 from vlance.views import index, dangcuocthi, DetaiOnsite, vieclamfreelance, Viecfreelances, vieclam, PartTime, \
     JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs
@@ -44,12 +44,19 @@ urlpatterns = [
                 path('nhatuyendung/dashboard/', include([
                     path('', DashboardView.as_view(), name='employer-dashboard'),
                     path('all-applicants', ApplicantsListView.as_view(), name='employer-all-applicants'),
+
                     path('applicants/<int:job_id>', ApplicantPerJobView.as_view(), name='employer-dashboard-applicants'),
+                    path('applicant/<int:jobpt_id>', ApplicantPerJPT.as_view(), name='employer-dashboard-applicants-pt'),
+
+                    path('cv-applicants/<int:applicant_id>', ChapnhanBaoGia.as_view(), name='chap-nhan-job'),
+                    path('pt-applicants/<int:cvonsite_id>', ChapnhanBaoGiaPT.as_view(), name='chap-nhan-jobpt'),
+
                     path('mark-filled/<int:job_id>', filled, name='job-mark-filled'),
+                    path('mark-filled-pt/<int:jobpt_id>', filleds, name='jobpt-mark-filled'),
                 ])),
     #Delete
                   path('delete/<int:id>', DeleteJob.as_view(), name='job-delete'),
-                  path('delete_bg/<int:user_id>', DeleteBG.as_view(), name='bao-gia-job-delete'),
+                  path('delete_jpt/<int:user_id>', DeleteJobpt.as_view(), name='jobpt-delete'),
 
 
 

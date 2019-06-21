@@ -96,6 +96,7 @@ class JobPartTime(models.Model):
     file = models.FileField("File đính kèm", upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/', default='')
     company_name = models.CharField("Tên Công Ty", max_length=300, default='')
     hinh = models.ImageField("Logo Công Ty", upload_to='uploads/ViecLamPartTime/logo/%Y/%m/%d/', default='')
+    filled = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
@@ -135,6 +136,27 @@ class CVonsite(models.Model):
     hotline = models.CharField(max_length=15, default='')
     email = models.CharField(max_length=55, default='')
     file = models.FileField("File đính kèm", upload_to='uploads/CVonsite/file/%Y/%m/%d/', default='')
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+# Thong bao chap nhan chao gia
+
+class GuiTBChapNhanJob(models.Model):
+        user = models.ForeignKey(User, on_delete=models.CASCADE)
+        applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name='Applicant')
+        created_at = models.DateTimeField(auto_now_add=True, null=True)
+        mess = RichTextField(max_length=300, default='')
+
+        def __str__(self):
+            return self.user.get_full_name()
+
+
+class GuiTBChapNhanJobpt(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    cvonsite = models.ForeignKey(CVonsite, on_delete=models.CASCADE, related_name='CVonsite')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    mess = RichTextField(max_length=300, default='')
 
     def __str__(self):
         return self.user.get_full_name()
