@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from vlance.decorators import user_is_employer
-from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt
+from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt, CuocThiFrom
 from vlance.models import Job, Applicant, GuiTBChapNhanJob, JobPartTime, CVonsite, GuiTBChapNhanJobpt
 from vlance.views import thanhpho
 
@@ -132,6 +132,37 @@ class PartTimeCreateView(CreateView, thanhpho):
             return self.form_invalid(form)
 
 
+# ##############################################
+# Viec PartTime by Đức
+
+class CuocThiCreateView(CreateView):
+    template_name = 'dang-cuoc-thi.html'
+    form_class = CuocThiFrom
+    extra_context = {
+        'title': 'Post New Cuoc Thi'
+    }
+    success_url = reverse_lazy('vlance:Job-PartTime')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
+        if self.request.user.is_authenticated and self.request.user.role != 'NhaTuyenDung':
+            return reverse_lazy('accounts:login')
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CuocThiCreateView, self).form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
 class ApplicantsListView(ListView):
     model = Applicant
     template_name = 'tai-khoan/Nhatuyendung/all_appy_job.html'
@@ -217,6 +248,7 @@ class ChapnhanBaoGia(CreateView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
 
 # #############################################################
 

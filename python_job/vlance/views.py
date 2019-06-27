@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
-from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime
+from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime, CuocThi
 
 
 # Create your view here.
@@ -15,7 +15,7 @@ def index(request):
 
 
 def dangduan(request):
-   return render(request, "dang-du-an.html", {})
+    return render(request, "dang-du-an.html", {})
 
 
 def dangviectuyendung(request):
@@ -25,10 +25,13 @@ def dangviectuyendung(request):
 def dangcuocthi(request):
     return render(request, "dang-cuoc-thi.html", {})
 
+
 ##### Viec lam .
 def vieclamfreelance(request):
     return render(request, "viec-lam-freelance.html", {})
-#Lisst viec lam freelance
+
+
+# Lisst viec lam freelance
 
 class thanhpho(ListView):
     model = ThanhPho
@@ -36,7 +39,7 @@ class thanhpho(ListView):
     queryset = ThanhPho.objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(thanhpho,self).get_context_data(**kwargs)
+        context = super(thanhpho, self).get_context_data(**kwargs)
         context['nghe'] = NganhNghe.objects.all()
         context['jobs'] = Job.objects.all()
         return context
@@ -51,15 +54,17 @@ class vieclam(ListView):
     queryset = Job.objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(vieclam,self).get_context_data(**kwargs)
+        context = super(vieclam, self).get_context_data(**kwargs)
         context['tp'] = ThanhPho.objects.all()
         context['NN'] = NganhNghe.objects.all()
         return context
 
+
 class detaiNNs(ListView):
     model = Job
+
     def get_context_data(self, **kwargs):
-        context = super(detaiNN,self).get_context_data(**kwargs)
+        context = super(detaiNN, self).get_context_data(**kwargs)
         context['tp'] = ThanhPho.objects.all()
         context['NN'] = NganhNghe.objects.all()
         return context
@@ -82,10 +87,31 @@ class PartTime(ListView):
     queryset = JobPartTime.objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(PartTime,self).get_context_data(**kwargs)
+        context = super(PartTime, self).get_context_data(**kwargs)
         context['tp'] = ThanhPho.objects.all()
         context['NN'] = NganhNghe.objects.all()
         return context
+
+
+# ######### Cuoc Thi ##########################################
+
+class CuocThiView(ListView):
+    template_name = 'cuoc-thi-thiet-ke.html'
+    paginate_by = 5
+    model = CuocThi
+    context_object_name = 'CT'
+    queryset = CuocThi.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(CuocThiView, self).get_context_data(**kwargs)
+        return context
+
+def CuocThiDetail(request, slug):
+    try:
+        ct = CuocThi.objects.get(slug=slug)
+    except CuocThi.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'viec-freelance/detail-cuoc-thi.html',{'ct':ct})
 
 class JobDetailsView(DetailView):
     model = Job
@@ -140,6 +166,7 @@ class CVDetail(DetailView):
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
+
 def DetaiOnsite(request, slug):
     try:
         jp = JobPartTime.objects.get(slug=slug)
@@ -161,12 +188,13 @@ def detaiNN(request, slug):
         'NN': NN,
         'tp': tp,
     }
-    return render(request, 'viec-freelance/nganhnghe.html',context)
+    return render(request, 'viec-freelance/nganhnghe.html', context)
+
 
 def detaiTP(request, slug):
     NN = NganhNghe.objects.all()
     tp = ThanhPho.objects.all()
-    #t = Job.objects.all()
+    # t = Job.objects.all()
     try:
         t = Job.objects.filter(Thanh_Pho__slug=slug)
     except Job.DoesNotExist:
@@ -177,4 +205,4 @@ def detaiTP(request, slug):
         'tp': tp,
     }
 
-    return render(request, 'viec-freelance/thanhpho.html',context)
+    return render(request, 'viec-freelance/thanhpho.html', context)

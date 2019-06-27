@@ -114,7 +114,7 @@
                     })
                 </script>
             </div>
-            <a href="/khach-hang/diggory-nguyen" title="{{ Job.user.get_full_name }}">
+            <a href="{% url 'accounts:info-freelance' Job.user_id %}" title="{{ Job.user.get_full_name }}">
                 <span>{{ Job.user.get_full_name }}</span>
             </a>
                             <i class="icon-info icon-user inactive" title="Tài khoản khách hàng thiếu thông tin cơ bản"></i>

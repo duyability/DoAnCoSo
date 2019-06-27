@@ -12,12 +12,12 @@
                                         </li>
 
             {% for NghanhNghe in NN %}
-                                        <li class="cat-item ">
+                                        <li class="cat-item selected">
                                             <a href="{% url 'vlance:viec-lam' %}/nn/{{ NghanhNghe.slug }}">
             {{ NghanhNghe.title }}
                                             </a>
                                         </li>
-          </ul>   {% endfor %}
+            {% endfor %}</ul>
 
                                 </div>
                         </div>

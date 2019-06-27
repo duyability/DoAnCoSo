@@ -18,8 +18,18 @@
 
     <div class = "content-blog" style="display: block; padding: 35px 150px 60px 150px;">
 
-
+<p>
 {{ p.description |safe}}
+</p>
+<p></p><p></p><p></p><p></p>
+<span class="tag" style="padding: 10px">
+    <blockquote>
+        <b>Từ khóa :</b>
+       {% for tag in p.tags.all %}
+            <a href="{{ tag.slug }}">{{ tag.name }}</a> ,
+        {% endfor %}
+    </blockquote>
+</span>
 
 </div>
 

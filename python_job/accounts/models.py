@@ -24,7 +24,7 @@ class User(AbstractUser):
     thanh_phos = models.ForeignKey(ThanhPho, on_delete=models.CASCADE,null=True, verbose_name="Chọn Thành Phố", )
     nganh_nghes = models.ForeignKey(NganhNghe, on_delete=models.CASCADE,null=True, verbose_name="Chọn Ngành Nghề",)
     hinh = models.ImageField("Avatar ", upload_to='uploads/User/avatar/%Y/%m/%d/',default='uploads/User/unknown.png',null=True,)
-    skill = models.ManyToManyField(KyNang, verbose_name="Chọn kỹ năng", default='',null=True,)
+    skill = models.ManyToManyField(KyNang, verbose_name="Chọn kỹ năng", default='')
     sologan = models.CharField("Chức danh",max_length=50, blank=True, null=True, default='')
     description = models.TextField("Giới Thiệu", max_length=300, blank=True, null=True, default="")
     year_exp = models.CharField("Trình Độ", max_length=300, default='',null=True)

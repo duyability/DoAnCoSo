@@ -2,15 +2,14 @@ from django import forms
 from django.http import request
 from django.shortcuts import render
 
-from vlance.models import Job, Applicant, JobPartTime, CVonsite, GuiTBChapNhanJob, GuiTBChapNhanJobpt
+from vlance.models import Job, Applicant, JobPartTime, CVonsite, GuiTBChapNhanJob, GuiTBChapNhanJobpt, CuocThi
 
 
 # From viec theo du an - Pham Minh Duc
 class CreateJobForm(forms.ModelForm):
-
     class Meta:
         model = Job
-        exclude = ('user', 'created_at', 'slug','filled')
+        exclude = ('user', 'created_at', 'slug', 'filled')
 
     def is_valid(self):
         valid = super(CreateJobForm, self).is_valid()
@@ -28,10 +27,9 @@ class CreateJobForm(forms.ModelForm):
 
 # From viec lam part time , ban thoi gian  by Pham Minh Duc
 class PartTimeFrom(forms.ModelForm):
-
     class Meta:
         model = JobPartTime
-        exclude = ('user', 'created_at', 'slug')
+        exclude = ('user', 'created_at', 'slug','filled')
 
     def is_valid(self):
         valid = super(PartTimeFrom, self).is_valid()
@@ -46,6 +44,27 @@ class PartTimeFrom(forms.ModelForm):
         if commit:
             j.save()
         return j
+
+
+# From Dang cuoc thi  by Pham Minh Duc
+class CuocThiFrom(forms.ModelForm):
+    class Meta:
+        model = CuocThi
+        exclude = ('user', 'created_at', 'slug','filled')
+
+    def is_valid(self):
+        valid = super(CuocThiFrom, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        c = super(CuocThiFrom, self).save(commit=False)
+        if commit:
+            c.save()
+        return c
 
 
 # ######### From gui bao gia ##############
@@ -92,7 +111,6 @@ class ApplyCVForm(forms.ModelForm):
         return jpt
 
 
-
 # ######### From nop cv ##############
 
 class ChapnhanJob(forms.ModelForm):
@@ -113,6 +131,7 @@ class ChapnhanJob(forms.ModelForm):
         if commit:
             t.save()
         return t
+
 
 # ######### From nop cv pt ##############
 

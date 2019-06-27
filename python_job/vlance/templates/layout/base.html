@@ -4,7 +4,7 @@
 {% include 'layout/sys.html' %}
 {% load static %}
 
-{% comment %}
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('.i32-mail').click(function(e) {
@@ -46,9 +46,7 @@
             }
         });
     });
-    </script>
-{% endcomment %}
-
+</script>
 <script type="text/javascript"> //Menu mobile
     $(document).ready(function(){
         /*Hiện menu trái*/
@@ -84,22 +82,10 @@
         <div class="body-messages">
                     </div>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            setTimeout( "$('#messages').hide();", 7000);
-        });
-    </script>
 
-<style>
-    .two-columns-left.freelance_job_list .content-section, .two-columns-left.contest_list .content-section {
-    margin-top: 0px;
-    width: 68%;
-    padding: 60px;
-}
-</style>
+<div class="top_content"></div>
 
-                        {% comment %}<div class="top_content">
-                            </div>{% endcomment %}
+
 {% block index %}
 
 {% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'layout/base-in.html' %}
+    {% load static %}
+{% block content %}
+    <div class="content-section">
+    {% include 'layout/sidebar/content-top.html' %}
+
+            <div class="row-fluid container">
+    {% include 'layout/sidebar/sidebar.html' %}
+                <div class="col2-right span9">
+                                        <div id="main_content">
+
+
+<div class="search-block row-fluid">
+<div class="modal fade popup-login" id="login-to-post-job">
+    <div class="modal-body">
+        <div class="login_view_job">
+            <div class="span3 btn-connect">
+                <p class="first">Để <strong>Đăng việc</strong>, bạn phải <strong>có tài khoản</strong> tại vLance.vn</p>
+                <div class="center">
+                    <div class="btn-create-account">
+                        <a class="btn btn-primary btn-large" href="{% url 'accounts:employer-register' %}" onclick="vtrack('Post CuocThi registration', {'type':'normal'})">Tạo tài khoản mới</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="search-content row-fluid">
+    <div class="layered-block search-results span12">
+        <div>
+            <div class="layered-heading results-counter">
+
+</div>
+        </div>
+        <div class="block-content">
+            <!----CuocThi -->
+
+        {% if not CT %}
+		Chưa có bài viết nào
+		{% else %}
+
+            {% for CuocThi in CT %}
+                 {% if CuocThi.filled %}
+                 {% else %}
+                    <div class="row-fluid row-result job-contest span12">
+    <div class="left-side span4">
+        <div class="img-contest">
+            <a href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="{{ CuocThi.title }}"><img src="/HinhAnh/{{ CuocThi.file }}" style=" width: 190px;height: 150px;">
+            </a>
+            <div class="info-contest row-fluid span12">
+                <a class="number-contest span12" href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="Xem thêm 23 bài dự thi">23 bài dự thi</a>
+            </div>
+        </div>
+    </div>
+    <div class="fr-info span8">
+        <h3 class="fr-name block-title">
+<a href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="{{ CuocThi.title }}">{{ CuocThi.title }}</a>
+</h3>
+        <div class="fr-title">
+            <div id="client-rating-box" class="list-job-rating">
+                <div class="box-rating-client" data-toggle="popover" data-placement="right" data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div><div>Việc đã đăng : <b>1</b> việc</div><div>Việc đã giao : <b>1</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
+                    <div class="rating-box-client">
+                        <div class="rating-client" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'accounts:info-freelance' CuocThi.user_id  %}" title="{{ CuocThi.user.get_full_name }}">
+                <span>{{ CuocThi.user.get_full_name }}</span>
+            </a>
+            <i class="icon-info icon-user" title="Tài khoản khách hàng đã có đủ thông tin cơ bản"></i>
+        </div>
+        <div class="fr-service">
+           {{ CuocThi.description|truncatechars:20|striptags}}... <a class="read_more" href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="Xem thêm Thiết kế Logo công ty ICOM">
+xem thêm </a>
+        </div>
+        <div class="data-contest">
+            <div class="row-fluid">
+                <div class="budget-contest span3">
+                    <a href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="Ngân sách cuộc thi">
+{{ CuocThi.gt }}</a>
+                </div>
+                <div class="status-time span3" title="Thời gian nộp bài cuộc thi">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> {{ CuocThi.last_date|date:'d/m/Y' }} </div>
+            </div>
+        </div>
+        <div class="status-contest">
+            <a href="{% url 'vlance:Cuoc-Thi-Detail' CuocThi.slug %}" title="Trạng thái cuộc thi Thiết kế Logo công ty ICOM">
+                <div class="label-tag label-orange">Đang nhận bài dự thi</div>
+            </a>
+        </div>
+    </div>
+</div>
+                    </div>
+                  {% endif %}
+        {% endfor %}
+        <!----end CuocThi -->
+               <br>
+		<!-- Hiện thị phân trang -->
+		{% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
+		{% endif %}
+
+            </div>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<style>
+.fr-info.span12:hover {
+    border: 1px solid #04c51c;
+    display: block;
+    padding: 5px;
+}
+</style>
+{% endblock %}

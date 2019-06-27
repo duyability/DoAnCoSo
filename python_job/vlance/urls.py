@@ -3,10 +3,11 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView, DashboardView, ApplicantsListView, \
-    ApplicantPerJobView, filled, DeleteJob, ChapnhanBaoGia, filleds, DeleteJobpt, ApplicantPerJPT, ChapnhanBaoGiaPT
+    ApplicantPerJobView, filled, DeleteJob, ChapnhanBaoGia, filleds, DeleteJobpt, ApplicantPerJPT, ChapnhanBaoGiaPT, \
+    CuocThiCreateView
 from vlance.view.freelance import ApplyJobView, ApplyCV
 from vlance.views import index, dangcuocthi, DetaiOnsite, vieclamfreelance, Viecfreelances, vieclam, PartTime, \
-    JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs
+    JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs, CuocThiView, CuocThiDetail
 from django.conf import settings
 
 app_name = 'vlance'
@@ -17,11 +18,13 @@ urlpatterns = [
                   path('viec-lam-freelance', vieclam.as_view(), name='viec-lam-freelance'),
     # Part Time
                   path('viec-lam-onsite', PartTime.as_view(), name='Job-PartTime'),
+                  path('cuoc-thi-thiet-ke', CuocThiView.as_view(), name='Cuoc-Thi-Thiet-ke'),
+                  path('cuoc-thi/<str:slug>', CuocThiDetail, name='Cuoc-Thi-Detail'),
                   path('viec-onsite/<str:slug>/', DetaiOnsite, name='viec-onsite'),
 
 
                   path('dang-viec-tuyen-dung', PartTimeCreateView.as_view(), name='dang-viec-tuyen-dung'),
-                  path('dang-cuoc-thi', dangcuocthi, name='dang-cuoc-thi'),
+                  path('dang-cuoc-thi', CuocThiCreateView.as_view(), name='dang-cuoc-thi'),
                   path('viec-lam-freelance', vieclamfreelance, name='viec-lam'),
 
                   path('viec-freelance/<str:slug>/', Viecfreelances, name='product'),

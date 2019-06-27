@@ -1,0 +1,199 @@
+{% extends 'layout/base-in.html' %}
+    {% load static %}
+{% block content %}
+
+<div class="top_content">
+                            <div class="block">
+        <div class="progress-job-wrapper">
+    <div class="progress-job">
+        <ul>
+            <li class="first active"><div class="number"><div class="first">1</div></div><div class="tally">Nhận chào giá</div><i></i></li>
+            <li class="unactive"><div class="number"><div class="unactive">2</div></div><div class="tally">Chọn freelancer</div><i></i></li>
+            <li class="unactive"><div class="number"><div class="unactive">3</div></div><div class="tally">Cam kết &amp; Làm việc</div><i></i></li>
+            <li class="last unactive"><div class="number"><div class="unactive">4</div></div><div class="tally">Đánh giá &amp; Thanh toán</div><i class="unactive"></i></li>
+        </ul>
+    </div>
+</div>
+                            </div>
+</div>
+    <!---top content--->
+
+
+    <div class="main_content">
+
+
+<div class="content-section container detail fl-view">
+    <div class="row-fluid">
+        <div class="span12">
+            <div style="display: none;">
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/viec-lam-freelance" itemprop="url">
+        <span itemprop="title">Việc freelance</span>
+      </a>
+    </div>
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"> › <a href="/viec-lam-freelance" itemprop="url">
+                <span itemprop="title">{{ct.Linh_Vuc}}</span>
+            </a>
+            </div>
+</div>
+<div class="breadcrumbs">
+    <ul>
+      <a href="/viec-lam-freelance" title="Việc freelance">
+          <span>Việc freelance</span>
+                        </a>
+                    </li>
+                    <li><span>›</span></li>
+                    <li>
+                        <a href="/viec-lam-freelance/cpath_cac-cong-viec-it-va-lap-trinh" title="IT và lập trình">
+                            <span>IT và lập trình</span>
+                        </a>
+                    </li>
+                    <li><span>›</span></li>
+                    <li>
+                        <a href="/viec-lam-freelance/cpath_cac-cong-viec-it-va-lap-trinh_chash_cac-cong-viec-lap-trinh-khac" title="Việc lập trình khác">
+                            <span>Việc lập trình khác</span>
+                        </a>
+                    </li>
+    </ul>
+</div>
+            <div class="row-fluid">
+                <div class="span7 news-detail">
+                                           <div class="row-fluid ">
+                                               <h1 class="title">{{ct.title}}</h1>
+                                               <div class="clear"></div>
+                        </div>
+
+                                        <div class="row-fluid body-view">
+                                 <div class="row-fluid">
+                                <div class="service-need-hire">
+                                    <div class="service-title">
+                                        Dịch vụ cần thuê: <b>{{ct.Nganh_Nghe}}</b>
+                                    </div>
+                                           <div class="service-suggest">
+                                            Bạn có thể cung cấp dịch vụ này? <a href="/a/172016/edit#service-can-provide">Thêm vào hồ sơ làm việc</a>.
+                                        </div>
+                                                                    </div>
+                            </div>
+
+                        <div class="span10 description ">
+
+                            <div class="">
+                                <p>
+                                   {{ct.description|safe}}
+                                </p>
+                                                                                                                                </div>
+                        </div>
+                        <div class="clear"></div>
+                                            <div class="attach">
+                                <label>File đính kèm:</label>
+                                <ul>
+                                 <li class="row-fluid">
+                                     <div class="i32 i32-attach"></div>
+                                     <a href="/HinhAnh/{{ ct.file }}" class="span10 file_upload_name" title="{{ ct.file }}">{{ ct.file }}                                                </a>
+                                      </li>
+                                                                    </ul>
+                            </div>
+                                            </div>
+                           <div class="row-fluid fb-like fb_iframe_widget" data-href="https://www.vlance.vn/viec-freelance/viet-truong-trinh-su-ly-text-hoac-pdf" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=197321233758025&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-freelance%2Fviet-truong-trinh-su-ly-text-hoac-pdf&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 122px; height: 20px;"><iframe name="f32bfc9ec6ca078" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=197321233758025&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df3acc5488315508%26domain%3Dwww.vlance.vn%26origin%3Dhttps%253A%252F%252Fwww.vlance.vn%252Ff5309f05e11ea4%26relation%3Dparent.parent&amp;container_width=689&amp;href=https%3A%2F%2Fwww.vlance.vn%2Fviec-freelance%2Fviet-truong-trinh-su-ly-text-hoac-pdf&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false" style="border: none; visibility: visible; width: 122px; height: 20px;" class=""></iframe></span></div>
+
+
+                                                                            </div>
+
+                                <div class="span4 job-information offset1">
+                                    <div class="row-fluid">
+                                        <h2>Thông tin dự án</h2>
+                                        <div class="description-job">
+                                            <dl class="dl-horizontal">
+                                                <dt>ID dự án</dt>
+                                                <dd>{{ ct.id }}</dd>
+                                                <dt>Ngày đăng</dt>
+                                                <dd>{{ ct.created_at|date:'d/m/Y'  }} </dd>
+                                                <dt>Ngày hết hạn</dt>
+                                                <dd>{{ ct.last_date|date:'d/m/Y' }}</dd>
+                                                <dt>Giải Thưởng</dt>
+                                                <dd>{{ ct.gt }} đ</dd>
+
+                                            </dl>
+                                        </div>                        </div>
+                                    <div class="row-fluid">
+                                        <h2>Thông tin khách hàng</h2>
+                                        <div class="info-employment">
+                                            <div class="info-employment-top row-fluid">
+                                                <div class="span4">
+                                                    <a href="/khach-hang/nam-25" title="Nam">
+                                                        <img src="https://www.vlance.vn/uploads/75x75/eba5c5c5fc452e3f48da065ac83b623fea15c720.PNG1.png" alt="Nam" title="Nam">
+                                                    </a>
+                                                </div>
+                                                <div class="span8">
+
+                                                    <h3 class="title">
+                                                        <a href="/khach-hang/nam-25" title="Nam">
+                                                            {{ ct.user.get_full_name }}              </a>
+                                                        <i class="icon-info icon-user" title="Tài khoản khách hàng đã có đủ thông tin cơ bản"></i>
+                                                    </h3>
+                                                    <div class="work-title">Nhan vien cao cap</div>
+                                                    <div id="client-rating-box">
+                                                        <div class="box-rating-client" data-toggle="popover" data-placement="right" data-content="<div>Tiền đã thuê : <b>0</b> VNĐ</div> <div>Việc đã đăng : <b>4</b> việc </div><div>Việc đã giao : <b>0</b> việc</div>" data-trigger="hover" data-html="true" data-original-title="" title="">
+                                                            <div class="rating-box-client">
+                                                                <div class="rating-client" style="width:100%"></div>
+                                                            </div>
+                                                        </div>
+                                                        <script type="text/javascript">
+                                                            $(document).ready(function() {
+                                                                $('.box-rating-client').popover();
+                                                            })
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-employment-bottom row-fluid">
+                                                <dl class="dl-horizontal">
+                                                    <dt>Đến từ</dt>
+                                                    <dd>{{ ct.user.thanh_phos }}</dd>
+                                                    <dt>Tham gia</dt>
+                                                    <dd>{{ ct.user.date_joined|date:'d/m/Y' }} </dd>
+                                                    <dt>Đã đăng</dt>
+                                                    <dd><a href="/khach-hang/nam-25" title="4">
+                                                        10 việc
+                                                    </a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        <!----------->
+<div class="span8 ct" style="
+                            border: 1px solid #a0f1a0d1;
+                            padding: 0px 7px 3px 10px;
+                            margin: 0;">
+
+        <a class="btn btn-vl btn-vl-green btn-vl-medium" href="/bao-gia/{{ ct.id }}" style="
+                                                                                    float: right;
+                                                                                    height: 32px;
+                                                                                    margin: 8px 0 8px 0;
+                                                                                    width: 157px;
+                                                                                    line-height: 32px;
+                                                                                    font-weight: normal;
+                                                                                    background: #2db964;">Báo giá</a>
+
+</div>
+
+        <!----------->
+<div class="detail-bottom span8">
+    {% include 'tags/cmt-face.html' %}
+
+
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

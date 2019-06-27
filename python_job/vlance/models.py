@@ -2,11 +2,12 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.conf import settings
+
 from python_job.utils import get_unique_slug
 
 User = settings.AUTH_USER_MODEL
 
-
+# ###########################################################################################
 # Create your models here.
 class NganhNghe(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
@@ -24,7 +25,7 @@ class NganhNghe(models.Model):
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
-
+# ###########################################################################################
 class ThanhPho(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     title = models.CharField(max_length=255, default='')
@@ -37,7 +38,7 @@ class ThanhPho(models.Model):
 
     def __str__(self):
         return self.title
-
+# ###########################################################################################
 class KyNang(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     title = models.CharField(max_length=255, default='')
@@ -51,7 +52,7 @@ class KyNang(models.Model):
     def __str__(self):
         return self.title
 
-
+# ###########################################################################################
 # Viec theo du an - Minh Duc
 class Job(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -76,7 +77,7 @@ class Job(models.Model):
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
 
-
+# ###########################################################################################
 # Viec theo PartTime
 class JobPartTime(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -107,7 +108,31 @@ class JobPartTime(models.Model):
         super().save(*args, **kwargs)
 
 
+# ###########################################################################################
 
+# Viec theo PartTime
+class CuocThi(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)  # Ngày tạo Job(auto)
+    slug = models.SlugField(max_length=255, default='')
+    linh_vuc = models.CharField(max_length=300, default='Các việc thiết kế khác')
+    title = models.CharField(max_length=300, default='')
+    description = RichTextUploadingField(default='')
+    last_date = models.DateTimeField()  # han nhan bai
+    gt = models.DecimalField("Giải thưởng ",decimal_places=3, max_digits=50, default='500.000')
+    file = models.FileField("File đính kèm", upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/', default='')
+    filled = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = get_unique_slug(self, 'title', 'slug')
+        super().save(*args, **kwargs)
+
+
+# ###########################################################################################
 # Gui Bao Gia
 class Applicant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -124,7 +149,7 @@ class Applicant(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
-
+# ###########################################################################################
 # Nop CV partTime
 class CVonsite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -140,6 +165,7 @@ class CVonsite(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+# ###########################################################################################
 # Thong bao chap nhan chao gia
 
 class GuiTBChapNhanJob(models.Model):
@@ -151,7 +177,7 @@ class GuiTBChapNhanJob(models.Model):
         def __str__(self):
             return self.user.get_full_name()
 
-
+# ###########################################################################################
 class GuiTBChapNhanJobpt(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     cvonsite = models.ForeignKey(CVonsite, on_delete=models.CASCADE, related_name='CVonsite')
