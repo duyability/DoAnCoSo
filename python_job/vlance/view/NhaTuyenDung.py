@@ -6,7 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
-from vlance.decorators import user_is_employer
+from vlance.decorators import user_is_employer, user_is_employee
 from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt, CuocThiFrom
 from vlance.models import Job, Applicant, GuiTBChapNhanJob, JobPartTime, CVonsite, GuiTBChapNhanJobpt
 from vlance.views import thanhpho
@@ -141,13 +141,13 @@ class CuocThiCreateView(CreateView):
     extra_context = {
         'title': 'Post New Cuoc Thi'
     }
-    success_url = reverse_lazy('vlance:Job-PartTime')
+    success_url = reverse_lazy('vlance:Cuoc-Thi-Thiet-ke')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     def dispatch(self, request, *args, **kwargs):
-        if not self.request.user.is_authenticated:
-            return reverse_lazy('accounts:login')
         if self.request.user.is_authenticated and self.request.user.role != 'NhaTuyenDung':
+            return reverse_lazy('vlance:Cuoc-Thi-Thiet-ke')
+        if not self.request.user.is_authenticated:
             return reverse_lazy('accounts:login')
         return super().dispatch(self.request, *args, **kwargs)
 
@@ -190,6 +190,7 @@ def filleds(request, jobpt_id=None):
     return HttpResponseRedirect(reverse_lazy('vlance:employer-dashboard'))
 
 
+# ################# Delete ##############################
 class DeleteJob(DeleteView):
     template_name = 'tags/delete.html'
 
@@ -199,7 +200,6 @@ class DeleteJob(DeleteView):
 
     def get_success_url(self):
         return reverse('vlance:employer-dashboard')
-
 
 class DeleteJobpt(DeleteView):
     template_name = 'tags/delete.html'
@@ -212,7 +212,18 @@ class DeleteJobpt(DeleteView):
         return reverse('vlance:employer-dashboard')
 
 
-# #############################################################
+class DeleteMess(DeleteView):
+    template_name = 'tags/delete.html'
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(GuiTBChapNhanJob, id=id_)
+
+    def get_success_url(self):
+        return reverse('vlance:Freelance-all-job')
+
+
+# ##########################################
 
 class ChapnhanBaoGia(CreateView):
     model = GuiTBChapNhanJob

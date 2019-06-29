@@ -7,6 +7,7 @@ from python_job.utils import get_unique_slug
 
 User = settings.AUTH_USER_MODEL
 
+
 # ###########################################################################################
 # Create your models here.
 class NganhNghe(models.Model):
@@ -25,6 +26,7 @@ class NganhNghe(models.Model):
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
+
 # ###########################################################################################
 class ThanhPho(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
@@ -38,6 +40,8 @@ class ThanhPho(models.Model):
 
     def __str__(self):
         return self.title
+
+
 # ###########################################################################################
 class KyNang(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, null=True)
@@ -52,20 +56,21 @@ class KyNang(models.Model):
     def __str__(self):
         return self.title
 
+
 # ###########################################################################################
 # Viec theo du an - Minh Duc
 class Job(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, default='')
     title = models.CharField(max_length=300, default='')
-    description =RichTextField(default='')
+    description = RichTextField(default='')
     skill = RichTextUploadingField(max_length=300, default='')
     Nganh_Nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
     Thanh_Pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
     last_date = models.DateTimeField()
-    NS_tu = models.DecimalField("Ngân sách từ",decimal_places=3, max_digits=50, default='')
-    NS_den = models.DecimalField("Ngân sách đến",decimal_places=3, max_digits=50, default='')
-    file = models.FileField("File đính kèm", default='',null=True)
+    NS_tu = models.DecimalField("Ngân sách từ", decimal_places=3, max_digits=50, default='')
+    NS_den = models.DecimalField("Ngân sách đến", decimal_places=3, max_digits=50, default='')
+    file = models.FileField("File đính kèm", default='', null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     filled = models.BooleanField(default=False)
 
@@ -76,6 +81,7 @@ class Job(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
 
 # ###########################################################################################
 # Viec theo PartTime
@@ -119,7 +125,7 @@ class CuocThi(models.Model):
     title = models.CharField(max_length=300, default='')
     description = RichTextUploadingField(default='')
     last_date = models.DateTimeField()  # han nhan bai
-    gt = models.DecimalField("Giải thưởng ",decimal_places=3, max_digits=50, default='500.000')
+    gt = models.DecimalField("Giải thưởng ", decimal_places=3, max_digits=50, default='500.000')
     file = models.FileField("File đính kèm", upload_to='uploads/ViecLamPartTime/file/%Y/%m/%d/', default='')
     filled = models.BooleanField(default=False)
 
@@ -149,6 +155,7 @@ class Applicant(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+
 # ###########################################################################################
 # Nop CV partTime
 class CVonsite(models.Model):
@@ -165,17 +172,19 @@ class CVonsite(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+
 # ###########################################################################################
 # Thong bao chap nhan chao gia
 
 class GuiTBChapNhanJob(models.Model):
-        user = models.ForeignKey(User, on_delete=models.CASCADE)
-        applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name='Applicant')
-        created_at = models.DateTimeField(auto_now_add=True, null=True)
-        mess = RichTextField(max_length=300, default='')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    applicant = models.ForeignKey(Applicant, on_delete=models.CASCADE, related_name='Applicant')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    mess = RichTextField(max_length=300, default='')
 
-        def __str__(self):
-            return self.user.get_full_name()
+    def __str__(self):
+        return self.user.get_full_name()
+
 
 # ###########################################################################################
 class GuiTBChapNhanJobpt(models.Model):
@@ -183,6 +192,7 @@ class GuiTBChapNhanJobpt(models.Model):
     cvonsite = models.ForeignKey(CVonsite, on_delete=models.CASCADE, related_name='CVonsite')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     mess = RichTextField(max_length=300, default='')
+
 
     def __str__(self):
         return self.user.get_full_name()

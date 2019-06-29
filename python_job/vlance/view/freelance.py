@@ -6,11 +6,11 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import UpdateView, CreateView, ListView
-from accounts.forms import ProfileUpdateBasic , ProfileUpdateCV
+from accounts.forms import ProfileUpdateBasic, ProfileUpdateCV
 from accounts.models import User, UpUser
 from vlance.decorators import user_is_employee
 from vlance.froms import ApplyJobForm, ApplyCVForm
-from vlance.models import Applicant, Job, CVonsite, NganhNghe, ThanhPho, KyNang
+from vlance.models import Applicant, Job, CVonsite, NganhNghe, ThanhPho, KyNang, GuiTBChapNhanJob
 from vlance.views import thanhpho
 
 
@@ -21,9 +21,8 @@ class EditProfileView(UpdateView):
     template_name = 'tai-khoan/Freelance/edituser.html'
     success_url = reverse_lazy('accounts:employer-profile-update')
 
-
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    #@method_decorator(user_is_employee)
+    # @method_decorator(user_is_employee)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(self.request, *args, **kwargs)
 
@@ -50,7 +49,7 @@ class EditProfileView(UpdateView):
     #         return self.form_invalid(form)
 
 
-#update cv
+# update cv
 
 class EditProfileCVView(UpdateView):
     model = User
@@ -60,10 +59,9 @@ class EditProfileCVView(UpdateView):
     success_url = reverse_lazy('accounts:employer-profile-cv')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    #@method_decorator(user_is_employee)
+    #
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(self.request, *args, **kwargs)
-
 
     def get(self, request, *args, **kwargs):
         try:
@@ -120,7 +118,7 @@ class ApplyJobView(CreateView):
 
 # Gui CV cng viec PartTime
 
-class ApplyCV (CreateView):
+class ApplyCV(CreateView):
     model = CVonsite
     template_name = 'from/cv-onsite.html'
     form_class = ApplyCVForm
@@ -156,7 +154,12 @@ class ApplyCV (CreateView):
             return self.form_invalid(form)
 
 
+# ######## THONG BAO NHAN JOB THANH CONG #############################
+class SuccessJob(ListView):
+    model = GuiTBChapNhanJob
+    template_name = 'tai-khoan/Freelance/success_job.html'
+    context_object_name = 'success'
+    paginate_by = 5
 
-
-
-
+    def get_queryset(self):
+        return self.model.objects.filter(applicant__user_id=self.request.user.id)

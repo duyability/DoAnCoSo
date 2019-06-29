@@ -4,7 +4,7 @@
 
 <div class="row-delete" style="margin: 50px;">
 <form id="edit-job-form" action='' method='POST'>{% csrf_token %}
-    <span>Bạn có muốn xóa  "<b>{{ object.title }}</b>" không ?</span>
+    <span>Bạn có muốn xóa  "<b>{{ object.title }} - {{ object.id }}</b>" không ?</span>
     <p></p>
     <p><input type='submit' value='Xóa Nhé' />
     <p></p>

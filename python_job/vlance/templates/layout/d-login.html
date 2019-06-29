@@ -39,7 +39,7 @@
                         </div>
                         <div class="account-menu dropdown pull-right">
                             <div class="avata">
-                                    <a href="/freelancer/pham-minh-duc-11">
+                                    <a href="/freelancer/{{ request.user.id }}">
                                     <img width="48" height="48" src="/HinhAnh/{{ request.user.hinh }}" alt="DUC PHAM MINH" title="{{ request.user.get_full_name }}">
                                 </a>
                             </div>
@@ -139,7 +139,7 @@
 
                                 <b class="caret"></b></a>
                             <div class="credit-balance">
-                                <span><a class="id-user" href="/freelancer/pham-minh-duc-11">Id. {{ request.user.id }} | </a></span>
+                                <span><a class="id-user" href="/freelancer/{{ request.user.id }}">Id. {{ request.user.id }} | </a></span>
                                 <a id="animategoCredit" href="#">
                                     <span data-credit="balance">{{ request.user.role }}</span>
                                 </a>
@@ -163,12 +163,12 @@
             <div class="container">
                                     <ul class="nav-menu span12">
 
-                        <li class="tf200 first ">
+                       {% comment %} <li class="tf200 first ">
                             <a href="/freelancer/{{ request.user.id }}"><img alt="" title="" src="/static/media/writing.png" style="padding-bottom: 2px;"> Quản lý báo giá</a>
-                        </li>
+                        </li>{% endcomment %}
 
                         <li class="tf200 ">
-                            <a href="/freelancer/{{ request.user.id }}" onclick="vtrack('Click post job', {'location':'Menu'})"><img alt="" title="" src="/media/portfolio.png" style="padding-bottom: 3px" ;=""> Quản lý việc nhận làm</a>
+                            <a href="{% url 'vlance:Freelance-all-job' %}" onclick="vtrack('Click post job', {'location':'Menu'})"><img alt="" title="" src="/media/portfolio.png" style="padding-bottom: 3px" ;=""> Quản lý việc nhận làm</a>
                         </li>
                         <li class="tf200 ">
                             <a href="/freelancer/{{ request.user.id }}">Hồ sơ năng lực</a>
