@@ -25,6 +25,8 @@ class NganhNghe(models.Model):
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
+    class Meta:
+        verbose_name_plural = 'Ngành Nghề - Lĩnh Vực'
 
 
 # ###########################################################################################
@@ -40,7 +42,8 @@ class ThanhPho(models.Model):
 
     def __str__(self):
         return self.title
-
+    class Meta:
+        verbose_name_plural = 'Thành Phố'
 
 # ###########################################################################################
 class KyNang(models.Model):
@@ -55,6 +58,8 @@ class KyNang(models.Model):
 
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name_plural = 'Kỹ Năng'
 
 
 # ###########################################################################################
@@ -81,7 +86,8 @@ class Job(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
-
+    class Meta:
+        verbose_name_plural = 'Đăng Dự Án'
 
 # ###########################################################################################
 # Viec theo PartTime
@@ -112,7 +118,8 @@ class JobPartTime(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
-
+    class Meta:
+        verbose_name_plural = 'Đăng Việc PartTime'
 
 # ###########################################################################################
 
@@ -136,6 +143,8 @@ class CuocThi(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+    class Meta:
+        verbose_name_plural = 'Đăng Cuộc Thi'
 
 
 # ###########################################################################################
@@ -155,6 +164,9 @@ class Applicant(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+    class Meta:
+        verbose_name_plural = 'Báo Giá Việc Dự Án'
+
 
 # ###########################################################################################
 # Nop CV partTime
@@ -171,6 +183,8 @@ class CVonsite(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
+    class Meta:
+        verbose_name_plural = 'Báo giá việc làm Part Time'
 
 
 # ###########################################################################################
@@ -185,6 +199,10 @@ class GuiTBChapNhanJob(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+    class Meta:
+        #verbose_name = 'Thông báo chấp nhận dự án'
+        verbose_name_plural = 'Thông báo chấp nhận dự án'
+
 
 # ###########################################################################################
 class GuiTBChapNhanJobpt(models.Model):
@@ -196,3 +214,5 @@ class GuiTBChapNhanJobpt(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
+    class Meta:
+        verbose_name_plural = 'Thông báo chấp nhận công việc'
