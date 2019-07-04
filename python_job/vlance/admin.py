@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Job, ThanhPho, NganhNghe, Applicant, JobPartTime, CVonsite, KyNang, GuiTBChapNhanJob, \
-    GuiTBChapNhanJobpt
+    GuiTBChapNhanJobpt, BaiThi, CuocThi
 
 
 class exc(admin.ModelAdmin):
@@ -23,3 +23,5 @@ admin.site.register(CVonsite)
 admin.site.register(KyNang)
 admin.site.register(GuiTBChapNhanJob)
 admin.site.register(GuiTBChapNhanJobpt)
+admin.site.register(BaiThi)
+admin.site.register(CuocThi)

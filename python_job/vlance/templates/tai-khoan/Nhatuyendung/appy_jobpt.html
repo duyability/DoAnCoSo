@@ -33,7 +33,7 @@ Danh sách ứng viên </a>
             <div class="profile-job-left-bottom">
                 <div class="title span6">Nội dung chào giá
                     <span class="contact-block">
-<a class="btn btn-primary hidejs" data-toggle="modal" href="#pay-sms" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}" onclick="vtrack('Click contact', {
+<a class="btn btn-primary hidejs" data-toggle="modal" href="tel{{ CVonsite.hotline }}" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}" onclick="vtrack('Click contact', {
                                             'authenticated':'true',
                                                     'location':'job view as client',
                                                     'category':'Lập trình web',
@@ -132,7 +132,7 @@ Báo cáo sai phạm </a>
                     <div class="row-fluid links">
                    {% load is_mess_jobpt %}
                     {% if request.user.is_authenticated %}
-                            {% is_mess_jobpt cvonsite request.user as is_mess %}
+                            {% is_mess_jobpt CVonsite request.user as is_mess %}
                         {% if is_mess %}
 
                              <a href="#myModal_Jo_Ok" role="button" data-toggle="modal"

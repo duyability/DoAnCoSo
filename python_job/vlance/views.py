@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
-from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime, CuocThi
+from vlance.models import Job, ThanhPho, NganhNghe, JobPartTime, CuocThi, BaiThi
 
 
 # Create your view here.
@@ -147,6 +147,7 @@ class CVDetail(DetailView):
     context_object_name = 'jobpt'
     pk_url_kwarg = 'id'
 
+    #yeu cau de hien thi
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(self.request, *args, **kwargs)
@@ -167,6 +168,15 @@ class CVDetail(DetailView):
         return self.render_to_response(context)
 
 
+def CTDetail(request, id):
+    try:
+        ct = CuocThi.objects.get(id=id)
+    except CuocThi.DoesNotExist:
+        raise Http404("Lỗi rồi !! Lien he DUC ngay !! ")
+    return render(request, 'from/bai-du-thi.html',{'ct':ct})
+
+
+#########################################
 def DetaiOnsite(request, slug):
     try:
         jp = JobPartTime.objects.get(slug=slug)

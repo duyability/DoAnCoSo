@@ -1,26 +1,22 @@
 {% extends 'layout/base.html' %}
 
 {% block index %}
+      {% load is_mess_job %}
+
     {% load static %}
  <div class="content-section container">
 
-  <div class="tabbable">
-  <ul class="nav nav-tabs">
-        <li class="active"><a href="#job" data-toggle="tab">Việc Theo Dự Án</a></li>
-        <li><a href="{% url 'vlance:employer-all-cv' %}#parttime" data-toggle="">Việc Làm PartTime</a></li>
-        <li><a href="#cuocthi" data-toggle="tab">Cuộc Thi</a></li>
-  </ul>
-        <div class="tab-content">
-            <!----------Job------------>
-            <div class="tab-pane active" id="job">
-                <div class="row-fluid">
+    <!----------start----------------------->
+
+
+    <div class="row-fluid">
         <div class="span12">
-            <h1 class="title">Danh sách báo giá với tất cả công việc </h1>
+            <h1 class="title">Danh sách báo giá với công việc : <b>{{ ct.title |truncatechars:50}}</b> </h1>
             <div class="row-fluid page-tabs">
                 <ul>
                     <li class="active">
                         <a href="/">
-                            Danh sách báo giá</a>
+Danh sách ứng viên </a>
                     </li>
 
                 </ul>
@@ -30,16 +26,23 @@
                 <div class="span12 news-client-view">
 
                   <!-------------->
-                     {% for applicant in applicants %}
+                     {% for baithi in bt %}
 
-                    <div class="profile-job span12">
+                    <div class="profile-job span12
+
+                ">
     <div class="row-fluid">
 
         <div class="span7 profile-job-left">
             <div class="profile-job-left-bottom">
                 <div class="title span6">Nội dung chào giá
                     <span class="contact-block">
-<a class="btn btn-primary hidejs" data-toggle="modal" href="tel:{{ applicant.hotline }}" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}" >
+<a class="btn btn-primary hidejs" data-toggle="modal" href="#pay-sms" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}" onclick="vtrack('Click contact', {
+                                            'authenticated':'true',
+                                                    'location':'job view as client',
+                                                    'category':'Lập trình web',
+                                                    'freelancer':'Hoàn Lê Tiến',
+                                                    'freelancer_id':'283076'})">
 <i class="fa fa-phone fa-lg"></i> Liên hệ</a>
 </span>
                 </div>
@@ -57,23 +60,18 @@ Báo cáo sai phạm </a>
                 <div class="body-view row-fluid">
                     <div class="textbody">
                         <div>
-                            <b>Tên công việc</b>:
-                            <br>
-                            {{ applicant.job.title }}
-                            <br>
-                            ---------------
-                            <br>
+
                             <b>Giới thiệu về kinh nghiệm và kỹ năng</b>:
                             <br>
-                             {{ applicant.exp_info }}
+                             {{ bt.exp_info }}
                             <br>
                             <b>Kế hoạch thực hiện công việc</b>:
                             <br>
-                            {{ applicant.dudinh_info }}
+                            {{ bt.dudinh_info }}
                         </div>
                         <div class="creatbid">
-                            <span>ID : {{ applicant.id }}</span> - Báo giá ngày :
-                            <span>{{ applicant.created_at|date:'d/m/Y' }}</span>
+                            <span>ID : {{ bt.id }}</span> - Báo giá ngày :
+                            <span>{{ bt.created_at|date:'d/m/Y' }}</span>
                         </div>
                     </div>
                 </div>
@@ -87,8 +85,8 @@ Báo cáo sai phạm </a>
 
                 <div class="freelancer-row-img span4">
                     <div class="images">
-                        <a href="{% url 'accounts:info-freelance' applicant.user.id %}" title="{{ applicant.user.get_full_name }}">
-                            <img src="/HinhAnh/{{ applicant.user.hinh }}" alt="Hoàn Lê Tiến" title="Hoàn Lê Tiến">
+                        <a href="{% url 'accounts:info-freelance' bt.user.id %}" title="{{ bt.user.get_full_name }}">
+                            <img src="/HinhAnh/{{ bt.user.hinh }}" alt="Hoàn Lê Tiến" title="Hoàn Lê Tiến">
                         </a>
                     </div>
                     <div class="rating-box" data-original-title="" title="">
@@ -98,8 +96,8 @@ Báo cáo sai phạm </a>
 
                 <div class="span8">
                     <div class="title">
-                        <a href="{% url 'accounts:info-freelance' applicant.user.id %}" title="{{ applicant.user.get_full_name }}">
-                            {{ applicant.user.get_full_name }}
+                        <a href="{% url 'accounts:info-freelance' bt.user.id %}" title="{{ bt.user.get_full_name }}">
+                            {{ bt.user.get_full_name }}
                             </a>
                         <script type="text/javascript" language="javascript">
                             jQuery(document).ready(function() {
@@ -112,13 +110,13 @@ Báo cáo sai phạm </a>
                     <div class="work-title">Developer Vue.Js, AngularJs, .NET, MSSQL, MySql, NodeJS</div>
                     <dl class="dl-horizontal">
                         <dt>Đến từ</dt>
-                        <dd>{{ applicant.user.thanh_phos}}</dd>
+                        <dd>{{ bt.user.thanh_phos}}</dd>
                         <dt>Ngày gia nhập</dt>
-                        <dd>{{ applicant.user.date_joined|date:'d/m/Y'}}</dd>
+                        <dd>{{ bt.user.date_joined|date:'d/m/Y'}}</dd>
 
                     </dl>
 
-                    <a href="mailto:{{ applicant.user.email }}" role="button" class="btn-flat btn-light-blue btn-flat-large formmessage-call-popup"
+                    <a href="mailto:{{ bt.user.email }}" role="button" class="btn-flat btn-light-blue btn-flat-large formmessage-call-popup"
                        data-toggle="modal" title="Nhắn tin">Gửi Mail</a>
                 </div>
             </div>
@@ -128,18 +126,17 @@ Báo cáo sai phạm </a>
 
                     <div class="price">
 
-                        <span>{{ applicant.baogia }}</span>
+                        <span>{{ bt.baogia }}</span>
                         <span class="less-important">VNĐ</span>
                         <span class="less-important"> - </span>
 
-                        <span>{{ applicant.time }}</span>
+                        <span>{{ bt.time }}</span>
                     </div>
 
                     <div class="row-fluid links">
 
                     {% if request.user.is_authenticated %}
-                        {% load is_mess_job %}
-                            {% is_mess_job applicant request.user as is_mess %}
+                            {% is_mess_job bt request.user as is_mess %}
                         {% if is_mess %}
 
                              <a href="#myModal_Jo_Ok" role="button" data-toggle="modal"
@@ -153,7 +150,7 @@ Báo cáo sai phạm </a>
                         {% endif %}
                     {% endif %}
 
-                        <a href="#" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
+                        <a href="{% url 'vlance:job-delete' bt.id %}" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
 Từ chối  </a>
 
                     </div>
@@ -170,23 +167,10 @@ Từ chối  </a>
             </div>
         </div>
     </div>
-            </div>
-            <!-----------Part Time----------->
-
-             <!-----------Cuoc Thi----------->
-            <div class="tab-pane active" id="cuocthi">
 
 
-            </div>
+    <!----------end---------------------->
 
-
-
-
-
-
-
-  {% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
+{% include "layout/pagination.html" with page=page_obj %} <!-- NEW -->
 </div>
-  </div>
-   </div>
 {% endblock %}

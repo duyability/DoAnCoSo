@@ -111,10 +111,97 @@
                                                 <dt>Ngày hết hạn</dt>
                                                 <dd>{{ ct.last_date|date:'d/m/Y' }}</dd>
                                                 <dt>Giải Thưởng</dt>
+                                                  <dd> <p id="demo"></p></dd>
                                                 <dd>{{ ct.gt }} đ</dd>
 
                                             </dl>
                                         </div>                        </div>
+
+
+                            <script type="text/javascript">
+                        var mangso = ['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín'];
+                        function dochangchuc(so,daydu)
+                        {
+                            var chuoi = "";
+                            chuc = Math.floor(so/10);
+                            donvi = so%10;
+                            if (chuc>1) {
+                                chuoi = " " + mangso[chuc] + " mươi";
+                                if (donvi==1) {
+                                    chuoi += " mốt";
+                                }
+                            } else if (chuc==1) {
+                                chuoi = " mười";
+                                if (donvi==1) {
+                                    chuoi += " một";
+                                }
+                            } else if (daydu && donvi>0) {
+                                chuoi = " lẻ";
+                            }
+                            if (donvi==5 && chuc>=1) {
+                                chuoi += " lăm";
+                            } else if (donvi>1||(donvi==1&&chuc==0)) {
+                                chuoi += " " + mangso[ donvi ];
+                            }
+                            return chuoi;
+                        }
+                        function docblock(so,daydu)
+                        {
+                            var chuoi = "";
+                            tram = Math.floor(so/100);
+                            so = so%100;
+                            if (daydu || tram>0) {
+                                chuoi = " " + mangso[tram] + " trăm";
+                                chuoi += dochangchuc(so,true);
+                            } else {
+                                chuoi = dochangchuc(so,false);
+                            }
+                            return chuoi;
+                        }
+                        function dochangtrieu(so,daydu)
+                        {
+                            var chuoi = "";
+                            trieu = Math.floor(so/1000000);
+                            so = so%1000000;
+                            if (trieu>0) {
+                                chuoi = docblock(trieu,daydu) + " triệu";
+                                daydu = true;
+                            }
+                            nghin = Math.floor(so/1000);
+                            so = so%1000;
+                            if (nghin>0) {
+                                chuoi += docblock(nghin,daydu) + " nghìn";
+                                daydu = true;
+                            }
+                            if (so>0) {
+                                chuoi += docblock(so,daydu);
+                            }
+                            return chuoi;
+                        }
+                        function docso(so)
+                        {
+                            if (so==0) return mangso[0];
+                            var chuoi = "", hauto = ""; dong = " đồng";
+
+                            do {
+                                ty = so%1000000000;
+                                so = Math.floor(so/1000000000);
+                                if (so>0) {
+                                    chuoi = dochangtrieu(ty,true) + hauto + chuoi + dong;
+                                } else {
+                                    chuoi = dochangtrieu(ty,false) + hauto + chuoi + dong;
+                                }
+                                hauto = " tỷ";
+                            } while (so>0);
+                            return chuoi;
+                        }
+                        document.getElementById("demo").innerHTML = docso({{ ct.gt }});
+
+                             </script>
+
+
+
+
                                     <div class="row-fluid">
                                         <h2>Thông tin khách hàng</h2>
                                         <div class="info-employment">
@@ -168,14 +255,14 @@
                             padding: 0px 7px 3px 10px;
                             margin: 0;">
 
-        <a class="btn btn-vl btn-vl-green btn-vl-medium" href="/bao-gia/{{ ct.id }}" style="
+        <a class="btn btn-vl btn-vl-green btn-vl-medium" href="/nop-bai-thi/{{ ct.id }}" style="
                                                                                     float: right;
                                                                                     height: 32px;
                                                                                     margin: 8px 0 8px 0;
                                                                                     width: 157px;
                                                                                     line-height: 32px;
                                                                                     font-weight: normal;
-                                                                                    background: #2db964;">Báo giá</a>
+                                                                                    background: #2db964;">Gửi Bài Dự Thi</a>
 
 </div>
 

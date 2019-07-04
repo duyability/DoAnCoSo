@@ -2,34 +2,40 @@
 <div id="myModal_Job" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="myModalLabel">Gửi Thông Báo Chấp Nhận Chào Giá Cho <span style="color: red">{{ applicant.user.get_full_name }}</span></h5>
+    <h5 id="myModalLabel">Gửi Thông Báo Chấp Nhận Chào Giá Cho <span style="color: red">{{ CVonsite.user.get_full_name }}</span></h5>
   </div>
   <div class="modal-body">
     <p>
 
-     <form method='POST' action='{% url 'vlance:chap-nhan-jobpt' CVonsite.id %}'>
+     <form method='POST' action='{% url 'vlance:chap-nhan-jobpt' CVonsite.id %}'  onSubmit="return confirmAction()">
       {% csrf_token %}
 
-    <label>Tin nhắn </label>
+    <label>ID Dự Án </label>
       <input type="text" name="cvonsite" value="{{CVonsite.id }}" readonly>
+      <label>Thông Báo Cho FreeLancer </label>
       <textarea name="mess">Thông báo bạn đã được nhận vào công ty {{CVonsite.user.get_full_name }}
       - Liên hệ : {{CVonsite.user.hotline }} để trao đổi thông tin .
       </textarea>
+s
 
 
       </p>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary" type="submit">Gửi Thông Báo</button>
+          <button class="btn btn-primary" type="submit">Gửi Thông Báo</button>
   </div>
     </form>
+
 </div>
 
 
+<script language="JavaScript">
+      function confirmAction() {
+        return confirm("Bạn có chắc sẽ làm điều này?")
+      }
 
-
-
+</script>
 <!-- Modal giao viec -->
 <div id="myModal_Jo_Ok" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">

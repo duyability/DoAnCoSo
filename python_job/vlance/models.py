@@ -25,6 +25,7 @@ class NganhNghe(models.Model):
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
+
     class Meta:
         verbose_name_plural = 'Ngành Nghề - Lĩnh Vực'
 
@@ -42,8 +43,10 @@ class ThanhPho(models.Model):
 
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name_plural = 'Thành Phố'
+
 
 # ###########################################################################################
 class KyNang(models.Model):
@@ -58,6 +61,7 @@ class KyNang(models.Model):
 
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name_plural = 'Kỹ Năng'
 
@@ -86,8 +90,10 @@ class Job(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = 'Đăng Dự Án'
+
 
 # ###########################################################################################
 # Viec theo PartTime
@@ -118,8 +124,10 @@ class JobPartTime(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = 'Đăng Việc PartTime'
+
 
 # ###########################################################################################
 
@@ -143,6 +151,7 @@ class CuocThi(models.Model):
         if not self.slug:
             self.slug = get_unique_slug(self, 'title', 'slug')
         super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = 'Đăng Cuộc Thi'
 
@@ -183,8 +192,30 @@ class CVonsite(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
+
     class Meta:
         verbose_name_plural = 'Báo giá việc làm Part Time'
+
+
+# ###########################################################################################
+# Nop bai du thi
+class BaiThi(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ct = models.ForeignKey(CuocThi, on_delete=models.CASCADE, related_name='BaiThi')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    ynghia = models.TextField(max_length=400, default='')
+    hinh1 = models.ImageField("File đính kèm", upload_to='uploads/CuocThi/hinh/%Y/%m/%d/',
+                              default='uploads/User/unknown.png')
+    hinh2 = models.ImageField("File đính kèm", upload_to='uploads/CuocThi/hinh/%Y/%m/%d/',
+                              default='uploads/User/unknown.png')
+    hinh3 = models.ImageField("File đính kèm", upload_to='uploads/CuocThi/hinh/%Y/%m/%d/',
+                              default='uploads/User/unknown.png')
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+    class Meta:
+        verbose_name_plural = 'Danh Sách Bài Dự Thi'
 
 
 # ###########################################################################################
@@ -200,7 +231,7 @@ class GuiTBChapNhanJob(models.Model):
         return self.user.get_full_name()
 
     class Meta:
-        #verbose_name = 'Thông báo chấp nhận dự án'
+        # verbose_name = 'Thông báo chấp nhận dự án'
         verbose_name_plural = 'Thông báo chấp nhận dự án'
 
 
@@ -211,8 +242,22 @@ class GuiTBChapNhanJobpt(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     mess = RichTextField(max_length=300, default='')
 
+    def __str__(self):
+        return self.user.get_full_name()
+
+    class Meta:
+        verbose_name_plural = 'Thông báo chấp nhận công việc'
+
+
+# ###########################################################################################
+class GuiTBChapNhanct(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bt = models.ForeignKey(BaiThi, on_delete=models.CASCADE, related_name='BaiThi')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    mess = RichTextField(max_length=300, default='')
 
     def __str__(self):
         return self.user.get_full_name()
+
     class Meta:
         verbose_name_plural = 'Thông báo chấp nhận công việc'

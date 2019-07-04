@@ -8,7 +8,8 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from vlance.decorators import user_is_employer, user_is_employee
 from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt, CuocThiFrom
-from vlance.models import Job, Applicant, GuiTBChapNhanJob, JobPartTime, CVonsite, GuiTBChapNhanJobpt
+from vlance.models import Job, Applicant, GuiTBChapNhanJob, JobPartTime, CVonsite, GuiTBChapNhanJobpt, CuocThi, BaiThi, \
+    GuiTBChapNhanct
 from vlance.views import thanhpho
 
 
@@ -28,6 +29,7 @@ class DashboardView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['jpt'] = JobPartTime.objects.all()
+        context['ct'] = CuocThi.objects.all()
         return context
 
 
@@ -57,7 +59,7 @@ class ApplicantPerJPT(ListView):
     model = CVonsite
     template_name = 'tai-khoan/Nhatuyendung/appy_jobpt.html'
     context_object_name = 'cvonsite'
-    paginate_by = 1
+    paginate_by = 5
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
     @method_decorator(user_is_employer)
@@ -70,6 +72,28 @@ class ApplicantPerJPT(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['jobpt'] = JobPartTime.objects.get(id=self.kwargs['jobpt_id'])
+        return context
+
+
+# ################################################################
+
+class CuocThiList(ListView):
+    model = BaiThi
+    template_name = 'tai-khoan/Nhatuyendung/appy_ct.html'
+    context_object_name = 'bt'
+    paginate_by = 5
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    @method_decorator(user_is_employer)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def get_queryset(self):
+        return BaiThi.objects.filter(ct_id=self.kwargs['ct_id']).order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ct'] = CuocThi.objects.get(id=self.kwargs['ct_id'])
         return context
 
 
@@ -163,6 +187,10 @@ class CuocThiCreateView(CreateView):
             return self.form_invalid(form)
 
 
+############################
+# ALL tin đăng dự án
+############################
+
 class ApplicantsListView(ListView):
     model = Applicant
     template_name = 'tai-khoan/Nhatuyendung/all_appy_job.html'
@@ -170,8 +198,35 @@ class ApplicantsListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        # jobs = Job.objects.filter(user_id=self.request.user.id)
         return self.model.objects.filter(job__user_id=self.request.user.id)
+
+
+################################
+# ALL tin đăng việc part time
+###############################
+
+class CVonsiteListView(ListView):
+    model = CVonsite
+    template_name = 'tai-khoan/Nhatuyendung/all_job_part_time.html'
+    context_object_name = 'cvonsite'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return self.model.objects.filter(jobpt__user_id=self.request.user.id)
+
+
+################################
+# ALL cuoc thi
+###############################
+
+class CuocThiListView(ListView):
+    model = BaiThi
+    template_name = 'tai-khoan/Nhatuyendung/all_job_cuoc-thi.html'
+    context_object_name = 'baithi'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return self.model.objects.filter(ct__user_id=self.request.user.id)
 
 
 @login_required(login_url=reverse_lazy('accounts:login'))
@@ -190,6 +245,14 @@ def filleds(request, jobpt_id=None):
     return HttpResponseRedirect(reverse_lazy('vlance:employer-dashboard'))
 
 
+@login_required(login_url=reverse_lazy('accounts:login'))
+def filledss(request, ct_id=None):
+    ct = CuocThi.objects.get(user_id=request.user.id, id=ct_id)
+    ct.filled = True
+    ct.save()
+    return HttpResponseRedirect(reverse_lazy('vlance:employer-dashboard'))
+
+
 # ################# Delete ##############################
 class DeleteJob(DeleteView):
     template_name = 'tags/delete.html'
@@ -200,6 +263,7 @@ class DeleteJob(DeleteView):
 
     def get_success_url(self):
         return reverse('vlance:employer-dashboard')
+
 
 class DeleteJobpt(DeleteView):
     template_name = 'tags/delete.html'
@@ -266,6 +330,44 @@ class ChapnhanBaoGia(CreateView):
 class ChapnhanBaoGiaPT(CreateView):
     model = GuiTBChapNhanJobpt
     template_name = 'tai-khoan/Nhatuyendung/appy_jobpt.html'
+    form_class = ChapnhanJobpt
+    extra_context = {
+        'title': 'Post New Job'
+    }
+    slug_field = 'cvonsite_id'
+    slug_url_kwarg = 'cvonsite_id'
+    success_url = reverse_lazy('vlance:homepage')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        # check if user already applied
+        c = GuiTBChapNhanJobpt.objects.filter(user_id=self.request.user.id, cvonsite_id=self.kwargs['cvonsite_id'])
+        if c:
+            messages.info(self.request, 'Bạn đã gửi báo giá cho công việc này')
+            return HttpResponseRedirect(self.get_success_url())
+        # save applicant
+        form.instance.user = self.request.user
+        form.save()
+        return super().form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+
+# #############################################################
+
+class ChapnhanCT(CreateView):
+    model = GuiTBChapNhanct
+    template_name = 'tai-khoan/Nhatuyendung/appy_ct.html'
     form_class = ChapnhanJobpt
     extra_context = {
         'title': 'Post New Job'

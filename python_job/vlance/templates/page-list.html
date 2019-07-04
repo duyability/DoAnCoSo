@@ -2,7 +2,7 @@
 {% block index %}
     {% load static %}
 
-<div class = "content-blog" style="display: block; padding: 35px 150px 60px 150px;">
+<div class = "blog-list" style="display: block;">
     {% for Page in p %}
     <div class="media">
   <a class="pull-left" href="{{ Page.slug }}.html">
@@ -35,5 +35,19 @@
     .media:hover {
     border: 1px solid #35fd28;
 }
+  .blog-list{
+      padding: 35px 150px 60px 150px;
+  }
+
+ @media (min-width: 360px) and (max-width: 767px) {
+
+.blog-list {
+    padding: 30px 20px 65px 20px;
+}
+
+}
+
+
+
     </style>
 {% endblock %}

@@ -12,6 +12,3 @@ def is_already_applied(job, user):
         return True
     else:
         return False
-
-
-

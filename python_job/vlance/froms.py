@@ -1,8 +1,7 @@
 from django import forms
-from django.http import request
-from django.shortcuts import render
 
-from vlance.models import Job, Applicant, JobPartTime, CVonsite, GuiTBChapNhanJob, GuiTBChapNhanJobpt, CuocThi
+from vlance.models import Job, Applicant, JobPartTime, CVonsite, GuiTBChapNhanJob, GuiTBChapNhanJobpt, CuocThi, BaiThi, \
+    GuiTBChapNhanct
 
 
 # From viec theo du an - Pham Minh Duc
@@ -110,6 +109,26 @@ class ApplyCVForm(forms.ModelForm):
             jpt.save()
         return jpt
 
+# ######### From gui bai thi ##############
+
+class BaiThiFrom(forms.ModelForm):
+    class Meta:
+        model = BaiThi
+        exclude = ('user', 'created_at')
+
+    def is_valid(self):
+        valid = super(BaiThiFrom, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        bt = super(BaiThiFrom, self).save(commit=False)
+        if commit:
+            bt.save()
+        return bt
 
 # ######### From nop cv ##############
 
@@ -153,3 +172,24 @@ class ChapnhanJobpt(forms.ModelForm):
         if commit:
             t.save()
         return t
+
+# ######### Gui thong bao bai thi trung giai ##############
+
+class Chapnhanbt(forms.ModelForm):
+    class Meta:
+        model = GuiTBChapNhanct
+        exclude = ('user', 'created_at')
+
+    def is_valid(self):
+        valid = super(Chapnhanbt, self).is_valid()
+
+        # if already valid, then return True
+        if valid:
+            return valid
+        return valid
+
+    def save(self, commit=True):
+        b = super(Chapnhanbt, self).save(commit=False)
+        if commit:
+            b.save()
+        return b

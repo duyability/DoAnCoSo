@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class = "content-blog" style="display: block; padding: 35px 150px 60px 150px;">
+    <div class = "content-blog" style="display: block;">
 
 <p>
 {{ p.description |safe}}
@@ -35,5 +35,23 @@
 
 
 </div>
+
+       <style>
+
+  .content-blog{
+       padding: 35px 150px 60px 150px;
+  }
+
+ @media (min-width: 360px) and (max-width: 767px) {
+
+.content-blog {
+    padding: 35px 15px 60px 15px;
+}
+
+}
+
+
+
+    </style>
 
 {% endblock %}

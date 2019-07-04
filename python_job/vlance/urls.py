@@ -4,10 +4,10 @@ from django.urls import path, include
 
 from vlance.view.NhaTuyenDung import JobCreateView, PartTimeCreateView, DashboardView, ApplicantsListView, \
     ApplicantPerJobView, filled, DeleteJob, ChapnhanBaoGia, filleds, DeleteJobpt, ApplicantPerJPT, ChapnhanBaoGiaPT, \
-    CuocThiCreateView, DeleteMess
-from vlance.view.freelance import ApplyJobView, ApplyCV, SuccessJob
+    CuocThiCreateView, DeleteMess, CVonsiteListView, CuocThiList, filledss, ChapnhanCT, CuocThiListView
+from vlance.view.freelance import ApplyJobView, ApplyCV, SuccessJob, SuccessJobpt, Successct, ApplyCT
 from vlance.views import index, dangcuocthi, DetaiOnsite, vieclamfreelance, Viecfreelances, vieclam, PartTime, \
-    JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs, CuocThiView, CuocThiDetail
+    JobDetailsView, CVDetail, detaiNN, detaiTP, detaiNNs, CuocThiView, CuocThiDetail, CTDetail
 from django.conf import settings
 
 app_name = 'vlance'
@@ -41,26 +41,38 @@ urlpatterns = [
                   # bao gia viec part time
                   path('nop-cv/<int:id>/', CVDetail.as_view(), name='cv-detail'),
                   path('nop-cv-pt/<int:jobpt_id>/', ApplyCV.as_view(), name='nop-cv-pt'),
+                  #  nop bai thi
+                  path('nop-bai-thi/<int:id>/', CTDetail, name='ct-detail'),
+                  path('bai-du-thi/<int:ct_id>/', ApplyCT.as_view(), name='nop-bai-du-thi'),
 
                   # dashboard
                   path('nhatuyendung/dashboard/', include([
                       path('', DashboardView.as_view(), name='employer-dashboard'),
                       path('all-applicants', ApplicantsListView.as_view(), name='employer-all-applicants'),
+                      path('all-cv', CVonsiteListView.as_view(), name='employer-all-cv'),
+                      path('all-ct', CuocThiListView.as_view(), name='employer-all-ct'),
+
 
                       path('applicants/<int:job_id>', ApplicantPerJobView.as_view(),
                            name='employer-dashboard-applicants'),
                       path('applicant/<int:jobpt_id>', ApplicantPerJPT.as_view(),
                            name='employer-dashboard-applicants-pt'),
+                      path('cuoc-thi/<int:jobpt_id>', CuocThiList.as_view(),
+                           name='employser-dashboard-applicants-ct'),
 
                       path('cv-applicants/<int:applicant_id>', ChapnhanBaoGia.as_view(), name='chap-nhan-job'),
                       path('pt-applicants/<int:cvonsite_id>', ChapnhanBaoGiaPT.as_view(), name='chap-nhan-jobpt'),
+                      path('ct-applicants/<int:baithi_id>', ChapnhanCT.as_view(), name='chap-nhan-cuoc-thi'),  # ...........
 
                       path('mark-filled/<int:job_id>', filled, name='job-mark-filled'),
                       path('mark-filled-pt/<int:jobpt_id>', filleds, name='jobpt-mark-filled'),
+                      path('mark-filled-ct/<int:ct_id>', filledss, name='cuoc-thi-mark-filled'),
                   ])),
 
-                  # Success_BaoGia
+                  # Success_BaoGia - Cuoc Thi
                   path('freelancer/job', SuccessJob.as_view(), name='Freelance-all-job'),
+                  path('freelancer/jobpt', SuccessJobpt.as_view(), name='Freelance-all-job-part-time'),
+                  path('freelancer/ct', Successct.as_view(), name='Freelance-all-cuoc-thi'),
 
                   # Delete
                   path('delete/<int:id>', DeleteJob.as_view(), name='job-delete'),

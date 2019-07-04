@@ -22,6 +22,8 @@
 		        Chưa có bài viết nào
 		        {% else %}
                     {% for JobPartTime in JPT %}
+                         {% if JobPartTime.filled %}
+                        {% else %}
                 <div class="row-fluid row-result job-onsite">
                     <div class="fr-info span12">
                         <div class="row-fluid">
@@ -77,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                        {% endif %}
                     {%endfor%}
                 <!---------END JOB part Time---->
             </div>
