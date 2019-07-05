@@ -39,20 +39,21 @@ $(document).ready(function(){
                         <th>Job</th>
                         <th>Công Ty</th>
                         <th>Nội dung tin nhắn</th>
-                        <th>Action</th>
+                      {% comment %}  <th>Action</th>{% endcomment %}
                     </tr>
                     </thead>
                       {% for GuiTBChapNhanJobpt in pt %}
                     <tbody>
                     <tr style="border: 1px solid black">
-                        <td >{{ GuiTBChapNhanJobpt.applicant.job.id}}</td>
-                        <td><a href="{% url 'vlance:product' GuiTBChapNhanJobpt.applicant.job.slug %}" title="{{ GuiTBChapNhanJobpt.applicant.job}}">{{ GuiTBChapNhanJobpt.applicant.job|truncatechars:40}}</a> </td>
+                        <td >{{ GuiTBChapNhanJobpt.cvonsite.jobpt.id}}</td>
+                        <td><a href="{% url 'vlance:viec-onsite' GuiTBChapNhanJobpt.cvonsite.jobpt.slug %}" title="{{ GuiTBChapNhanJobpt.cvonsite.jobpt}}">{{ GuiTBChapNhanJobpt.cvonsite.jobpt|truncatechars:40}}</a> </td>
                         <td><a href="{% url 'accounts:info-freelance' GuiTBChapNhanJobpt.user.id %}"> {{ GuiTBChapNhanJobpt.user.get_full_name }}</a></td>
-                        <td><p>{{ GuiTBChapNhanJobpt.mess|safe}} </p>
+                        <td>
+                            <p>{{ GuiTBChapNhanJobpt.mess|safe}}</p>
                             <button id="hide">Ẩn</button>
                             <button id="show">Hiển Thị</button>
                         </td>
-                        <td><a href="{% url 'vlance:mess-delete' GuiTBChapNhanJobpt.id %}">Xóa</a> </td>
+                            {% comment %}<td><a href="{% url 'vlance:mess-delete' GuiTBChapNhanJobpt.id %}">Xóa</a> </td>{% endcomment %}
                     </tr>
                     </tbody>
                       {% endfor %}

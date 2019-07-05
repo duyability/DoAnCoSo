@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from vlance.decorators import user_is_employer, user_is_employee
-from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt, CuocThiFrom
+from vlance.froms import CreateJobForm, PartTimeFrom, ChapnhanJob, ChapnhanJobpt, CuocThiFrom, Chapnhanbt
 from vlance.models import Job, Applicant, GuiTBChapNhanJob, JobPartTime, CVonsite, GuiTBChapNhanJobpt, CuocThi, BaiThi, \
     GuiTBChapNhanct
 from vlance.views import thanhpho
@@ -368,12 +368,12 @@ class ChapnhanBaoGiaPT(CreateView):
 class ChapnhanCT(CreateView):
     model = GuiTBChapNhanct
     template_name = 'tai-khoan/Nhatuyendung/appy_ct.html'
-    form_class = ChapnhanJobpt
+    form_class = Chapnhanbt
     extra_context = {
         'title': 'Post New Job'
     }
-    slug_field = 'cvonsite_id'
-    slug_url_kwarg = 'cvonsite_id'
+    slug_field = 'bt_id'
+    slug_url_kwarg = 'bt_id'
     success_url = reverse_lazy('vlance:homepage')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
@@ -384,7 +384,7 @@ class ChapnhanCT(CreateView):
 
     def form_valid(self, form):
         # check if user already applied
-        c = GuiTBChapNhanJobpt.objects.filter(user_id=self.request.user.id, cvonsite_id=self.kwargs['cvonsite_id'])
+        c = GuiTBChapNhanct.objects.filter(user_id=self.request.user.id, bt_id=self.kwargs['bt_id'])
         if c:
             messages.info(self.request, 'Bạn đã gửi báo giá cho công việc này')
             return HttpResponseRedirect(self.get_success_url())

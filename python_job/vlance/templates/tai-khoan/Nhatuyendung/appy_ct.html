@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 
 {% block index %}
-      {% load is_mess_job %}
+      {% load is_mess_ct %}
 
     {% load static %}
  <div class="content-section container">
@@ -26,7 +26,7 @@ Danh sách ứng viên </a>
                 <div class="span12 news-client-view">
 
                   <!-------------->
-                     {% for baithi in bt %}
+                     {% for bt in bt %}
 
                     <div class="profile-job span12
 
@@ -35,14 +35,9 @@ Danh sách ứng viên </a>
 
         <div class="span7 profile-job-left">
             <div class="profile-job-left-bottom">
-                <div class="title span6">Nội dung chào giá
+                <div class="title span6">Thông tin bài dự thi
                     <span class="contact-block">
-<a class="btn btn-primary hidejs" data-toggle="modal" href="#pay-sms" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}" onclick="vtrack('Click contact', {
-                                            'authenticated':'true',
-                                                    'location':'job view as client',
-                                                    'category':'Lập trình web',
-                                                    'freelancer':'Hoàn Lê Tiến',
-                                                    'freelancer_id':'283076'})">
+<a class="btn btn-primary hidejs" data-toggle="modal" href="tel:{{ bt.user.hotline }}" data-request="{&quot;fid&quot;:283076, &quot;pid&quot;:172016}">
 <i class="fa fa-phone fa-lg"></i> Liên hệ</a>
 </span>
                 </div>
@@ -52,7 +47,7 @@ Danh sách ứng viên </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li>
                                 <a href="#popup-report_violations" role="button" class="report-violations-call-popup" data-toggle="modal" data-id="283076" data-action="/bid/violated/233008" title="Báo cáo sai phạm">
-Báo cáo sai phạm </a>
+ </a>
                             </li>
                         </ul>
                     </div>
@@ -60,17 +55,26 @@ Báo cáo sai phạm </a>
                 <div class="body-view row-fluid">
                     <div class="textbody">
                         <div>
+                            <div class="ynghia" style="border: 1px solid #b8ffa0;padding: 16px;">
+                            <b>Ý nghĩa của bài dự thi </b>:
+                            <p></p>
+                            <br>
+                                 <p>
+                             {{ bt.ynghia }}
+                                     </p>
+                            <br>
+                                </div>
+                            <p></p>
+                            <b>File thiết kế </b>:
+                            <br>
+                            <p></p>
+                            {% include 'tags/show-img.html' %}
 
-                            <b>Giới thiệu về kinh nghiệm và kỹ năng</b>:
                             <br>
-                             {{ bt.exp_info }}
-                            <br>
-                            <b>Kế hoạch thực hiện công việc</b>:
-                            <br>
-                            {{ bt.dudinh_info }}
+
                         </div>
                         <div class="creatbid">
-                            <span>ID : {{ bt.id }}</span> - Báo giá ngày :
+                            <span>ID : {{ bt.id }}</span> - Gửi bài :
                             <span>{{ bt.created_at|date:'d/m/Y' }}</span>
                         </div>
                     </div>
@@ -90,7 +94,7 @@ Báo cáo sai phạm </a>
                         </a>
                     </div>
                     <div class="rating-box" data-original-title="" title="">
-                        <div class="rating" style="width:0%"></div>
+                        <div class="rating" style="width:100%"></div>
                     </div>
                 </div>
 
@@ -123,35 +127,25 @@ Báo cáo sai phạm </a>
 
             <div class="profile-job-right-bottom span12">
                 <div class="row-fluid">
-
-                    <div class="price">
-
-                        <span>{{ bt.baogia }}</span>
-                        <span class="less-important">VNĐ</span>
-                        <span class="less-important"> - </span>
-
-                        <span>{{ bt.time }}</span>
-                    </div>
-
                     <div class="row-fluid links">
 
                     {% if request.user.is_authenticated %}
-                            {% is_mess_job bt request.user as is_mess %}
+                            {% is_mess_ct bt request.user as is_mess %}
                         {% if is_mess %}
 
                              <a href="#myModal_Jo_Ok" role="button" data-toggle="modal"
                            class="btn-flat btn-light-green btn-flat-xlarge formassignment-call-popup" style="background-color: #ec0404e0;"
-                           title="Giao việc">Đã Giao Việc Này</a>
+                           title="Giao việc">ĐÃ TRAO GIẢI </a>
                         {% else %}
                             <a href="#myModal_Job" role="button" data-toggle="modal"
                            class="btn-flat btn-light-green btn-flat-xlarge formassignment-call-popup"
-                           title="Giao việc">Giao Việc</a>
+                           title="Giao việc">TRAO GIẢI</a>
 
                         {% endif %}
                     {% endif %}
 
-                        <a href="{% url 'vlance:job-delete' bt.id %}" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
-Từ chối  </a>
+                        {% comment %}<a href="{% url 'vlance:job-delete' bt.id %}" role="button" class="refusal-call-popup btn-flat btn-flat-no-border btn-light-red btn-flat-xlarge" data-toggle="modal">
+Từ chối  </a>{% endcomment %}
 
                     </div>
                 </div>
@@ -159,7 +153,7 @@ Từ chối  </a>
         </div>
     </div>
 </div>
-                          {% include 'from/chapnhanbaogiajob.html' %}
+                          {% include 'from/chapnhanbaogiact.html' %}
                     {% endfor %}
                   <!-------------->
 

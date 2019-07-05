@@ -381,30 +381,30 @@ Danh sách các cuộc thi </a>
                                 <th class="price-th">Giải Thưởng</th>
                                 <th class="price-th">Actions</th>
                             </tr>
-                             {% for jobpt in ct %}
+                             {% for BaiThi in ct %}
                             <tr class="odd updated">
                                 <td class="project-freelancer ">
                                     <div class="span10 project-info ">
                                         <div class="title-job">
-                                            <a href="{% url 'vlance:Cuoc-Thi-Detail' jobpt.slug %}">
-                                            {{ jobpt.title }}
+                                            <a href="{% url 'vlance:Cuoc-Thi-Detail' BaiThi.slug %}">
+                                            {{ BaiThi.title }}
                                             </a>
                                         </div>
                                         <div class="freelancer">
-                                            <span>Tìm được {{ jobpt.ct.count }} freelancer</span>
+                                            <span>Tìm được {{ BaiThi.BaiThi.count }} freelancer</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="num-bid">
-                                    <a href="{% url 'vlance:employer-dashboard-applicants-pt' jobpt.id %}">
+                                    <a href="{% url 'vlance:employser-dashboard-applicants-ct' BaiThi.id %}">
                                    <button class="btn btn-vl-green" data-placement="top"
                                            data-content="Danh sách bài dự thi"
                                            data-original-title="" title="">
-                                            {{ jobpt.ct.count }} bài dự thi <i class="fa fa-arrow-up" data-original-title="" title=""></i>
+                                            {{ BaiThi.BaiThi.count }} bài dự thi <i class="fa fa-arrow-up" data-original-title="" title=""></i>
                                         </button></a>
                                 </td>
                                 <td class="payment-th">
-                                    {% if jobpt.filled %}
+                                    {% if BaiThi.filled %}
                                             <span class="badge badge-success">Đã Hoàn Thành</span>
                                         {% else %}
                                             <span class="badge badge-secondary">Đang Nhận Chào Giá</span>
@@ -417,28 +417,28 @@ Danh sách các cuộc thi </a>
 </i>
                                 </td>
                                 <td class="price-td">
-                                   {{ jobpt.gt }} </td>
+                                   {{ BaiThi.gt }} </td>
 
                                 <td>
                                         <a href="#" class="btn btn-outline-white-secondary">
                                             <i class="fa fa-edit"></i>Edit
                                         </a>
                                         <br>
-                                        {% if jobpt.filled %}
-                                            <a href="{% url 'vlance:jobpt-mark-filled' jobpt.id %}"
+                                        {% if BaiThi.filled %}
+                                            <a href="{% url 'vlance:cuoc-thi-mark-filled' BaiThi.id  %}"
                                                class="btn btn-outline-white-secondary">
                                                 <i class="fa fa-check-circle-o"></i>
                                                 <span class="hidden-xs hidden-sm">Hoàn Thành</span>
                                             </a><br>
                                         {% else %}
-                                            <a href="{% url 'vlance:jobpt-mark-filled' jobpt.id %}"
+                                            <a href="{% url 'vlance:cuoc-thi-mark-filled'  BaiThi.id  %}"
                                                class="btn btn-outline-white-secondary">
                                                 <i class="fa fa-check-circle-o"></i>
                                                 <span class="hidden-xs hidden-sm">Đánh dấu </span> hoàn thành
                                             </a><br>
 
                                         {% endif %}
-                                        <a href="{% url 'vlance:jobpt-delete' jobpt.id %}" class="btn btn-outline-white-secondary">
+                                        <a href="{% url 'vlance:jobpt-delete'  BaiThi.id %}" class="btn btn-outline-white-secondary">
                                             <i class="fa fa-times-circle-o"></i>Delete
                                         </a>
                                     </td>

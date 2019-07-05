@@ -1,17 +1,8 @@
 {% extends 'layout/base.html' %}
 
 {% block index %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#show").click(function(){
-    $("p").show();
-  });
-  $("#hide").click(function(){
-    $("p").hide();
-  });
-});
-</script>
+<script src="/static/js/jquery.min.js"></script>
+
 
 <div class="content-section container">
 <div class="row-fluid">
@@ -48,10 +39,24 @@ $(document).ready(function(){
                         <td >{{ GuiTBChapNhanJob.applicant.job.id}}</td>
                         <td><a href="{% url 'vlance:product' GuiTBChapNhanJob.applicant.job.slug %}" title="{{ GuiTBChapNhanJob.applicant.job}}">{{ GuiTBChapNhanJob.applicant.job|truncatechars:40}}</a> </td>
                         <td><a href="{% url 'accounts:info-freelance' GuiTBChapNhanJob.user.id %}"> {{ GuiTBChapNhanJob.user.get_full_name }}</a></td>
-                        <td><p>{{ GuiTBChapNhanJob.mess|safe}} </p>
-                            <button id="hide">Ẩn</button>
-                            <button id="show">Hiển Thị</button>
+                        <td>
+                            <span id="haha__{{ GuiTBChapNhanJob.id}}" >{{ GuiTBChapNhanJob.mess|safe}} </span>
+                            <button id="hide_{{ GuiTBChapNhanJob.id }}">Ẩn</button>
+                            <button id="show_{{ GuiTBChapNhanJob.id }}">Hiển Thị</button>
                         </td>
+                                        <script>
+                                        $(document).ready(function(){
+                                            $("#hide_{{ GuiTBChapNhanJob.id}}").click(function(){
+                                            $("#haha__{{ GuiTBChapNhanJob.id}}").hide();
+                                          });
+
+                                          $("#show_{{ GuiTBChapNhanJob.id}}").click(function(){
+                                            $("#haha__{{ GuiTBChapNhanJob.id}}").show();
+                                          });
+
+                                        });
+                                        </script>
+
                         <td><a href="{% url 'vlance:mess-delete' GuiTBChapNhanJob.id %}">Xóa</a> </td>
                     </tr>
                     </tbody>

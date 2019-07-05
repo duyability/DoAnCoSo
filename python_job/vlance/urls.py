@@ -57,12 +57,12 @@ urlpatterns = [
                            name='employer-dashboard-applicants'),
                       path('applicant/<int:jobpt_id>', ApplicantPerJPT.as_view(),
                            name='employer-dashboard-applicants-pt'),
-                      path('cuoc-thi/<int:jobpt_id>', CuocThiList.as_view(),
+                      path('cuoc-thi/<int:ct_id>', CuocThiList.as_view(),
                            name='employser-dashboard-applicants-ct'),
 
                       path('cv-applicants/<int:applicant_id>', ChapnhanBaoGia.as_view(), name='chap-nhan-job'),
                       path('pt-applicants/<int:cvonsite_id>', ChapnhanBaoGiaPT.as_view(), name='chap-nhan-jobpt'),
-                      path('ct-applicants/<int:baithi_id>', ChapnhanCT.as_view(), name='chap-nhan-cuoc-thi'),  # ...........
+                      path('ct-applicants/<int:bt_id>', ChapnhanCT.as_view(), name='chap-nhan-cuoc-thi'),  # ...........
 
                       path('mark-filled/<int:job_id>', filled, name='job-mark-filled'),
                       path('mark-filled-pt/<int:jobpt_id>', filleds, name='jobpt-mark-filled'),

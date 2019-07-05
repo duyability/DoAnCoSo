@@ -1,0 +1,65 @@
+<!-- Modal -->
+<div id="myModal_Job" class="modal hide fade"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     style="background: white;
+            padding: 0;"
+     aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Gửi Thông Báo Đạt Giải Cho Bài Thi <span style="color: red">{{ bt.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+
+     <form method='POST' action='{% url 'vlance:chap-nhan-cuoc-thi' bt.id %}'>
+      {% csrf_token %}
+
+    <label>Tin nhắn </label>
+      <input type="text" name="bt" value="{{bt.id }}" readonly>
+      <textarea name="mess">Xin chúc mừng bạn đã thắng cuộc thi :
+          - {{ ct.title }}
+          của công ty {{ ct.user.get_full_name }}
+      </textarea>
+
+
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary" type="submit">Gửi Thông Báo</button>
+  </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- Modal giao viec -->
+<div id="myModal_Jo_Ok" class="modal hide fade"
+     tabindex="-1"
+     style="background: white;
+            padding: 0;"
+     role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Bạn trao giải cho  <span style="color: red">{{ bt.user.get_full_name }}</span></h5>
+  </div>
+  <div class="modal-body">
+    <p>
+           -Người Thắng Cuộc :  {{ bt.user.get_full_name }}
+        <br>
+            -Số Điện Thoại : {{ bt.user.hotline  }}
+        <br>
+            -Email : {{ bt.user.email }}
+    <br>
+
+      </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Đóng Lại </button>
+  </div>
+    </form>
+</div>
