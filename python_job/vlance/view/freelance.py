@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import UpdateView, CreateView, ListView
 from accounts.forms import ProfileUpdateBasic, ProfileUpdateCV
-from accounts.models import User, UpUser
+from accounts.models import User
 from vlance.decorators import user_is_employee, user_is_employer
 from vlance.froms import ApplyJobForm, ApplyCVForm, BaiThiFrom
 from vlance.models import Applicant, Job, CVonsite, NganhNghe, ThanhPho, KyNang, GuiTBChapNhanJob, BaiThi, \

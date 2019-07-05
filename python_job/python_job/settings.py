@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'page',
     'taggit',
     'vlance',
-
+    'dbbackup_ui',
+    'import_export',
 
 
 ]
@@ -74,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -114,7 +115,7 @@ DATABASES = {
     'USER': 'root',
     'PASSWORD': '',
     'OPTIONS': {
-            # Tell MySQLdb to connect with 'utf8mb4' character set
+
             'charset': 'utf8mb4',
         },
         # Tell Django to build the test database with the 'utf8mb4' character set

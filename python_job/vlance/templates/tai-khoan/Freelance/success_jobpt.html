@@ -1,17 +1,7 @@
 {% extends 'layout/base.html' %}
 
 {% block index %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#show").click(function(){
-    $("p").show();
-  });
-  $("#hide").click(function(){
-    $("p").hide();
-  });
-});
-</script>
+<script src="/static/js/jquery.min.js"></script>
 
 <div class="content-section container">
 <div class="row-fluid">
@@ -49,13 +39,28 @@ $(document).ready(function(){
                         <td><a href="{% url 'vlance:viec-onsite' GuiTBChapNhanJobpt.cvonsite.jobpt.slug %}" title="{{ GuiTBChapNhanJobpt.cvonsite.jobpt}}">{{ GuiTBChapNhanJobpt.cvonsite.jobpt|truncatechars:40}}</a> </td>
                         <td><a href="{% url 'accounts:info-freelance' GuiTBChapNhanJobpt.user.id %}"> {{ GuiTBChapNhanJobpt.user.get_full_name }}</a></td>
                         <td>
-                            <p>{{ GuiTBChapNhanJobpt.mess|safe}}</p>
-                            <button id="hide">Ẩn</button>
-                            <button id="show">Hiển Thị</button>
+                            <span id="haha__{{ GuiTBChapNhanJobpt.id}}" >{{ GuiTBChapNhanJob.mess|safe}} </span>
+                             <button id="hide_{{ GuiTBChapNhanJobpt.id }}">Ẩn</button>
+                             <button id="show_{{ GuiTBChapNhanJobpt.id }}">Hiển Thị</button>
                         </td>
                             {% comment %}<td><a href="{% url 'vlance:mess-delete' GuiTBChapNhanJobpt.id %}">Xóa</a> </td>{% endcomment %}
                     </tr>
                     </tbody>
+
+                           <script>
+                                        $(document).ready(function(){
+                                            $("#hide_{{ GuiTBChapNhanJobpt.id}}").click(function(){
+                                            $("#haha__{{ GuiTBChapNhanJobpt.id}}").hide();
+                                          });
+
+                                          $("#show_{{ GuiTBChapNhanJobpt.id}}").click(function(){
+                                            $("#haha__{{ GuiTBChapNhanJobpt.id}}").show();
+                                          });
+
+                                        });
+                                        </script>
+
+
                       {% endfor %}
                 </table>
 

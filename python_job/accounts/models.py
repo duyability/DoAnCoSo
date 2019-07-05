@@ -37,16 +37,3 @@ class User(AbstractUser):
         return self.email
 
     objects = UserManager()
-
-class UpUser(models.Model):
-    # update
-    created_at = models.DateTimeField(auto_now_add=True, null=True)  # Ngày tạo Job(auto)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # thanh_pho = models.ForeignKey(ThanhPho, on_delete=models.CASCADE, verbose_name="Chọn Thành Phố", default='')
-    # nganh_nghe = models.ForeignKey(NganhNghe, on_delete=models.CASCADE, verbose_name="Chọn Nganh Nghe", default='')
-    # hinh = models.ImageField("Avatar ", upload_to='uploads/User/avatar/%Y/%m/%d/', default='')
-    # skill = models.ManyToManyField(KyNang,verbose_name="Chọn kỹ năng", default='')
-    # sologan = models.CharField(max_length=50, blank=True, null=True, default="")
-    # description = models.TextField("Mô tả - giới thiệu về bản thân", max_length=300, blank=True, null=True, default="")
-    # year_exp = models.CharField("Số Năm Kinh Nghiệm", max_length=300, default='')
-    # end update

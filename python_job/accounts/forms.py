@@ -1,10 +1,8 @@
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
+from accounts.models import User
 
-from accounts.models import User, UpUser
-
-from vlance.models import ThanhPho, NganhNghe, KyNang
 
 GENDER_CHOICES = (
     ('male', 'Nam'),
